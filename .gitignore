@@ -3,3 +3,6 @@
 
 # Claude Code local settings (machine-specific, do not commit)
 .claude/settings.local.json
+
+# Obsidian 로컬 작업공간 설정(머신별)
+.obsidian/
