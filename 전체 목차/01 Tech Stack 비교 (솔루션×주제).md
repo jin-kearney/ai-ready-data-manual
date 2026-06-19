@@ -3,7 +3,8 @@
 > **목적:** 20개 주제(A-1~F-4)에 "어떤 솔루션을 써야 하는가"를 한 곳에서 비교·결정하기 위한 **마스터 Tech Stack 정본(초안 v0.1)**.
 > **관점 고정:** "AI/에이전트를 만드는 도구"가 아니라 **"그 AI가 쓸 데이터를 준비·정비하는 도구"**다. (절대 원칙 — CLAUDE.md / 데이터 준비 관점)
 > **읽는 법(2층 구조):**
-> - **Part A — 주제별 솔루션**: "이 주제엔 뭘 쓰지?" (주제 → 솔루션). 각 주제 가이드의 '솔루션' 섹션은 여기로 연결한다.
+> - **Part A — 주제별 솔루션**: "이 주제엔 뭘 쓰지?" (주제 → 솔루션). 각 주제 가이드의 '솔루션' 섹션은 여기로 연결한다. **솔루션을 "제품명"이 아니라 "어떤 기능을 하느냐(capability)"로 비교한다** — 자동 메타 수집·동의어 매핑·표 구조 보존·AI 1차 라벨·그래프 추론처럼 *기능 열*을 축으로.
+> - **Part A0 — 기능 기준 묶음 한눈에**: "이 기능을 하는 제품군은?" + "한 제품이 여러 주제를 묶어서 커버하나?"를 먼저 본다(이번에 새로 추가 — A·B 6개 주제). 핵심 인사이트 = **A-1 카탈로그·A-2 메타데이터·A-3 용어집은 별도 제품이 아니라 통합 거버넌스 플랫폼 1개가 함께 해결**한다.
 > - **Part B — 묶음(플랫폼) × 주제 매트릭스**: "우리가 X 플랫폼을 깔면 어디까지 한 번에 되나?" (솔루션 → 주제).
 > - **Part C — 묶음 스택 비교·선정 가이드**: 최종 의사결정용. 어느 스택이 어느 주제군에 강한가, 제조업(설비·OCR·비식별)엔 무엇이 중요한가.
 
@@ -34,68 +35,142 @@
 
 ---
 
+# Part A0. 기능 기준 묶음 한눈에 (A·B 6개 주제)
+
+> 👉 **한 줄 요약:** 6개 주제(A-1·A-2·A-3·B-1·B-2·B-3)에 등장하는 솔루션을 **① 어떤 기능을 하느냐**로 묶고, **② 한 제품이 여러 주제를 함께 커버하면 한 줄로** 보여준다. **가장 중요한 결론 = A-1·A-2·A-3은 따로 사는 게 아니라 통합 거버넌스 플랫폼 1개가 통째로 한다.**
+
+## A0-1. 4개 솔루션 묶음 (한 제품군이 무슨 기능으로 어느 주제를 덮나)
+
+| 묶음 | 핵심 기능(capability) | 커버 주제 | 대표 제품(군) |
+|---|---|---|---|
+| **① 통합 데이터 거버넌스·카탈로그 플랫폼** | 자동 메타 수집(커넥터) · 검색/탐색 · **비즈니스 용어집(Glossary)+동의어 매핑** · 승인 워크플로 · **컬럼단위 계통(Lineage)** · AI 자연어 탐색 | **A-1·A-2·A-3** (+C-3 계통) **한 제품으로 묶임** | Collibra · Microsoft Purview · Atlan · Databricks Unity Catalog · (OSS) OpenMetadata · DataHub |
+| **② 문서 전처리 / Document AI** | 레이아웃 인식 OCR · **표 구조 보존** · 마크다운/JSON 출력 · 청킹·임베딩 · 온프레미스/망분리 · 한국어 | **B-1** | Docling · Unstructured · LlamaParse · Camelot/pdfplumber · Azure Document Intelligence · Google Document AI · AWS Textract · (국내) Upstage |
+| **③ 데이터 라벨링 / 주석 플랫폼** | **AI 1차 라벨(pre-label)** · 능동학습 · 프로그래매틱(약지도) 라벨링 · 라벨 오류 탐지 · 합의/검수(HITL) · 온프레미스 | **B-2** | Label Studio · CVAT · Snorkel Flow · Labelbox · Scale AI · Roboflow · Prodigy · Cleanlab · SageMaker Ground Truth · (보조) SAM 2 |
+| **④ 그래프DB / 온톨로지** | **그래프 추론**(OWL/SHACL) · 다중 홉 경로 탐색 · SPARQL/Cypher 질의 · 벡터·GraphRAG · 온톨로지 저작 | **B-3** | Neo4j · Amazon Neptune · TigerGraph · Memgraph · Ontotext GraphDB · Stardog · Apache Jena · Protégé |
+
+**핵심 인사이트:**
+- **묶음 ①이 곧 이 매뉴얼 A군의 정답 구조다.** A-1·A-2·A-3을 도구 3개로 따로 사는 게 아니라, **카탈로그/거버넌스 플랫폼 1개**가 카탈로그 + 메타데이터 작성·승인 + 비즈니스 용어집을 함께 제공한다(계통 C-3까지). 6개 가이드 본문이 모두 같은 벤더 집합(Collibra·Purview·Atlan·Unity Catalog·OpenMetadata·DataHub)으로 수렴한다.
+- **묶음 ②③④는 서로 다른 시장이다 — 한 제품으로 다 안 된다.** 전처리(B-1)·라벨링(B-2)·온톨로지(B-3)는 각각 전용/OSS 도구를 붙여야 하고, 묶음 ①의 거버넌스 플랫폼은 이 영역이 통째로 비어 있다.
+
+## A0-2. 기능(capability) × 묶음 매트릭스 — "이 기능을 하는 건 어느 묶음인가"
+
+> 행=기능, 열=4개 솔루션 묶음. ● 그 묶음의 핵심 기능 / ◐ 일부 제품만·부분 / ○ 연동·플러그인으로 / 공백=아님.
+
+| 기능 (capability) | ① 거버넌스·카탈로그 | ② 문서 전처리 | ③ 라벨링·주석 | ④ 그래프·온톨로지 |
+|---|:--:|:--:|:--:|:--:|
+| 자동 메타데이터 수집(커넥터) | ● | | | ○ |
+| 검색·탐색(자연어·필터) | ● | | | ◐ |
+| 비즈니스 용어집·동의어 매핑 | ● | | | ◐(어휘 통합) |
+| 데이터 계통(Lineage, 컬럼단위) | ● | | | |
+| 승인·거버넌스 워크플로 | ● | | ◐(검수 큐) | ◐(거버넌스 에디션) |
+| 문서 파싱·OCR | | ● | ○(문서 라벨링 전처리) | |
+| 표 구조 보존(table structure) | | ● | | |
+| 마크다운/JSON·청킹(RAG 적재) | | ● | | |
+| AI 1차 라벨(pre-label)·능동학습 | | | ● | |
+| 프로그래매틱/약지도 라벨링 | | | ◐(Snorkel) | |
+| 라벨 합의·품질(IAA·오류탐지) | | | ●(도구+방법론) | |
+| 그래프 추론(OWL·SHACL·Datalog) | | | | ◐(RDF 계열만) |
+| 다중 홉 경로 탐색·GraphRAG | | | | ●(LPG 계열) |
+| 온프레미스·망분리 배포 | ◐(OSS·일부 전용) | ●(Docling 등 로컬) | ◐(OSS·Prodigy) | ◐(자체호스팅·인메모리) |
+
+> ⚠️ ●/◐는 **묶음의 일반적 성격**이다 — 같은 묶음 안에서도 제품마다 다르다(예: 그래프 추론은 RDF 트리플스토어[GraphDB·Stardog·Jena]는 강하나 LPG[Neo4j·Memgraph]는 약함). 제품 단위 차이는 아래 Part A 각 주제 표에서 본다.
+
+---
+
 # Part A. 주제별 솔루션 (주제 → 솔루션)
 
-## A군 + C-3 — 데이터 카탈로그·메타데이터·용어집·계통 (한 제품으로 묶임)
+## A군 + C-3 — 데이터 카탈로그·메타데이터·용어집·계통 (한 제품으로 묶임) = 묶음 ①
 
-> 📄 **주제 가이드(1층):** [A-1 데이터 카탈로그](../가이드%20작성/A-1%20데이터%20카탈로그/A-1%20데이터%20카탈로그.md) (작성됨) · A-2 메타데이터·A-3 Glossary·C-3 Lineage (작성 예정)
-> **핵심:** A-1 카탈로그·A-2 메타데이터·A-3 용어집·C-3 계통(Lineage)은 **카탈로그/거버넌스 플랫폼 1개가 통째로 커버**하는 것이 시장 표준이다. 4개 도구를 따로 사는 게 아니다. **변별점은 ① 네이티브 비즈니스 용어집(A-3) ② 컬럼 단위 계통(C-3)** 두 가지.
+> 📄 **주제 가이드(1층):** [A-1 데이터 카탈로그](../가이드%20작성/A-1%20데이터%20카탈로그/A-1%20데이터%20카탈로그.md) · [A-2 메타데이터](../가이드%20작성/A-2%20메타데이터/A-2%20메타데이터.md) · [A-3 비즈니스 Glossary](../가이드%20작성/A-3%20비즈니스%20Glossary/A-3%20비즈니스%20Glossary.md) (모두 작성됨) · C-3 Lineage (작성 예정)
+> **핵심(= 묶음 ①):** A-1 카탈로그·A-2 메타데이터·A-3 용어집·C-3 계통(Lineage)은 **카탈로그/거버넌스 플랫폼 1개가 통째로 커버**하는 것이 시장 표준이다. 도구를 따로 사는 게 아니다. **세 가이드(A-1·A-2·A-3)가 모두 같은 벤더 집합으로 수렴**한다(A-2 §7.1·A-3 §6.1·§7.3에 명시). **변별점은 ① 네이티브 비즈니스 용어집·동의어 매핑(A-3) ② 컬럼 단위 계통(C-3)** 두 가지.
+>
+> **기능(capability)으로 비교 — 열이 곧 "무엇을 하느냐":**
 
-| 솔루션 | 카테고리 | A-1 | A-2 | A-3 | C-3 | 핵심 (출처) |
-|---|---|:--:|:--:|:--:|:--:|---|
-| **Collibra** | 전용 거버넌스 | ✓ | ✓ | ✓ | ✓ | 카탈로그·용어집·리니지를 의미계층으로 묶은 엔터프라이즈 정본 ([catalog](https://www.collibra.com/products/data-catalog)) |
-| **Alation** | 전용 카탈로그 | ✓ | ✓ | ✓ Glossary Hub | ✓ 컬럼단위 | 액티브 메타데이터 그래프·신뢰 신호 ([catalog](https://www.alation.com/product/data-catalog/)) |
-| **Atlan** | 전용(액티브 메타) | ✓ | ✓ | ✓ Business Graph | ✓ 컬럼·OpenLineage | MCP/REST로 AI 연동, 제조 레퍼런스 ([catalog](https://atlan.com/data-discovery-catalog/)) |
-| **Microsoft Purview** | 플랫폼 내장 | ✓ | ✓ | ✓ | ✓ | 멀티클라우드 페더레이션 거버넌스 ([unified-catalog](https://learn.microsoft.com/en-us/purview/unified-catalog)) |
-| **Databricks Unity Catalog** | 플랫폼 내장 | ✓ | ✓ | △ 시맨틱레이어 | ✓ 컬럼단위 자동 | 데이터·모델·에이전트 단일 거버넌스 ([UC](https://docs.databricks.com/aws/en/data-governance/unity-catalog/)) |
-| **OpenMetadata** | 오픈소스 | ✓ | ✓ | ✓ | ✓ 컬럼단위 | 단일 시맨틱 그래프·네이티브 MCP ([open-metadata.org](https://open-metadata.org/)) |
-| **DataHub** | 오픈소스 | ✓ | ✓ | △ | ✓ 컬럼단위 | 실시간 메타데이터 그래프 ([docs](https://docs.datahub.com/docs/introduction)) |
-| **OpenLineage + Marquez** | 오픈소스(계통 표준) | △ | ✓ | ✗ | ✓ **계통 특화** | C-3 계통을 표준 이벤트로 자동 수집 ([OpenLineage](https://openlineage.io/)) |
+| 솔루션 | 카테고리 | 자동 메타 수집 | 검색·탐색 | 용어집+동의어 | 계통(Lineage) | A-1 | A-2 | A-3 | C-3 | 핵심·출처 |
+|---|---|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|---|
+| **Collibra** | 전용 거버넌스 | ✓ 커넥터 | ✓ | ✓ Glossary+동의어 | ✓ | ✓ | ✓ | ✓ | ✓ | 카탈로그·용어집·계통을 의미계층으로 묶은 엔터프라이즈 정본 ([catalog](https://www.collibra.com/products/data-catalog)) |
+| **Alation** | 전용 카탈로그 | ✓ | ✓ | ✓ Glossary Hub | ✓ 컬럼단위 | ✓ | ✓ | ✓ | ✓ | 액티브 메타데이터 그래프·신뢰 신호 ([catalog](https://www.alation.com/product/data-catalog/)) |
+| **Atlan** | 전용(액티브 메타) | ✓ | ✓ 최고 UX | ✓ Business Graph | ✓ 컬럼·OpenLineage | ✓ | ✓ | ✓ | ✓ | MCP/REST로 AI 연동, SaaS 운영부담 최저, 제조 레퍼런스 ([catalog](https://atlan.com/data-discovery-catalog/)) |
+| **Microsoft Purview** | 플랫폼 내장(Azure) | ✓ 커넥터 | ✓ Copilot | ✓ Unified Catalog | ✓ | ✓ | ✓ | ✓ | ✓ | 멀티클라우드 페더레이션 거버넌스. **Azure shop이면 PoC 1순위**(A-1 §6) ([unified-catalog](https://learn.microsoft.com/en-us/purview/unified-catalog)) |
+| **Databricks Unity Catalog** | 플랫폼 내장 | ✓ `information_schema` 자동 | ✓ | △ 시맨틱레이어 | ✓ 컬럼단위 자동 | ✓ | ✓ | △ | ✓ | 데이터·모델·에이전트 단일 거버넌스, 용어를 데이터와 같은 곳에서 ([UC](https://docs.databricks.com/aws/en/data-governance/unity-catalog/)) |
+| **OpenMetadata** | 오픈소스 | ✓ | ✓ | ✓ | ✓ 컬럼단위 | ✓ | ✓ | ✓ | ✓ | 단일 시맨틱 그래프·네이티브 MCP. 운영 0.5~1 FTE ([open-metadata.org](https://open-metadata.org/)) |
+| **DataHub** | 오픈소스 | ✓ 활발한 커넥터 | ✓ | △ | ✓ 컬럼단위 | ✓ | ✓ | △ | ✓ | 실시간 메타데이터 그래프. 운영 0.5~1 FTE ([docs](https://docs.datahub.com/docs/introduction)) |
+| **OpenLineage + Marquez** | 오픈소스(계통 표준) | △ | ✗ | ✗ | ✓ **계통 특화** | △ | ✓ | ✗ | ✓ | C-3 계통을 표준 이벤트로 자동 수집(위 제품들과 결합) ([OpenLineage](https://openlineage.io/)) |
 
-**선정 포인트:** 단일 클라우드면 플랫폼 내장(Unity Catalog·Purview)으로 충분. 멀티소스·전사 거버넌스면 전용(Collibra·Alation·Atlan). 폐쇄망·무료 시작은 **OpenMetadata 또는 DataHub + 계통은 OpenLineage** 조합. A-3 용어집이 중요하면 Databricks·Snowflake(△)는 보완 필요.
+> **A-1 추가 후보(전용 카탈로그·클라우드 네이티브 유형, A-1 §6.1 표):** [Informatica CDGC](https://www.informatica.com/products/data-governance/cloud-data-governance-and-catalog.html) · [IBM Knowledge Catalog](https://www.ibm.com/products/watsonx-data-intelligence/governance-catalog) (둘 다 Gartner MQ Leader) · [AWS Glue Data Catalog](https://aws.amazon.com/glue/features/) · [Google Knowledge Catalog (Dataplex)](https://docs.cloud.google.com/dataplex/docs/catalog-overview). **Gartner MQ for D&A Governance Platforms 2025–2026 Leaders = Collibra·Alation·Informatica·IBM(2026)·Atlan(2026 신규).** Snowflake/BigQuery/SAP는 `INFORMATION_SCHEMA` 시스템 카탈로그 제공 → 본 가이드 항목을 각 필드에 매핑만 하면 적용(A-1 §7.7·A-2 §7.4).
 
-## B-1 — 데이터 전처리 (문서 파싱·추출)
+**기능별 동의어·약어 매핑(A-3 핵심):** 별도 엔진을 만드는 게 아니라 **거버넌스 솔루션의 동의어(Synonym) 매핑 기능**이 Glossary 데이터를 소비해 질의 확장(Query Expansion)·RAG 용어 정규화로 작동한다 — 우리 일은 그 매핑 데이터를 채우는 것(A-3 §7.4, 데이터 준비 관점). Collibra·Purview·Atlan이 네이티브 제공.
 
-| 솔루션 | 카테고리 | 핵심 (출처) |
-|---|---|---|
-| **Unstructured** | 전용+OSS | 64종+ 파싱·청킹·임베딩 ETL 파이프라인 ([unstructured.io](https://unstructured.io/)) |
-| **LlamaParse** | 전용(API) | 레이아웃 인식 OCR·표 구조 보존·마크다운 출력 ([docs](https://developers.llamaindex.ai/python/cloud/llamaparse/overview)) |
-| **Azure AI Document Intelligence** | 클라우드 내장 | Read·Layout, RAG용 결정적 추출 ([overview](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview)) |
-| **Amazon Textract / Google Document AI** | 클라우드 내장 | 표·폼·질의 기반 추출 ([Textract](https://docs.aws.amazon.com/textract/latest/dg/what-is.html)) |
-| **Docling** (IBM) / **Apache Tika** | 오픈소스 | 온프렘 가능, gen-AI 파이프라인 연동 ([Docling](https://github.com/docling-project/docling)) |
-| **Upstage Document Parse** (한국) | 전용(온프렘) | 국내 벤더·온프렘, RAG용 구조화 출력 ([product](https://www.upstage.ai/products/document-parse)) |
+**선정 포인트:** 단일 클라우드면 플랫폼 내장(Unity Catalog·Purview)으로 충분. 멀티소스·전사 거버넌스면 전용(Collibra·Alation·Atlan). 폐쇄망·무료 시작은 **OpenMetadata 또는 DataHub + 계통은 OpenLineage** 조합. **A-3 용어집·동의어가 중요하면 Databricks·Snowflake(△)는 보완 필요.** 공통 평가축(A-1 §6.2 / A-2 §7.1): ① 우리 원천 커넥터 범위(SAP·MES·QMS·LIMS·SharePoint) ② 자동 메타 수집률 ③ 검색 UX ④ 권한·거버넌스 ⑤ 계통 연계 ⑥ AI 기능 ⑦ 계열사 확장성 + **운영형태(SaaS/온프렘·폐쇄망 적합성)**. **반드시 두산 실제 원천 2~3종 연결 PoC로 검증**(LabWare LIMS 등 커스텀 커넥터는 난이도 높음 — Purview 수동·DataHub 커스텀·Atlan API).
 
-**선정 포인트:** 망분리면 OSS(Docling·Tika)·온프렘(Upstage). 사내 클라우드 표준이 있으면 그 생태계 내장형. RAG 적재 목표면 마크다운/JSON + 청킹 내장 여부.
+## B-1 — 데이터 전처리 (문서 파싱·추출) = 묶음 ②
 
-## B-2 — 데이터 해설·주석 (라벨링/Annotation)
+> 📄 **주제 가이드(1층):** [B-1 데이터 전처리](../가이드%20작성/B-1%20데이터%20전처리/B-1%20데이터%20전처리.md) (작성됨 — §6.3 변환 도구·[Backup 6-A] 비교)
+> **기능으로 비교 — 핵심 변별 기능 = ① 표 구조 보존 ② 온프레미스/로컬 ③ 한국어/OCR.** (표 구조 보존 ★ = B-1 가이드의 핵심 평가축; 복잡한 다중행 표를 깨뜨리지 않는가)
 
-> 📄 **주제 가이드(1층):** [B-2 데이터 해설·주석](../가이드%20작성/B-2%20데이터%20해설·주석/B-2%20데이터%20해설·주석.md) (작성됨)
+| 솔루션 | 카테고리 | 표 구조 보존 | 레이아웃 | 출력 | 온프렘/로컬 | 한국어·OCR | 핵심·출처 |
+|---|---|:--:|:--:|---|:--:|:--:|---|
+| **Docling** (IBM) | 오픈소스 | ★★★ | ★★★ | JSON(좌표)·MD·HTML | ✓ **로컬 실행** | △ | 복잡한 표 보존 + 사외 전송 제한 시 **1차 파서**(B-1 권장). 속도 느린 편 ([Docling](https://github.com/docling-project/docling)) |
+| **Camelot / pdfplumber** | 오픈소스 | ★★★ **표 전용** | △ | 표(DataFrame) | ✓ 로컬 | ✗ | 까다로운 PDF **표만** 세밀 추출 — 위 파서의 보완용 ([Camelot](https://camelot-py.readthedocs.io) · [pdfplumber](https://github.com/jsvine/pdfplumber)) |
+| **Unstructured** | 오픈소스+SaaS | ★★ | ★★ | JSON(요소·좌표) | ✓(OSS) | △ OCR | 다양한 포맷 통합·청킹·임베딩 ETL. 복잡한 표 컬럼 이동 오류 가능 ([unstructured.io](https://unstructured.io/)) |
+| **LlamaParse** | 클라우드 API | ★★ | ★★★ | **LLM-ready MD**·JSON | ✗ 인터넷 필수 | △ | 빠른 처리·RAG용 마크다운. 크레딧 과금 ([docs](https://developers.llamaindex.ai/python/framework/llama_cloud/llama_parse/)) |
+| **Azure AI Document Intelligence** | 클라우드(Azure) | ★★★ | ★★★ | JSON(좌표·신뢰도) | ✗ | ✓ **한국어·커스텀모델** | MS 인프라면 1순위. 가격 PoC 확인 ([overview](https://azure.microsoft.com/ko-kr/products/ai-services/ai-document-intelligence)) |
+| **Google Document AI** | 클라우드(GCP) | ★★★ | ★★★ | JSON(좌표·신뢰도) | ✗ | ✓ 다국어(한국어) | GCP 인프라면 선택. 언어범위 공식 확인 ([Document AI](https://cloud.google.com/document-ai)) |
+| **AWS Textract** | 클라우드(AWS) | ★★★ | ★★★ | JSON(블록·좌표) | ✗ | △ 범위 확인 | AWS 인프라면 선택 ([Textract](https://aws.amazon.com/textract/)) |
+| **Upstage Document Parse** (한국) | 전용(국내) | ★★★ | ★★★ | RAG 구조화 출력 | △(국내 벤더) | ✓ **한글 강점** | 국내 벤더, RAG용 구조화 ([product](https://www.upstage.ai/products/document-parse)) |
+| **Apache Tika** | 오픈소스 | △ | △ | 텍스트·메타 | ✓ 로컬 | △ | 1,000+ 포맷 텍스트·메타 추출(범용) ([Tika](https://tika.apache.org)) |
 
-| 솔루션 | 카테고리 | AI 1차 라벨 · 온프레미스 (출처) |
-|---|---|---|
-| **Label Studio** (HumanSignal) | OSS+엔터프라이즈 | AI 1차 ✓ · 온프렘 ✓(에어갭) ([labelstud.io](https://labelstud.io/)) |
-| **CVAT** | 오픈소스 | AI 1차 ✓(SAM/YOLO) · 온프렘 ✓(완전 셀프호스트) ([github](https://github.com/cvat-ai/cvat)) |
-| **Encord** | 전용 | AI 1차 ✓(SAM 2) · 온프렘 ✓(에어갭 명시) ([docs](https://docs.encord.com/platform-documentation/Other/deployment-options.md)) |
-| **Snorkel Flow** | 전용(프로그래매틱) | AI 1차 ✓(대량 초벌) · 온프렘 ✓ ([snorkel.ai](https://snorkel.ai/snorkel-flow/)) |
-| **Labelbox / SuperAnnotate / Scale AI** | 전용(SaaS) | AI 1차 ✓ · 온프렘 **미확인**(계약 확인 필요) ([Labelbox](https://labelbox.com/product/annotate/)) |
-| **SageMaker Ground Truth** (AWS) | 클라우드 내장 | AI 1차 ✓ · 온프렘 ✗(AWS 전용) ([groundtruth](https://aws.amazon.com/sagemaker/ai/groundtruth/)) |
+> **포맷별 보조 라이브러리(B-1 References):** PDF=PyMuPDF·Tabula-py / Office=python-pptx·openpyxl·python-docx·Mammoth / HWP=pyhwp(한계) / 이미지·스캔 OCR=Tesseract·pytesseract / RAG 적재 sink=pgvector·Milvus·Pinecone·Chroma·Elasticsearch·OpenSearch / 데이터셋 버전=DVC·lakeFS.
 
-**선정 포인트:** **공정·품질 데이터를 외부 반출 못 하면 후보가 좁혀진다** — 온프렘 공식 확인된 곳은 **CVAT(무료)·Encord·Snorkel·Label Studio**. AI 1차 라벨은 사실상 전 제품 지원하나 정확도는 PoC로 검증.
+**선정 포인트:** **표 복잡도**가 높으면 전용 표 파서(Camelot·pdfplumber)로 보완, **데이터 민감도**가 높아 사외 전송 불가면 로컬(Docling·Tika), **다국어·스캔본**은 OCR 강한 클라우드, **기존 인프라**(MS=Azure DI / AWS=Textract / GCP=Document AI)에 맞춘다. 망분리면 OSS·국내(Upstage). RAG 적재 목표면 마크다운/JSON + 청킹 내장 여부. (가격·한국어 범위는 변동 → PoC/공식 문서 확인. 벤치마크 예: [Procycons PDF 추출 비교](https://procycons.com/en/blogs/pdf-data-extraction-benchmark/))
 
-## B-3 — 온톨로지·지식그래프
+## B-2 — 데이터 해설·주석 (라벨링/Annotation) = 묶음 ③
+
+> 📄 **주제 가이드(1층):** [B-2 데이터 해설·주석](../가이드%20작성/B-2%20데이터%20해설·주석/B-2%20데이터%20해설·주석.md) (작성됨 — 솔루션은 [Backup 6-B] 비교)
+> **기능으로 비교 — 핵심 변별 기능 = ① AI 1차 라벨(pre-label) ② 데이터 유형(이미지/텍스트/음성) ③ 온프레미스/로컬 ④ 약지도(프로그래매틱).**
+
+| 솔루션 | 카테고리 | AI 1차 라벨 | 지원 데이터 유형 | 온프렘/로컬 | 핵심·출처 |
+|---|---|:--:|---|:--:|---|
+| **Label Studio** (HumanSignal) | OSS(Apache-2.0)+기업판 | ✓ | **텍스트·이미지·음성·시계열** 폭넓음 | ✓ 셀프호스트 | 다중 유형 라벨링 범용 ([labelstud.io](https://labelstud.io/)) |
+| **CVAT** | OSS(MIT)+클라우드 | ✓ AI 보조·QA | 비전(이미지·영상·3D) | ✓ 완전 셀프호스트 | 비전 라벨링 + AI 보조·QA ([github](https://github.com/cvat-ai/cvat)) |
+| **Snorkel Flow** | 상용(프로그래매틱) | ✓ 대량 초벌 | 텍스트·문서(약지도) | △ 계약 확인 | **약지도/프로그래매틱** — 라벨링 함수로 대량 생성 ([snorkel.ai](https://snorkel.ai/)) |
+| **Labelbox** | 상용(SaaS) | ✓ | 멀티모달 | 미확인(계약) | 대규모 협업·모델 평가 ([Labelbox](https://labelbox.com/)) |
+| **Scale AI** (Data Engine) | 상용(SaaS) | ✓ | 멀티모달 | ✗(SaaS) | 대규모 인력+AI 큐레이션 ([Scale](https://scale.com/data-engine)) |
+| **Roboflow** | 상용(코어) | ✓ | 컴퓨터 비전 | △ | 비전 올인원·포맷 변환·증강 ([Roboflow](https://roboflow.com/)) |
+| **Prodigy** (Explosion) | 상용 | ✓ 능동학습 | NLP(텍스트) | ✓ **로컬 실행** | 스크립트형·spaCy 통합·로컬 ([Prodigy](https://prodi.gy/)) |
+| **SageMaker Ground Truth** (AWS) | 상용(AWS) | ✓ | 멀티모달·3D | ✗(AWS) | 매니지드 인력+ML 라벨링 ([groundtruth](https://aws.amazon.com/sagemaker/ai/groundtruth/)) |
+
+**보조 기능 도구:** **SAM 2**(Meta, Apache-2.0) = 이미지·영상 **자동 분할 프리라벨**(AI 1차 라벨 엔진) ([SAM 2](https://ai.meta.com/research/sam2/)) · **Cleanlab** = **라벨 오류 자동 탐지**(품질 보정) ([Cleanlab](https://cleanlab.ai/)) · 데이터셋 버전 = DVC·lakeFS.
+
+> **⚠️ IAA(평가자 간 일치도)·합의·검수 워크플로는 "제품 기능"이 아니라 방법론이다** — B-2 가이드는 Cohen's κ / Fleiss' κ / Krippendorff's α 측정과 HITL(확신도 기반 라우팅)을 *작성 방법*으로 다룬다. 도구는 이를 담는 그릇일 뿐.
+
+**선정 포인트:** **데이터 유형 × 자동화 수준**으로 고른다 — 비전이면 CVAT·Roboflow, 텍스트/NLP면 Label Studio·Prodigy, 약지도 대량이면 Snorkel. **공정·품질 데이터를 외부 반출 못 하면** OSS 셀프호스트(Label Studio·CVAT)·로컬(Prodigy)로 좁혀지고, SaaS(Labelbox·Scale·Ground Truth)는 온프렘 가부를 **계약으로 확인**한다. AI 1차 라벨은 사실상 전 제품 지원하나 정확도는 PoC로 검증.
+
+## B-3 — 온톨로지·지식그래프 = 묶음 ④
 
 > 📄 **주제 가이드(1층):** [B-3 온톨로지](../가이드%20작성/B-3%20온톨로지/B-3%20온톨로지.md) (작성됨 — 형식 선정·아키텍처 방법론 포함)
-> **1차 분기 = 데이터 모델:** 표준 온톨로지·추론(OWL/SKOS)이면 **RDF/트리플스토어**, 대규모 관계 탐색·GraphRAG면 **속성 그래프(LPG)**. Neptune만 둘 다.
+> **★ 1차 분기 = 데이터 모델(전환 비용 최대, 되돌리기 어려움):**
+> - **LPG(속성 그래프) 선택** = 긴 경로·다중 홉(6홉+) 탐색·실시간 패턴·GraphRAG, 외부 연계가 사내(MES·ERP·QMS) 위주, 일반 개발자(SQL/NoSQL), **탐색 속도 우선**. → 관계를 일급 엣지로 저장해 깊은 홉에도 조인 폭증 없음.
+> - **RDF/OWL 선택** = OWL 추론·의미적 어휘 통합이 핵심, 외부(공급망 파트너·표준기관)와 데이터 교환, 시맨틱웹/OWL 전문가 확보, **의미 정확성·표준 준수 우선**. → 깊은 경로에선 트리플 조인이 폭증할 수 있음.
+> - **Amazon Neptune만 둘 다.** (Hybrid: 적재 시 RDF 추론 → 쿼리 시 LPG 탐색)
+> - 🏭 **두산 프로젝트 결정(커니 수행):** 원인 탐색이 "불량→공정→설비→부품→로트→공급사" 6홉+ → **LPG 채택, RDF 배제**(B-3 §7.2).
 
-| 솔루션 | 모델 | 카테고리 | 핵심 (출처) |
-|---|---|---|---|
-| **Neo4j** | LPG | 전용(Community OSS) | Cypher·벡터·GraphRAG·LLM KG Builder ([use-case](https://neo4j.com/use-cases/knowledge-graph/)) |
-| **Amazon Neptune** | **RDF+LPG** | 클라우드 내장 | 한 서비스에 SPARQL·Gremlin·openCypher ([userguide](https://docs.aws.amazon.com/neptune/latest/userguide/intro.html)) |
-| **Stardog / Ontotext GraphDB** | RDF | 전용 | OWL 추론·SHACL·가상 그래프 ([Stardog](https://www.stardog.com/platform/)) |
-| **RDFox** (삼성) | RDF | 전용(인메모리) | 증분 추론·Datalog 룰 ([rdfox](https://www.oxfordsemantic.tech/rdfox)) |
-| **Protégé + Apache Jena** | RDF/OWL | 오픈소스 | 온톨로지 저작(Protégé) + 저장·추론(Jena) ([Protégé](https://protege.stanford.edu/)) |
+| 솔루션 | 모델 | 카테고리 | 추론 | 질의어 | 온프렘/배포 | 핵심·출처 |
+|---|---|---|:--:|---|---|---|
+| **Neo4j** | LPG | 전용(Community OSS) | △ OWL 사전적재 약함 | Cypher/GQL | 자체+AuraDB | Cypher·벡터·GraphRAG·LLM KG Builder·GDS·NeoSemantics(RDF 브릿지) ([use-case](https://neo4j.com/use-cases/knowledge-graph/)) |
+| **Amazon Neptune** | **LPG+RDF** | 클라우드 내장 | ✓(RDF 모드) | Gremlin·openCypher·SPARQL | AWS 관리형·서버리스 | 한 서비스에 세 질의어·두 모델 — "둘 다 필요" 시 ([userguide](https://docs.aws.amazon.com/neptune/latest/userguide/intro.html)) |
+| **TigerGraph** | LPG(병렬) | 전용 | ✗ 네이티브 온톨로지 없음 | GSQL(독자) | 자체+클라우드 | 심층 분석·연산 집약 탐색 ([TigerGraph](https://www.tigergraph.com)) |
+| **Memgraph** | LPG(인메모리) | 전용 | ✗ OWL 없음 | openCypher | 자체(인메모리) | 실시간 IoT 스트리밍·Kafka ([Memgraph](https://memgraph.com)) |
+| **Ontotext GraphDB** | RDF | 전용 | ✓ **OWL QL/RL·사전적재·SHACL** | SPARQL 1.1 | 자체+Cloud | 시맨틱/온톨로지 앱, 안정 데이터 사전 추론 ([GraphDB](https://graphdb.ontotext.com)) |
+| **Stardog** | RDF | 전용 | ✓ **전 OWL·질의 시 추론·가상화** | SPARQL 1.1 | 자체+클라우드 | 사일로 통합 KG, 실시간 데이터 질의 추론 ([Stardog](https://www.stardog.com/platform/)) |
+| **RDFox** (삼성) | RDF | 전용(인메모리) | ✓ 증분 추론·Datalog 룰 | SPARQL | 자체(인메모리) | 고속 증분 추론 ([rdfox](https://www.oxfordsemantic.tech/rdfox)) |
+| **Apache Jena (+TDB)** | RDF/OWL | 오픈소스(무료) | ✓ Pellet/HermiT·SHACL | SPARQL 1.1 | 자체 | 예산형 PoC·연구·RDF 탐색 ([Jena](https://jena.apache.org)) |
+| **Protégé** | 편집기(OWL) | 오픈소스 | (추론기 연동) | — | 데스크톱·WebProtégé | 온톨로지 **저작**(개념·관계 수기 설계) ([Protégé](https://protege.stanford.edu)) |
+| **PoolParty / TopBraid EDG** | 편집기·거버넌스 | 상용 | — | — | 엔터프라이즈 | 온톨로지 편집·거버넌스 GUI(상용 단계) ([PoolParty](https://www.poolparty.biz/ontology-management) · [TopBraid EDG](https://www.topquadrant.com/products/topbraid-edg/)) |
 
-**선정 포인트:** 추론(인과·논리 도출) 필요하면 RDFox·Stardog·GraphDB. 관계 적재·GraphRAG만이면 Neo4j·Memgraph(LPG+벡터). AWS면 관리형 Neptune, 폐쇄망·무료면 Protégé+Jena.
+> **표준·프레임워크:** **IOF**(Industrial Ontologies Foundry, NIST+산업) = 제조·유지보수·공급망 표준 참조 온톨로지 — IOF Core의 `Process`·`Equipment`·`MaterialArtifact`가 B-3 7엔티티와 대응 ([IOF](https://github.com/iofoundry/ontology)) · **BFO**(ISO/IEC 21838-2) 최상위 온톨로지 · **OWL 2**(W3C) · **GQL**(ISO/IEC 39075, 2024) · **SHACL**(검증). 두산 권고 = **IOF 어휘 참조 + 기업 맞춤 온톨로지로 시작**, 외부 연계 시 점진 정렬.
+
+**선정 포인트(권장 LPG 경로):** PoC = **Neo4j Community(무료)** → 운영 = **Amazon Neptune(AWS)** 또는 **Neo4j AuraDB** → 실시간 대량 = **Memgraph(Kafka)** → 추론 필요 시 = **GraphDB Free(PoC)→Stardog**. 편집·저작은 **Protégé/WebProtégé**, 엔터프라이즈 거버넌스는 **PoolParty/TopBraid EDG**(PoC 가치 확인 후). **추론(인과·논리 도출)이 핵심이면 RDF(GraphDB·Stardog·RDFox)** 또는 하이브리드, 관계 적재·GraphRAG만이면 LPG. 온프레미스 진단(B-3 §7.8): 내부망 격리 배포 가부·노드/트리플 단위 접근제어·벤더 잠금(openCypher/GQL 호환)·관리형 vs 자체호스팅 TCO.
 
 ## C-1 — 데이터 Observability
 
@@ -309,9 +384,11 @@
 
 ## 핵심 판단
 
-1. **A·C·F(거버넌스) 계열은 어느 대형 플랫폼이든 강하다.** 카탈로그·메타데이터·계통·품질·보안은 평준화됐다 — 여기서 스택을 가르는 건 "이미 어느 클라우드를 쓰는가"다. 단일 클라우드면 그 내장 거버넌스로 시작하는 게 합리적.
+> ⭐ **A·B 6개 주제 요약(이번 갱신 범위):** 4개 묶음으로 갈린다 — **묶음 ① 거버넌스·카탈로그 플랫폼 1개가 A-1·A-2·A-3을 통째로** 덮고(따로 안 산다), **묶음 ② 전처리·③ 라벨링·④ 온톨로지는 각각 전용/OSS 도구**를 따로 붙인다(거버넌스 플랫폼엔 이 셋이 비어 있다). 즉 "**거버넌스 플랫폼 1개 + B-1·B-2·B-3용 전용 도구 3개**"가 자연스러운 조합이다.
 
-2. **B·E(처리·생성) 계열에서 갈린다.** 라벨링(B-2)·온톨로지(B-3)·합성(E-2)은 **어느 통합 플랫폼도 약하다** — 사실상 전용/OSS 도구를 붙여야 한다(Label Studio·Neo4j·SDV/Omniverse). 거버넌스 플랫폼(Collibra/Alation)은 이 영역이 통째로 비어 있다.
+1. **A·C·F(거버넌스) 계열은 어느 대형 플랫폼이든 강하다.** 카탈로그·메타데이터·용어집·계통·품질·보안은 평준화됐다 — A-1·A-2·A-3은 한 제품(묶음 ①)으로 함께 해결된다. 여기서 스택을 가르는 건 "이미 어느 클라우드를 쓰는가"다. 단일 클라우드면 그 내장 거버넌스로 시작하는 게 합리적. **단 A-3 네이티브 용어집·동의어 매핑은 Databricks·Snowflake가 약하므로(△)** 용어집이 중요하면 전용(Collibra·Purview·Atlan)을 본다.
+
+2. **B(처리) 계열에서 갈린다 — 한 묶음으로 B-1·B-2·B-3을 다 못 한다.** 전처리(B-2 ②)·라벨링(B-2 ③)·온톨로지(B-3 ④)는 서로 다른 시장이고 **어느 통합 거버넌스 플랫폼도 약하다** — 사실상 전용/OSS 도구를 붙여야 한다(Docling·Label Studio·Neo4j). 거버넌스 플랫폼(Collibra/Alation)은 이 영역이 통째로 비어 있다. 이 셋 안에서도 서로 안 겹친다(파싱 ≠ 라벨링 ≠ 그래프) — B-3 안에서만 Amazon Neptune이 LPG·RDF 두 모델을 함께 덮는다.
 
 3. **제조업에 특히 중요한 D-1·F-3·F-4는 누가 메우나.**
    - **D-1(설비·IoT):** 통합 플랫폼보다 **산업 historian(AVEVA PI·Ignition) + 표준(OPC UA·Sparkplug)**이 본질. 클라우드는 적재·분석을 보조. (Google은 IoT Core 폐기로 갭)
@@ -334,6 +411,12 @@
 - OpenMetadata — https://open-metadata.org/ · DataHub — https://datahub.com/ · OpenLineage — https://openlineage.io/
 - Collibra — https://www.collibra.com/ · Alation — https://www.alation.com/ · Atlan — https://atlan.com/
 
+**A·B 6개 주제 — 묶음별 제품 공식 문서 (이번 갱신에서 추가):**
+- 묶음 ① 거버넌스·카탈로그: Informatica CDGC — https://www.informatica.com/products/data-governance/cloud-data-governance-and-catalog.html · IBM Knowledge Catalog — https://www.ibm.com/products/watsonx-data-intelligence/governance-catalog
+- 묶음 ② 문서 전처리: Docling — https://github.com/docling-project/docling · Unstructured — https://unstructured.io/ · LlamaParse — https://developers.llamaindex.ai/python/framework/llama_cloud/llama_parse/ · Camelot — https://camelot-py.readthedocs.io · pdfplumber — https://github.com/jsvine/pdfplumber · Azure Document Intelligence — https://azure.microsoft.com/ko-kr/products/ai-services/ai-document-intelligence · Google Document AI — https://cloud.google.com/document-ai · AWS Textract — https://aws.amazon.com/textract/ · Upstage — https://www.upstage.ai/products/document-parse · Apache Tika — https://tika.apache.org
+- 묶음 ③ 라벨링: Label Studio — https://labelstud.io/ · CVAT — https://github.com/cvat-ai/cvat · Snorkel Flow — https://snorkel.ai/ · Labelbox — https://labelbox.com/ · Scale AI — https://scale.com/data-engine · Roboflow — https://roboflow.com/ · Prodigy — https://prodi.gy/ · SAM 2 — https://ai.meta.com/research/sam2/ · Cleanlab — https://cleanlab.ai/ · SageMaker Ground Truth — https://aws.amazon.com/sagemaker/ai/groundtruth/
+- 묶음 ④ 그래프·온톨로지: Neo4j — https://neo4j.com · Amazon Neptune — https://aws.amazon.com/neptune/ · TigerGraph — https://www.tigergraph.com · Memgraph — https://memgraph.com · Ontotext GraphDB — https://graphdb.ontotext.com · Stardog — https://www.stardog.com/platform/ · Apache Jena — https://jena.apache.org · Protégé — https://protege.stanford.edu · PoolParty — https://www.poolparty.biz/ontology-management · TopBraid EDG — https://www.topquadrant.com/products/topbraid-edg/ · IOF — https://github.com/iofoundry/ontology
+
 > 주제별 개별 제품 출처 URL은 각 Part A 표의 인라인 링크 참조. 모든 링크는 리서치 시점(2026-06)에 실제 확인했으며, **시장 변동 주의** 표의 인수·종료·개명 사항을 인용 전 재확인할 것.
 
 ---
@@ -343,3 +426,4 @@
 | 버전 | 일자 | 내용 |
 |---|---|---|
 | v0.1 | 2026-06-19 | 초안 — 2층 구조(주제별 솔루션 + 플랫폼×주제 매트릭스 + 묶음 비교). 6개 주제군·7개 플랫폼 웹 리서치(출처 검증) 기반. |
+| v0.2 | 2026-06-19 | **A·B 6개 주제(A-1~A-3·B-1~B-3) 솔루션 비교를 기능 중심·묶음 중심으로 갱신.** ① 신설 **Part A0**(4개 솔루션 묶음 + 기능×묶음 매트릭스) ② Part A의 6개 주제 표를 *기능 열*(자동수집·동의어매핑·표구조보존·AI 1차 라벨·그래프 추론·온프렘 등)로 재구성 ③ 6개 가이드(1층) 본문에서 솔루션·기능 재수집 — B-1에 Camelot/pdfplumber·표구조 보존 ★, B-2에 Roboflow·Prodigy·Cleanlab·SAM 2(Encord 제거 — 가이드 미수록), B-3에 TigerGraph·Memgraph·PoolParty/TopBraid·IOF·LPG↔RDF 분기·두산 LPG 결정 반영 ④ Part C에 A·B 6주제 묶음 요약 추가. (C~F 주제는 미변경.) |
