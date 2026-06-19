@@ -39,3 +39,24 @@
 | src-238 | src-238-ontologist-tbox-abox.md | A-Box, T-Box, R-Box, C-Box (The Ontologist) | 2026-06-19 | §Architecture — T-Box/A-Box / Materialization |
 | src-239 | src-239-researchgate-pfmea-ontology.md | PFMEA Ontology for Mfg Knowledge Sharing (ResearchGate) | 2026-06-19 | §HOW — Manufacturing Document Extraction |
 | src-240 | src-240-enterprise-knowledge-rdf-lpg-intro.md | Introduction to RDF & LPG Graphs (Enterprise Knowledge) | 2026-06-19 | §Architecture — Format Decision (RDF-advocate) |
+| src-241 | src-241-microsoft-graphrag-blog.md | GraphRAG: Unlocking LLM Discovery on Narrative Private Data — Microsoft Research | 2026-06-19 | §WHY — GraphRAG vs RAG; relational reasoning; provenance |
+| src-242 | src-242-aws-graphrag-accuracy.md | Improving RAG Accuracy with GraphRAG — AWS ML Blog (Lettria benchmark) | 2026-06-19 | §WHY — quantitative accuracy comparison |
+| src-243 | src-243-neo4j-taxonomy-ontology-kg.md | Taxonomy vs. Ontology vs. Knowledge Graph — Neo4j Blog | 2026-06-19 | §WHEN — decision criteria; boundary conditions |
+| src-244 | src-244-arxiv-fmea-ontology-manufacturing.md | Fault Cause ID via Ontology-Guided FMEA Graph Learning — arXiv 2510.15428 | 2026-06-19 | §WHY + WHEN — manufacturing causal reasoning; FMEA knowledge transfer |
+| src-245 | src-245-singlestore-graphrag-multihop.md | How GraphRAG Improves Multi-Hop Reasoning — SingleStore Blog | 2026-06-19 | §WHY — multi-hop; vector RAG structural failure |
+| src-246 | src-246-neo4j-ai-knowledge-layer.md | Why Every Enterprise Needs an AI Knowledge Layer — Neo4j Blog | 2026-06-19 | §WHY — AI agent failures without KG; causal reasoning gap |
+| src-247 | src-247-sgkg-ontology-vs-taxonomy.md | Ontology vs Taxonomy: Choosing the Right Knowledge Organisation Model — SGKG | 2026-06-19 | §WHEN NOT — when taxonomy/glossary is sufficient |
+| src-248 | src-248-enterprise-knowledge-taxonomy-to-ontology.md | Extending Taxonomies to Ontologies — Enterprise Knowledge | 2026-06-19 | §WHEN — triggers for ontology; what taxonomy cannot do |
+| src-249 | src-249-cognee-ontology-ai-memory.md | Enhancing Knowledge Graphs with Ontology Integration — Cognee | 2026-06-19 | §WHY — inference vs explicit-only; automotive example |
+| src-250 | src-250-cn-patent-welding-kg.md | Metal Welding Defect Root Cause Analysis via Knowledge Graph — CN Patent 114943415A | 2026-06-19 | §WHY + WHEN — welding defect causal chain; KG structure |
+| src-251 | src-251-manufacturing-kg-ordo.md | Knowledge Graphs in Manufacturing: 20 Practical Questions — Industrial AI Ordo | 2026-06-19 | §WHY — scattered knowledge failure; WHEN — manufacturing prerequisites |
+| src-261 | src-261-arxiv-structural-kg-metrics.md | Structural Quality Metrics to Evaluate Knowledge Graphs (arXiv 2211.10011) | 2026-06-19 | §KPI — Structural metrics; OntoQA; relationship richness; orphan concepts |
+| src-262 | src-262-oops-pitfall-scanner.md | OOPS! OntOlogy Pitfall Scanner — Poveda-Villalón & Gómez-Pérez (IJSWIS 2014) | 2026-06-19 | §KPI — SHACL/constraint validation; pitfall categories; pass rate |
+| src-263 | src-263-kg-quality-management-survey.md | Knowledge Graph Quality Management: A Comprehensive Survey (ResearchGate) | 2026-06-19 | §KPI — Quality dimensions (accuracy, completeness, consistency) |
+| src-264 | src-264-kg-procedure-model-industry.md | Procedure Model for Building KGs for Industry Applications (arXiv 2409.13425) | 2026-06-19 | §Roadmap — Build stages; KPI — CQ answerability; SHACL validation |
+| src-265 | src-265-ekgf-maturity-model.md | EKG Maturity Model — Enterprise Knowledge Graph Foundation (maturity.ekgf.org) | 2026-06-19 | §Roadmap — 5-level maturity model (EKG/MM v1.0) |
+| src-266 | src-266-arxiv-kgroot-rca.md | KGroot: Enhancing Root Cause Analysis via KGs (arXiv 2402.13264) | 2026-06-19 | §KPI — AI-usage value; RCA accuracy vs. baseline; manufacturing |
+| src-267 | src-267-arxiv-onto-rag-performance.md | Ontology Learning & KG Construction: Impact on RAG Performance (arXiv 2511.05991) | 2026-06-19 | §KPI — AI-usage value; ontology vs. vector RAG accuracy (+30 pp) |
+| src-268 | src-268-kgcl-change-language.md | A Change Language for Ontologies and KGs — KGCL (PMC 11753292) | 2026-06-19 | §KPI — Operations; change turnaround SLA; user satisfaction survey |
+| src-269 | src-269-llm-kg-maturity-survey.md | LLM-Empowered Knowledge Graph Construction: A Survey (arXiv 2510.20345) | 2026-06-19 | §Roadmap — 3-stage progression: manual → LLM-assisted → autonomous |
+| src-270 | src-270-galaxy-onto-governance-kpi.md | Ontology Management Operating Model: Governance & Change Control (Galaxy) | 2026-06-19 | §KPI — Operations; change classification tiers; downstream propagation |
