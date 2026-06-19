@@ -4,7 +4,7 @@ topic-code: A-3
 topic: 비즈니스 Glossary
 type: storyline
 lang: ko
-version: 0.3
+version: 0.4
 status: draft
 last-updated: 2026-06-19
 tags: [ai-ready-data, A-3, storyline, glossary, 용어집]
@@ -362,7 +362,7 @@ flowchart LR
 
 | 저장 위치 | 적합 상황 | 비고 |
 |---|---|---|
-| 카탈로그·거버넌스 솔루션의 **Glossary 모듈** ([Collibra](https://www.collibra.com)·[Purview](https://learn.microsoft.com/azure/purview/)·[Atlan](https://atlan.com)) | 본격 운영 | 검색·메타·승인과 자동 연계 |
+| 카탈로그·거버넌스 솔루션의 **Glossary 모듈** ([Collibra](https://www.collibra.com)·[Purview](https://learn.microsoft.com/azure/purview/)·[Atlan](https://atlan.com)) | 본격 운영 | 검색·메타·승인과 자동 연계[^glossary-tools] |
 | **플랫폼 내장** ([Databricks Unity Catalog](https://www.databricks.com/product/unity-catalog)) | 데이터플랫폼 중심 | 데이터와 같은 곳에서 관리 |
 | **위키·공유 시트** | 파일럿·소규모 시작 | 단, *한 곳만*. 나중에 솔루션으로 이관 |
 
@@ -424,7 +424,7 @@ flowchart LR
 
 > **🏭 와닿는 예시:** 30년 경력 검사반장이 늘 쓰던 "빵꾸(핀홀)"로 "빵꾸 많이 난 로트 보여줘"라고 물어도, 동의어 사전이 `빵꾸 → 핀홀(P03)`로 변환해 정확한 데이터를 찾는다. **반장은 표준 용어를 몰라도 되고, 데이터는 표준으로 정리된다.** 사람을 바꾸는 대신 사전이 다리를 놓는다.
 
-> **🛠 어디서 되나:** 이 변환은 별도 엔진을 *만드는* 게 아니라, **카탈로그·거버넌스 솔루션의 동의어(Synonym) 매핑 기능**과 검색엔진의 동의어 처리, RAG의 용어 정규화가 *Glossary 데이터를 소비*해 작동한다. 우리 일은 그 매핑 데이터(동의어·약어)를 정확히 채워 두는 것이다(데이터 준비 관점).
+> **🛠 어디서 되나:** 이 변환은 별도 엔진을 *만드는* 게 아니라, **카탈로그·거버넌스 솔루션의 동의어(Synonym) 매핑 기능**과 검색엔진의 동의어 처리, RAG의 용어 정규화가 *Glossary 데이터를 소비*해 작동한다[^synonym]. 우리 일은 그 매핑 데이터(동의어·약어)를 정확히 채워 두는 것이다(데이터 준비 관점).
 
 > **용어 풀이 — 질의 확장(Query Expansion):** 사용자가 입력한 검색어에 동의어·관련어를 더해 검색 범위를 넓히는 기법. Glossary 동의어가 그 재료가 된다.
 
@@ -566,6 +566,11 @@ flowchart LR
 **입력 자료**
 - 두산 「Meta Tag 운영 가이드(Template)」 — Glossary 개념·유형, 도메인 용어 예시(`기존 매뉴얼 작성본/`)
 
+### 각주 (출처)
+
+[^glossary-tools]: 비즈니스 Glossary 모듈은 주요 데이터 거버넌스·카탈로그 솔루션이 내장한다 — [Collibra](https://www.collibra.com)·[Microsoft Purview](https://learn.microsoft.com/azure/purview/)(Unified Catalog)·[Atlan](https://atlan.com)·[Databricks Unity Catalog](https://www.databricks.com/product/unity-catalog). (공식 페이지, 검증 2026-06-19 라이브. 세부 기능·명칭·범위는 공식 문서·PoC로 확인.)
+[^synonym]: 동의어(Synonym) 매핑·용어 기반 검색 보강(질의 확장)은 위 카탈로그·거버넌스 솔루션과 검색엔진이 제공하는 일반 기능이다. 제품별 지원 범위·명칭은 상이하므로 공식 문서·PoC로 확인한다(가격·버전 단정 금지).
+
 ---
 
 ## 변경 이력 / 피드백 반영
@@ -574,4 +579,5 @@ flowchart LR
 |------|------|-----------|-----------|
 | 2026-06-19 | v0.1 | 초안 작성 — 전체 목차 A-3 9섹션 골격 위에 두산 엑셀 Glossary(3.5.1 개념·2유형, 도메인 용어 예시집) 흡수. 「현업 실행 키트」 5장치 적용(㉠ §3.1 용어 카드, ㉡ §7.1 Before→After, ㉢ [Appendix C], ㉣ [Appendix A] 빈템플릿+완성예시, [Appendix B] 도메인 용어집). A-2 메타데이터·B-3 온톨로지와 경계 명시. 웹 리서치 없이 기존 스토리라인 기반 + 엑셀 보완. KQ 5개 전부 커버 | 전체 |
 | 2026-06-19 | v0.2 | **고객 피드백 — "와닿는 실무 이야기 보강"** 반영. §7 전면 심화: ① §7.1 용어 수집처(MES 코드값·작업일지·BI 라벨·SME 워크숍)·합의 과정, ② §7.3 신설 — **어디에 두고 모두가 보게 하나**(단일 정본 저장소·엑셀 일괄 업로드·전사 권한·검색/BI/챗봇/온보딩 배포 + 다이어그램), ③ §7.4 심화 — **현장 약어 그대로 써도 자동 변환**(동의어 매핑→질의 확장 4단계 + 다이어그램, "빵꾸→핀홀" 예시, 솔루션 Synonym 기능으로 작동/데이터 준비 관점). §7.4→7.5로 운영 이동, KQ4/KQ5 박스·앵커 갱신 | §7 |
+| 2026-06-19 | v0.4 | **출처 검증 패스 + 각주 추가** — 도구 공식 페이지(Collibra·Purview·Atlan·Databricks Unity Catalog)·표준을 web_fetch로 실검증(모두 라이브). §6.1 Glossary 모듈·§7.4 동의어 변환 문장에 각주, 문서 끝 「각주(출처)」 절 신설(검증일·"세부 기능은 PoC 확인" 명기) | §6.1·§7.4·각주 |
 | 2026-06-19 | v0.3 | **고객 피드백 — "단일 시나리오로 구성 설명이 더 실천적"** 반영(하이브리드 채택). §5를 '결함명 표준화' **end-to-end 8단계 시나리오**로 전면 교체 — 상황→적용전후→8단계 표(각 단계 산출물 + §7.x 링크)+흐름 다이어그램+실제 용어 카드 1장. 흩어진 예시를 한 사례(기스/빵꾸→스크래치/핀홀)로 수렴, worked example 역할 강화. 주제형 §7 절은 레퍼런스로 유지 | §5 |
