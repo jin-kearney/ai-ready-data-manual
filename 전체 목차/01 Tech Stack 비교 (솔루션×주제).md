@@ -184,7 +184,7 @@
 
 **선정 포인트:** OSS는 사실상 Soda Core 단독. 컬럼 단위 계보 연계가 강한 곳(Monte Carlo·Sifflet)이 RCA에 유리. C-2(합·불 판정)와 경계를 흐리지 말 것 — C-1은 "지금 정상으로 흐르나".
 
-## C-2 — 데이터 품질 + 접근 게이트 (두 축)
+## C-2 — 데이터 품질 게이트
 
 **품질 (합·불 판정):**
 
@@ -194,15 +194,7 @@
 | **Soda Core** | 오픈소스+SaaS | YAML 선언형 체크·데이터 계약 ([github](https://github.com/sodadata/soda-core)) |
 | **Informatica / Collibra / Ataccama / Qlik Talend** | 엔터프라이즈 | 프로파일링→규칙→스코어카드→DQ 차원 ([Ataccama](https://www.ataccama.com/platform/data-quality)) |
 
-**접근 게이트 (누가 쓸 수 있나):**
-
-| 솔루션 | 카테고리 | 핵심 (출처) |
-|---|---|---|
-| **Immuta / Privacera** | 전용 | 멀티플랫폼 ABAC·동적 마스킹·행/열/셀 통제 ([Immuta](https://www.immuta.com/product/data-access-governance/)) |
-| **Unity Catalog / Snowflake Horizon / AWS Lake Formation** | 플랫폼 내장 | ABAC·태그 기반 행/열 통제 ([Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/data-filtering.html)) |
-| **Apache Ranger** | 오픈소스 | 빅데이터 표준 권한·감사(상용 도구의 기반) ([ranger](https://ranger.apache.org/)) |
-
-**선정 포인트:** 단일 클라우드면 플랫폼 내장으로 충분. **여러 플랫폼을 한 정책으로 가로질러** 통제하려면 전용(Immuta·Privacera). 추세는 ABAC+태그 기반.
+**선정 포인트:** OSS는 Great Expectations·Soda Core, 엔터프라이즈는 프로파일링→규칙→스코어카드 일체형(Informatica·Collibra·Ataccama). **접근 권한 통제(Immuta·Ranger·Unity Catalog 등)는 [F-4 AI 데이터 권한 보안](#f-4--ai-데이터-권한-보안-접근통제--비식별)으로 이관** — 투입 직전 품질 게이트와 권한 게이트를 함께 운영한다.
 
 ## D-1 — Physical 데이터 (IoT·시계열)
 
@@ -320,9 +312,21 @@
 
 **선정 포인트:** ★ **STT 공백 주의** — 문서 OCR 도구는 음성을 못 한다. 한글 손글씨·도면 주석·점검표엔 국내 특화(CLOVA·Upstage)가 결정적. 음성은 Whisper/CLOVA Speech 별도.
 
-## F-4 — AI 데이터 보안 (비식별)
+## F-4 — AI 데이터 권한 보안 (접근통제 + 비식별)
 
-> **관점 고정:** 접근차단/방화벽이 아니라 **데이터 자체 변환**. 흐름 = 발견 → 변환 → 합성.
+> **두 축:** ① **접근 권한 통제** — 누가 어떤 데이터를 쓸 수 있나(RBAC/ABAC). ② **비식별** — 데이터 자체 변환(발견 → 변환 → 합성). *(접근차단/방화벽은 인프라 보안의 영역이고, 여기서는 데이터 접근 정책과 데이터 변환을 다룬다.)*
+
+**접근 권한 통제 (누가 쓸 수 있나):**
+
+| 솔루션 | 카테고리 | 핵심 (출처) |
+|---|---|---|
+| **Immuta / Privacera** | 전용 | 멀티플랫폼 ABAC·동적 마스킹·행/열/셀 통제 ([Immuta](https://www.immuta.com/product/data-access-governance/)) |
+| **Unity Catalog / Snowflake Horizon / AWS Lake Formation** | 플랫폼 내장 | ABAC·태그 기반 행/열 통제 ([Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/data-filtering.html)) |
+| **Apache Ranger** | 오픈소스 | 빅데이터 표준 권한·감사(상용 도구의 기반) ([ranger](https://ranger.apache.org/)) |
+
+단일 클라우드면 플랫폼 내장으로 충분. **여러 플랫폼을 한 정책으로 가로질러** 통제하려면 전용(Immuta·Privacera). 추세는 ABAC+태그 기반.
+
+**비식별 (데이터 변환):**
 
 | 솔루션 | 카테고리 | 역할 (출처) |
 |---|---|---|
@@ -333,7 +337,7 @@
 | **Tonic.ai / Gretel** | 전용 | 비식별+합성으로 안전 데이터화 ([Tonic](https://www.tonic.ai/)) |
 | **파수(Fasoo)** (한국) / **ARX** (OSS) | 전용/OSS | 국내 레퍼런스 / k-익명성 ([ARX](https://arx.deidentifier.org/)) |
 
-**선정 포인트:** **Macie·BigID는 발견 전용** — 단독으로 F-4 못 채움, 변환 도구와 짝지어야. Presidio(OSS)는 강력하나 "모든 PII 탐지 보장 안 됨"을 문서가 명시 → 사람 검수 병행.
+**선정 포인트:** 접근 권한은 단일 클라우드면 내장(Unity Catalog·Horizon·Lake Formation), 멀티플랫폼이면 전용(Immuta·Privacera). 비식별은 **Macie·BigID가 발견 전용** — 단독으로 못 채움, 변환 도구와 짝지어야. Presidio(OSS)는 강력하나 "모든 PII 탐지 보장 안 됨"을 문서가 명시 → 사람 검수 병행.
 
 ---
 
@@ -350,7 +354,7 @@
 | B-2 라벨링 | △ | ✓ | ✓ | ✗ | △ | ✓ | ✗ |
 | B-3 온톨로지 | △ | △ | ✓ | △ | △ | ✓ | ✗ |
 | C-1 Observability | ✓ | ✓ | △ | △ | ✓ | ✓ | ✓ |
-| C-2 품질·게이트 | ✓ | ✓ | ✓ | △ | ✓ | △ | ✓ |
+| C-2 품질 게이트 | ✓ | ✓ | ✓ | △ | ✓ | △ | ✓ |
 | C-3 계통 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | D-1 Physical/IoT | ✓ | ✓ | ✓ | △ | ✓ | ✓ | ✗ |
 | D-2 API/Tool 명세 | ✓ | △ | △ | △ | △ | ✓ | △ |
@@ -362,7 +366,7 @@
 | F-1 DataOps | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | △ |
 | F-2 생애주기 | △ | ✓ | ✓ | ✓ | ✓ | △ | ✓ |
 | F-3 디지털화/OCR | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ |
-| F-4 보안/비식별 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | △ |
+| F-4 권한·보안 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | △ |
 
 **대표 커버 기능(예시):** Databricks=Unity Catalog·Lakeflow·Mosaic AI / Azure=Purview·Document Intelligence·AI Foundry / AWS=Glue+DataZone·Textract·Bedrock·Neptune / Google=Dataplex Knowledge Catalog·Document AI·Vertex AI / Snowflake=Horizon·Cortex·합성데이터 / OSS=OpenMetadata+GX+Label Studio+Neo4j+Airflow+Presidio / Collibra·Alation=거버넌스 계층 전문.
 
@@ -393,7 +397,7 @@
 3. **제조업에 특히 중요한 D-1·F-3·F-4는 누가 메우나.**
    - **D-1(설비·IoT):** 통합 플랫폼보다 **산업 historian(AVEVA PI·Ignition) + 표준(OPC UA·Sparkplug)**이 본질. 클라우드는 적재·분석을 보조. (Google은 IoT Core 폐기로 갭)
    - **F-3(디지털화):** 한글 손글씨·도면엔 **국내 특화(CLOVA·Upstage)**가 글로벌 OCR보다 유리할 수 있음. 음성은 STT 별도.
-   - **F-4(비식별):** 플랫폼 내장 마스킹(Unity Catalog·Snowflake·DLP)으로 기본은 되나, 활용성 보존·재식별 점검엔 전용(Presidio·Tonic)·국내(파수) 보강.
+   - **F-4(권한·비식별):** 접근 권한은 Unity Catalog·Immuta·Ranger, 비식별은 플랫폼 내장 마스킹(Snowflake·DLP)으로 기본은 되나, 활용성 보존·재식별 점검엔 전용(Presidio·Tonic)·국내(파수) 보강.
 
 4. **현실적 추천 = "거버넌스 베이스 1개 + 처리계 전용 도구 + 산업 historian".**
    - 두산처럼 계열사별 시스템이 흩어진 환경이면 **멀티소스 거버넌스(Collibra/Alation/Atlan 또는 OSS OpenMetadata)**를 베이스로, 클라우드는 계열사별 사정에 맞추고, **D-1은 PI/Ignition+표준, B-2·B-3·E-2·F-3는 전용/국내 도구**를 붙이는 best-of-breed가 자연스럽다.
