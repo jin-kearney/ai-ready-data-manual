@@ -314,17 +314,17 @@
 
 ## F-4 — AI 데이터 권한 보안 (접근통제 + 비식별)
 
-> **두 축:** ① **접근 권한 통제** — 누가 어떤 데이터를 쓸 수 있나(RBAC/ABAC). ② **비식별** — 데이터 자체 변환(발견 → 변환 → 합성). *(접근차단/방화벽은 인프라 보안의 영역이고, 여기서는 데이터 접근 정책과 데이터 변환을 다룬다.)*
+> **두 축:** ① **접근 권한 통제** — 누가 어떤 데이터를 쓸 수 있는지 정한다. ② **비식별** — 민감정보를 가려 데이터 자체를 안전하게 바꾼다(발견 → 변환 → 합성).
 
 **접근 권한 통제 (누가 쓸 수 있나):**
 
 | 솔루션 | 카테고리 | 핵심 (출처) |
 |---|---|---|
-| **Immuta / Privacera** | 전용 | 멀티플랫폼 ABAC·동적 마스킹·행/열/셀 통제 ([Immuta](https://www.immuta.com/product/data-access-governance/)) |
-| **Unity Catalog / Snowflake Horizon / AWS Lake Formation** | 플랫폼 내장 | ABAC·태그 기반 행/열 통제 ([Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/data-filtering.html)) |
+| **Immuta / Privacera** | 전용 | 멀티플랫폼 접근 통제·동적 마스킹·행/열/셀 통제 ([Immuta](https://www.immuta.com/product/data-access-governance/)) |
+| **Unity Catalog / Snowflake Horizon / AWS Lake Formation** | 플랫폼 내장 | 역할·태그 기반 행/열 통제 ([Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/data-filtering.html)) |
 | **Apache Ranger** | 오픈소스 | 빅데이터 표준 권한·감사(상용 도구의 기반) ([ranger](https://ranger.apache.org/)) |
 
-단일 클라우드면 플랫폼 내장으로 충분. **여러 플랫폼을 한 정책으로 가로질러** 통제하려면 전용(Immuta·Privacera). 추세는 ABAC+태그 기반.
+단일 클라우드면 플랫폼 내장으로 충분. **여러 플랫폼을 한 정책으로 가로질러** 통제하려면 전용(Immuta·Privacera). 추세는 역할·태그 기반 통제.
 
 **비식별 (데이터 변환):**
 
