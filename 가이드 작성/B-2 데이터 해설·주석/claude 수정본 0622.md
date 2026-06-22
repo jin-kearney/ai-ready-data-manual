@@ -34,10 +34,10 @@ tags:
 2. [왜 필요한가 (Why)](#2-왜-필요한가-why)
 3. [무엇을 갖추나 (What)](#3-무엇을-갖추나-what)
 4. [어디부터 하나 (Where)](#4-어디부터-하나-where)
-5. [어떻게 구축·운영하나 (How)]
-6. [다른 주제와의 관계]
-7. [KPI 및 Roadmap]
-8. [Appendix](#appendix)
+5. [어떻게 구축운영하나 (How)](#5-어떻게-구축운영하나-how)
+6. [다른 주제와의 관계](#6-다른-주제와의-관계)
+7. [KPI 및 Roadmap](#7-kpi-및-roadmap)
+8. [Appendix](#8-appendix)
 
 > 관련 가이드:
 > A-3 비즈니스 Glossary
