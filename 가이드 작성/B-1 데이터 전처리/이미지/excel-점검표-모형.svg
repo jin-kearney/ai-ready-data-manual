@@ -1,5 +1,5 @@
-<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
-  <rect width="760" height="380" fill="#ffffff"/>
+<svg viewBox="0 0 760 252" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="760" height="252" fill="#ffffff"/>
   <text x="24" y="32" font-size="17" font-weight="700" fill="#10243f">Excel 설비 점검표 — 전처리 전 모습 (가상)</text>
 
   <!-- column letters -->
@@ -59,6 +59,4 @@
     <text x="540" y="188" fill="#3a4a55">글자엔 없음 → 별도 컬럼으로 데이터화</text>
   </g>
 
-  <text x="24" y="300" font-size="12.5" fill="#3a4a55">사람 눈엔 자연스럽지만, AI에겐 병합·가로펼침·색 세 가지가 동시에 걸림돌이 된다.</text>
-  <text x="24" y="322" font-size="12.5" fill="#3a4a55">전처리: 병합 풀어 카테고리 전파 → 가로를 세로로(unpivot) → 색을 '이상여부' 컬럼으로.</text>
 </svg>

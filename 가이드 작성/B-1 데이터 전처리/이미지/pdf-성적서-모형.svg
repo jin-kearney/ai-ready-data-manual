@@ -1,10 +1,10 @@
-<svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
-  <rect width="760" height="420" fill="#ffffff"/>
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="760" height="300" fill="#ffffff"/>
   <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">PDF 품질 성적서 — 전처리 전 모습 (가상)</text>
 
   <!-- page -->
-  <rect x="40" y="48" width="430" height="350" fill="#ffffff" stroke="#c9d4e0" stroke-width="1.5"/>
-  <rect x="40" y="48" width="430" height="350" fill="none" stroke="#e8edf3"/>
+  <rect x="40" y="48" width="430" height="232" fill="#ffffff" stroke="#c9d4e0" stroke-width="1.5"/>
+  <rect x="40" y="48" width="430" height="232" fill="none" stroke="#e8edf3"/>
 
   <!-- repeated header / page no (to be removed) -->
   <text x="56" y="70" font-size="10.5" fill="#9aa6b2">QualityDept Confidential</text>
@@ -53,6 +53,4 @@
     <text x="500" y="268" fill="#3a4a55">격자 인식으로 행·열 복원</text>
   </g>
 
-  <text x="24" y="350" font-size="12.5" fill="#3a4a55">PDF엔 "제목·문단·표" 라는 논리 구조가 없다. 글자만 이으면 표가 뭉개지므로,</text>
-  <text x="24" y="372" font-size="12.5" fill="#3a4a55">레이아웃 인식 파싱으로 블록을 나눠 뽑고 표는 격자로 복원한 뒤, 문서ID·페이지를 붙인다.</text>
 </svg>
