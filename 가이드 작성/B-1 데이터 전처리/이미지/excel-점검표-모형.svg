@@ -1,0 +1,64 @@
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="760" height="380" fill="#ffffff"/>
+  <text x="24" y="32" font-size="17" font-weight="700" fill="#10243f">Excel 설비 점검표 — 전처리 전 모습 (가상)</text>
+
+  <!-- column letters -->
+  <g font-size="11" fill="#6b7785" text-anchor="middle">
+    <rect x="40" y="54" width="430" height="18" fill="#eef2f7" stroke="#c9d4e0"/>
+    <text x="95" y="67">A</text><text x="195" y="67">B</text><text x="270" y="67">C</text><text x="350" y="67">D</text><text x="430" y="67">E</text>
+  </g>
+
+  <!-- header row -->
+  <g font-size="12.5" fill="#10243f" text-anchor="middle">
+    <rect x="40" y="72" width="110" height="30" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <rect x="150" y="72" width="90" height="30" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <rect x="240" y="72" width="80" height="30" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <rect x="320" y="72" width="80" height="30" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <rect x="400" y="72" width="70" height="30" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <text x="95" y="92" font-weight="700">설비</text>
+    <text x="195" y="92" font-weight="700">카테고리</text>
+    <text x="280" y="92" font-weight="700">1주차</text>
+    <text x="360" y="92" font-weight="700">2주차</text>
+    <text x="435" y="92" font-weight="700">3주차</text>
+  </g>
+
+  <!-- data rows -->
+  <g font-size="12.5" fill="#10243f" text-anchor="middle">
+    <!-- 설비 (row1+2) -->
+    <rect x="40" y="102" width="110" height="34" fill="#fff" stroke="#c9d4e0"/>
+    <rect x="40" y="136" width="110" height="34" fill="#fff" stroke="#c9d4e0"/>
+    <text x="95" y="124">CNC-01</text>
+    <text x="95" y="158">CNC-01</text>
+    <!-- 카테고리 병합 (윤활, spans 2 rows) -->
+    <rect x="150" y="102" width="90" height="68" fill="#fffbe6" stroke="#e0b400"/>
+    <text x="195" y="140" font-weight="700">윤활</text>
+    <!-- 주차 cells row1 -->
+    <rect x="240" y="102" width="80" height="34" fill="#fff" stroke="#c9d4e0"/><text x="280" y="124">정상</text>
+    <rect x="320" y="102" width="80" height="34" fill="#fff" stroke="#c9d4e0"/><text x="360" y="124">정상</text>
+    <rect x="400" y="102" width="70" height="34" fill="#f7d4d4" stroke="#d64545"/><text x="435" y="124" fill="#b32020" font-weight="700">이상</text>
+    <!-- 주차 cells row2 -->
+    <rect x="240" y="136" width="80" height="34" fill="#fff" stroke="#c9d4e0"/><text x="280" y="158">정상</text>
+    <rect x="320" y="136" width="80" height="34" fill="#fff" stroke="#c9d4e0"/><text x="360" y="158">정상</text>
+    <rect x="400" y="136" width="70" height="34" fill="#fff" stroke="#c9d4e0"/><text x="435" y="158">정상</text>
+  </g>
+
+  <!-- annotations -->
+  <g font-size="12" fill="#2f6b50">
+    <line x1="240" y1="136" x2="150" y2="200" stroke="#4FA47D" stroke-width="1.3"/>
+    <text x="150" y="216" fill="#2f6b50" font-weight="700">① 병합셀</text>
+    <text x="150" y="232" fill="#3a4a55">아래 칸이 비어, 추출하면 빈값(None)</text>
+  </g>
+  <g font-size="12">
+    <line x1="360" y1="72" x2="540" y2="120" stroke="#2456A4" stroke-width="1.3"/>
+    <text x="540" y="120" fill="#2456A4" font-weight="700">② 가로 교차표</text>
+    <text x="540" y="136" fill="#3a4a55">주차가 옆으로 펼쳐짐 → 세로로 펴야 함</text>
+  </g>
+  <g font-size="12">
+    <line x1="435" y1="119" x2="540" y2="170" stroke="#d64545" stroke-width="1.3"/>
+    <text x="540" y="172" fill="#b32020" font-weight="700">③ 색으로만 표시된 '이상'</text>
+    <text x="540" y="188" fill="#3a4a55">글자엔 없음 → 별도 컬럼으로 데이터화</text>
+  </g>
+
+  <text x="24" y="300" font-size="12.5" fill="#3a4a55">사람 눈엔 자연스럽지만, AI에겐 병합·가로펼침·색 세 가지가 동시에 걸림돌이 된다.</text>
+  <text x="24" y="322" font-size="12.5" fill="#3a4a55">전처리: 병합 풀어 카테고리 전파 → 가로를 세로로(unpivot) → 색을 '이상여부' 컬럼으로.</text>
+</svg>
