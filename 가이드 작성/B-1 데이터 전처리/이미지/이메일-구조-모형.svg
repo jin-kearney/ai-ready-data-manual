@@ -17,17 +17,15 @@
   <!-- body -->
   <text x="50" y="156" font-size="12" fill="#10243f">3차 측정 결과 회신드립니다. 재현됨 확인했습니다.</text>
 
-  <!-- embedded table -->
+  <!-- embedded table : 1 data row matching body example -->
   <g font-size="10.5" fill="#10243f" text-anchor="middle">
-    <rect x="50" y="166" width="180" height="48" fill="#fff" stroke="#6B9AD1"/>
+    <rect x="50" y="166" width="180" height="32" fill="#fff" stroke="#6B9AD1"/>
     <rect x="50" y="166" width="180" height="16" fill="#DCE8F5" stroke="#6B9AD1"/>
-    <line x1="120" y1="166" x2="120" y2="214" stroke="#6B9AD1"/>
-    <line x1="180" y1="166" x2="180" y2="214" stroke="#6B9AD1"/>
+    <line x1="120" y1="166" x2="120" y2="198" stroke="#6B9AD1"/>
+    <line x1="180" y1="166" x2="180" y2="198" stroke="#6B9AD1"/>
     <line x1="50" y1="182" x2="230" y2="182" stroke="#6B9AD1"/>
-    <line x1="50" y1="198" x2="230" y2="198" stroke="#d7e0ea"/>
     <text x="85" y="178" font-weight="700">위치</text><text x="150" y="178" font-weight="700">실측</text><text x="205" y="178" font-weight="700">판정</text>
     <text x="85" y="194">모서리</text><text x="150" y="194">0.08</text><text x="205" y="194" fill="#b32020" font-weight="700">NG</text>
-    <text x="85" y="210">중앙</text><text x="150" y="210">0.02</text><text x="205" y="210">OK</text>
   </g>
   <!-- inline image -->
   <rect x="244" y="166" width="120" height="48" fill="#eef2f7" stroke="#9aa6b2" stroke-dasharray="4 3"/>

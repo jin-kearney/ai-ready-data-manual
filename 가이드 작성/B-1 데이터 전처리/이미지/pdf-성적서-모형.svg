@@ -8,34 +8,32 @@
 
   <!-- repeated header / page no (to be removed) -->
   <text x="56" y="70" font-size="10.5" fill="#9aa6b2">QualityDept Confidential</text>
-  <text x="454" y="70" font-size="10.5" fill="#9aa6b2" text-anchor="end">3 / 12</text>
+  <text x="454" y="70" font-size="10.5" fill="#9aa6b2" text-anchor="end">p.3</text>
   <line x1="56" y1="76" x2="454" y2="76" stroke="#e8edf3"/>
 
   <!-- title block -->
   <text x="255" y="104" font-size="15" font-weight="700" fill="#10243f" text-anchor="middle">품질 검사 성적서</text>
-  <text x="255" y="124" font-size="11.5" fill="#3a4a55" text-anchor="middle">문서번호 QR-2026-0481 · 라인 CCL-2 · 2026-06-15</text>
+  <text x="255" y="124" font-size="11.5" fill="#3a4a55" text-anchor="middle">문서번호 QR-2026-0481 · 2026-06-15</text>
 
-  <!-- bordered table -->
+  <!-- bordered table : 3 rows matching body example -->
   <g font-size="11" fill="#10243f" text-anchor="middle">
-    <rect x="64" y="148" width="382" height="26" fill="#DCE8F5" stroke="#6B9AD1"/>
-    <line x1="150" y1="148" x2="150" y2="278" stroke="#6B9AD1"/>
-    <line x1="236" y1="148" x2="236" y2="278" stroke="#6B9AD1"/>
-    <line x1="330" y1="148" x2="330" y2="278" stroke="#6B9AD1"/>
-    <line x1="392" y1="148" x2="392" y2="278" stroke="#6B9AD1"/>
-    <text x="107" y="165" font-weight="700">공정</text>
-    <text x="193" y="165" font-weight="700">검사항목</text>
-    <text x="283" y="165" font-weight="700">합격기준</text>
-    <text x="361" y="165" font-weight="700">실측</text>
-    <text x="419" y="165" font-weight="700">판정</text>
-    <rect x="64" y="174" width="382" height="104" fill="none" stroke="#6B9AD1"/>
-    <line x1="64" y1="200" x2="446" y2="200" stroke="#d7e0ea"/>
-    <line x1="64" y1="226" x2="446" y2="226" stroke="#d7e0ea"/>
-    <line x1="64" y1="252" x2="446" y2="252" stroke="#d7e0ea"/>
+    <rect x="64" y="150" width="382" height="26" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <line x1="150" y1="150" x2="150" y2="254" stroke="#6B9AD1"/>
+    <line x1="236" y1="150" x2="236" y2="254" stroke="#6B9AD1"/>
+    <line x1="330" y1="150" x2="330" y2="254" stroke="#6B9AD1"/>
+    <line x1="392" y1="150" x2="392" y2="254" stroke="#6B9AD1"/>
+    <text x="107" y="167" font-weight="700">공정</text>
+    <text x="193" y="167" font-weight="700">검사항목</text>
+    <text x="283" y="167" font-weight="700">합격기준</text>
+    <text x="361" y="167" font-weight="700">실측</text>
+    <text x="419" y="167" font-weight="700">판정</text>
+    <rect x="64" y="176" width="382" height="78" fill="none" stroke="#6B9AD1"/>
+    <line x1="64" y1="202" x2="446" y2="202" stroke="#d7e0ea"/>
+    <line x1="64" y1="228" x2="446" y2="228" stroke="#d7e0ea"/>
     <g text-anchor="middle">
-      <text x="107" y="191">용접부</text><text x="193" y="191">외관</text><text x="283" y="191">균열 없음</text><text x="361" y="191">균열 없음</text><text x="419" y="191">합격</text>
-      <text x="107" y="217">용접부</text><text x="193" y="217">치수</text><text x="283" y="217">100±0.1</text><text x="361" y="217">100.04</text><text x="419" y="217">합격</text>
-      <text x="107" y="243">도장</text><text x="193" y="243">두께</text><text x="283" y="243">80~120㎛</text><text x="361" y="243">95</text><text x="419" y="243">합격</text>
-      <text x="107" y="269">도장</text><text x="193" y="269">부착</text><text x="283" y="269">≥4B</text><text x="361" y="269">4B</text><text x="419" y="269">합격</text>
+      <text x="107" y="193">용접부</text><text x="193" y="193">외관</text><text x="283" y="193">균열 없음</text><text x="361" y="193">균열 없음</text><text x="419" y="193">합격</text>
+      <text x="107" y="219">용접부</text><text x="193" y="219">치수</text><text x="283" y="219">100±0.1</text><text x="361" y="219">100.04</text><text x="419" y="219">합격</text>
+      <text x="107" y="245">도장</text><text x="193" y="245">두께</text><text x="283" y="245">80~120㎛</text><text x="361" y="245">95</text><text x="419" y="245">합격</text>
     </g>
   </g>
 
@@ -49,7 +47,7 @@
     <text x="500" y="152" fill="#2456A4" font-weight="700">제목 블록</text>
     <text x="500" y="168" fill="#3a4a55">레이아웃 인식으로 따로 분류</text>
 
-    <line x1="330" y1="220" x2="540" y2="234" stroke="#4FA47D" stroke-width="1.3"/>
+    <line x1="330" y1="219" x2="540" y2="234" stroke="#4FA47D" stroke-width="1.3"/>
     <text x="500" y="236" fill="#2f6b50" font-weight="700">표(테두리 격자)</text>
     <text x="500" y="252" fill="#3a4a55">단순 추출 시 한 줄로 뭉개짐 →</text>
     <text x="500" y="268" fill="#3a4a55">격자 인식으로 행·열 복원</text>
