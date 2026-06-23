@@ -1,3 +1,33 @@
+---
+title: "B-2 데이터 해설·주석 가이드"
+topic-code: B-2
+topic: 데이터 해설·주석
+type: guide
+lang: ko
+version: 1.1
+status: draft
+last-updated: 2026-06-23
+tags:
+  - ai-ready-data
+  - data-annotation
+  - annotation
+  - labeling
+  - taxonomy
+---
+
+# B-2 데이터 해설·주석 가이드
+
+## 목차
+
+1. [개요](#1-개요)
+2. [왜 필요한가 (Why)](#2-왜-필요한가-why)
+3. [무엇을 갖추나 (What)](#3-무엇을-갖추나-what)
+4. [어디부터 하나 (Where)](#4-어디부터-하나-where)
+5. [어떻게 구축·운영하나 (How)](#5-어떻게-구축운영하나-how)
+6. [다른 주제와의 관계](#6-다른-주제와의-관계)
+7. [KPI 및 Roadmap](#7-kpi-및-roadmap)
+8. [Appendix](#8-appendix)
+
 # 1. 개요
 
 ## 1.1 데이터 해설·주석이란
