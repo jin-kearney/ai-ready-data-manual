@@ -4,9 +4,9 @@ topic-code: A-3
 topic: 비즈니스 Glossary
 type: storyline
 lang: ko
-version: 0.6
+version: 0.8
 status: draft
-last-updated: 2026-06-22
+last-updated: 2026-06-23
 tags: [ai-ready-data, A-3, storyline, glossary, 용어집]
 ---
 
