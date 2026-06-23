@@ -549,7 +549,7 @@ flowchart LR
 ## 별첨 (Appendix)
 
 <a id="appendix-a"></a>
-### [Appendix A] 용어 카드 빈 템플릿 + 완성 예시 (현업 실행 키트 ㉣)
+### [Appendix A] 용어 카드 템플릿 및 예시
 
 **가. 빈 용어 카드 (복사해서 채우기)**
 
@@ -612,7 +612,7 @@ flowchart LR
 | 분류 | SOI | Sales of Income, 내부 매출/사업 분류 기준(주간 보고 등) |
 
 <a id="appendix-c"></a>
-### [Appendix C] 표준값 목록 (현업 실행 키트 ㉢)
+### [Appendix C] 표준값 목록
 
 | 항목 | 고르는 값 |
 |---|---|
