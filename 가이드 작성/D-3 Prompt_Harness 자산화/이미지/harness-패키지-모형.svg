@@ -1,0 +1,60 @@
+<svg viewBox="0 0 760 392" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="760" height="392" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">Harness 패키지 — 묶어서 반복 실행하는 단위 (예시)</text>
+
+  <!-- 바깥 패키지 박스 -->
+  <rect x="34" y="48" width="430" height="320" rx="8" fill="#EEF4FB" stroke="#2456A4" stroke-width="1.8"/>
+  <rect x="34" y="48" width="430" height="30" rx="8" fill="#2456A4"/>
+  <text x="50" y="68" font-size="12.5" font-weight="700" fill="#ffffff">Harness: claim-analysis-harness  v1.2</text>
+
+  <!-- 1. Prompt 자산 -->
+  <rect x="56" y="92" width="386" height="56" rx="5" fill="#ffffff" stroke="#6B9AD1" stroke-width="1.3"/>
+  <rect x="56" y="92" width="8" height="56" rx="2" fill="#2456A4"/>
+  <text x="74" y="113" font-size="12" font-weight="700" fill="#10243f">① Prompt 자산 (버전 고정)</text>
+  <text x="74" y="133" font-size="11" fill="#3a4a55">claim-classification @ v2.1.0  — Registry 참조</text>
+
+  <!-- 2. 입력 데이터 연결 -->
+  <rect x="56" y="156" width="386" height="56" rx="5" fill="#ffffff" stroke="#6B9AD1" stroke-width="1.3"/>
+  <rect x="56" y="156" width="8" height="56" rx="2" fill="#3F9BD4"/>
+  <text x="74" y="177" font-size="12" font-weight="700" fill="#10243f">② 입력 데이터 연결</text>
+  <text x="74" y="197" font-size="11" fill="#3a4a55">C/S Report 본문 + 결함 표준 용어(defect_taxonomy)</text>
+
+  <!-- 3. Tool 호출 순서 -->
+  <rect x="56" y="220" width="386" height="64" rx="5" fill="#ffffff" stroke="#6B9AD1" stroke-width="1.3"/>
+  <rect x="56" y="220" width="8" height="64" rx="2" fill="#79C3E8"/>
+  <text x="74" y="241" font-size="12" font-weight="700" fill="#10243f">③ Tool 호출 순서</text>
+  <g font-size="10.5" text-anchor="middle">
+    <rect x="74" y="251" width="96" height="22" rx="11" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <text x="122" y="266" fill="#10243f">SAP 조회</text>
+    <text x="178" y="266" fill="#2456A4">→</text>
+    <rect x="190" y="251" width="80" height="22" rx="11" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <text x="230" y="266" fill="#10243f">분류</text>
+    <text x="278" y="266" fill="#2456A4">→</text>
+    <rect x="290" y="251" width="100" height="22" rx="11" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <text x="340" y="266" fill="#10243f">결과 저장</text>
+  </g>
+
+  <!-- 4. 출력 형식·검증 -->
+  <rect x="56" y="292" width="386" height="58" rx="5" fill="#ffffff" stroke="#6B9AD1" stroke-width="1.3"/>
+  <rect x="56" y="292" width="8" height="58" rx="2" fill="#4FA47D"/>
+  <text x="74" y="313" font-size="12" font-weight="700" fill="#10243f">④ 출력 형식 · 검증 기준</text>
+  <text x="74" y="333" font-size="11" fill="#3a4a55">JSON 스키마 검증 · confidence=low → needs_review=true</text>
+
+  <!-- 오른쪽 주석 -->
+  <g font-size="11.5">
+    <line x1="442" y1="120" x2="494" y2="120" stroke="#2456A4" stroke-width="1.3"/>
+    <text x="500" y="116" fill="#2456A4" font-weight="700">Prompt는 D-3 Registry 참조</text>
+    <text x="500" y="132" fill="#3a4a55">본문은 자산으로 따로 버전 관리</text>
+
+    <line x1="442" y1="252" x2="494" y2="252" stroke="#3F9BD4" stroke-width="1.3"/>
+    <text x="500" y="248" fill="#2456A4" font-weight="700">Tool 명세는 D-2 참조</text>
+    <text x="500" y="264" fill="#3a4a55">호출 순서만 여기서 정의</text>
+
+    <line x1="442" y1="320" x2="494" y2="320" stroke="#4FA47D" stroke-width="1.3"/>
+    <text x="500" y="316" fill="#2f6b50" font-weight="700">평가셋은 E-3 참조</text>
+    <text x="500" y="332" fill="#3a4a55">이 Harness를 검증할 기준 연결</text>
+  </g>
+
+  <text x="500" y="370" font-size="11.5" fill="#2456A4" font-weight="700">입력을 변수로 분리 → 다른 제품·라인에</text>
+  <text x="500" y="386" font-size="11.5" fill="#2456A4" font-weight="700">같은 Harness를 그대로 재사용</text>
+</svg>

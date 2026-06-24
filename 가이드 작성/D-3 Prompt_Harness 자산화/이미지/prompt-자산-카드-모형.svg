@@ -1,0 +1,77 @@
+<svg viewBox="0 0 760 472" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="760" height="472" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">Prompt 자산 1건의 구조 — Registry 등록 모습 (예시)</text>
+
+  <!-- ===== 왼쪽: 프롬프트 본문 (구조화) ===== -->
+  <rect x="30" y="48" width="430" height="368" rx="6" fill="#ffffff" stroke="#c9d4e0" stroke-width="1.5"/>
+  <rect x="30" y="48" width="430" height="28" rx="6" fill="#DCE8F5" stroke="#6B9AD1"/>
+  <text x="44" y="67" font-size="12.5" font-weight="700" fill="#10243f">프롬프트 본문 (구조화)</text>
+
+  <!-- 역할 -->
+  <rect x="44" y="86" width="64" height="40" rx="4" fill="#2456A4"/>
+  <text x="76" y="110" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">역할</text>
+  <text x="118" y="103" font-size="11.5" fill="#10243f">두산전자 CCL 품질 클레임 원인 분류 전문가</text>
+  <text x="118" y="119" font-size="10.5" fill="#6b7785">"누가 이 업무를 하는가"를 고정</text>
+
+  <!-- 입력 -->
+  <rect x="44" y="134" width="64" height="40" rx="4" fill="#3F9BD4"/>
+  <text x="76" y="158" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">입력</text>
+  <text x="118" y="151" font-size="11.5" fill="#10243f">{{cs_report}} · {{defect_taxonomy}}</text>
+  <text x="118" y="167" font-size="10.5" fill="#6b7785">변수로 분리 → 다른 건에 재사용</text>
+
+  <!-- 판단 기준 -->
+  <rect x="44" y="182" width="64" height="56" rx="4" fill="#79C3E8"/>
+  <text x="76" y="206" font-size="11.5" font-weight="700" fill="#0b3a52" text-anchor="middle">판단</text>
+  <text x="76" y="221" font-size="11.5" font-weight="700" fill="#0b3a52" text-anchor="middle">기준</text>
+  <text x="118" y="199" font-size="11.5" fill="#10243f">Delamination은 소재 결함 / 공정 결함으로</text>
+  <text x="118" y="215" font-size="11.5" fill="#10243f">구분, 불명확하면 needs_review=true</text>
+  <text x="118" y="231" font-size="10.5" fill="#6b7785">현업 SME의 판단 노하우를 명문화</text>
+
+  <!-- 금지 행동 -->
+  <rect x="44" y="246" width="64" height="40" rx="4" fill="#C9663A"/>
+  <text x="76" y="270" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">금지</text>
+  <text x="118" y="263" font-size="11.5" fill="#10243f">Glossary 외 임의 용어 금지</text>
+  <text x="118" y="279" font-size="11.5" fill="#10243f">근거 없는 단정 금지</text>
+
+  <!-- 출력 형식 -->
+  <rect x="44" y="294" width="64" height="56" rx="4" fill="#4FA47D"/>
+  <text x="76" y="318" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">출력</text>
+  <text x="76" y="333" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">형식</text>
+  <text x="118" y="311" font-size="11" fill="#10243f" font-family="monospace">{ primary_cause, confidence,</text>
+  <text x="118" y="327" font-size="11" fill="#10243f" font-family="monospace">  evidence, needs_review }</text>
+  <text x="118" y="343" font-size="10.5" fill="#6b7785">뒤 시스템이 그대로 받도록 JSON 고정</text>
+
+  <text x="44" y="375" font-size="11" fill="#2456A4" font-weight="700">① 본문을 5구획으로 → 누가 써도 같은 품질</text>
+  <text x="44" y="396" font-size="10.5" fill="#3a4a55">역할·입력·판단 기준·금지·출력을 나눠 적어 재현 가능하게</text>
+
+  <!-- ===== 오른쪽: 관리 메타데이터 ===== -->
+  <rect x="478" y="48" width="252" height="368" rx="6" fill="#f3f7fc" stroke="#6B9AD1" stroke-width="1.5"/>
+  <rect x="478" y="48" width="252" height="28" rx="6" fill="#2456A4"/>
+  <text x="492" y="67" font-size="12.5" font-weight="700" fill="#ffffff">관리 메타데이터</text>
+
+  <g font-size="11.5">
+    <text x="492" y="98" fill="#6b7785">자산 ID</text><text x="566" y="98" fill="#10243f" font-weight="700">claim-classification</text>
+    <text x="492" y="124" fill="#6b7785">버전</text><text x="566" y="124" fill="#10243f" font-weight="700">v2.1.0</text>
+    <rect x="640" y="112" width="64" height="18" rx="9" fill="#4FA47D"/>
+    <text x="672" y="125" fill="#ffffff" font-size="10.5" font-weight="700" text-anchor="middle">배포</text>
+    <text x="492" y="150" fill="#6b7785">업무</text><text x="566" y="150" fill="#10243f">CCL 클레임 원인 분류</text>
+    <text x="492" y="176" fill="#6b7785">작성</text><text x="566" y="176" fill="#10243f">AI팀</text>
+    <text x="492" y="200" fill="#6b7785">승인</text><text x="566" y="200" fill="#10243f">품질기술팀 책임</text>
+  </g>
+  <line x1="492" y1="214" x2="716" y2="214" stroke="#d7e0ea"/>
+  <text x="492" y="234" font-size="11" font-weight="700" fill="#2456A4">의존 자산</text>
+  <g font-size="11">
+    <text x="500" y="254" fill="#3a4a55">· Glossary 결함 용어 v3.2 (A-3)</text>
+    <text x="500" y="273" fill="#3a4a55">· 조회 Tool v1.1 (D-2)</text>
+    <text x="500" y="292" fill="#3a4a55">· C/S Report 데이터 DA-042</text>
+    <text x="500" y="311" fill="#3a4a55">· 평가셋 v1.2 (E-3)</text>
+  </g>
+  <line x1="492" y1="324" x2="716" y2="324" stroke="#d7e0ea"/>
+  <text x="492" y="344" font-size="11.5" fill="#6b7785">평가</text>
+  <text x="566" y="344" font-size="11.5" fill="#2f6b50" font-weight="700">정확도 91% (n=200)</text>
+  <text x="492" y="368" font-size="11.5" fill="#6b7785">변경 사유</text>
+  <text x="492" y="388" font-size="10.5" fill="#3a4a55">Delamination 소재/공정 구분 기준 추가</text>
+
+  <text x="478" y="438" font-size="11" fill="#2456A4" font-weight="700">② 메타데이터로 버전·의존성·평가를 함께 등록</text>
+  <text x="478" y="458" font-size="10.5" fill="#3a4a55">→ 추적·롤백·재사용·감사 대응이 가능해진다</text>
+</svg>

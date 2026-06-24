@@ -1,0 +1,60 @@
+<svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="760" height="360" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">Prompt를 개인 메모에서 공용 자산으로 (전 / 후, 예시)</text>
+
+  <!-- ===== 전 (Before) ===== -->
+  <text x="40" y="62" font-size="13" font-weight="700" fill="#b32020">전 — 사람마다 따로</text>
+  <rect x="34" y="72" width="300" height="250" rx="6" fill="#fdf4f4" stroke="#e3b7b7" stroke-width="1.3"/>
+
+  <!-- scattered files -->
+  <g>
+    <rect x="58" y="92" width="160" height="58" rx="4" fill="#ffffff" stroke="#d64545"/>
+    <text x="70" y="112" font-size="11.5" fill="#10243f" font-weight="700">prompt_최신.txt</text>
+    <text x="70" y="130" font-size="10.5" fill="#6b7785">"클레임 원인 분류해줘"</text>
+    <text x="70" y="144" font-size="10" fill="#9aa6b2">— 김대리 PC</text>
+  </g>
+  <g>
+    <rect x="150" y="150" width="160" height="58" rx="4" fill="#ffffff" stroke="#d64545"/>
+    <text x="162" y="170" font-size="11.5" fill="#10243f" font-weight="700">분류_v2_진짜최종.txt</text>
+    <text x="162" y="188" font-size="10.5" fill="#6b7785">"원인이 뭔지 봐줘"</text>
+    <text x="162" y="202" font-size="10" fill="#9aa6b2">— 이책임 메일함</text>
+  </g>
+  <g>
+    <rect x="58" y="208" width="160" height="58" rx="4" fill="#ffffff" stroke="#d64545"/>
+    <text x="70" y="228" font-size="11.5" fill="#10243f" font-weight="700">내프롬프트.docx</text>
+    <text x="70" y="246" font-size="10.5" fill="#6b7785">"불량 분석"</text>
+    <text x="70" y="260" font-size="10" fill="#9aa6b2">— 공용폴더</text>
+  </g>
+
+  <text x="50" y="292" font-size="11" fill="#b32020" font-weight="700">결과가 제각각 · 누가 언제 만들었는지 모름</text>
+  <text x="50" y="310" font-size="11" fill="#b32020" font-weight="700">이력·의존성·평가 없음 → 롤백 불가</text>
+
+  <!-- ===== 화살표 ===== -->
+  <g>
+    <line x1="350" y1="195" x2="408" y2="195" stroke="#2456A4" stroke-width="2"/>
+    <polygon points="408,189 420,195 408,201" fill="#2456A4"/>
+    <text x="384" y="184" font-size="12" font-weight="700" fill="#2456A4" text-anchor="middle">자산화</text>
+  </g>
+
+  <!-- ===== 후 (After) ===== -->
+  <text x="436" y="62" font-size="13" font-weight="700" fill="#2f6b50">후 — 검증된 공용 자산 하나</text>
+  <rect x="430" y="72" width="300" height="250" rx="6" fill="#f1f8f4" stroke="#7CC2A7" stroke-width="1.3"/>
+
+  <rect x="454" y="96" width="252" height="180" rx="6" fill="#ffffff" stroke="#4FA47D" stroke-width="1.5"/>
+  <rect x="454" y="96" width="252" height="26" rx="6" fill="#2456A4"/>
+  <text x="468" y="114" font-size="12" font-weight="700" fill="#ffffff">claim-classification</text>
+  <rect x="640" y="100" width="56" height="18" rx="9" fill="#4FA47D"/>
+  <text x="668" y="113" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">배포</text>
+
+  <g font-size="11">
+    <text x="468" y="142" fill="#6b7785">버전</text><text x="540" y="142" fill="#10243f" font-weight="700">v2.1.0</text>
+    <text x="468" y="164" fill="#6b7785">구조</text><text x="540" y="164" fill="#10243f">역할·입력·판단·금지·출력</text>
+    <text x="468" y="186" fill="#6b7785">의존</text><text x="540" y="186" fill="#10243f">Glossary·Tool·평가셋</text>
+    <text x="468" y="208" fill="#6b7785">평가</text><text x="540" y="208" fill="#2f6b50" font-weight="700">정확도 91%</text>
+    <text x="468" y="230" fill="#6b7785">승인</text><text x="540" y="230" fill="#10243f">품질기술팀 책임</text>
+    <text x="468" y="252" fill="#6b7785">이력</text><text x="540" y="252" fill="#10243f">변경 사유·롤백 대상 기록</text>
+  </g>
+
+  <text x="446" y="298" font-size="11" fill="#2f6b50" font-weight="700">누가 써도 같은 품질 · 변경 추적 · 즉시 롤백</text>
+  <text x="446" y="316" font-size="11" fill="#2f6b50" font-weight="700">타 계열사·업무에 재사용</text>
+</svg>
