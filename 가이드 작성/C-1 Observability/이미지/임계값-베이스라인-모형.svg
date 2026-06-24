@@ -1,0 +1,60 @@
+<svg viewBox="0 0 760 348" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="760" height="348" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">이상 판단 — 고정 한계값과 평소 추세(적응형) (가상)</text>
+  <text x="24" y="50" font-size="12" fill="#6b7785">시간당 적재 건수 한 주 · 같은 데이터를 두 기준으로 판단</text>
+
+  <!-- plot frame -->
+  <line x1="80" y1="72" x2="80" y2="258" stroke="#c9d4e0"/>
+  <line x1="80" y1="258" x2="724" y2="258" stroke="#c9d4e0"/>
+
+  <!-- adaptive baseline band (green ribbon) -->
+  <path d="M120,86 L210,85 L300,86 L390,85 L480,88 L570,149 L660,150 L660,191 L570,191 L480,131 L390,129 L300,129 L210,128 L120,129 Z"
+        fill="#C2E6D6" fill-opacity="0.55" stroke="#7CC2A7" stroke-width="1"/>
+
+  <!-- fixed threshold line -->
+  <line x1="80" y1="143" x2="724" y2="143" stroke="#C9663A" stroke-width="1.8" stroke-dasharray="7 4"/>
+  <text x="722" y="138" font-size="11" font-weight="700" fill="#C9663A" text-anchor="end">고정 한계값</text>
+
+  <!-- actual data line -->
+  <polyline points="120,108 210,106 300,197 390,108 480,111 570,168 660,172"
+            fill="none" stroke="#2456A4" stroke-width="2.4"/>
+  <g fill="#2456A4">
+    <circle cx="120" cy="108" r="4"/>
+    <circle cx="210" cy="106" r="4"/>
+    <circle cx="390" cy="108" r="4"/>
+    <circle cx="480" cy="111" r="4"/>
+  </g>
+  <!-- weekend normal points -->
+  <circle cx="570" cy="168" r="4" fill="#2456A4"/>
+  <circle cx="660" cy="172" r="4" fill="#2456A4"/>
+  <!-- anomaly point (red) -->
+  <circle cx="300" cy="197" r="6.5" fill="#C9663A" stroke="#7a2e0a" stroke-width="1.5"/>
+
+  <!-- x axis labels -->
+  <g font-size="11.5" fill="#3a4a55" text-anchor="middle">
+    <text x="120" y="276">월</text>
+    <text x="210" y="276">화</text>
+    <text x="300" y="276">수</text>
+    <text x="390" y="276">목</text>
+    <text x="480" y="276">금</text>
+    <text x="570" y="276">토</text>
+    <text x="660" y="276">일</text>
+  </g>
+
+  <!-- legend -->
+  <g font-size="11.5">
+    <rect x="84" y="296" width="18" height="11" fill="#C2E6D6" stroke="#7CC2A7"/>
+    <text x="108" y="306" fill="#3a4a55">평소 추세 정상 범위(요일 패턴 학습)</text>
+    <line x1="318" y1="302" x2="340" y2="302" stroke="#C9663A" stroke-width="1.8" stroke-dasharray="7 4"/>
+    <text x="346" y="306" fill="#3a4a55">고정 한계값</text>
+    <line x1="452" y1="302" x2="474" y2="302" stroke="#2456A4" stroke-width="2.4"/>
+    <text x="480" y="306" fill="#3a4a55">실제 적재량</text>
+  </g>
+
+  <!-- annotations -->
+  <line x1="300" y1="197" x2="300" y2="226" stroke="#C9663A" stroke-width="1"/>
+  <text x="300" y="240" font-size="11.5" font-weight="700" fill="#C9663A" text-anchor="middle">진짜 급락 → 추세 띠 벗어남 = 이상</text>
+
+  <line x1="615" y1="170" x2="615" y2="324" stroke="#9aa6b2" stroke-width="1"/>
+  <text x="615" y="338" font-size="11.5" fill="#3a4a55" text-anchor="middle">주말 정상 하락 → 띠 안 = 정상 (고정 한계값이면 오탐)</text>
+</svg>

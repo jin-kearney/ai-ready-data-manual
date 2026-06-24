@@ -1,0 +1,46 @@
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="760" height="300" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">수집 중단 — 적용 전과 후 (가상)</text>
+  <text x="24" y="50" font-size="12" fill="#6b7785">새벽 02:00 통신 장애로 텔레매틱스 수집 중단</text>
+
+  <!-- light vertical hour guides -->
+  <g stroke="#eef2f6">
+    <line x1="214" y1="64" x2="214" y2="250"/>
+    <line x1="338" y1="64" x2="338" y2="250"/>
+    <line x1="462" y1="64" x2="462" y2="250"/>
+    <line x1="586" y1="64" x2="586" y2="250"/>
+  </g>
+
+  <!-- Row A: 관측 없을 때 -->
+  <text x="24" y="92" font-size="13" font-weight="700" fill="#7a2e0a">관측 없을 때</text>
+  <line x1="90" y1="118" x2="710" y2="118" stroke="#c9d4e0" stroke-width="1.5"/>
+  <rect x="214" y="110" width="434" height="16" fill="#F4D9D0" stroke="#C9663A" stroke-dasharray="4 3"/>
+  <circle cx="214" cy="118" r="5" fill="#C9663A"/>
+  <text x="214" y="104" font-size="11.5" font-weight="700" fill="#10243f" text-anchor="middle">02:00 수집 중단</text>
+  <text x="431" y="121" font-size="11.5" font-weight="700" fill="#7a2e0a" text-anchor="middle">약 7시간 — 아무도 모름</text>
+  <text x="431" y="146" font-size="11" fill="#7a2e0a" text-anchor="middle">그 사이 AI는 옛 값으로 "정상" 응답</text>
+  <circle cx="648" cy="118" r="5" fill="#C9663A"/>
+  <text x="648" y="104" font-size="11.5" font-weight="700" fill="#10243f" text-anchor="middle">09:00 출근 후 발견</text>
+
+  <!-- Row B: 관측 있을 때 -->
+  <text x="24" y="200" font-size="13" font-weight="700" fill="#2f6b50">관측 있을 때</text>
+  <line x1="90" y1="218" x2="710" y2="218" stroke="#c9d4e0" stroke-width="1.5"/>
+  <rect x="214" y="212" width="24" height="12" fill="#4FA47D"/>
+  <circle cx="214" cy="218" r="5" fill="#3F9BD4"/>
+  <text x="214" y="206" font-size="11.5" font-weight="700" fill="#10243f" text-anchor="middle">02:00 중단</text>
+  <circle cx="238" cy="218" r="5" fill="#4FA47D"/>
+  <text x="300" y="206" font-size="11.5" font-weight="700" fill="#2f6b50">02:06 신선도 경보 → 즉시 알림</text>
+  <text x="300" y="240" font-size="11" fill="#2f6b50">02:20 운영 담당 대응·억제 윈도우 · 영향 AI팀 통보</text>
+  <line x1="238" y1="218" x2="296" y2="234" stroke="#7CC2A7" stroke-width="1"/>
+
+  <!-- bottom time axis -->
+  <g font-size="11" fill="#9aa6b2" text-anchor="middle">
+    <text x="90" y="272">00:00</text>
+    <text x="214" y="272">02:00</text>
+    <text x="338" y="272">04:00</text>
+    <text x="462" y="272">06:00</text>
+    <text x="586" y="272">08:00</text>
+    <text x="710" y="272">10:00</text>
+  </g>
+  <text x="24" y="292" font-size="11" fill="#9aa6b2">감지가 7시간에서 6분으로 줄면, 잘못된 AI 응답을 막고 손쓸 시간을 번다.</text>
+</svg>

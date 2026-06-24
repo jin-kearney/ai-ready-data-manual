@@ -1,0 +1,72 @@
+<svg viewBox="0 0 760 372" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="760" height="372" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">데이터 관측 대시보드 — 관측 4축 (가상)</text>
+  <text x="24" y="50" font-size="12" fill="#6b7785">텔레매틱스 수집 → 피처 테이블 흐름 · 새벽 02:16 현재</text>
+
+  <!-- Panel 1: 신선도 (ALERT) -->
+  <rect x="24" y="64" width="352" height="138" rx="7" fill="#FBEEEA" stroke="#C9663A" stroke-width="2"/>
+  <text x="42" y="90" font-size="13.5" font-weight="700" fill="#10243f">① 신선도 (Freshness)</text>
+  <rect x="300" y="76" width="58" height="20" rx="10" fill="#C9663A"/>
+  <text x="329" y="90" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">경보</text>
+  <!-- regular dots then stop -->
+  <line x1="44" y1="140" x2="356" y2="140" stroke="#e3d2cb"/>
+  <circle cx="60" cy="140" r="4" fill="#3F9BD4"/>
+  <circle cx="96" cy="140" r="4" fill="#3F9BD4"/>
+  <circle cx="132" cy="140" r="4" fill="#3F9BD4"/>
+  <circle cx="168" cy="140" r="4" fill="#3F9BD4"/>
+  <circle cx="204" cy="140" r="4" fill="#3F9BD4"/>
+  <text x="246" y="135" font-size="20" font-weight="700" fill="#C9663A" text-anchor="middle">···</text>
+  <line x1="288" y1="128" x2="312" y2="152" stroke="#C9663A" stroke-width="2.4"/>
+  <line x1="312" y1="128" x2="288" y2="152" stroke="#C9663A" stroke-width="2.4"/>
+  <text x="42" y="186" font-size="12" fill="#7a2e0a">마지막 적재 16분 전 — 1분 주기 기대, 수집 끊김</text>
+
+  <!-- Panel 2: 양 (OK) -->
+  <rect x="384" y="64" width="352" height="138" rx="7" fill="#ffffff" stroke="#6B9AD1" stroke-width="1.5"/>
+  <text x="402" y="90" font-size="13.5" font-weight="700" fill="#10243f">② 양 (Volume)</text>
+  <rect x="662" y="76" width="58" height="20" rx="10" fill="#4FA47D"/>
+  <text x="691" y="90" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">정상</text>
+  <g fill="#79C3E8" stroke="#3F9BD4">
+    <rect x="408" y="120" width="20" height="40"/>
+    <rect x="438" y="116" width="20" height="44"/>
+    <rect x="468" y="122" width="20" height="38"/>
+    <rect x="498" y="118" width="20" height="42"/>
+    <rect x="528" y="120" width="20" height="40"/>
+    <rect x="558" y="117" width="20" height="43"/>
+    <rect x="588" y="121" width="20" height="39"/>
+  </g>
+  <text x="402" y="186" font-size="12" fill="#3a4a55">시간당 약 5만 건 — 평소 범위 안</text>
+
+  <!-- Panel 3: 구조 (OK) -->
+  <rect x="24" y="216" width="352" height="138" rx="7" fill="#ffffff" stroke="#6B9AD1" stroke-width="1.5"/>
+  <text x="42" y="242" font-size="13.5" font-weight="700" fill="#10243f">③ 구조 (Schema)</text>
+  <rect x="318" y="228" width="40" height="20" rx="10" fill="#4FA47D"/>
+  <text x="338" y="242" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">정상</text>
+  <g font-size="11" fill="#10243f">
+    <rect x="44" y="262" width="312" height="24" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <text x="56" y="278">engine_temp_c</text>
+    <text x="160" y="278">hydraulic_kpa</text>
+    <text x="270" y="278">fuel_pct</text>
+    <rect x="44" y="286" width="312" height="24" fill="none" stroke="#d7e0ea"/>
+    <text x="56" y="302" fill="#3a4a55">컬럼 12개 · 타입·단위 변경 없음</text>
+  </g>
+  <text x="42" y="338" font-size="12" fill="#3a4a55">단위·컬럼 그대로 — 펌웨어 변경 없음</text>
+
+  <!-- Panel 4: 값 분포 (OK) -->
+  <rect x="384" y="216" width="352" height="138" rx="7" fill="#ffffff" stroke="#6B9AD1" stroke-width="1.5"/>
+  <text x="402" y="242" font-size="13.5" font-weight="700" fill="#10243f">④ 값 분포 (Distribution)</text>
+  <rect x="678" y="228" width="40" height="20" rx="10" fill="#4FA47D"/>
+  <text x="698" y="242" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">정상</text>
+  <g fill="#B7CDE6" stroke="#6B9AD1">
+    <rect x="430" y="296" width="22" height="14"/>
+    <rect x="454" y="286" width="22" height="24"/>
+    <rect x="478" y="270" width="22" height="40"/>
+    <rect x="502" y="262" width="22" height="48"/>
+    <rect x="526" y="272" width="22" height="38"/>
+    <rect x="550" y="288" width="22" height="22"/>
+    <rect x="574" y="298" width="22" height="12"/>
+  </g>
+  <text x="402" y="338" font-size="12" fill="#3a4a55">결측 2% · 범위 이탈·오류코드 없음</text>
+
+  <!-- footnote -->
+  <text x="24" y="368" font-size="11" fill="#9aa6b2">네 축이 한 화면에서 동시에 켜져 있고, 이상이 난 축만 즉시 경보로 떠오른다.</text>
+</svg>
