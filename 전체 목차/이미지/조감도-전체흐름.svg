@@ -1,100 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 880 1100" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" fill="#10243f">
-  <rect width="880" height="1100" fill="#ffffff"/>
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" fill="#10243f">
+  <rect width="1280" height="720" fill="#ffffff"/>
   <defs>
     <marker id="aflow" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2456A4"/></marker>
     <marker id="aloop" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#4FA47D"/></marker>
     <marker id="asup" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7CC2A7"/></marker>
   </defs>
-  <text x="440" y="28" text-anchor="middle" font-weight="700" font-size="13.5" fill="#2456A4">아래(데이터 원천) → 위(AI Agent) · RFP ①→⑤ 순</text>
-  <rect x="22" y="44" width="150" height="124" rx="8" fill="#ffffff" stroke="#C7D6EA"/>
-  <text x="32" y="62" font-weight="700" font-size="11">색 안내</text>
-  <rect x="32" y="70" width="14" height="11" fill="#79C3E8"/><text x="52" y="79" font-size="10">원천·확보</text>
-  <rect x="32" y="86" width="14" height="11" fill="#B7CDE6"/><text x="52" y="95" font-size="10">일반 단계</text>
-  <rect x="32" y="102" width="14" height="11" fill="#3F9BD4"/><text x="52" y="111" font-size="10">품질 게이트</text>
-  <rect x="32" y="118" width="14" height="11" fill="#2456A4"/><text x="52" y="127" font-size="10">핵심(카탈로그·AI)</text>
-  <rect x="32" y="134" width="14" height="11" fill="#4FA47D"/><text x="52" y="143" font-size="10">평가·환류</text>
-  <rect x="32" y="150" width="14" height="11" fill="#C2E6D6"/><text x="52" y="159" font-size="10">범위 외</text>
-  <rect x="24" y="320" width="148" height="680" rx="10" fill="#C2E6D6" stroke="#7CC2A7" stroke-dasharray="5 4"/>
-  <text x="98" y="344" text-anchor="middle" font-weight="700" font-size="11.5" fill="#1f4d3a">범위 외 · 받침</text>
-  <text x="98" y="616" text-anchor="middle" font-weight="700" font-size="11" fill="#1f4d3a">F-1 데이터 운영관리</text>
-  <text x="98" y="631" text-anchor="middle" font-size="9.5" fill="#1f4d3a">흐름 안 멈추게</text>
-  <text x="98" y="700" text-anchor="middle" font-weight="700" font-size="11" fill="#1f4d3a">F-2 데이터 생애주기</text>
-  <text x="98" y="715" text-anchor="middle" font-size="9.5" fill="#1f4d3a">얼마나 두고·버리나</text>
-  <line x1="172" y1="400" x2="190" y2="400" stroke="#7CC2A7" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#asup)"/>
-  <line x1="172" y1="700" x2="190" y2="700" stroke="#7CC2A7" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#asup)"/>
-  <line x1="172" y1="930" x2="190" y2="930" stroke="#7CC2A7" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#asup)"/>
-  <rect x="310" y="180" width="200" height="92" rx="16" fill="#2456A4" stroke="#163a73" stroke-width="2"/>
-  <text x="410" y="222" text-anchor="middle" font-weight="700" font-size="20" fill="#ffffff">AI Agent</text>
-  <text x="410" y="248" text-anchor="middle" font-size="11" fill="#DCE8F5">RAG · 에이전트 서비스</text>
-  <rect x="180" y="320" width="460" height="170" rx="10" fill="#EEF4FB" stroke="#6B9AD1"/>
-  <text x="192" y="340" font-weight="700" font-size="13" fill="#2456A4">⑤ AI·RAG·Agent 연계</text>
-  <text x="632" y="340" text-anchor="end" font-size="10" fill="#2f6b50" font-style="italic">= 실행 + 합성 + 평가·환류</text>
-  <rect x="200" y="350" width="192" height="44" rx="8" fill="#B7CDE6" stroke="#6B9AD1"/>
-  <text x="296" y="368" text-anchor="middle" font-weight="700" font-size="12">D-2 API/Tool 연계</text><text x="296" y="383" text-anchor="middle" font-size="9.5">부를 기능·규격</text>
-  <rect x="406" y="350" width="192" height="44" rx="8" fill="#2456A4" stroke="#163a73"/>
-  <text x="502" y="368" text-anchor="middle" font-weight="700" font-size="12" fill="#ffffff">D-3 Prompt/Harness</text><text x="502" y="383" text-anchor="middle" font-size="9.5" fill="#dce8f5">절차·판단 (지휘)</text>
-  <rect x="200" y="404" width="128" height="44" rx="8" fill="#79C3E8" stroke="#3F9BD4"/>
-  <text x="264" y="422" text-anchor="middle" font-weight="700" font-size="11" fill="#0b3a52">E-2 합성데이터</text><text x="264" y="437" text-anchor="middle" font-size="9.5" fill="#0b3a52">학습 보강</text>
-  <rect x="338" y="404" width="128" height="44" rx="8" fill="#4FA47D" stroke="#2f6b50"/>
-  <text x="402" y="422" text-anchor="middle" font-weight="700" font-size="11" fill="#ffffff">E-3 AI 평가</text><text x="402" y="437" text-anchor="middle" font-size="9.5" fill="#eafaf2">채점</text>
-  <rect x="476" y="404" width="142" height="44" rx="8" fill="#4FA47D" stroke="#2f6b50"/>
-  <text x="547" y="422" text-anchor="middle" font-weight="700" font-size="11" fill="#ffffff">E-4 Feedback</text><text x="547" y="437" text-anchor="middle" font-size="9.5" fill="#eafaf2">원인 라우팅</text>
-  <rect x="180" y="510" width="460" height="118" rx="10" fill="#EEF4FB" stroke="#6B9AD1"/>
-  <text x="192" y="530" font-weight="700" font-size="13" fill="#2456A4">④ 품질·계보·감사</text>
-  <text x="632" y="530" text-anchor="end" font-size="10" fill="#2f6b50" font-style="italic">= 믿고 쓰기 게이트</text>
-  <rect x="330" y="544" width="176" height="46" rx="8" fill="#3F9BD4" stroke="#2456A4"/>
-  <text x="418" y="564" text-anchor="middle" font-weight="700" font-size="12" fill="#ffffff">C-2 데이터 품질 관리</text><text x="418" y="579" text-anchor="middle" font-size="9.5" fill="#eaf3fb">쓸 수 있나 판정</text>
-  <rect x="190" y="540" width="128" height="38" rx="7" fill="#B7CDE6" stroke="#6B9AD1"/>
-  <text x="254" y="557" text-anchor="middle" font-weight="700" font-size="10.5">C-1 Observability</text><text x="254" y="571" text-anchor="middle" font-size="9">실시간 근거</text>
-  <rect x="190" y="582" width="128" height="38" rx="7" fill="#B7CDE6" stroke="#6B9AD1"/>
-  <text x="254" y="599" text-anchor="middle" font-weight="700" font-size="10.5">C-3 계통 Lineage</text><text x="254" y="613" text-anchor="middle" font-size="9">이력 근거</text>
-  <rect x="516" y="544" width="116" height="46" rx="7" fill="#C2E6D6" stroke="#7CC2A7"/>
-  <text x="574" y="564" text-anchor="middle" font-weight="700" font-size="10.5" fill="#1f4d3a">F-4 권한·보안</text><text x="574" y="579" text-anchor="middle" font-size="9" fill="#1f4d3a">접근·마스킹</text>
-  <line x1="318" y1="558" x2="330" y2="562" stroke="#2456A4" stroke-width="1.5" marker-end="url(#aflow)"/>
-  <line x1="318" y1="600" x2="330" y2="576" stroke="#2456A4" stroke-width="1.5" marker-end="url(#aflow)"/>
-  <line x1="516" y1="567" x2="506" y2="567" stroke="#7CC2A7" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#asup)"/>
-  <rect x="180" y="648" width="460" height="102" rx="10" fill="#EEF4FB" stroke="#6B9AD1"/>
-  <text x="192" y="668" font-weight="700" font-size="13" fill="#2456A4">③ 어노테이션·온톨로지</text>
-  <text x="632" y="668" text-anchor="end" font-size="10" fill="#2f6b50" font-style="italic">= 가공(주석) + 온톨로지</text>
-  <rect x="210" y="684" width="190" height="50" rx="8" fill="#B7CDE6" stroke="#6B9AD1"/>
-  <text x="305" y="705" text-anchor="middle" font-weight="700" font-size="12">B-2 데이터 해설·주석</text><text x="305" y="720" text-anchor="middle" font-size="9.5">의미(라벨) 부여</text>
-  <rect x="420" y="684" width="190" height="50" rx="8" fill="#B7CDE6" stroke="#6B9AD1"/>
-  <text x="515" y="705" text-anchor="middle" font-weight="700" font-size="12">B-3 온톨로지</text><text x="515" y="720" text-anchor="middle" font-size="9.5">개념 관계</text>
-  <rect x="180" y="770" width="460" height="108" rx="10" fill="#EEF4FB" stroke="#6B9AD1"/>
-  <text x="192" y="790" font-weight="700" font-size="13" fill="#2456A4">② 메타·카탈로그·글로서리</text>
-  <text x="632" y="790" text-anchor="end" font-size="10" fill="#2f6b50" font-style="italic">= 찾기·의미</text>
-  <rect x="190" y="806" width="140" height="50" rx="8" fill="#B7CDE6" stroke="#6B9AD1"/>
-  <text x="260" y="827" text-anchor="middle" font-weight="700" font-size="10.5">A-3 비즈니스 Glossary</text><text x="260" y="842" text-anchor="middle" font-size="9.5">용어 뜻</text>
-  <rect x="342" y="806" width="140" height="50" rx="8" fill="#B7CDE6" stroke="#6B9AD1"/>
-  <text x="412" y="827" text-anchor="middle" font-weight="700" font-size="12">A-2 메타데이터</text><text x="412" y="842" text-anchor="middle" font-size="9.5">자산 속성</text>
-  <rect x="494" y="806" width="138" height="50" rx="8" fill="#2456A4" stroke="#163a73"/>
-  <text x="563" y="827" text-anchor="middle" font-weight="700" font-size="11" fill="#ffffff">A-1 데이터 카탈로그</text><text x="563" y="842" text-anchor="middle" font-size="9.5" fill="#dce8f5">소재·위치</text>
-  <line x1="330" y1="831" x2="342" y2="831" stroke="#2456A4" stroke-width="1.5" marker-end="url(#aflow)"/>
-  <line x1="482" y1="831" x2="494" y2="831" stroke="#2456A4" stroke-width="1.5" marker-end="url(#aflow)"/>
-  <rect x="180" y="898" width="460" height="102" rx="10" fill="#EEF4FB" stroke="#6B9AD1"/>
-  <text x="192" y="918" font-weight="700" font-size="13" fill="#2456A4">① 수집·전처리</text>
-  <text x="632" y="918" text-anchor="end" font-size="10" fill="#2f6b50" font-style="italic">= 원천 확보 + 가공</text>
-  <rect x="190" y="932" width="140" height="50" rx="8" fill="#79C3E8" stroke="#3F9BD4"/>
-  <text x="260" y="953" text-anchor="middle" font-weight="700" font-size="11" fill="#0b3a52">F-3 데이터 디지털화</text><text x="260" y="968" text-anchor="middle" font-size="9.5" fill="#0b3a52">종이→디지털</text>
-  <rect x="342" y="932" width="140" height="50" rx="8" fill="#79C3E8" stroke="#3F9BD4"/>
-  <text x="412" y="953" text-anchor="middle" font-weight="700" font-size="10.5" fill="#0b3a52">D-1 Physical 데이터</text><text x="412" y="968" text-anchor="middle" font-size="9.5" fill="#0b3a52">현장 신호</text>
-  <rect x="494" y="932" width="138" height="50" rx="8" fill="#B7CDE6" stroke="#6B9AD1"/>
-  <text x="563" y="953" text-anchor="middle" font-weight="700" font-size="11">B-1 데이터 전처리</text><text x="563" y="968" text-anchor="middle" font-size="9.5">구조화 변환</text>
-  <rect x="24" y="1000" width="832" height="58" rx="10" fill="#79C3E8" stroke="#3F9BD4" stroke-width="1.5"/>
-  <text x="440" y="1026" text-anchor="middle" font-weight="700" font-size="16" fill="#0b3a52">데이터 원천</text>
-  <text x="440" y="1046" text-anchor="middle" font-size="11" fill="#0b3a52">현장·설비 센서 · 문서·도면 · 시스템 기록 등</text>
-  <line x1="410" y1="998" x2="410" y2="982" stroke="#2456A4" stroke-width="2.6" marker-end="url(#aflow)"/>
-  <line x1="410" y1="896" x2="410" y2="880" stroke="#2456A4" stroke-width="2.6" marker-end="url(#aflow)"/>
-  <line x1="410" y1="768" x2="410" y2="752" stroke="#2456A4" stroke-width="2.6" marker-end="url(#aflow)"/>
-  <line x1="410" y1="646" x2="410" y2="630" stroke="#2456A4" stroke-width="2.6" marker-end="url(#aflow)"/>
-  <line x1="410" y1="508" x2="410" y2="492" stroke="#2456A4" stroke-width="2.6" marker-end="url(#aflow)"/>
-  <text x="418" y="504" font-size="10.5" fill="#2456A4">품질 통과만 ↑</text>
-  <line x1="410" y1="318" x2="410" y2="274" stroke="#2456A4" stroke-width="2.6" marker-end="url(#aflow)"/>
-  <rect x="700" y="372" width="156" height="54" rx="8" fill="#B7CDE6" stroke="#7CC2A7" stroke-dasharray="5 4"/>
-  <text x="778" y="393" text-anchor="middle" font-weight="700" font-size="11">E-1 데이터 Product화</text><text x="778" y="409" text-anchor="middle" font-size="9.5">재사용 상품 (범위 외)</text>
-  <path d="M700,398 L512,250" fill="none" stroke="#6B9AD1" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#aflow)"/>
-  <text x="640" y="318" text-anchor="middle" font-size="10.5" fill="#2456A4" transform="rotate(-38 640 318)">재사용 공급</text>
-  <path d="M510,226 L866,226 L866,946 L642,946" fill="none" stroke="#4FA47D" stroke-width="2.6" marker-end="url(#aloop)"/>
-  <text x="744" y="936" text-anchor="middle" font-size="10.5" fill="#2f6b50">환류 — ⑤ 평가·Feedback이 결과를 원인 주제(①·③·④)로 되돌림</text>
+
+  <text x="640" y="40" text-anchor="middle" font-weight="700" font-size="22">AI-Ready Data 20개 가이드 — 읽는 순서와 목적 한눈에</text>
+  <text x="640" y="66" text-anchor="middle" font-size="12.5" fill="#44607f">왼쪽 데이터 원천 → 오른쪽 AI Agent · 번호 = 권장 읽기 순서(데이터 흐름 순) · 처음이라면 ②부터, ①·⑥은 상황에 따라</text>
+
+  <path d="M1150,228 Q 700,84 440,150" fill="none" stroke="#4FA47D" stroke-width="2.6" marker-end="url(#aloop)"/>
+  <text x="700" y="100" text-anchor="middle" font-size="11.5" fill="#2f6b50" font-weight="700">⑥ 지속·평가·개선 — 운영 결과를 E-3 평가·E-4 Feedback이 원인 주제로 환류 · E-1 Product화로 재사용</text>
+
+  <rect x="20" y="230" width="104" height="140" rx="10" fill="#79C3E8" stroke="#3F9BD4"/>
+  <text x="72" y="292" text-anchor="middle" font-weight="700" font-size="13" fill="#0b3a52">데이터 원천</text>
+  <text x="72" y="312" text-anchor="middle" font-size="9" fill="#0b3a52">현장·설비</text>
+  <text x="72" y="326" text-anchor="middle" font-size="9" fill="#0b3a52">문서·도면</text>
+  <text x="72" y="340" text-anchor="middle" font-size="9" fill="#0b3a52">시스템 기록</text>
+
+  <rect x="140" y="155" width="178" height="290" rx="10" fill="#EEF4FB" stroke="#6B9AD1"/>
+  <text x="229" y="180" text-anchor="middle" font-weight="700" font-size="12.5" fill="#2456A4">① 원천 확보·디지털화</text>
+  <text x="229" y="203" text-anchor="middle" font-size="10.5" fill="#2f6b50" font-style="italic">데이터를 '있게' 만든다</text>
+  <rect x="150" y="222" width="158" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="229" y="245" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">F-3</tspan> 데이터 디지털화</text>
+  <rect x="150" y="266" width="158" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="229" y="289" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">D-1</tspan> Physical 데이터</text>
+  <rect x="150" y="310" width="158" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="229" y="333" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">E-2</tspan> 합성데이터</text>
+
+  <rect x="334" y="155" width="192" height="290" rx="10" fill="#EEF4FB" stroke="#6B9AD1"/>
+  <text x="430" y="180" text-anchor="middle" font-weight="700" font-size="12.5" fill="#2456A4">② 찾고, 뜻을 안다</text>
+  <text x="430" y="203" text-anchor="middle" font-size="10.5" fill="#2f6b50" font-style="italic">소재·속성·뜻으로 찾고 해석</text>
+  <rect x="344" y="222" width="172" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="430" y="245" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">A-1</tspan> 데이터 카탈로그</text>
+  <rect x="344" y="266" width="172" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="430" y="289" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">A-2</tspan> 메타데이터</text>
+  <rect x="344" y="310" width="172" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="430" y="333" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">A-3</tspan> 비즈니스 Glossary</text>
+  <rect x="344" y="354" width="172" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="430" y="377" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">B-3</tspan> 온톨로지</text>
+
+  <rect x="542" y="155" width="150" height="290" rx="10" fill="#EEF4FB" stroke="#6B9AD1"/>
+  <text x="617" y="180" text-anchor="middle" font-weight="700" font-size="12.5" fill="#2456A4">③ AI가 읽게 가공</text>
+  <text x="617" y="203" text-anchor="middle" font-size="10.5" fill="#2f6b50" font-style="italic">읽을 형태·의미로</text>
+  <rect x="552" y="222" width="130" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="617" y="245" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">B-1</tspan> 데이터 전처리</text>
+  <rect x="552" y="266" width="130" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="617" y="289" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">B-2</tspan> 해설·주석</text>
+
+  <rect x="708" y="155" width="192" height="290" rx="10" fill="#EEF4FB" stroke="#2456A4" stroke-width="1.8"/>
+  <text x="804" y="180" text-anchor="middle" font-weight="700" font-size="12.5" fill="#2456A4">④ 믿고 쓰기 — 게이트</text>
+  <text x="804" y="203" text-anchor="middle" font-size="10.5" fill="#2f6b50" font-style="italic">쓸 수 있나 판정·통제</text>
+  <rect x="718" y="222" width="172" height="36" rx="6" fill="#ffffff" stroke="#3F9BD4"/><text x="804" y="245" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">C-2</tspan> 데이터 품질 관리</text>
+  <rect x="718" y="266" width="172" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="804" y="289" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">C-1</tspan> Observability</text>
+  <rect x="718" y="310" width="172" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="804" y="333" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">C-3</tspan> 계통 Lineage</text>
+  <rect x="718" y="354" width="172" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="804" y="377" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">F-4</tspan> 권한·보안</text>
+
+  <rect x="916" y="155" width="146" height="290" rx="10" fill="#EEF4FB" stroke="#6B9AD1"/>
+  <text x="989" y="180" text-anchor="middle" font-weight="700" font-size="12.5" fill="#2456A4">⑤ 에이전트로 실행</text>
+  <text x="989" y="203" text-anchor="middle" font-size="10.5" fill="#2f6b50" font-style="italic">도구·절차로 실행</text>
+  <rect x="926" y="222" width="126" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="989" y="245" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">D-2</tspan> API/Tool 연계</text>
+  <rect x="926" y="266" width="126" height="36" rx="6" fill="#ffffff" stroke="#B7CDE6"/><text x="989" y="289" text-anchor="middle" font-size="11"><tspan font-weight="700" fill="#2456A4">D-3</tspan> Prompt·Harness</text>
+
+  <rect x="1090" y="230" width="120" height="140" rx="16" fill="#2456A4" stroke="#163a73" stroke-width="2"/>
+  <text x="1150" y="296" text-anchor="middle" font-weight="700" font-size="17" fill="#ffffff">AI Agent</text>
+  <text x="1150" y="316" text-anchor="middle" font-size="9.5" fill="#DCE8F5">RAG · 에이전트</text>
+
+  <line x1="124" y1="300" x2="138" y2="300" stroke="#2456A4" stroke-width="2.4" marker-end="url(#aflow)"/>
+  <line x1="318" y1="300" x2="332" y2="300" stroke="#2456A4" stroke-width="2.4" marker-end="url(#aflow)"/>
+  <line x1="526" y1="300" x2="540" y2="300" stroke="#2456A4" stroke-width="2.4" marker-end="url(#aflow)"/>
+  <line x1="692" y1="300" x2="706" y2="300" stroke="#2456A4" stroke-width="2.4" marker-end="url(#aflow)"/>
+  <line x1="900" y1="300" x2="914" y2="300" stroke="#2456A4" stroke-width="2.4" marker-end="url(#aflow)"/>
+  <text x="908" y="291" text-anchor="middle" font-size="9.5" fill="#2456A4">통과만</text>
+  <line x1="1062" y1="300" x2="1088" y2="300" stroke="#2456A4" stroke-width="2.4" marker-end="url(#aflow)"/>
+
+  <rect x="20" y="475" width="1190" height="66" rx="10" fill="#C2E6D6" stroke="#7CC2A7" stroke-dasharray="5 4"/>
+  <text x="615" y="503" text-anchor="middle" font-weight="700" font-size="12.5" fill="#1f4d3a">⑦ 전 과정 받침 — 운영·수명 (RFP 범위 외)</text>
+  <text x="615" y="523" text-anchor="middle" font-size="11" fill="#1f4d3a">F-1 데이터 운영관리 (흐름 안 멈추게) · F-2 데이터 생애주기 관리 (언제까지 두고 버리나)</text>
+  <line x1="229" y1="473" x2="229" y2="447" stroke="#7CC2A7" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#asup)"/>
+  <line x1="617" y1="473" x2="617" y2="447" stroke="#7CC2A7" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#asup)"/>
+  <line x1="989" y1="473" x2="989" y2="447" stroke="#7CC2A7" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#asup)"/>
+
+  <text x="640" y="588" text-anchor="middle" font-size="11.5" fill="#44607f">묶음은 데이터가 흐르는 '하는 일'(관계)로 나눴습니다 — 같은 일을 하는 가이드끼리. 각 묶음의 초록 글씨가 '왜 보는지(목적)'입니다.</text>
 </svg>
