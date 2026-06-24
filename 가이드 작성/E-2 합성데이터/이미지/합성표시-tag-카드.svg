@@ -1,0 +1,50 @@
+<svg viewBox="0 0 760 348" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <defs>
+    <pattern id="tagHatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="7" height="7" fill="#4FA47D"/>
+      <line x1="0" y1="0" x2="0" y2="7" stroke="#3c8765" stroke-width="2.4"/>
+    </pattern>
+  </defs>
+  <rect width="760" height="348" fill="#ffffff"/>
+  <text x="24" y="32" font-size="17" font-weight="700" fill="#10243f">합성 표시 (Synthetic Tag) — 합성데이터에 붙이는 꼬리표 (가상)</text>
+  <text x="24" y="52" font-size="11.5" fill="#6b7785">합성데이터는 실데이터와 구분하여, 무엇을·어떻게·왜 만들었는지 함께 기록한다</text>
+
+  <!-- 카드 -->
+  <rect x="48" y="68" width="664" height="234" rx="10" fill="#ffffff" stroke="#6B9AD1" stroke-width="1.6"/>
+  <!-- 헤더 바 -->
+  <path d="M48,78 a10,10 0 0 1 10,-10 h644 a10,10 0 0 1 10,10 v30 h-664 z" fill="#DCE8F5"/>
+  <text x="68" y="98" font-size="13" font-weight="700" fill="#10243f">데이터셋 카드</text>
+  <rect x="560" y="76" width="132" height="24" rx="12" fill="url(#tagHatch)" stroke="#3c8765"/>
+  <text x="626" y="93" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">SYNTHETIC</text>
+
+  <!-- is_synthetic 강조 띠 -->
+  <rect x="60" y="146" width="640" height="22" rx="4" fill="#E3F2EA"/>
+
+  <!-- 항목 -->
+  <g font-size="11.5">
+    <text x="72" y="135" fill="#6b7785">dataset_id</text>
+    <text x="300" y="135" fill="#10243f" font-weight="700">Synthetic_Delamination_V1</text>
+
+    <text x="72" y="161" fill="#6b7785">is_synthetic</text>
+    <text x="300" y="161" fill="#2f6b50" font-weight="700">true  (합성데이터)</text>
+
+    <text x="72" y="187" fill="#6b7785">생성 방식</text>
+    <text x="300" y="187" fill="#10243f">CTGAN · SDV</text>
+
+    <text x="72" y="213" fill="#6b7785">생성 목적</text>
+    <text x="300" y="213" fill="#10243f">Delamination 예측 모델 학습용 보강</text>
+
+    <text x="72" y="239" fill="#6b7785">기준 실데이터</text>
+    <text x="300" y="239" fill="#10243f">QLT-CCL-2026 (v3) · 품질 이력</text>
+
+    <text x="72" y="265" fill="#6b7785">버전 / 소유자</text>
+    <text x="300" y="265" fill="#10243f">v1.0 / 품질혁신팀</text>
+
+    <text x="72" y="291" fill="#6b7785">생성일 / 검증</text>
+    <text x="300" y="291" fill="#10243f">2026-06-20 / 3축 통과</text>
+  </g>
+  <line x1="284" y1="116" x2="284" y2="290" stroke="#e1e8f0" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- 하단 용도 -->
+  <text x="48" y="328" font-size="11" fill="#6b7785">용도 — 실데이터와 혼동 방지 · 학습/검증 이력 추적 · 조직 자산으로 재사용하는 관리 단위</text>
+</svg>

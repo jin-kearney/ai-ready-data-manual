@@ -1,0 +1,72 @@
+<svg viewBox="0 0 820 372" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <defs>
+    <pattern id="synHatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="7" height="7" fill="#d6ece0"/>
+      <line x1="0" y1="0" x2="0" y2="7" stroke="#4FA47D" stroke-width="2.4"/>
+    </pattern>
+    <marker id="arrowBlue" markerWidth="11" markerHeight="11" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#2456A4"/>
+    </marker>
+  </defs>
+
+  <rect width="820" height="372" fill="#ffffff"/>
+  <text x="24" y="32" font-size="17" font-weight="700" fill="#10243f">데이터 불균형 — 합성데이터로 희소 불량 사례 보강 (가상)</text>
+
+  <!-- ===== 좌 패널 : 적용 전 ===== -->
+  <text x="218" y="64" font-size="13" font-weight="700" fill="#6b7785" text-anchor="middle">적용 전 — 실제 불량 사례 부족</text>
+  <line x1="70" y1="300" x2="378" y2="300" stroke="#c9d4e0" stroke-width="1.5"/>
+
+  <!-- 정상 막대 -->
+  <rect x="104" y="120" width="62" height="180" fill="#B7CDE6" stroke="#6B9AD1"/>
+  <text x="135" y="112" font-size="11" fill="#10243f" text-anchor="middle">정상</text>
+  <text x="135" y="318" font-size="10.5" fill="#3a4a55" text-anchor="middle">1,240,000건</text>
+
+  <!-- 불량 막대 (거의 0) -->
+  <rect x="276" y="295" width="62" height="5" fill="#2456A4" stroke="#163a73"/>
+  <text x="307" y="285" font-size="11" fill="#10243f" text-anchor="middle">Delamination</text>
+  <text x="307" y="318" font-size="10.5" fill="#3a4a55" text-anchor="middle">2,350건 · 0.19%</text>
+
+  <!-- 주황 주석 -->
+  <line x1="307" y1="293" x2="307" y2="246" stroke="#C9663A" stroke-width="1.2"/>
+  <text x="307" y="238" font-size="11" fill="#C9663A" font-weight="700" text-anchor="middle">학습 가능한 불량이 거의 없음</text>
+  <text x="307" y="222" font-size="10.5" fill="#3a4a55" text-anchor="middle">정상 데이터에 편향</text>
+
+  <!-- ===== 화살표 ===== -->
+  <line x1="386" y1="205" x2="432" y2="205" stroke="#2456A4" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="409" y="195" font-size="10.5" fill="#2456A4" font-weight="700" text-anchor="middle">CTGAN</text>
+  <text x="409" y="222" font-size="10" fill="#6b7785" text-anchor="middle">합성</text>
+
+  <!-- ===== 우 패널 : 적용 후 ===== -->
+  <text x="612" y="64" font-size="13" font-weight="700" fill="#2f6b50" text-anchor="middle">적용 후 — 합성으로 학습 수준 보강</text>
+  <line x1="462" y1="300" x2="770" y2="300" stroke="#c9d4e0" stroke-width="1.5"/>
+
+  <!-- 정상 막대 -->
+  <rect x="496" y="120" width="62" height="180" fill="#B7CDE6" stroke="#6B9AD1"/>
+  <text x="527" y="112" font-size="11" fill="#10243f" text-anchor="middle">정상</text>
+  <text x="527" y="318" font-size="10.5" fill="#3a4a55" text-anchor="middle">1,240,000건</text>
+
+  <!-- 불량 막대 (실데이터 + 합성 누적) -->
+  <rect x="668" y="150" width="62" height="138" fill="url(#synHatch)" stroke="#2f6b50"/>
+  <rect x="668" y="288" width="62" height="12" fill="#2456A4" stroke="#163a73"/>
+  <text x="699" y="142" font-size="11" fill="#10243f" text-anchor="middle">Delamination</text>
+  <text x="699" y="318" font-size="10.5" fill="#3a4a55" text-anchor="middle">실 2,350 + 합성 30,000</text>
+
+  <!-- 누적 라벨 -->
+  <text x="699" y="224" font-size="10.5" fill="#2f6b50" font-weight="700" text-anchor="middle">합성 보강분</text>
+  <line x1="640" y1="294" x2="612" y2="276" stroke="#2456A4" stroke-width="1"/>
+  <text x="600" y="272" font-size="9.5" fill="#2456A4" text-anchor="end">실데이터</text>
+
+  <!-- 초록 주석 -->
+  <line x1="730" y1="205" x2="756" y2="205" stroke="#4FA47D" stroke-width="1.2"/>
+  <text x="699" y="248" font-size="11" fill="#2f6b50" font-weight="700" text-anchor="middle">다양한 불량 패턴 학습 가능</text>
+
+  <!-- ===== 범례 ===== -->
+  <g font-size="10.5" fill="#3a4a55">
+    <rect x="180" y="346" width="14" height="11" fill="#B7CDE6" stroke="#6B9AD1"/>
+    <text x="199" y="356">정상</text>
+    <rect x="250" y="346" width="14" height="11" fill="#2456A4" stroke="#163a73"/>
+    <text x="269" y="356">실제 불량</text>
+    <rect x="350" y="346" width="14" height="11" fill="url(#synHatch)" stroke="#2f6b50"/>
+    <text x="369" y="356">합성 보강 (Synthetic Tag 부여)</text>
+  </g>
+</svg>

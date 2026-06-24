@@ -1,0 +1,47 @@
+<svg viewBox="0 0 780 360" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="780" height="360" fill="#ffffff"/>
+  <text x="24" y="32" font-size="17" font-weight="700" fill="#10243f">충실도 검증 — 실데이터와 합성데이터의 분포 비교 (가상)</text>
+  <text x="24" y="52" font-size="11.5" fill="#6b7785">열압착 공정 온도 분포가 합성 후에도 유지되는지 겹쳐 본다</text>
+
+  <!-- 좌표축 -->
+  <line x1="80" y1="282" x2="724" y2="282" stroke="#9aa6b2" stroke-width="1.4"/>
+  <line x1="80" y1="92" x2="80" y2="282" stroke="#9aa6b2" stroke-width="1.4"/>
+  <text x="402" y="312" font-size="11" fill="#6b7785" text-anchor="middle">열압착 온도 (℃)</text>
+  <text x="64" y="100" font-size="11" fill="#6b7785" text-anchor="end">빈도</text>
+  <g font-size="9.5" fill="#9aa6b2" text-anchor="middle">
+    <text x="200" y="298">175</text>
+    <text x="402" y="298">185</text>
+    <text x="604" y="298">195</text>
+  </g>
+
+  <!-- 실데이터 분포 (면적 + 실선) -->
+  <path d="M110,282 C260,282 300,118 402,112 C504,118 544,282 694,282 Z" fill="#DCE8F5" stroke="none" opacity="0.85"/>
+  <path d="M110,282 C260,282 300,118 402,112 C504,118 544,282 694,282" fill="none" stroke="#2456A4" stroke-width="2.4"/>
+
+  <!-- 합성데이터 분포 (점선) -->
+  <path d="M110,282 C254,282 296,130 402,124 C512,130 552,282 694,282" fill="none" stroke="#4FA47D" stroke-width="2.4" stroke-dasharray="7 4"/>
+
+  <!-- 일치 주석 -->
+  <line x1="402" y1="116" x2="468" y2="86" stroke="#2456A4" stroke-width="1"/>
+  <text x="472" y="84" font-size="11" fill="#2456A4" font-weight="700">분포가 거의 일치</text>
+  <text x="472" y="100" font-size="10.5" fill="#3a4a55">평균·분산 보존 → 충실도 양호</text>
+
+  <!-- 꼬리(희소 구간) 주석 -->
+  <line x1="630" y1="250" x2="628" y2="214" stroke="#4FA47D" stroke-width="1"/>
+  <text x="628" y="206" font-size="10.5" fill="#2f6b50" text-anchor="middle">희소 구간(고온)도</text>
+  <text x="628" y="221" font-size="10.5" fill="#2f6b50" text-anchor="middle">합성이 채움</text>
+
+  <!-- 지표 카드 -->
+  <rect x="92" y="120" width="166" height="64" rx="6" fill="#EEF4FB" stroke="#6B9AD1"/>
+  <text x="104" y="139" font-size="10.5" font-weight="700" fill="#10243f">충실도 지표 (가상)</text>
+  <text x="104" y="157" font-size="10.5" fill="#3a4a55">분포 유사도(KS)   0.94</text>
+  <text x="104" y="173" font-size="10.5" fill="#3a4a55">상관관계 보존     0.91</text>
+
+  <!-- 범례 -->
+  <g font-size="11" fill="#3a4a55">
+    <line x1="300" y1="338" x2="334" y2="338" stroke="#2456A4" stroke-width="2.4"/>
+    <text x="342" y="342">실데이터</text>
+    <line x1="440" y1="338" x2="474" y2="338" stroke="#4FA47D" stroke-width="2.4" stroke-dasharray="7 4"/>
+    <text x="482" y="342">합성데이터</text>
+  </g>
+</svg>
