@@ -1,0 +1,50 @@
+<svg viewBox="0 0 820 315" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="820" height="315" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">AI에 넣기 전, 센서 신호에서 흔한 4가지 문제 (가상)</text>
+
+  <!-- plot frame -->
+  <line x1="60" y1="64" x2="60" y2="250" stroke="#c9d4e0" stroke-width="1.2"/>
+  <line x1="60" y1="250" x2="785" y2="250" stroke="#c9d4e0" stroke-width="1.2"/>
+  <line x1="60" y1="165" x2="785" y2="165" stroke="#e6ecf3" stroke-width="1"/>
+  <text x="40" y="60" font-size="11" fill="#6b7785">값</text>
+  <text x="770" y="246" font-size="11" fill="#6b7785">시간 →</text>
+
+  <!-- region tints -->
+  <rect x="60" y="64" width="150" height="186" fill="#fdf3ec" opacity="0.6"/>
+  <rect x="360" y="64" width="120" height="186" fill="#fbeaea" opacity="0.6"/>
+  <rect x="600" y="64" width="185" height="186" fill="#f2f4f6" opacity="0.7"/>
+
+  <!-- signal: noise + spike + normal (before gap) -->
+  <polyline fill="none" stroke="#2456A4" stroke-width="2"
+    points="60,165 72,156 84,173 96,154 108,175 120,157 132,171 144,155 156,173 168,159 180,168 192,161 204,166 210,164
+            224,165 238,163 252,165 266,164 278,164 288,80 296,164 304,165 322,163 344,165 360,164"/>
+  <!-- signal: after gap normal + stuck flat -->
+  <polyline fill="none" stroke="#2456A4" stroke-width="2"
+    points="480,164 500,161 520,167 540,162 560,166 585,163 600,165 690,165 785,165"/>
+
+  <!-- gap markers -->
+  <line x1="360" y1="64" x2="360" y2="250" stroke="#d64545" stroke-width="1.1" stroke-dasharray="4 3"/>
+  <line x1="480" y1="64" x2="480" y2="250" stroke="#d64545" stroke-width="1.1" stroke-dasharray="4 3"/>
+  <line x1="360" y1="164" x2="480" y2="164" stroke="#d64545" stroke-width="1.2" stroke-dasharray="2 4"/>
+
+  <!-- spike marker -->
+  <circle cx="288" cy="80" r="4.5" fill="none" stroke="#d64545" stroke-width="1.6"/>
+
+  <!-- inline labels -->
+  <text x="250" y="74" font-size="12" fill="#b32020" font-weight="700">② 스파이크(이상값)</text>
+  <text x="368" y="118" font-size="12" fill="#b32020" font-weight="700">③ 결측·신호 끊김</text>
+  <text x="376" y="134" font-size="11" fill="#3a4a55">값이 비어 있음</text>
+
+  <!-- region legend under axis -->
+  <g font-size="12">
+    <rect x="60" y="266" width="11" height="11" fill="#fdf3ec" stroke="#C9663A"/>
+    <text x="77" y="276" fill="#9a4a1a" font-weight="700">① 잡음(노이즈)</text>
+    <text x="77" y="293" fill="#3a4a55" font-size="11">값이 미세하게 떨림 → 평활화</text>
+
+    <rect x="600" y="266" width="11" height="11" fill="#f2f4f6" stroke="#6b7785"/>
+    <text x="617" y="276" fill="#3a4a55" font-weight="700">④ 고착(stuck)</text>
+    <text x="617" y="293" fill="#3a4a55" font-size="11">같은 값만 반복 → 센서 의심</text>
+  </g>
+
+  <text x="24" y="312" font-size="11.5" fill="#2f6b50">기초 정제는 이 네 가지를 AI 입력 전 1차로 정리한다. 최종 사용 가능 여부 판정은 C-2 품질관리가 맡는다.</text>
+</svg>

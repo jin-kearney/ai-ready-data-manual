@@ -1,0 +1,64 @@
+<svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="820" height="300" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">같은 09시 한 공장인데 — 설비마다 시간·단위·이름이 제각각 (가상)</text>
+
+  <!-- header -->
+  <g font-size="12.5" fill="#10243f" text-anchor="middle">
+    <rect x="30" y="52" width="110" height="30" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <rect x="140" y="52" width="210" height="30" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <rect x="350" y="52" width="90" height="30" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <rect x="440" y="52" width="95" height="30" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <rect x="535" y="52" width="80" height="30" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <text x="85" y="72" font-weight="700">설비 이름</text>
+    <text x="245" y="72" font-weight="700">측정 시각</text>
+    <text x="395" y="72" font-weight="700">온도</text>
+    <text x="487" y="72" font-weight="700">진동</text>
+    <text x="575" y="72" font-weight="700">샘플링</text>
+  </g>
+
+  <!-- rows -->
+  <g font-size="12.5" fill="#10243f" text-anchor="middle">
+    <!-- 설비 이름 column (clashing names) -->
+    <rect x="30" y="82" width="110" height="34" fill="#eaf1fa" stroke="#6B9AD1"/><text x="85" y="104" fill="#2456A4" font-weight="700">CNC-01</text>
+    <rect x="30" y="116" width="110" height="34" fill="#eaf1fa" stroke="#6B9AD1"/><text x="85" y="138" fill="#2456A4" font-weight="700">1호기</text>
+    <rect x="30" y="150" width="110" height="34" fill="#eaf1fa" stroke="#6B9AD1"/><text x="85" y="172" fill="#2456A4" font-weight="700">TAG_7731</text>
+    <!-- 측정 시각 column (clashing time) -->
+    <rect x="140" y="82" width="210" height="34" fill="#fff" stroke="#c9d4e0"/><text x="245" y="104">2026-06-24 09:00:00 KST</text>
+    <rect x="140" y="116" width="210" height="34" fill="#f7d4d4" stroke="#d64545"/><text x="245" y="138" fill="#b32020">09:00 (날짜 없음)</text>
+    <rect x="140" y="150" width="210" height="34" fill="#f7d4d4" stroke="#d64545"/><text x="245" y="172" fill="#b32020">1718182800 (epoch)</text>
+    <!-- 온도 column (clashing unit) -->
+    <rect x="350" y="82" width="90" height="34" fill="#fff" stroke="#c9d4e0"/><text x="395" y="104">85 ℃</text>
+    <rect x="350" y="116" width="90" height="34" fill="#fce9d8" stroke="#C9663A"/><text x="395" y="138" fill="#9a4a1a">185 ℉</text>
+    <rect x="350" y="150" width="90" height="34" fill="#fce9d8" stroke="#C9663A"/><text x="395" y="172" fill="#9a4a1a">358 K</text>
+    <!-- 진동 column -->
+    <rect x="440" y="82" width="95" height="34" fill="#fff" stroke="#c9d4e0"/><text x="487" y="104">2.1 mm/s</text>
+    <rect x="440" y="116" width="95" height="34" fill="#fff" stroke="#c9d4e0"/><text x="487" y="138">0.21 g</text>
+    <rect x="440" y="150" width="95" height="34" fill="#f3f5f7" stroke="#c9d4e0"/><text x="487" y="172" fill="#6b7785">측정 안 함</text>
+    <!-- 샘플링 column -->
+    <rect x="535" y="82" width="80" height="34" fill="#fff" stroke="#c9d4e0"/><text x="575" y="104">1 s</text>
+    <rect x="535" y="116" width="80" height="34" fill="#fff" stroke="#c9d4e0"/><text x="575" y="138">10 s</text>
+    <rect x="535" y="150" width="80" height="34" fill="#fff" stroke="#c9d4e0"/><text x="575" y="172">100 ms</text>
+  </g>
+
+  <!-- connector lines -->
+  <line x1="85" y1="184" x2="90" y2="206" stroke="#2456A4" stroke-width="1.3"/>
+  <line x1="245" y1="184" x2="320" y2="206" stroke="#d64545" stroke-width="1.3"/>
+  <line x1="395" y1="184" x2="585" y2="206" stroke="#C9663A" stroke-width="1.3"/>
+
+  <!-- annotation blocks -->
+  <g font-size="12">
+    <text x="30" y="224" fill="#2456A4" font-size="12.5" font-weight="700">① 설비 이름이 제각각</text>
+    <text x="30" y="242" fill="#3a4a55">CNC-01·1호기·TAG_7731이</text>
+    <text x="30" y="259" fill="#3a4a55">같은 종류인지 알 수 없음</text>
+
+    <text x="300" y="224" fill="#b32020" font-size="12.5" font-weight="700">② 시각 기준이 제각각</text>
+    <text x="300" y="242" fill="#3a4a55">날짜 없음·KST/UTC·epoch 혼재</text>
+    <text x="300" y="259" fill="#3a4a55">→ 같은 순간도 정렬할 수 없음</text>
+
+    <text x="560" y="224" fill="#9a4a1a" font-size="12.5" font-weight="700">③ 단위 혼재 (℃·℉·K)</text>
+    <text x="560" y="242" fill="#3a4a55">85℃ = 185℉ = 358K 같은 값</text>
+    <text x="560" y="259" fill="#3a4a55">변환 없이 합치면 틀린 비교</text>
+  </g>
+
+  <text x="30" y="288" font-size="12" fill="#2f6b50">세 줄은 사실 같은 09시·같은 종류 설비지만, 표준을 맞추기 전에는 한 표로 합치거나 비교할 수 없다.</text>
+</svg>
