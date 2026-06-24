@@ -5,7 +5,8 @@
 > **읽는 법(2층 구조):**
 > - **Part A — 주제별 솔루션**: "이 주제엔 뭘 쓰지?" (주제 → 솔루션). 각 주제 가이드의 '솔루션' 섹션은 여기로 연결한다. **솔루션을 "제품명"이 아니라 "어떤 기능을 하느냐(capability)"로 비교한다** — 자동 메타 수집·동의어 매핑·표 구조 보존·AI 1차 라벨·그래프 추론처럼 *기능 열*을 축으로.
 > - **Part A0 — 기능 기준 묶음 한눈에**: "이 기능을 하는 제품군은?" + "한 제품이 여러 주제를 묶어서 커버하나?"를 먼저 본다(이번에 새로 추가 — A·B 6개 주제). 핵심 인사이트 = **A-1 카탈로그·A-2 메타데이터·A-3 용어집은 별도 제품이 아니라 통합 거버넌스 플랫폼 1개가 함께 해결**한다.
-> - **Part B — 묶음(플랫폼) × 주제 매트릭스**: "우리가 X 플랫폼을 깔면 어디까지 한 번에 되나?" (솔루션 → 주제).
+> - **Part B — 묶음(플랫폼) × 주제 매트릭스**: "우리가 X 플랫폼을 깔면 어디까지 한 번에 되나?" (솔루션 → 주제). ✓/△/✗ 커버리지 강도만 본다.
+> - **Part B+ — 플랫폼별 모듈 묶음 맵**: "그걸 *어느 제품 모듈*로 하나, 한 모듈이 몇 개 주제를 묶나?" (플랫폼 → 모듈 → 주제). Databricks를 깔면 A-1·A-2·C-3·F-4가 Unity Catalog 하나로 묶이는 식의 도입 설계용 뷰(2026-06 모듈명 검증).
 > - **Part C — 묶음 스택 비교·선정 가이드**: 최종 의사결정용. 어느 스택이 어느 주제군에 강한가, 제조업(설비·OCR·비식별)엔 무엇이 중요한가.
 
 > ⚠️ **이 표는 칸 채우기가 아니라 "필요 기능(capability)으로 고르게" 하는 표다.** 제품명은 시점에 따라 바뀐다 — 아래 **시장 변동 주의**를 반드시 함께 읽을 것. 카테고리·필요 기능을 먼저 보고, 제품은 PoC로 검증한다.
@@ -29,9 +30,9 @@
 
 | 구분 | 내용 |
 |---|---|
-| **서비스 종료** | **Humanloop**(프롬프트/평가) 2025-09-08 종료(Anthropic acqui-hire) · **OpenAI `v1/prompts`** 2026-11-30 종료 예정 · **Google Vertex AI 데이터 라벨링** 종료(2024-10) · **Google IoT Core** 종료(2023-08) |
-| **인수·브랜드 변경** | Gretel→**NVIDIA**(2025) · Hazy→**SAS**(2024) · Syntho가 **MOSTLY AI 브랜드** 인수(2026) · Informatica→**Salesforce** · data.world→**ServiceNow** · Metaplane→**Datadog** · RDFox→**삼성전자** |
-| **제품명 변경** | Databricks DLT→**Lakeflow Declarative Pipelines** · Azure Form Recognizer→**Document Intelligence** · Google Dataplex Universal Catalog→**Knowledge Catalog**(2026-04) · Alation Glossary→**Glossary Hub** · Atlan Glossary→**Business Graph** |
+| **서비스 종료** | **Humanloop**(프롬프트/평가) 2025-09-08 종료(Anthropic acqui-hire) · **OpenAI `v1/prompts`** 2026-11-30 종료 예정 · **Google Vertex AI 데이터 라벨링** 종료(2024) · **Google IoT Core** 종료(2023-08) · **AWS IoT Analytics** 종료(2025-12-15)·**AWS IoT Events**(2026-05-20) · **Azure ML 데이터 라벨링** 종료(2026-09-30) · **Azure AI Foundry Prompt flow** 종료(2027-04-20) |
+| **인수·브랜드 변경** | Gretel→**NVIDIA**(2025) · Hazy→**SAS**(2024) · Syntho가 **MOSTLY AI 브랜드** 인수(2026) · Informatica→**Salesforce** · data.world→**ServiceNow** · Metaplane→**Datadog** · RDFox→**삼성전자** · **Snowflake가 Select Star 인수**(2025-11, Horizon 외부 메타 연동) |
+| **제품명 변경** | Databricks DLT→**Lakeflow (Spark) Declarative Pipelines** · Databricks Workflows→**Lakeflow Jobs** · Databricks Delta Sharing→**OpenSharing** 브랜드(Iceberg 호환) · Amazon **DataZone→SageMaker Catalog**(SageMaker→**SageMaker AI**) · Azure Form Recognizer→**Document Intelligence**(현 AI Foundry Tools) · Azure AI Studio→**Microsoft Foundry** · Google Dataplex Universal Catalog→**Knowledge Catalog**(2026-04-10) · Alation Glossary→**Glossary Hub** · Atlan Glossary→**Business Graph** |
 
 ---
 
@@ -370,6 +371,116 @@
 
 **대표 커버 기능(예시):** Databricks=Unity Catalog·Lakeflow·Mosaic AI / Azure=Purview·Document Intelligence·AI Foundry / AWS=Glue+DataZone·Textract·Bedrock·Neptune / Google=Dataplex Knowledge Catalog·Document AI·Vertex AI / Snowflake=Horizon·Cortex·합성데이터 / OSS=OpenMetadata+GX+Label Studio+Neo4j+Airflow+Presidio / Collibra·Alation=거버넌스 계층 전문.
 
+> 이 매트릭스는 빠른 조감(✓/△/✗)용이다. **셀이 어느 모듈로 되는지·강도 세부·개명/종료 주의**(예: Azure ML 데이터 라벨링 2026-09-30 종료로 B-2는 외부 도구로 이동)는 아래 **Part B+ 플랫폼 블록**을 본다 — 블록과 매트릭스가 다르면 블록이 최신이다.
+
+---
+
+# Part B+. 플랫폼별 모듈 묶음 맵 (플랫폼 → 어느 모듈이 어느 주제를 묶나)
+
+> Part B 매트릭스가 "어디까지 되나(✓/△/✗)"라면, Part B+는 **"그걸 어느 제품 모듈로 하나, 그리고 한 모듈이 몇 개 주제를 묶나"**를 보여준다. "이 플랫폼을 깔면 — A-1은 이 모듈, A-2·C-3은 같은 모듈, 라벨링은 외부 도구" 식으로 도입 설계를 바로 그릴 수 있게 한 뷰다. 모듈명·강도는 2026-06 공식 문서로 확인했다(개명·종료는 위 "시장 변동 주의" 참조). 표기: ✓ 네이티브 강함 · △ 부분/외부 보강 · ✗ 없음(외부 도구 필수).
+
+> **다섯 플랫폼 공통 발견:**
+> - ① **각 플랫폼의 단일 거버넌스 모듈**(Databricks Unity Catalog · Azure Purview Unified Catalog · AWS SageMaker Catalog · Google Knowledge Catalog · Snowflake Horizon)이 **A-1·A-2·A-3·C-3·F-4를 한 제품으로 묶는다** — A군은 따로 사는 게 아니다(Part A0 묶음 ①을 상용 플랫폼에서 재확인). 변별점은 A-3 네이티브 용어집의 성숙도(Databricks·Snowflake는 Preview/로드맵 단계라 △).
+> - ② **B-2 라벨링·B-3 온톨로지·E-2 합성데이터는 어느 플랫폼이든 약하거나 비어 있다** — 전용/OSS 도구를 붙인다. 예외: **B-3은 AWS Neptune**(LPG+RDF 네이티브), **E-2는 Snowflake `GENERATE_SYNTHETIC_DATA`**(네이티브 GA)만 한 플랫폼 안에서 해결된다.
+> - ③ 제조의 **D-1(설비·IoT)**은 클라우드 수집(Lakeflow Connect·Fabric RTI·IoT SiteWise·Snowpipe Streaming)으로 되지만 **산업 historian(AVEVA PI·Ignition)·OT 프로토콜**은 전용이 본질이고, **F-3 한글 손글씨 OCR**은 클라우드 OCR보다 국내 특화(CLOVA·Upstage)가 유리할 수 있다.
+
+## Databricks 도입 시 — 모듈 묶음 맵
+
+한 줄: **Unity Catalog 하나가 A-1·A-2·C-3·F-4(+A-3 △)** 거버넌스 축을 묶는 최대 모듈. 처리·AI는 Lakeflow·Lakehouse Monitoring·Mosaic AI/MLflow가 나눠 맡고, **B-2·B-3·E-2는 외부 도구**가 공백을 메운다.
+
+| 제품 모듈 | 묶이는 주제 | 그 모듈이 하는 일(데이터 준비 관점) | 강도 | 출처 |
+|---|---|---|---|---|
+| **Unity Catalog** (통합 거버넌스 정본) | A-1·A-2·C-3·F-4 | 카탈로그·태그·자동 **컬럼단위 계통**·행/열 접근통제·PII 분류·접근 감사를 한 곳에서 | ✓ | [docs](https://docs.databricks.com/aws/en/data-governance/unity-catalog/) |
+| └ **Business Semantics** (Metric Views·Glossary·Domains) | A-2·A-3 | 시맨틱 메타·업무지표 1회 정의→전사 재사용·용어집(Glossary는 Preview) | A-2 ✓ / A-3 △ | [docs](https://docs.databricks.com/aws/en/business-semantics/) |
+| **Lakehouse Monitoring** | C-1·C-2 | freshness·완전성·분포 이상 자동 탐지, 품질 지표 알림 | ✓ | [docs](https://docs.databricks.com/aws/en/lakehouse-monitoring/) |
+| **Lakeflow** (Declarative Pipelines·Jobs·Connect) | B-1·C-2·D-1·F-1 | `expectations` 품질 게이트·오케스트레이션·CDC/스트리밍(Zerobus) 수집 | ✓ | [docs](https://docs.databricks.com/aws/en/ldp/expectations) |
+| **Mosaic AI — `ai_parse_document`** | B-1·F-3 | 문서 AI 파싱(OCR+VLM)·청킹. 한글 OCR 정확도는 PoC 확인 | B-1 ✓ / F-3 △ | [docs](https://docs.databricks.com/aws/en/sql/language-manual/functions/ai_parse_document) |
+| **Mosaic AI / MLflow 3** (UC Functions·MCP·Prompt Registry·Agent Eval) | D-2·D-3·E-3·E-4 | Tool 레지스트리(UC 함수)·프롬프트 버전관리·Agent 평가·추론테이블 피드백 | ✓ | [docs](https://docs.databricks.com/aws/en/generative-ai/mcp/) |
+| **Delta Sharing · Marketplace** | E-1 | 복사 없는 데이터 공유·마켓플레이스(OpenSharing, Iceberg 호환) | ✓ | [docs](https://docs.databricks.com/aws/en/delta-sharing/) |
+| **Predictive Optimization · Auto-TTL** | F-2 | 자동 OPTIMIZE/VACUUM·행 TTL·S3 Glacier 아카이브 | △ | [docs](https://docs.databricks.com/aws/en/optimizations/predictive-optimization) |
+| **갭 — 외부 도구 필요** | B-2 · B-3 · E-2 | 라벨링(Label Studio·Labelbox) · 온톨로지(Neo4j·Neptune) · 합성(MOSTLY AI·Gretel) | ✗ | — |
+
+개명·주의: DLT→Lakeflow (Spark) Declarative Pipelines, Workflows→Lakeflow Jobs, `ai_parse_document` 신규 GA(2025). **Unity Catalog Glossary는 Preview** — A-3 네이티브 용어집·동의어 깊이는 GA 여부를 PoC로 확인.
+
+## Microsoft Azure 도입 시 — 모듈 묶음 맵
+
+한 줄: **Purview Unified Catalog 하나가 A-1·A-2·A-3·C-2·C-3·E-1·F-4(7개)**를 묶는 최대 허브. 갭 = **B-2(Azure ML 라벨링 2026-09-30 종료)·B-3(온톨로지)·E-2(제조 도메인 합성)·D-1 historian**.
+
+| 제품 모듈 | 묶이는 주제 | 그 모듈이 하는 일(데이터 준비 관점) | 강도 | 출처 |
+|---|---|---|---|---|
+| **Microsoft Purview Unified Catalog** (Data Map 포함) | A-1·A-2·A-3·C-2·C-3·E-1·F-4 | 스캔·메타 수집·용어집·품질 규칙(no-code/AI)·계통·데이터 상품·민감정보 분류·접근통제 | A군/C-3/F-4 ✓ · C-2/E-1 △ | [docs](https://learn.microsoft.com/en-us/purview/unified-catalog) |
+| **Azure AI Document Intelligence** (구 Form Recognizer) | B-1·F-3 | OCR·레이아웃·표 추출·청킹용 구조화 텍스트 | ✓ | [docs](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/layout?view=doc-intel-4.0.0) |
+| **Microsoft Foundry** (구 AI Studio) | D-3·E-3·E-4·E-2 | 프롬프트 자산화·평가 데이터셋·AI 평가·피드백 수집. 합성은 평가/파인튜닝용 한정 | D-3/E-3/E-4 ✓ · E-2 △ | [docs](https://learn.microsoft.com/en-us/azure/foundry/how-to/evaluate-generative-ai-app) |
+| **Microsoft Fabric — Data Factory** | F-1 | 오케스트레이션·CI/CD·Purview 계통 자동 연동 | ✓ | [docs](https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview) |
+| **Fabric Real-Time Intelligence + Azure IoT Operations** | D-1·C-1 | IoT/시계열 수집(**OPC UA** 엣지)·실시간 이상탐지·알림(Data Activator) | ✓ | [docs](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/overview) |
+| **Azure API Center** | D-2 | API·MCP 서버·에이전트 명세 레지스트리·버전·품질 스코어카드 | ✓ | [docs](https://learn.microsoft.com/en-us/azure/api-center/overview) |
+| **Azure AI Speech** | F-3 | STT 배치/실시간(140+ 로케일, 한국어) | ✓ | [docs](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-to-text) |
+| **Azure Blob 수명주기 관리** | F-2 | Hot→Cool→Cold→Archive 자동 전환·만료 삭제 | ✓ | [docs](https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview) |
+| **갭 — 외부 도구 필요** | B-2 · B-3 · E-2 · D-1(historian) | 라벨링(**Azure ML 라벨링 2026-09-30 종료**→Scale·Labelbox·CVAT) · 온톨로지(Stardog·Neo4j; Digital Twins는 DTDL 설비모델 한정) · 제조 합성(Gretel·SDV) · 산업 historian(AVEVA PI) | ✗ | — |
+
+개명·주의: AI Studio→Microsoft Foundry, Form Recognizer→Document Intelligence(현 AI Foundry Tools). **Prompt flow 2027-04-20 종료**(Agent Framework로 이전). Purview 데이터 상품 접근 자동화는 일부 Preview → E-1 △.
+
+## AWS 도입 시 — 모듈 묶음 맵
+
+한 줄: **SageMaker Catalog(구 DataZone)가 A-1·A-2·A-3·C-2·C-3·E-1**을 가장 넓게 묶고, 다른 플랫폼과 달리 **B-3 온톨로지를 Neptune이 네이티브(LPG+RDF)**로 덮는다. 갭 = 온톨로지 편집기·D-2 OpenAPI 레지스트리·C-1 전용 관측.
+
+| 제품/서비스 | 묶이는 주제 | 그 서비스가 하는 일(데이터 준비 관점) | 강도 | 출처 |
+|---|---|---|---|---|
+| **Amazon SageMaker Catalog** (구 DataZone) | A-1·A-2·A-3·C-2·C-3·E-1 | 카탈로그·용어집·LLM 메타데이터 자동생성·OpenLineage 계통·품질 모니터·데이터 마켓플레이스 | ✓ | [docs](https://aws.amazon.com/sagemaker/catalog/) |
+| **AWS Glue** (+Data Quality·DataBrew) | A-1·B-1·C-2·F-1 | 크롤러 스키마 등록·25+ 품질 규칙·코드없는 정제·ETL 오케스트레이션 | ✓ | [docs](https://docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html) |
+| **Bedrock Data Automation + Textract** | B-1·F-3 | 문서 분류·OCR·표·청킹·정형 JSON 추출 | ✓ | [docs](https://aws.amazon.com/bedrock/bda/) |
+| **SageMaker Ground Truth** | B-2·E-2·E-3 | 라벨링(active learning)·평가셋·합성데이터(이미지 중심) | B-2 ✓ · E-2 △ | [docs](https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-labeling.html) |
+| **Amazon Neptune** (+Neptune Analytics) | B-3 | **LPG+RDF 네이티브**·OWL 모델링·GraphRAG (시각 편집기는 외부) | ✓ | [docs](https://aws.amazon.com/blogs/database/model-driven-graphs-using-owl-in-amazon-neptune/) |
+| **Amazon Bedrock** (Knowledge Bases·Evaluation·AgentCore) | D-2·D-3·E-3·E-4 | RAG 지식자산·평가·피드백·Tool/Agent 레지스트리(AgentCore Preview) | D-3/E-3 ✓ · D-2 △ | [docs](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html) |
+| **AWS IoT SiteWise + IoT Core** | D-1 | **OPC UA·Modbus·MQTT** 수집·정규화·시계열·엣지(SiteWise Edge) | ✓ | [docs](https://aws.amazon.com/iot-sitewise/) |
+| **Amazon MWAA + Step Functions** | F-1 | Airflow 3.0 DAG·AWS 서비스 전체 통합 | ✓ | [docs](https://aws.amazon.com/managed-workflows-for-apache-airflow/) |
+| **S3 Lifecycle · Glacier · Intelligent-Tiering** | F-2 | 접근 패턴 기반 자동 티어링·보관·만료 | ✓ | [docs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html) |
+| **Amazon Transcribe** | F-3 | STT(100+ 언어)·화자 분리 | ✓ | [docs](https://aws.amazon.com/transcribe/features/) |
+| **Lake Formation + Macie** | F-4 | 행/열 접근통제·열 마스킹·PII 탐지→익명화 | ✓ | [docs](https://aws.amazon.com/blogs/security/data-masking-and-granular-access-control-using-amazon-macie-and-aws-lake-formation/) |
+| **갭 — 외부 도구 필요** | B-3 편집기 · D-2 OpenAPI · C-1 관측 | 온톨로지 편집(Protégé·metaphactory) · OpenAPI 레지스트리(SwaggerHub·Backstage) · 데이터 관측(Monte Carlo·Bigeye) | ✗/△ | — |
+
+개명·주의: DataZone→SageMaker Catalog(UI 병존), SageMaker→SageMaker AI. **IoT Analytics 종료(2025-12-15)·IoT Events(2026-05-20)** — SiteWise가 대체. AgentCore Agent Registry는 Preview → D-2 △.
+
+## Google Cloud 도입 시 — 모듈 묶음 맵
+
+한 줄: **Knowledge Catalog(구 Dataplex, 2026-04 개명) 하나가 A-1·A-2·A-3·C-1·C-2·C-3(6개)**를 묶는 허브. 갭이 가장 두드러진다 — **B-2 라벨링 종료(2024)·D-1 IoT Core 종료(2023)·E-2 네이티브 합성 없음**.
+
+| 제품 모듈 | 묶이는 주제 | 그 제품이 하는 일(데이터 준비 관점) | 강도 | 출처 |
+|---|---|---|---|---|
+| **Knowledge Catalog** (구 Dataplex Universal Catalog) | A-1·A-2·A-3·C-1·C-2·C-3 | 자동 카탈로그·Aspect 메타·용어집·품질 프로파일/룰·계통·관측 | ✓ | [docs](https://cloud.google.com/products/knowledge-catalog) |
+| **Document AI** (레이아웃 파서·OCR) | B-1·F-3 | OCR·레이아웃·표 추출·context-aware 청킹 | ✓ | [docs](https://cloud.google.com/document-ai) |
+| **Cloud Speech-to-Text** (Chirp 3) | F-3 | STT(125개 언어)·배치/스트리밍 | ✓ | [docs](https://cloud.google.com/speech-to-text) |
+| **Vertex AI** (Gen AI Evaluation·Prompt Management) | D-3·E-3·E-4 | 프롬프트 자산화·평가 데이터셋·에이전트 평가(autorater) | D-3/E-3 ✓ · E-4 △ | [docs](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/evaluation-overview) |
+| **Apigee API Hub** | D-2 | API·MCP Tool 명세 등록·거버넌스·버전 | ✓ | [docs](https://cloud.google.com/apigee/docs/apihub/what-is-api-hub) |
+| **BigQuery — Analytics Hub** | E-1 | 데이터 거래소·구독 공유·데이터 Product 발행 | ✓ | [docs](https://cloud.google.com/analytics-hub) |
+| **BigQuery — Enterprise Knowledge Graph** | B-3 | 엔티티 조정·schema.org 매핑·GQL 그래프 쿼리(제조 온톨로지는 확인 필요) | △ | [docs](https://docs.cloud.google.com/enterprise-knowledge-graph/docs/overview) |
+| **Cloud Composer + Dataform** | F-1 | Airflow DAG·SQL 워크플로 스케줄·버전관리 | ✓ | [docs](https://cloud.google.com/composer) |
+| **Cloud Storage** (Autoclass·Lifecycle) | F-2 | 접근 기반 클래스 자동 전환·TTL·삭제 | ✓ | [docs](https://cloud.google.com/storage/docs/autoclass) |
+| **Sensitive Data Protection** (구 DLP) + IAM | F-4 | PII 탐지·태깅·동적 마스킹(열 수준)·접근통제 | ✓ | [docs](https://cloud.google.com/security/products/sensitive-data-protection) |
+| **Pub/Sub + Bigtable + Dataflow** | D-1 | IoT Core 종료 후 대체 — 스트림 수집·시계열 저장·변환(디바이스 인증은 별도) | △ | [docs](https://cloud.google.com/pubsub/docs/overview) |
+| **갭 — 외부 도구 필요** | B-2 · E-2 · D-1(디바이스 관리) | 라벨링(**Vertex 라벨링 2024 종료**→Labelbox·Snorkel) · 합성(Gretel) · IoT 디바이스 인증·프로비저닝(외부 IoT 플랫폼) | ✗ | — |
+
+개명·주의: Dataplex Universal Catalog→Knowledge Catalog(2026-04-10, API명 불변). **Vertex AI 데이터 라벨링 종료(2024)·IoT Core 종료(2023-08)**. C-1은 품질/계통 기반 관측이라 전용 관측(Monte Carlo)은 PoC 확인.
+
+## Snowflake 도입 시 — 모듈 묶음 맵
+
+한 줄: **Horizon Catalog가 A-1·A-2·C-1·C-2·C-3·F-4**를 묶고(+Select Star 인수로 외부 메타 확장), 다른 플랫폼과 달리 **E-2 합성데이터가 `GENERATE_SYNTHETIC_DATA`로 네이티브**. 갭 = B-2 라벨링·B-3 온톨로지(파트너 앱)·**A-3 용어집(H2 2026 로드맵)**·D-3 프롬프트 레지스트리.
+
+| 제품 모듈 | 묶이는 주제 | 그 제품이 하는 일(데이터 준비 관점) | 강도 | 출처 |
+|---|---|---|---|---|
+| **Snowflake Horizon Catalog** | A-1·A-2·C-1·C-2·C-3·F-4 | 분류·품질 모니터·**컬럼단위 계통**·태그·마스킹·행 접근·자동 설명. Select Star로 외부 DB/BI 메타 연동 | ✓ | [docs](https://docs.snowflake.com/en/user-guide/snowflake-horizon) |
+| **Horizon Context + Semantic Views** | A-2·A-3 | 시맨틱 레이어. **Business Glossary는 H2 2026 로드맵(현재 미지원)** | A-3 △ | [docs](https://www.snowflake.com/en/product/features/horizon-context/) |
+| **Cortex Document AI** (`PARSE_DOCUMENT`) | B-1·F-3 | 문서 OCR(GA 2025-03)·표·레이아웃 추출 | ✓ | [docs](https://docs.snowflake.com/en/sql-reference/functions/parse_document-snowflake-cortex) |
+| **Cortex AI** (AISQL·Analyst·Search) | B-1·B-2·D-3 | 청킹·변환·SQL 내 LLM 라벨 자동생성(전용 라벨 UI는 없음) | 범용 ✓ · B-2/D-3 △ | [docs](https://docs.snowflake.com/en/user-guide/snowflake-cortex/aisql) |
+| **Cortex AI Observability + Agent Evaluations** | E-3·E-4 | LLM-judge·RAG Triad 지표·평가셋을 테이블에 축적 | ✓ | [docs](https://docs.snowflake.com/en/user-guide/snowflake-cortex/ai-observability) |
+| **`GENERATE_SYNTHETIC_DATA`** (저장 프로시저) | E-2 | 분포·상관 유지 합성데이터(최대 1,400만 행) — **네이티브** | ✓ | [docs](https://docs.snowflake.com/en/sql-reference/stored-procedures/generate_synthetic_data) |
+| **Marketplace + Secure Data Sharing** | E-1 | 복사 없는 데이터·시맨틱 모델 공유(3,400+ 데이터셋) | ✓ | [docs](https://docs.snowflake.com/en/collaboration/collaboration-marketplace-about) |
+| **Snowpipe Streaming + Dynamic Tables + Tasks** | D-1·F-1 | 실시간 스트림 수집(최대 10 GB/s)·CDC 증분 변환·DAG 오케스트레이션 | ✓ | [docs](https://docs.snowflake.com/en/user-guide/snowpipe-streaming/data-load-snowpipe-streaming-overview) |
+| **Storage Lifecycle Policies + Time Travel** | F-2 | 행단위 아카이브/만료 자동·Time Travel 90일 | ✓ | [docs](https://docs.snowflake.com/en/user-guide/storage-management/storage-lifecycle-policies) |
+| **갭 — 외부 도구/파트너** | B-2 · B-3 · D-1(OT) · D-3 | 라벨링(Label Studio·Scale) · 온톨로지(RelationalAI 파트너앱·Neo4j) · 산업 historian/OT(Ignition Edge) · 프롬프트 레지스트리(MLflow·LangSmith) | ✗/△ | — |
+
+개명·주의: `GENERATE_SYNTHETIC_DATA` GA(2025-04), AI Observability GA(2025-07), Snowpipe Streaming 고성능 GA(2025-09), Select Star 인수(2025-11). **A-3 Business Glossary는 H2 2026 로드맵** — 현재는 외부(Atlan·Collibra) 보강.
+
 ---
 
 # Part C. 묶음 스택 비교·선정 가이드
@@ -433,3 +544,4 @@
 | v0.2 | 2026-06-19 | **A·B 6개 주제(A-1~A-3·B-1~B-3) 솔루션 비교를 기능 중심·묶음 중심으로 갱신.** ① 신설 **Part A0**(4개 솔루션 묶음 + 기능×묶음 매트릭스) ② Part A의 6개 주제 표를 *기능 열*(자동수집·동의어매핑·표구조보존·AI 1차 라벨·그래프 추론·온프렘 등)로 재구성 ③ 6개 가이드(1층) 본문에서 솔루션·기능 재수집 — B-1에 Camelot/pdfplumber·표구조 보존 ★, B-2에 Roboflow·Prodigy·Cleanlab·SAM 2(Encord 제거 — 가이드 미수록), B-3에 TigerGraph·Memgraph·PoolParty/TopBraid·IOF·LPG↔RDF 분기·두산 LPG 결정 반영 ④ Part C에 A·B 6주제 묶음 요약 추가. (C~F 주제는 미변경.) |
 | v0.3 | 2026-06-22 | **Part B 매트릭스의 A·B 6주제 행을 v0.2 Part A0/A 결론과 정합화**(C~F 행·열 미변경). 4개 셀 수정: ① A-3 용어집 **OSS △→✓**(OpenMetadata 네이티브 용어집, Part A 라인 96·A0-1 묶음①) ② B-1 전처리 **Collibra/Alation △→✗**(거버넌스 플랫폼은 처리계 전무 — Part C "데이터를 변환 안 함", A0 기능표 문서파싱 공백) ③ B-3 온톨로지 **Google Cloud ✓→△**(Part A B-3 표에 GCP 네이티브 그래프DB 없음 — 클라우드 네이티브는 Amazon Neptune뿐) ④ B-3 온톨로지 **Collibra/Alation △→✗**(그래프 기능 전무 — A0-1 묶음④는 별도 시장). |
 | v0.4 | 2026-06-22 | **B-3 LPG/RDF 분기에서 수행사(커니) 귀속 hallucination 제거** — "🏭 두산 프로젝트 결정(커니 수행): … LPG 채택, RDF 배제(B-3 §7.2)" → "제조 원인 탐색형 사례: … LPG 적합, RDF는 일반적으로 배제 가능(B-3 §5.1)"으로 중립화(특정 수행사 결정 귀속 삭제, 기술 근거·이모지 정리, 스테일 §참조 §7.2→§5.1 교정). B-3 본문도 동일 정정(B-3 v0.16). |
+| v0.5 | 2026-06-24 | **신설 Part B+ — 플랫폼별 "모듈 묶음 맵"(통합 플랫폼 5개).** 요청 = "한 데이터 플랫폼을 깔면 A-1·A-2·A-3·C-3 등을 *각각 어느 기능/모듈로* 하고, 한 솔루션으로 묶이는 주제를 묶어 보여달라". Databricks·MS Azure·AWS·Google Cloud·Snowflake 각각에 대해 "어느 제품 모듈이 어느 주제를 묶나"를 2026-06 공식 문서로 **웹 검증**해 표로 정리(병렬 리서치 5건). Part B 매트릭스는 빠른 조감용으로 유지하되 블록이 모듈·강도·개명/종료의 최신본(매트릭스 셀은 미변경 — 차이는 블록이 우선). **시장 변동 주의 표 갱신**: DataZone→SageMaker Catalog, Workflows→Lakeflow Jobs, AI Studio→Microsoft Foundry, Delta Sharing→OpenSharing, Azure ML 라벨링(2026-09-30)·AWS IoT Analytics(2025-12-15)/Events(2026-05-20)·Prompt flow(2027-04-20) 종료, Snowflake Select Star 인수(2025-11) 추가. **핵심 발견**: 각 플랫폼의 단일 거버넌스 모듈(UC·Purview Unified Catalog·SageMaker Catalog·Knowledge Catalog·Horizon)이 A군+C-3+F-4를 통째로 묶음 / B-2 라벨링·B-3 온톨로지·E-2 합성은 공통 갭(예외: B-3=AWS Neptune 네이티브, E-2=Snowflake GENERATE_SYNTHETIC_DATA 네이티브). |
