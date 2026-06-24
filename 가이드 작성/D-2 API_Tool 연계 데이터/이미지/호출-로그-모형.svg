@@ -1,0 +1,51 @@
+<svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="760" height="340" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">Tool 호출 기록 — 한 건의 로그 모습 (가상 예시)</text>
+
+  <!-- log card -->
+  <rect x="40" y="50" width="450" height="262" rx="6" fill="#ffffff" stroke="#c9d4e0" stroke-width="1.5"/>
+  <rect x="40" y="50" width="450" height="30" rx="6" fill="#2456A4"/>
+  <text x="56" y="70" font-size="12.5" font-weight="700" fill="#ffffff">tool_call_log · 2026-05-31 14:07:22</text>
+
+  <g font-size="11.5">
+    <text x="56" y="104" font-weight="700" fill="#2456A4">호출 주체</text>
+    <text x="170" y="104" fill="#10243f">현장지원-Agent / 엔지니어 김OO</text>
+
+    <text x="56" y="130" font-weight="700" fill="#2456A4">도구 · 버전</text>
+    <text x="170" y="130" fill="#10243f">createWorkOrder · v2.0.0</text>
+
+    <text x="56" y="156" font-weight="700" fill="#2456A4">입력</text>
+    <text x="170" y="156" fill="#10243f">robotSerial="DR-A0512", faultCode="J3_OVL"</text>
+
+    <text x="56" y="182" font-weight="700" fill="#2456A4">출력</text>
+    <text x="170" y="182" fill="#10243f">workOrderId="WO-26-3391", status="CREATED"</text>
+
+    <text x="56" y="208" font-weight="700" fill="#2456A4">결과</text>
+    <text x="170" y="208" fill="#2f6b50" font-weight="700">성공</text>
+    <text x="240" y="208" fill="#10243f">· 오류코드 —</text>
+
+    <text x="56" y="234" font-weight="700" fill="#2456A4">소요시간</text>
+    <text x="170" y="234" fill="#10243f">820 ms</text>
+
+    <text x="56" y="260" font-weight="700" fill="#2456A4">승인자</text>
+    <text x="170" y="260" fill="#10243f">반장 박OO (실행형 → 승인 필요)</text>
+  </g>
+  <line x1="56" y1="284" x2="474" y2="284" stroke="#e8edf3"/>
+  <text x="56" y="302" font-size="10.5" fill="#9aa6b2">필드 관례: OpenTelemetry GenAI (gen_ai.tool.name · execute_tool)</text>
+
+  <!-- annotations -->
+  <line x1="300" y1="130" x2="540" y2="112" stroke="#2456A4" stroke-width="1.2"/>
+  <text x="548" y="108" font-size="12" font-weight="700" fill="#2456A4">도구 + 버전</text>
+  <text x="548" y="124" font-size="11.5" fill="#3a4a55">어느 명세로 불렀는지 남겨야</text>
+  <text x="548" y="140" font-size="11.5" fill="#3a4a55">바뀐 뒤 문제를 가린다</text>
+
+  <line x1="300" y1="208" x2="540" y2="196" stroke="#C9663A" stroke-width="1.2"/>
+  <text x="548" y="192" font-size="12" font-weight="700" fill="#C9663A">성공/실패 · 오류코드</text>
+  <text x="548" y="208" font-size="11.5" fill="#3a4a55">실패 기록이 개선의 입력이 된다</text>
+  <text x="548" y="224" font-size="11.5" fill="#3a4a55">(모아서 개선하는 일은 E-4)</text>
+
+  <line x1="320" y1="260" x2="540" y2="270" stroke="#4FA47D" stroke-width="1.3"/>
+  <text x="548" y="266" font-size="12" font-weight="700" fill="#2f6b50">승인자</text>
+  <text x="548" y="282" font-size="11.5" fill="#3a4a55">누가 위험 행동을 허가했는지</text>
+  <text x="548" y="298" font-size="11.5" fill="#3a4a55">감사 추적으로 남는다</text>
+</svg>
