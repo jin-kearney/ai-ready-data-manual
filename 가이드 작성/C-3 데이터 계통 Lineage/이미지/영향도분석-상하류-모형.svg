@@ -1,0 +1,50 @@
+<svg viewBox="0 0 840 340" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="840" height="340" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">계통으로 답하는 두 가지 질문 — 상류와 하류 (가상 예시)</text>
+
+  <!-- center: changed node -->
+  <rect x="330" y="138" width="180" height="64" rx="8" fill="#F4D9D0" stroke="#C9663A" stroke-width="2"/>
+  <text x="420" y="164" font-size="12.5" font-weight="700" fill="#7a2e0a" text-anchor="middle">성적서 전처리 로직</text>
+  <text x="420" y="184" font-size="11.5" fill="#7a2e0a" text-anchor="middle">변경: 두께 단위 ㎛→mm</text>
+
+  <!-- ===== upstream (left) ===== -->
+  <text x="150" y="76" font-size="13" font-weight="700" fill="#2456A4" text-anchor="middle">상류 추적 (←)</text>
+  <text x="150" y="94" font-size="11" fill="#3a4a55" text-anchor="middle">왜 이렇게 나왔나 · 어디서 왔나</text>
+
+  <rect x="60" y="148" width="150" height="44" rx="6" fill="#79C3E8" stroke="#2456A4"/>
+  <text x="135" y="175" font-size="12" font-weight="700" fill="#0b3a52" text-anchor="middle">원본 성적서(PDF)</text>
+
+  <line x1="330" y1="170" x2="216" y2="170" stroke="#2456A4" stroke-width="2.4" fill="none"/>
+  <polygon points="210,170 220,165 220,175" fill="#2456A4"/>
+  <text x="272" y="160" font-size="10.5" fill="#2456A4" text-anchor="middle">근본 원인</text>
+
+  <!-- ===== downstream (right) ===== -->
+  <text x="680" y="76" font-size="13" font-weight="700" fill="#C9663A" text-anchor="middle">하류 추적 (→)</text>
+  <text x="680" y="94" font-size="11" fill="#3a4a55" text-anchor="middle">바뀌면 무엇이 깨지나 · 영향 범위</text>
+
+  <!-- downstream affected nodes (warning tint) -->
+  <rect x="556" y="110" width="230" height="40" rx="6" fill="#FBEEE7" stroke="#C9663A"/>
+  <text x="671" y="135" font-size="12" font-weight="700" fill="#7a2e0a" text-anchor="middle">품질 데이터셋 (두께 컬럼)</text>
+
+  <rect x="556" y="162" width="230" height="40" rx="6" fill="#FBEEE7" stroke="#C9663A"/>
+  <text x="671" y="187" font-size="12" font-weight="700" fill="#7a2e0a" text-anchor="middle">불량 분석 리포트</text>
+
+  <rect x="556" y="214" width="230" height="40" rx="6" fill="#FBEEE7" stroke="#C9663A"/>
+  <text x="671" y="239" font-size="12" font-weight="700" fill="#7a2e0a" text-anchor="middle">AI 품질 점검 답변</text>
+
+  <!-- edges center -> downstream -->
+  <g stroke="#C9663A" stroke-width="2.2" fill="none">
+    <line x1="510" y1="160" x2="552" y2="130"/>
+    <line x1="510" y1="172" x2="552" y2="182"/>
+    <line x1="510" y1="186" x2="552" y2="232"/>
+  </g>
+  <g fill="#C9663A">
+    <polygon points="556,130 547,127 548,136"/>
+    <polygon points="556,182 547,178 547,187"/>
+    <polygon points="556,232 547,229 547,238"/>
+  </g>
+
+  <!-- caption -->
+  <rect x="60" y="286" width="726" height="34" rx="6" fill="#EEF4FB" stroke="#6B9AD1"/>
+  <text x="423" y="307" font-size="11.5" fill="#10243f" text-anchor="middle">원천·로직이 바뀌면 영향받는 데이터셋·리포트·AI 답변을 배포 전에 미리 본다 (영향도 분석). 거꾸로, 이상한 답의 근본 원인을 원천까지 거슬러 찾는다 (근본 원인 분석).</text>
+</svg>

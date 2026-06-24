@@ -1,0 +1,56 @@
+<svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="820" height="300" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">테이블 단위 vs 컬럼 단위 계통 (가상 예시)</text>
+
+  <!-- divider -->
+  <line x1="410" y1="56" x2="410" y2="284" stroke="#e2e8f0" stroke-dasharray="4 4"/>
+
+  <!-- ===== LEFT : table-level ===== -->
+  <text x="200" y="76" font-size="13" font-weight="700" fill="#2456A4" text-anchor="middle">테이블 단위</text>
+
+  <rect x="60" y="108" width="120" height="50" rx="6" fill="#B7CDE6" stroke="#6B9AD1"/>
+  <text x="120" y="138" font-size="12.5" font-weight="700" fill="#10243f" text-anchor="middle">생산이력</text>
+
+  <rect x="248" y="108" width="120" height="50" rx="6" fill="#B7CDE6" stroke="#6B9AD1"/>
+  <text x="308" y="138" font-size="12.5" font-weight="700" fill="#10243f" text-anchor="middle">원가 요약</text>
+
+  <line x1="180" y1="133" x2="240" y2="133" stroke="#2456A4" stroke-width="3" fill="none"/>
+  <polygon points="248,133 238,128 238,138" fill="#2456A4"/>
+
+  <text x="200" y="196" font-size="11.5" fill="#3a4a55" text-anchor="middle">어느 테이블에서 왔는지만 안다.</text>
+  <text x="200" y="214" font-size="11.5" fill="#6b7785" text-anchor="middle">안의 어느 값이 영향인지는 모른다.</text>
+
+  <!-- ===== RIGHT : column-level ===== -->
+  <text x="610" y="76" font-size="13" font-weight="700" fill="#2456A4" text-anchor="middle">컬럼 단위</text>
+
+  <!-- source table with columns -->
+  <rect x="452" y="92" width="132" height="96" rx="6" fill="#ffffff" stroke="#6B9AD1"/>
+  <rect x="452" y="92" width="132" height="22" rx="6" fill="#DCE8F5" stroke="#6B9AD1"/>
+  <text x="518" y="108" font-size="11.5" font-weight="700" fill="#10243f" text-anchor="middle">생산이력</text>
+  <text x="466" y="134" font-size="11.5" fill="#2456A4" font-weight="700">수량</text>
+  <text x="466" y="158" font-size="11.5" fill="#2456A4" font-weight="700">단가</text>
+  <text x="466" y="182" font-size="11.5" fill="#9aa6b2">일자</text>
+  <line x1="452" y1="140" x2="584" y2="140" stroke="#eef1f5"/>
+  <line x1="452" y1="164" x2="584" y2="164" stroke="#eef1f5"/>
+
+  <!-- target table with columns -->
+  <rect x="664" y="104" width="120" height="72" rx="6" fill="#ffffff" stroke="#6B9AD1"/>
+  <rect x="664" y="104" width="120" height="22" rx="6" fill="#DCE8F5" stroke="#6B9AD1"/>
+  <text x="724" y="120" font-size="11.5" font-weight="700" fill="#10243f" text-anchor="middle">원가 요약</text>
+  <text x="678" y="146" font-size="11.5" fill="#2456A4" font-weight="700">총원가</text>
+  <text x="678" y="170" font-size="11.5" fill="#9aa6b2">월</text>
+  <line x1="664" y1="152" x2="784" y2="152" stroke="#eef1f5"/>
+
+  <!-- column-level edges: 수량,단가 -> 총원가 -->
+  <path d="M 584 130 C 624 130, 624 142, 662 142" stroke="#2456A4" stroke-width="2" fill="none"/>
+  <path d="M 584 154 C 624 154, 624 142, 662 142" stroke="#2456A4" stroke-width="2" fill="none"/>
+  <polygon points="664,142 654,137 654,147" fill="#2456A4"/>
+  <text x="624" y="100" font-size="10.5" fill="#4FA47D" font-weight="700" text-anchor="middle">수량 × 단가</text>
+
+  <text x="610" y="208" font-size="11.5" fill="#3a4a55" text-anchor="middle">어느 컬럼이 어느 컬럼을 만드는지까지 안다.</text>
+  <text x="610" y="226" font-size="11.5" fill="#6b7785" text-anchor="middle">단가 컬럼만 바뀌어도 총원가가 영향받음을 짚는다.</text>
+
+  <!-- bottom note -->
+  <rect x="60" y="252" width="700" height="30" rx="6" fill="#EEF4FB" stroke="#C2E6D6"/>
+  <text x="410" y="271" font-size="11.5" fill="#1f4d3a" text-anchor="middle">영향도 분석·감사 증빙에는 컬럼 단위가 필요하다 — "이 컬럼이 바뀌면 무엇이 깨지나"를 배포 전에 답한다.</text>
+</svg>

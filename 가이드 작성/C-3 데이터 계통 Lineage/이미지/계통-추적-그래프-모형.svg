@@ -1,0 +1,77 @@
+<svg viewBox="0 0 840 430" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="840" height="430" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">데이터 계통 추적 — AI 답변에서 원천까지 거꾸로 (가상 예시)</text>
+
+  <!-- column headers -->
+  <g font-size="12" font-weight="700" fill="#6b7785" text-anchor="middle">
+    <text x="118" y="64">원천</text>
+    <text x="330" y="64">전처리·데이터셋</text>
+    <text x="542" y="64">데이터셋·RAG 인덱스</text>
+    <text x="748" y="64">AI 답변</text>
+  </g>
+
+  <!-- ===== edges (drawn first, under nodes) ===== -->
+  <!-- highlighted path -->
+  <g stroke="#2456A4" stroke-width="2.6" fill="none">
+    <line x1="201" y1="100" x2="248" y2="100"/>            <!-- A1 -> B1 -->
+    <line x1="413" y1="100" x2="460" y2="135"/>            <!-- B1 -> C1 -->
+    <line x1="201" y1="300" x2="460" y2="270"/>            <!-- A3 -> C2 -->
+    <line x1="625" y1="135" x2="662" y2="200"/>            <!-- C1 -> D1 -->
+    <line x1="625" y1="270" x2="662" y2="216"/>            <!-- C2 -> D1 -->
+  </g>
+  <!-- arrow heads (highlighted) -->
+  <g fill="#2456A4">
+    <polygon points="248,100 240,96 240,104"/>
+    <polygon points="460,135 451,133 455,141"/>
+    <polygon points="460,270 451,267 452,276"/>
+    <polygon points="662,200 653,198 656,206"/>
+    <polygon points="662,216 653,214 655,222"/>
+  </g>
+  <!-- non-path (gray) edges -->
+  <g stroke="#cdd6e0" stroke-width="1.6" fill="none">
+    <line x1="201" y1="198" x2="248" y2="198"/>            <!-- A2 -> B2 -->
+    <line x1="413" y1="198" x2="460" y2="150"/>            <!-- B2 -> C1 -->
+  </g>
+
+  <!-- ===== nodes ===== -->
+  <!-- A1 진동 센서 로그 (on path, 원천) -->
+  <rect x="36" y="78" width="165" height="44" rx="6" fill="#79C3E8" stroke="#2456A4" stroke-width="1.6"/>
+  <text x="118" y="105" font-size="12.5" font-weight="700" fill="#0b3a52" text-anchor="middle">진동 센서 로그</text>
+  <!-- A2 품질 성적서 (off path) -->
+  <rect x="36" y="176" width="165" height="44" rx="6" fill="#eef1f5" stroke="#cdd6e0"/>
+  <text x="118" y="203" font-size="12.5" fill="#9aa6b2" text-anchor="middle">품질 성적서(PDF)</text>
+  <!-- A3 정비 기준서 (on path) -->
+  <rect x="36" y="278" width="165" height="44" rx="6" fill="#79C3E8" stroke="#2456A4" stroke-width="1.6"/>
+  <text x="118" y="305" font-size="12.5" font-weight="700" fill="#0b3a52" text-anchor="middle">정비 기준서(SOP)</text>
+
+  <!-- B1 센서 시계열 (on path) -->
+  <rect x="248" y="78" width="165" height="44" rx="6" fill="#B7CDE6" stroke="#2456A4" stroke-width="1.6"/>
+  <text x="330" y="105" font-size="12.5" font-weight="700" fill="#10243f" text-anchor="middle">센서 시계열 데이터셋</text>
+  <!-- B2 성적서 구조화 (off path) -->
+  <rect x="248" y="176" width="165" height="44" rx="6" fill="#eef1f5" stroke="#cdd6e0"/>
+  <text x="330" y="203" font-size="12.5" fill="#9aa6b2" text-anchor="middle">성적서 구조화</text>
+
+  <!-- C1 설비 점검 데이터셋 (on path) -->
+  <rect x="460" y="113" width="165" height="44" rx="6" fill="#B7CDE6" stroke="#2456A4" stroke-width="1.6"/>
+  <text x="542" y="140" font-size="12.5" font-weight="700" fill="#10243f" text-anchor="middle">설비 점검 데이터셋</text>
+  <!-- C2 정비 RAG 인덱스 (on path) -->
+  <rect x="460" y="248" width="165" height="44" rx="6" fill="#B7CDE6" stroke="#2456A4" stroke-width="1.6"/>
+  <text x="542" y="275" font-size="12.5" font-weight="700" fill="#10243f" text-anchor="middle">정비 RAG 인덱스</text>
+
+  <!-- D1 AI 답변 (cat) -->
+  <rect x="662" y="174" width="150" height="66" rx="6" fill="#2456A4" stroke="#163a73" stroke-width="2"/>
+  <text x="737" y="200" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">AI 점검 리포트</text>
+  <text x="737" y="219" font-size="11" fill="#cfe0f3" text-anchor="middle">"1호기 베어링</text>
+  <text x="737" y="233" font-size="11" fill="#cfe0f3" text-anchor="middle">이상 징후"</text>
+
+  <!-- ===== legend / annotation ===== -->
+  <g font-size="11.5">
+    <line x1="40" y1="372" x2="78" y2="372" stroke="#2456A4" stroke-width="2.6"/>
+    <text x="86" y="376" fill="#10243f" font-weight="700">이 답변이 근거로 삼은 흐름</text>
+    <text x="86" y="392" fill="#3a4a55" font-size="11">답변의 근거 링크를 누르면 원천(센서·문서)까지 거꾸로 따라간다</text>
+
+    <line x1="430" y1="372" x2="468" y2="372" stroke="#cdd6e0" stroke-width="2.6"/>
+    <text x="476" y="376" fill="#6b7785" font-weight="700">이번 답변과 무관한 흐름</text>
+    <text x="476" y="392" fill="#9aa6b2" font-size="11">같은 데이터셋에 모이지만 이 답의 근거는 아님</text>
+  </g>
+</svg>

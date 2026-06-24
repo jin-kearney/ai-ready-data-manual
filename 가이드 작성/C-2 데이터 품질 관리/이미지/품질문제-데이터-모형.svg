@@ -1,0 +1,112 @@
+<svg viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="880" height="360" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">품질 문제가 섞인 검사 데이터 — 점검 전 모습 (가상)</text>
+  <text x="24" y="50" font-size="12.5" fill="#3a4a55">사람 눈엔 그냥 표지만, 여섯 가지 품질 차원에서 문제가 숨어 있어 그대로 AI에 넣으면 답이 틀어진다.</text>
+
+  <!-- ===== header row ===== -->
+  <g font-size="12.5" fill="#10243f" text-anchor="middle" font-weight="700">
+    <rect x="36" y="64" width="98" height="30" fill="#DCE8F5" stroke="#6B9AD1"/><text x="85" y="83">검사일자</text>
+    <rect x="134" y="64" width="66" height="30" fill="#DCE8F5" stroke="#6B9AD1"/><text x="167" y="83">설비</text>
+    <rect x="200" y="64" width="72" height="30" fill="#DCE8F5" stroke="#6B9AD1"/><text x="236" y="83">검사항목</text>
+    <rect x="272" y="64" width="64" height="30" fill="#DCE8F5" stroke="#6B9AD1"/><text x="304" y="83">측정값</text>
+    <rect x="336" y="64" width="44" height="30" fill="#DCE8F5" stroke="#6B9AD1"/><text x="358" y="83">단위</text>
+    <rect x="380" y="64" width="54" height="30" fill="#DCE8F5" stroke="#6B9AD1"/><text x="407" y="83">판정</text>
+  </g>
+
+  <!-- ===== data cells (white default) ===== -->
+  <g font-size="12.5" fill="#10243f" text-anchor="middle">
+    <!-- r1 (정상 기준 행) -->
+    <rect x="36" y="94" width="98" height="30" fill="#fff" stroke="#c9d4e0"/><text x="85" y="113">2026-06-15</text>
+    <rect x="134" y="94" width="66" height="30" fill="#fff" stroke="#c9d4e0"/><text x="167" y="113">CNC-01</text>
+    <rect x="200" y="94" width="72" height="30" fill="#fff" stroke="#c9d4e0"/><text x="236" y="113">외경</text>
+    <rect x="272" y="94" width="64" height="30" fill="#fff" stroke="#c9d4e0"/><text x="304" y="113">100.04</text>
+    <rect x="336" y="94" width="44" height="30" fill="#fff" stroke="#c9d4e0"/><text x="358" y="113">mm</text>
+    <rect x="380" y="94" width="54" height="30" fill="#fff" stroke="#c9d4e0"/><text x="407" y="113">합격</text>
+
+    <!-- r2 (중복 + 표기 불일치) -->
+    <rect x="36" y="124" width="98" height="30" fill="#fff7e0" stroke="#e0b400"/><text x="85" y="143">2026-06-15</text>
+    <rect x="134" y="124" width="66" height="30" fill="#fff7e0" stroke="#e0b400"/><text x="167" y="143">cnc_01</text>
+    <rect x="200" y="124" width="72" height="30" fill="#fff" stroke="#c9d4e0"/><text x="236" y="143">외경</text>
+    <rect x="272" y="124" width="64" height="30" fill="#fff" stroke="#c9d4e0"/><text x="304" y="143">100.04</text>
+    <rect x="336" y="124" width="44" height="30" fill="#fff" stroke="#c9d4e0"/><text x="358" y="143">mm</text>
+    <rect x="380" y="124" width="54" height="30" fill="#fff" stroke="#c9d4e0"/><text x="407" y="143">합격</text>
+
+    <!-- r3 (범위 벗어난 값) -->
+    <rect x="36" y="154" width="98" height="30" fill="#fff" stroke="#c9d4e0"/><text x="85" y="173">2026-06-16</text>
+    <rect x="134" y="154" width="66" height="30" fill="#fff" stroke="#c9d4e0"/><text x="167" y="173">CNC-02</text>
+    <rect x="200" y="154" width="72" height="30" fill="#fff" stroke="#c9d4e0"/><text x="236" y="173">외경</text>
+    <rect x="272" y="154" width="64" height="30" fill="#f7d4d4" stroke="#d64545"/><text x="304" y="173" fill="#b32020" font-weight="700">9999</text>
+    <rect x="336" y="154" width="44" height="30" fill="#fff" stroke="#c9d4e0"/><text x="358" y="173">mm</text>
+    <rect x="380" y="154" width="54" height="30" fill="#fff" stroke="#c9d4e0"/><text x="407" y="173">합격</text>
+
+    <!-- r4 (빈칸 = 결측) -->
+    <rect x="36" y="184" width="98" height="30" fill="#fff" stroke="#c9d4e0"/><text x="85" y="203">2026-06-16</text>
+    <rect x="134" y="184" width="66" height="30" fill="#fff" stroke="#c9d4e0"/><text x="167" y="203">CNC-02</text>
+    <rect x="200" y="184" width="72" height="30" fill="#fff" stroke="#c9d4e0"/><text x="236" y="203">표면조도</text>
+    <rect x="272" y="184" width="64" height="30" fill="#fff" stroke="#c9d4e0"/><text x="304" y="203">0.03</text>
+    <rect x="336" y="184" width="44" height="30" fill="#fdeaea" stroke="#d64545"/><text x="358" y="203" fill="#b32020">(빈칸)</text>
+    <rect x="380" y="184" width="54" height="30" fill="#fdeaea" stroke="#d64545"/><text x="407" y="203" fill="#b32020">(빈칸)</text>
+
+    <!-- r5 (오래된 날짜 + 단위 표기 불일치) -->
+    <rect x="36" y="214" width="98" height="30" fill="#fff7e0" stroke="#e0b400"/><text x="85" y="233">2019-02-11</text>
+    <rect x="134" y="214" width="66" height="30" fill="#fff" stroke="#c9d4e0"/><text x="167" y="233">CNC-03</text>
+    <rect x="200" y="214" width="72" height="30" fill="#fff" stroke="#c9d4e0"/><text x="236" y="233">외경</text>
+    <rect x="272" y="214" width="64" height="30" fill="#fff" stroke="#c9d4e0"/><text x="304" y="233">99.90</text>
+    <rect x="336" y="214" width="44" height="30" fill="#fff7e0" stroke="#e0b400"/><text x="358" y="233">㎜</text>
+    <rect x="380" y="214" width="54" height="30" fill="#fff" stroke="#c9d4e0"/><text x="407" y="233">합격</text>
+
+    <!-- r6 (불가능한 날짜 형식) -->
+    <rect x="36" y="244" width="98" height="30" fill="#f7d4d4" stroke="#d64545"/><text x="85" y="263" fill="#b32020" font-weight="700">2026/13/40</text>
+    <rect x="134" y="244" width="66" height="30" fill="#fff" stroke="#c9d4e0"/><text x="167" y="263">CNC-03</text>
+    <rect x="200" y="244" width="72" height="30" fill="#fff" stroke="#c9d4e0"/><text x="236" y="263">외경</text>
+    <rect x="272" y="244" width="64" height="30" fill="#fff" stroke="#c9d4e0"/><text x="304" y="263">100.1</text>
+    <rect x="336" y="244" width="44" height="30" fill="#fff" stroke="#c9d4e0"/><text x="358" y="263">mm</text>
+    <rect x="380" y="244" width="54" height="30" fill="#fff" stroke="#c9d4e0"/><text x="407" y="263">합격</text>
+  </g>
+
+  <!-- ===== badges (cell corner number markers) ===== -->
+  <g font-size="11" font-weight="700" text-anchor="middle">
+    <!-- ⑤ 유일성: r1·r2 중복 (검사일자 r2 좌상단) -->
+    <circle cx="44" cy="132" r="8" fill="#2456A4"/><text x="44" y="136" fill="#fff">5</text>
+    <!-- ② 일관성: 설비 표기 cnc_01 -->
+    <circle cx="192" cy="132" r="8" fill="#e0b400"/><text x="192" y="136" fill="#10243f">2</text>
+    <!-- ③ 정확성: 측정값 9999 -->
+    <circle cx="328" cy="162" r="8" fill="#d64545"/><text x="328" y="166" fill="#fff">3</text>
+    <!-- ① 완전성: 단위·판정 빈칸 -->
+    <circle cx="426" cy="192" r="8" fill="#d64545"/><text x="426" y="196" fill="#fff">1</text>
+    <!-- ④ 최신성: 2019 날짜 -->
+    <circle cx="44" cy="222" r="8" fill="#e0b400"/><text x="44" y="226" fill="#10243f">4</text>
+    <!-- ② 일관성: 단위 ㎜ -->
+    <circle cx="372" cy="222" r="8" fill="#e0b400"/><text x="372" y="226" fill="#10243f">2</text>
+    <!-- ⑥ 유효성: 불가능 날짜 -->
+    <circle cx="44" cy="252" r="8" fill="#d64545"/><text x="44" y="256" fill="#fff">6</text>
+  </g>
+
+  <!-- ===== legend: 6 dimensions ===== -->
+  <g font-size="12.5">
+    <text x="470" y="80" font-size="13.5" font-weight="700" fill="#10243f">여섯 가지 품질 차원에서 본 문제</text>
+
+    <circle cx="478" cy="104" r="8" fill="#d64545"/><text x="478" y="108" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+    <text x="494" y="102" font-weight="700" fill="#10243f">완전성</text><text x="556" y="102" fill="#3a4a55">단위·판정이 비어 있다(빈칸)</text>
+
+    <circle cx="478" cy="134" r="8" fill="#e0b400"/><text x="478" y="138" font-size="11" font-weight="700" fill="#10243f" text-anchor="middle">2</text>
+    <text x="494" y="132" font-weight="700" fill="#10243f">일관성</text><text x="556" y="132" fill="#3a4a55">같은 것을 CNC-01·cnc_01, mm·㎜로 제각각</text>
+
+    <circle cx="478" cy="164" r="8" fill="#d64545"/><text x="478" y="168" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+    <text x="494" y="162" font-weight="700" fill="#10243f">정확성</text><text x="556" y="162" fill="#3a4a55">측정값 9999 — 있을 수 없는 값</text>
+
+    <circle cx="478" cy="194" r="8" fill="#e0b400"/><text x="478" y="198" font-size="11" font-weight="700" fill="#10243f" text-anchor="middle">4</text>
+    <text x="494" y="192" font-weight="700" fill="#10243f">최신성</text><text x="556" y="192" fill="#3a4a55">2019년 값이 최신값처럼 섞여 있다</text>
+
+    <circle cx="478" cy="224" r="8" fill="#2456A4"/><text x="478" y="228" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+    <text x="494" y="222" font-weight="700" fill="#10243f">유일성</text><text x="556" y="222" fill="#3a4a55">같은 검사가 중복 입력됐다</text>
+
+    <circle cx="478" cy="254" r="8" fill="#d64545"/><text x="478" y="258" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">6</text>
+    <text x="494" y="252" font-weight="700" fill="#10243f">유효성</text><text x="556" y="252" fill="#3a4a55">날짜 형식이 규칙 위반(2026/13/40)</text>
+  </g>
+
+  <!-- bottom note -->
+  <rect x="36" y="298" width="809" height="42" rx="5" fill="#EEF4FB" stroke="#6B9AD1"/>
+  <text x="48" y="318" font-size="12.5" fill="#10243f">이 표를 그대로 학습·검색에 넣으면 AI는 9999를 정상값으로 배우고, 2019년 데이터로 오늘을 판정하며,</text>
+  <text x="48" y="334" font-size="12.5" fill="#10243f">중복·빈칸 탓에 집계가 어긋난다. 품질 관리는 투입 전에 이 여섯 가지를 점검해 통과한 데이터만 AI로 보낸다.</text>
+</svg>

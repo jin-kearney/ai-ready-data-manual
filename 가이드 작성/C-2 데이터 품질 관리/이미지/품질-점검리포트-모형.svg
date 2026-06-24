@@ -1,0 +1,100 @@
+<svg viewBox="0 0 860 452" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="860" height="452" fill="#ffffff"/>
+
+  <!-- header band -->
+  <rect x="0" y="0" width="860" height="46" fill="#2456A4"/>
+  <text x="24" y="29" font-size="16.5" font-weight="700" fill="#ffffff">데이터 품질 점검 리포트 — CCL_검사결과_월간 (가상)</text>
+  <text x="836" y="29" font-size="11.5" fill="#cfe0f4" text-anchor="end">점검 시각 2026-06-16 02:00 · 적용 기준 v1.3</text>
+
+  <!-- meta line -->
+  <text x="24" y="70" font-size="12.5" fill="#3a4a55">대상: MES 외관검사 결과 (월 12만 건) · 용도: 불량 원인 RAG·월간 품질 집계 · 오너: 품질혁신팀</text>
+
+  <!-- ===== Section: 품질 차원별 점수 ===== -->
+  <text x="24" y="100" font-size="13.5" font-weight="700" fill="#10243f">품질 차원별 점수 (합격선 대비)</text>
+
+  <!-- left column bars -->
+  <g font-size="12.5" fill="#10243f">
+    <!-- 완전성 -->
+    <text x="104" y="130" text-anchor="end">완전성</text>
+    <rect x="112" y="121" width="150" height="14" rx="3" fill="#e6ebf1"/>
+    <rect x="112" y="121" width="148.5" height="14" rx="3" fill="#3F9BD4"/>
+    <text x="270" y="131" font-size="11.5" font-weight="700" fill="#2f6b50">99%</text>
+    <!-- 정확성 -->
+    <text x="104" y="164" text-anchor="end">정확성</text>
+    <rect x="112" y="155" width="150" height="14" rx="3" fill="#e6ebf1"/>
+    <rect x="112" y="155" width="145.5" height="14" rx="3" fill="#3F9BD4"/>
+    <text x="270" y="165" font-size="11.5" font-weight="700" fill="#2f6b50">97%</text>
+    <!-- 일관성 -->
+    <text x="104" y="198" text-anchor="end">일관성</text>
+    <rect x="112" y="189" width="150" height="14" rx="3" fill="#e6ebf1"/>
+    <rect x="112" y="189" width="150" height="14" rx="3" fill="#3F9BD4"/>
+    <text x="270" y="199" font-size="11.5" font-weight="700" fill="#2f6b50">100%</text>
+  </g>
+
+  <!-- right column bars -->
+  <g font-size="12.5" fill="#10243f">
+    <!-- 최신성 (FAIL) -->
+    <text x="408" y="130" text-anchor="end">최신성</text>
+    <rect x="416" y="121" width="150" height="14" rx="3" fill="#e6ebf1"/>
+    <rect x="416" y="121" width="136.5" height="14" rx="3" fill="#d64545"/>
+    <text x="574" y="131" font-size="11.5" font-weight="700" fill="#b32020">91% ▼</text>
+    <!-- 유효성 -->
+    <text x="408" y="164" text-anchor="end">유효성</text>
+    <rect x="416" y="155" width="150" height="14" rx="3" fill="#e6ebf1"/>
+    <rect x="416" y="155" width="148.5" height="14" rx="3" fill="#3F9BD4"/>
+    <text x="574" y="165" font-size="11.5" font-weight="700" fill="#2f6b50">99%</text>
+    <!-- 유일성 -->
+    <text x="408" y="198" text-anchor="end">유일성</text>
+    <rect x="416" y="189" width="150" height="14" rx="3" fill="#e6ebf1"/>
+    <rect x="416" y="189" width="150" height="14" rx="3" fill="#3F9BD4"/>
+    <text x="574" y="199" font-size="11.5" font-weight="700" fill="#2f6b50">100%</text>
+  </g>
+
+  <text x="650" y="165" font-size="12.5" fill="#3a4a55">종합 점수</text>
+  <text x="650" y="190" font-size="24" font-weight="700" fill="#2456A4">97.6</text>
+  <text x="712" y="190" font-size="12.5" fill="#3a4a55">/ 100</text>
+
+  <!-- ===== Section: 품질 규칙 점검 ===== -->
+  <text x="24" y="240" font-size="13.5" font-weight="700" fill="#10243f">품질 규칙 점검 (규칙별 합·불 자동 판정)</text>
+
+  <!-- table header -->
+  <g font-size="12" font-weight="700" fill="#10243f" text-anchor="middle">
+    <rect x="24" y="250" width="430" height="26" fill="#DCE8F5" stroke="#6B9AD1"/><text x="239" y="267">품질 규칙</text>
+    <rect x="454" y="250" width="120" height="26" fill="#DCE8F5" stroke="#6B9AD1"/><text x="514" y="267">합격선</text>
+    <rect x="574" y="250" width="120" height="26" fill="#DCE8F5" stroke="#6B9AD1"/><text x="634" y="267">실측</text>
+    <rect x="694" y="250" width="142" height="26" fill="#DCE8F5" stroke="#6B9AD1"/><text x="765" y="267">판정</text>
+  </g>
+
+  <!-- table rows -->
+  <g font-size="12" fill="#10243f">
+    <!-- r1 -->
+    <rect x="24" y="276" width="430" height="26" fill="#fff" stroke="#c9d4e0"/><text x="34" y="293">측정값 결측률</text>
+    <rect x="454" y="276" width="120" height="26" fill="#fff" stroke="#c9d4e0"/><text x="514" y="293" text-anchor="middle">≤ 2%</text>
+    <rect x="574" y="276" width="120" height="26" fill="#fff" stroke="#c9d4e0"/><text x="634" y="293" text-anchor="middle">0.8%</text>
+    <rect x="694" y="276" width="142" height="26" fill="#eaf5ee" stroke="#c9d4e0"/><text x="765" y="293" text-anchor="middle" fill="#2f6b50" font-weight="700">합격</text>
+    <!-- r2 -->
+    <rect x="24" y="302" width="430" height="26" fill="#fff" stroke="#c9d4e0"/><text x="34" y="319">측정값 범위(0~500) 이탈</text>
+    <rect x="454" y="302" width="120" height="26" fill="#fff" stroke="#c9d4e0"/><text x="514" y="319" text-anchor="middle">0 건</text>
+    <rect x="574" y="302" width="120" height="26" fill="#fff" stroke="#c9d4e0"/><text x="634" y="319" text-anchor="middle">0 건</text>
+    <rect x="694" y="302" width="142" height="26" fill="#eaf5ee" stroke="#c9d4e0"/><text x="765" y="319" text-anchor="middle" fill="#2f6b50" font-weight="700">합격</text>
+    <!-- r3 FAIL -->
+    <rect x="24" y="328" width="430" height="26" fill="#fdeaea" stroke="#d64545"/><text x="34" y="345" font-weight="700">데이터 최신성(최근 7일 비율)</text>
+    <rect x="454" y="328" width="120" height="26" fill="#fdeaea" stroke="#d64545"/><text x="514" y="345" text-anchor="middle">≥ 95%</text>
+    <rect x="574" y="328" width="120" height="26" fill="#fdeaea" stroke="#d64545"/><text x="634" y="345" text-anchor="middle" fill="#b32020" font-weight="700">91%</text>
+    <rect x="694" y="328" width="142" height="26" fill="#f7d4d4" stroke="#d64545"/><text x="765" y="345" text-anchor="middle" fill="#b32020" font-weight="700">미달</text>
+    <!-- r4 -->
+    <rect x="24" y="354" width="430" height="26" fill="#fff" stroke="#c9d4e0"/><text x="34" y="371">검사 ID 중복</text>
+    <rect x="454" y="354" width="120" height="26" fill="#fff" stroke="#c9d4e0"/><text x="514" y="371" text-anchor="middle">0 건</text>
+    <rect x="574" y="354" width="120" height="26" fill="#fff" stroke="#c9d4e0"/><text x="634" y="371" text-anchor="middle">0 건</text>
+    <rect x="694" y="354" width="142" height="26" fill="#eaf5ee" stroke="#c9d4e0"/><text x="765" y="371" text-anchor="middle" fill="#2f6b50" font-weight="700">합격</text>
+    <!-- r5 -->
+    <rect x="24" y="380" width="430" height="26" fill="#fff" stroke="#c9d4e0"/><text x="34" y="397">설비코드 표준값 일치</text>
+    <rect x="454" y="380" width="120" height="26" fill="#fff" stroke="#c9d4e0"/><text x="514" y="397" text-anchor="middle">100%</text>
+    <rect x="574" y="380" width="120" height="26" fill="#fff" stroke="#c9d4e0"/><text x="634" y="397" text-anchor="middle">100%</text>
+    <rect x="694" y="380" width="142" height="26" fill="#eaf5ee" stroke="#c9d4e0"/><text x="765" y="397" text-anchor="middle" fill="#2f6b50" font-weight="700">합격</text>
+  </g>
+
+  <!-- ===== Gate verdict ===== -->
+  <rect x="24" y="416" width="812" height="30" rx="5" fill="#f7d4d4" stroke="#d64545"/>
+  <text x="36" y="435" font-size="12.5" fill="#10243f"><tspan font-weight="700" fill="#b32020">종합 판정 — 미달(차단):</tspan> 최신성 규칙 미통과 → AI 투입 자동 차단. 꼭 써야 하면 예외 승인(승인자·사유·기간·범위 기록) 후 한시 사용.</text>
+</svg>
