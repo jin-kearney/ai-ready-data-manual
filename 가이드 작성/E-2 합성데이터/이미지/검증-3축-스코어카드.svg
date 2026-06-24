@@ -1,7 +1,7 @@
 <svg viewBox="0 0 820 336" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
   <rect width="820" height="336" fill="#ffffff"/>
-  <text x="24" y="32" font-size="17" font-weight="700" fill="#10243f">합성데이터 검증 리포트 — 세 축으로 본다 (가상)</text>
-  <text x="24" y="52" font-size="11.5" fill="#6b7785">생성한 합성데이터는 세 축을 모두 통과해야 활용한다</text>
+  <text x="24" y="32" font-size="17" font-weight="700" fill="#10243f">합성데이터 3축 검증 리포트 (가상)</text>
+  <text x="24" y="52" font-size="11.5" fill="#6b7785">합성데이터 활용 여부는 충실도·유용성·프라이버시 검증 결과를 기준으로 판단한다</text>
 
   <!-- ===== Card 1 : 충실도 ===== -->
   <rect x="28" y="68" width="244" height="206" rx="8" fill="#ffffff" stroke="#c9d4e0" stroke-width="1.4"/>
@@ -45,5 +45,5 @@
 
   <!-- 하단 판단 규칙 -->
   <rect x="28" y="294" width="766" height="30" rx="6" fill="#EEF4FB" stroke="#6B9AD1"/>
-  <text x="411" y="313" font-size="11.5" fill="#10243f" text-anchor="middle">세 축을 모두 통과해야 활용한다. 하나라도 미달이면 생성 방식을 바꾸거나 다시 생성한다.</text>
+  <text x="411" y="313" font-size="11.5" fill="#10243f" text-anchor="middle">하나라도 미달이면 생성 방식을 바꾸거나 다시 생성한다.</text>
 </svg>
