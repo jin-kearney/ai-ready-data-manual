@@ -553,7 +553,7 @@ C-2의 핵심은 "점검"이 아니라 "**합/불로 막는 것**"이다. 솔루
 4. **Bigeye 배포 옵션:** 홈에 SaaS 외 온프레/in-VPC 명시 적음 — 영업/문서 확인 필요. 최근 "AI Trust Platform" 포지셔닝으로 메시지 변화 중.
 5. **Informatica·SAP·IBM Databand 온프레/하이브리드 세부:** 배포·가격·지원 범위는 단정 금지 — PoC·영업 확인.
 6. **Qlik Trust Score for AI:** "AI 준비도 차원 점수화"가 C-2 관점에 부합하나, 구체 차원·임계·게이트 연동 방식은 공식 문서/데모 확인 권장.
-7. **유형③ 관측 솔루션의 C-1 중복:** Monte Carlo·Anomalo·Bigeye·Soda Cloud·Metaplane·Databand는 C-1 Observability와 동일 제품군. 가이드에서 경계(게이트 vs 상시 모니터링)를 명시하고, 솔루션 묶음 비교는 2층 정본(`전체 목차/01 Tech Stack 비교 (솔루션×주제).md`)으로 링크 권장.
+7. **유형③ 관측 솔루션의 C-1 중복:** Monte Carlo·Anomalo·Bigeye·Soda Cloud·Metaplane·Databand는 C-1 Observability와 동일 제품군. 가이드에서 경계(게이트 vs 상시 모니터링)를 명시하고, 솔루션 묶음 비교는 2층 정본(`Tech Player/01 Tech Stack 비교 (솔루션×주제).md`)으로 링크 권장.
 8. **SAP 공식 URL 지역 경로:** 검색 결과에 `sap.com/sea/...`(동남아) 등 지역 경로가 섞임 — 글로벌 경로(`sap.com/products/...`)로 정규화해 적었으나 접속 확인 권장.
 
 ---

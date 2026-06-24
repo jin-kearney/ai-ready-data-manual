@@ -21,7 +21,7 @@
 
 ## 1. 2층 정본 C-3 반영 현황
 
-`전체 목차/01 Tech Stack 비교 (솔루션×주제).md` 파일에 이미 C-3 Lineage 관련 내용이 기재되어 있음. 주요 내용:
+`Tech Player/01 Tech Stack 비교 (솔루션×주제).md` 파일에 이미 C-3 Lineage 관련 내용이 기재되어 있음. 주요 내용:
 
 - **묶음 ① (통합 거버넌스·카탈로그 플랫폼)**: A-1·A-2·A-3 + C-3 계통을 한 제품이 함께 커버함이 명시됨. 대상 솔루션: Collibra, Microsoft Purview, Atlan, Databricks Unity Catalog, OpenMetadata, DataHub
 - **계통(Lineage, 컬럼단위)** 행이 별도로 존재
