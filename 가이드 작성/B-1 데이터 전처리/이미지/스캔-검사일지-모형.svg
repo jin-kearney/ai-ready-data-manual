@@ -44,7 +44,7 @@
 
     <line x1="300" y1="186" x2="500" y2="170" stroke="#4FA47D" stroke-width="1.3"/>
     <text x="506" y="166" fill="#2f6b50" font-weight="700">손글씨 측정값</text>
-    <text x="506" y="182" fill="#3a4a55">신뢰도 낮으면 검수 플래그(_review)</text>
+    <text x="506" y="182" fill="#3a4a55">신뢰도 낮으면 검수 대상으로 분류</text>
 
     <line x1="300" y1="214" x2="500" y2="232" stroke="#d64545" stroke-width="1.3"/>
     <text x="506" y="232" fill="#b32020" font-weight="700">흐려서 판독 불가</text>
