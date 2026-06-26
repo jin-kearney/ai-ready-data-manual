@@ -1,0 +1,77 @@
+<svg viewBox="0 0 900 348" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="900" height="348" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">데이터 카탈로그 검색 화면 — 품질 데이터 조회 예시 (가상)</text>
+
+  <!-- ===== 좌: 탐색 필터 ===== -->
+  <rect x="24" y="48" width="262" height="284" rx="6" fill="#EEF4FB" stroke="#6B9AD1"/>
+  <text x="40" y="76" font-size="13.5" font-weight="700" fill="#2456A4">탐색 필터로 범위 좁히기</text>
+
+  <!-- 필터 행: 라벨 + 선택 칩 -->
+  <g font-size="12">
+    <text x="40" y="112" fill="#6b7785">업무 영역</text>
+    <rect x="150" y="98" width="120" height="24" rx="12" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <text x="210" y="114" fill="#10243f" font-weight="700" text-anchor="middle">품질</text>
+
+    <text x="40" y="150" fill="#6b7785">시스템</text>
+    <rect x="150" y="136" width="120" height="24" rx="12" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <text x="210" y="152" fill="#10243f" font-weight="700" text-anchor="middle">MES</text>
+
+    <text x="40" y="188" fill="#6b7785">데이터 유형</text>
+    <rect x="150" y="174" width="120" height="24" rx="12" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <text x="210" y="190" fill="#10243f" font-weight="700" text-anchor="middle">정형 데이터</text>
+
+    <text x="40" y="226" fill="#6b7785">태그</text>
+    <rect x="150" y="212" width="120" height="24" rx="12" fill="#DCE8F5" stroke="#6B9AD1"/>
+    <text x="210" y="228" fill="#10243f" font-weight="700" text-anchor="middle">검사</text>
+  </g>
+
+  <!-- 검색창: 데이터명 -->
+  <text x="40" y="268" font-size="12" fill="#6b7785">데이터명 검색</text>
+  <rect x="40" y="278" width="230" height="32" rx="6" fill="#ffffff" stroke="#2456A4" stroke-width="1.5"/>
+  <text x="54" y="299" font-size="13" fill="#10243f" font-weight="700">동박</text>
+  <text x="250" y="300" font-size="14" fill="#2456A4" text-anchor="middle">⌕</text>
+
+  <!-- ===== 화살표 ===== -->
+  <line x1="292" y1="190" x2="330" y2="190" stroke="#2456A4" stroke-width="2"/>
+  <path d="M330 190 l-9 -5 l0 10 z" fill="#2456A4"/>
+
+  <!-- ===== 우: 검색 결과 카드 ===== -->
+  <text x="346" y="68" font-size="13.5" font-weight="700" fill="#2456A4">검색 결과 (1건) — 카드에서 한눈에 확인</text>
+
+  <rect x="346" y="80" width="530" height="252" rx="6" fill="#ffffff" stroke="#c9d4e0"/>
+  <!-- 카드 제목 줄 -->
+  <rect x="346" y="80" width="530" height="40" rx="6" fill="#DCE8F5" stroke="#6B9AD1"/>
+  <text x="364" y="105" font-size="14.5" font-weight="700" fill="#10243f">동박 두께 검사 결과</text>
+  <rect x="792" y="90" width="70" height="22" rx="11" fill="#ffffff" stroke="#6B9AD1"/>
+  <text x="827" y="105" font-size="11" fill="#2456A4" font-weight="700" text-anchor="middle">정형</text>
+
+  <!-- 필드 2열 -->
+  <g font-size="12">
+    <!-- row1 -->
+    <text x="368" y="152" fill="#6b7785">보유 시스템</text>
+    <text x="368" y="170" fill="#10243f" font-weight="700">MES</text>
+    <text x="630" y="152" fill="#6b7785">저장 위치</text>
+    <text x="630" y="170" fill="#10243f" font-weight="700">MES_DB.INSP_RESULT</text>
+    <!-- row2 -->
+    <text x="368" y="200" fill="#6b7785">관리 조직</text>
+    <text x="368" y="218" fill="#10243f" font-weight="700">품질보증팀</text>
+    <text x="630" y="200" fill="#6b7785">데이터 오너</text>
+    <text x="630" y="218" fill="#10243f" font-weight="700">김품질 책임</text>
+    <!-- row3 -->
+    <text x="368" y="248" fill="#6b7785">접근 방법</text>
+    <text x="368" y="266" fill="#10243f" font-weight="700">신청 → 승인</text>
+    <text x="630" y="248" fill="#6b7785">보안 등급</text>
+    <text x="630" y="266" fill="#b32020" font-weight="700">대외비</text>
+    <!-- row4 -->
+    <text x="368" y="296" fill="#6b7785">AI 활용 여부</text>
+    <text x="368" y="314" fill="#2f6b50" font-weight="700">활용중 · 결함예측 모델</text>
+    <text x="630" y="296" fill="#6b7785">갱신 주기</text>
+    <text x="630" y="314" fill="#10243f" font-weight="700">일간</text>
+  </g>
+
+  <!-- 구분선 -->
+  <line x1="611" y1="134" x2="611" y2="320" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="346" y1="180" x2="876" y2="180" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="346" y1="228" x2="876" y2="228" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="346" y1="276" x2="876" y2="276" stroke="#eef2f7" stroke-width="1"/>
+</svg>
