@@ -1,0 +1,59 @@
+<svg viewBox="0 0 960 470" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'Malgun Gothic','Apple SD Gothic Neo',sans-serif" fill="#10243f">
+  <rect width="960" height="470" fill="#ffffff"/>
+
+  <!-- 상단 제목 -->
+  <text x="40" y="38" font-size="18" font-weight="700" fill="#10243f">저장소 계층(Storage Tier) — 자주 쓸수록 위(비쌈), 안 쓸수록 아래(쌈)</text>
+
+  <!-- 위쪽: 복원 화살표(아래→위, 점선) -->
+  <text x="40" y="72" font-size="13" font-weight="700" fill="#2f6b50">▲ 재사용·감사가 필요하면 위 계층으로 복원(Restore)</text>
+  <line x1="820" y1="80" x2="120" y2="80" stroke="#4FA47D" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrUp)"/>
+
+  <!-- 계단형 4계층 -->
+  <!-- Hot -->
+  <rect x="60" y="100" width="190" height="120" rx="10" fill="#2456A4" stroke="#163a73" stroke-width="2"/>
+  <text x="155" y="128" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">Hot · 운영</text>
+  <text x="155" y="152" font-size="13" fill="#dce8f5" text-anchor="middle">접근: 매일·수시</text>
+  <text x="155" y="172" font-size="13" fill="#dce8f5" text-anchor="middle">비용: 가장 높음</text>
+  <text x="155" y="198" font-size="12" fill="#ffffff" text-anchor="middle">분석 중 데이터,</text>
+  <text x="155" y="214" font-size="12" fill="#ffffff" text-anchor="middle">AI 학습 중 시험 로그</text>
+
+  <!-- Warm -->
+  <rect x="270" y="150" width="190" height="120" rx="10" fill="#3F9BD4" stroke="#2456A4" stroke-width="2"/>
+  <text x="365" y="178" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">Warm · 보관</text>
+  <text x="365" y="202" font-size="13" fill="#eef4fb" text-anchor="middle">접근: 월 1~수 회</text>
+  <text x="365" y="222" font-size="13" fill="#eef4fb" text-anchor="middle">비용: 중간</text>
+  <text x="365" y="248" font-size="12" fill="#ffffff" text-anchor="middle">최근 수년 품질 성적서,</text>
+  <text x="365" y="264" font-size="12" fill="#ffffff" text-anchor="middle">제조 이력</text>
+
+  <!-- Cold -->
+  <rect x="480" y="200" width="190" height="120" rx="10" fill="#79C3E8" stroke="#3F9BD4" stroke-width="2"/>
+  <text x="575" y="228" font-size="17" font-weight="700" fill="#0b3a52" text-anchor="middle">Cold · 아카이브</text>
+  <text x="575" y="252" font-size="13" fill="#0b3a52" text-anchor="middle">접근: 연 1회 이하</text>
+  <text x="575" y="272" font-size="13" fill="#0b3a52" text-anchor="middle">비용: 매우 낮음</text>
+  <text x="575" y="298" font-size="12" fill="#0b3a52" text-anchor="middle">법적 보존 성적서,</text>
+  <text x="575" y="314" font-size="12" fill="#0b3a52" text-anchor="middle">장기 내구 시험 로그</text>
+
+  <!-- Archive/폐기 대기 -->
+  <rect x="690" y="250" width="200" height="120" rx="10" fill="#EEF2F7" stroke="#6B9AD1" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="790" y="278" font-size="17" font-weight="700" fill="#10243f" text-anchor="middle">폐기 / 만료 대기</text>
+  <text x="790" y="302" font-size="13" fill="#10243f" text-anchor="middle">보존 기간 만료 확인</text>
+  <text x="790" y="322" font-size="13" fill="#10243f" text-anchor="middle">→ 승인 후 안전 삭제</text>
+  <text x="790" y="348" font-size="12" fill="#7a3b3b" text-anchor="middle">법적 보존 대상이면</text>
+  <text x="790" y="364" font-size="12" fill="#7a3b3b" text-anchor="middle">삭제 금지(Legal Hold)</text>
+
+  <!-- 계단 사이 연결 화살표 -->
+  <line x1="250" y1="180" x2="270" y2="190" stroke="#2456A4" stroke-width="2.5" marker-end="url(#arrDn)"/>
+  <line x1="460" y1="230" x2="480" y2="240" stroke="#2456A4" stroke-width="2.5" marker-end="url(#arrDn)"/>
+  <line x1="670" y1="280" x2="690" y2="290" stroke="#2456A4" stroke-width="2.5" marker-end="url(#arrDn)"/>
+
+  <!-- 아래쪽: 자동 티어링 화살표(위→아래로 진행, 좌→우) -->
+  <line x1="120" y1="410" x2="840" y2="410" stroke="#2456A4" stroke-width="2.5" marker-end="url(#arrDn2)"/>
+  <text x="40" y="414" font-size="13" font-weight="700" fill="#2456A4">시간 경과·미사용 →</text>
+  <text x="480" y="438" font-size="13" fill="#10243f" text-anchor="middle">일정 기간 안 쓰면 아래 계층으로 자동 이동(자동 티어링) — 정책 엔진이 규칙대로 옮긴다</text>
+
+  <defs>
+    <marker id="arrUp" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L8,5 L0,10 Z" fill="#4FA47D"/></marker>
+    <marker id="arrDn" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L8,5 L0,10 Z" fill="#2456A4"/></marker>
+    <marker id="arrDn2" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L8,5 L0,10 Z" fill="#2456A4"/></marker>
+  </defs>
+</svg>
