@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="960" height="470" fill="#ffffff"/>
+  <text x="480" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#10243f">활용성 보존 — 같은 클레임 한 건, 식별자만 가리고 업무 정보는 남긴다</text>
+  <text x="480" y="56" text-anchor="middle" font-size="13" fill="#5b6b80">두산밥캣 A/S 클레임 레코드 (가상 예시)</text>
+
+  <!-- BEFORE -->
+  <text x="38" y="92" font-size="14" font-weight="700" fill="#7a2e0a">처리 전 (원본)</text>
+  <text x="200" y="92" font-size="12" fill="#5b6b80">— 딜러·고객 식별정보가 그대로 섞여 AI 학습·외부 전송 불가</text>
+
+  <!-- before chips -->
+  <g>
+    <rect x="38"  y="104" width="116" height="62" rx="8" fill="#F4D9D0" stroke="#C9663A" stroke-width="1.5"/>
+    <text x="96"  y="126" text-anchor="middle" font-size="11" fill="#7a2e0a">딜러명</text>
+    <text x="96"  y="148" text-anchor="middle" font-size="13" font-weight="700" fill="#7a2e0a">홍길동</text>
+
+    <rect x="166" y="104" width="116" height="62" rx="8" fill="#F4D9D0" stroke="#C9663A" stroke-width="1.5"/>
+    <text x="224" y="126" text-anchor="middle" font-size="11" fill="#7a2e0a">연락처</text>
+    <text x="224" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#7a2e0a">010-1234-5678</text>
+
+    <rect x="294" y="104" width="116" height="62" rx="8" fill="#F4D9D0" stroke="#C9663A" stroke-width="1.5"/>
+    <text x="352" y="126" text-anchor="middle" font-size="11" fill="#7a2e0a">계약가</text>
+    <text x="352" y="148" text-anchor="middle" font-size="13" font-weight="700" fill="#7a2e0a">$24,800</text>
+
+    <rect x="422" y="104" width="116" height="62" rx="8" fill="#DCE8F5" stroke="#6B9AD1" stroke-width="1.5"/>
+    <text x="480" y="126" text-anchor="middle" font-size="11" fill="#10243f">제품군</text>
+    <text x="480" y="148" text-anchor="middle" font-size="13" font-weight="700" fill="#10243f">밥캣 S770</text>
+
+    <rect x="550" y="104" width="116" height="62" rx="8" fill="#DCE8F5" stroke="#6B9AD1" stroke-width="1.5"/>
+    <text x="608" y="126" text-anchor="middle" font-size="11" fill="#10243f">결함 유형</text>
+    <text x="608" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#10243f">유압 실린더 누유</text>
+
+    <rect x="678" y="104" width="116" height="62" rx="8" fill="#DCE8F5" stroke="#6B9AD1" stroke-width="1.5"/>
+    <text x="736" y="126" text-anchor="middle" font-size="11" fill="#10243f">공정</text>
+    <text x="736" y="148" text-anchor="middle" font-size="13" font-weight="700" fill="#10243f">조립</text>
+
+    <rect x="806" y="104" width="116" height="62" rx="8" fill="#DCE8F5" stroke="#6B9AD1" stroke-width="1.5"/>
+    <text x="864" y="126" text-anchor="middle" font-size="11" fill="#10243f">지역</text>
+    <text x="864" y="148" text-anchor="middle" font-size="13" font-weight="700" fill="#10243f">경기 용인시</text>
+  </g>
+
+  <!-- arrow -->
+  <text x="480" y="206" text-anchor="middle" font-size="13" font-weight="700" fill="#2456A4">비식별 처리 (식별자 가명화·마스킹 / 업무 정보 보존)</text>
+  <path d="M 480 214 L 480 244" stroke="#2456A4" stroke-width="2.5" fill="none"/>
+  <path d="M 472 236 L 480 246 L 488 236 Z" fill="#2456A4"/>
+
+  <!-- AFTER -->
+  <text x="38" y="288" font-size="14" font-weight="700" fill="#1f4d3a">처리 후</text>
+  <text x="120" y="288" font-size="12" fill="#5b6b80">— 식별자는 가렸지만 “어떤 공정·제품에서 어떤 결함이 많은가”는 그대로 학습 가능</text>
+
+  <g>
+    <rect x="38"  y="300" width="116" height="62" rx="8" fill="#EDEFF2" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="96"  y="322" text-anchor="middle" font-size="11" fill="#6B7280">딜러명</text>
+    <text x="96"  y="344" text-anchor="middle" font-size="12" font-weight="700" fill="#6B7280">DEALER_K042</text>
+
+    <rect x="166" y="300" width="116" height="62" rx="8" fill="#EDEFF2" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="224" y="322" text-anchor="middle" font-size="11" fill="#6B7280">연락처</text>
+    <text x="224" y="344" text-anchor="middle" font-size="12" font-weight="700" fill="#6B7280">[삭제]</text>
+
+    <rect x="294" y="300" width="116" height="62" rx="8" fill="#EDEFF2" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="352" y="322" text-anchor="middle" font-size="11" fill="#6B7280">계약가</text>
+    <text x="352" y="344" text-anchor="middle" font-size="12" font-weight="700" fill="#6B7280">$20K~$30K</text>
+
+    <rect x="422" y="300" width="116" height="62" rx="8" fill="#C2E6D6" stroke="#4FA47D" stroke-width="1.5"/>
+    <text x="480" y="322" text-anchor="middle" font-size="11" fill="#1f4d3a">제품군</text>
+    <text x="480" y="344" text-anchor="middle" font-size="13" font-weight="700" fill="#1f4d3a">밥캣 S770</text>
+
+    <rect x="550" y="300" width="116" height="62" rx="8" fill="#C2E6D6" stroke="#4FA47D" stroke-width="1.5"/>
+    <text x="608" y="322" text-anchor="middle" font-size="11" fill="#1f4d3a">결함 유형</text>
+    <text x="608" y="344" text-anchor="middle" font-size="12" font-weight="700" fill="#1f4d3a">유압 실린더 누유</text>
+
+    <rect x="678" y="300" width="116" height="62" rx="8" fill="#C2E6D6" stroke="#4FA47D" stroke-width="1.5"/>
+    <text x="736" y="322" text-anchor="middle" font-size="11" fill="#1f4d3a">공정</text>
+    <text x="736" y="344" text-anchor="middle" font-size="13" font-weight="700" fill="#1f4d3a">조립</text>
+
+    <rect x="806" y="300" width="116" height="62" rx="8" fill="#C2E6D6" stroke="#4FA47D" stroke-width="1.5"/>
+    <text x="864" y="322" text-anchor="middle" font-size="11" fill="#1f4d3a">지역</text>
+    <text x="864" y="344" text-anchor="middle" font-size="13" font-weight="700" fill="#1f4d3a">경기도(범주)</text>
+  </g>
+
+  <!-- legend -->
+  <rect x="38" y="404" width="22" height="16" rx="4" fill="#F4D9D0" stroke="#C9663A" stroke-width="1.5"/>
+  <text x="68" y="417" font-size="12" fill="#5b6b80">식별자·민감정보 (가려야 함: 딜러·고객·계약가)</text>
+  <rect x="392" y="404" width="22" height="16" rx="4" fill="#EDEFF2" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="422" y="417" font-size="12" fill="#5b6b80">가명화·삭제·범주화로 가린 값</text>
+  <rect x="680" y="404" width="22" height="16" rx="4" fill="#C2E6D6" stroke="#4FA47D" stroke-width="1.5"/>
+  <text x="710" y="417" font-size="12" fill="#5b6b80">업무 정보 (그대로 보존)</text>
+
+  <text x="480" y="450" text-anchor="middle" font-size="12" fill="#7a2e0a">과도하게 다 가리면 분석 가치가 사라진다 — 식별자만 정확히 가리고 업무 맥락은 남기는 것이 핵심.</text>
+</svg>
