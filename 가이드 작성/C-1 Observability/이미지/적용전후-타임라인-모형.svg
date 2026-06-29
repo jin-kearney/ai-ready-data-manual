@@ -11,8 +11,8 @@
     <line x1="586" y1="64" x2="586" y2="250"/>
   </g>
 
-  <!-- Row A: 관측 없을 때 -->
-  <text x="24" y="92" font-size="13" font-weight="700" fill="#7a2e0a">관측 없을 때</text>
+  <!-- Row A: 적용 전 -->
+  <text x="24" y="92" font-size="13" font-weight="700" fill="#7a2e0a">적용 전</text>
   <line x1="90" y1="118" x2="710" y2="118" stroke="#c9d4e0" stroke-width="1.5"/>
   <rect x="214" y="110" width="434" height="16" fill="#F4D9D0" stroke="#C9663A" stroke-dasharray="4 3"/>
   <circle cx="214" cy="118" r="5" fill="#C9663A"/>
@@ -22,8 +22,8 @@
   <circle cx="648" cy="118" r="5" fill="#C9663A"/>
   <text x="648" y="104" font-size="11.5" font-weight="700" fill="#10243f" text-anchor="middle">09:00 출근 후 발견</text>
 
-  <!-- Row B: 관측 있을 때 -->
-  <text x="24" y="200" font-size="13" font-weight="700" fill="#2f6b50">관측 있을 때</text>
+  <!-- Row B: 적용 후 -->
+  <text x="24" y="200" font-size="13" font-weight="700" fill="#2f6b50">적용 후</text>
   <line x1="90" y1="218" x2="710" y2="218" stroke="#c9d4e0" stroke-width="1.5"/>
   <rect x="214" y="212" width="24" height="12" fill="#4FA47D"/>
   <circle cx="214" cy="218" r="5" fill="#3F9BD4"/>
