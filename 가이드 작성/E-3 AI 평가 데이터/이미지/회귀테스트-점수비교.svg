@@ -1,0 +1,64 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="800" height="420" fill="#ffffff"/>
+  <text x="24" y="32" font-size="17" font-weight="700" fill="#10243f">회귀 테스트 — Prompt를 바꾼 뒤 점수가 조용히 떨어진 항목을 잡는다 (가상)</text>
+  <text x="24" y="52" font-size="11.5" fill="#6b7785">설비 이상 원인 추천 과제 · 같은 평가셋을 변경 전후로 자동 채점해 항목별 점수를 비교</text>
+
+  <!-- 범례 -->
+  <rect x="540" y="22" width="14" height="14" rx="3" fill="#B7CDE6"/>
+  <text x="560" y="34" font-size="11" fill="#10243f">변경 전</text>
+  <rect x="620" y="22" width="14" height="14" rx="3" fill="#2456A4"/>
+  <text x="640" y="34" font-size="11" fill="#10243f">변경 후</text>
+  <rect x="700" y="22" width="14" height="14" rx="3" fill="#C9663A"/>
+  <text x="720" y="34" font-size="11" fill="#10243f">하락(회귀)</text>
+
+  <!-- Y축 기준선 (0 ~ 1.0 점) -->
+  <line x1="250" y1="80" x2="250" y2="350" stroke="#9aa6b2" stroke-width="1.4"/>
+  <g font-size="9.5" fill="#9aa6b2">
+    <line x1="250" y1="350" x2="760" y2="350" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="420" y1="80" x2="420" y2="350" stroke="#eef2f7" stroke-width="1"/>
+    <line x1="590" y1="80" x2="590" y2="350" stroke="#eef2f7" stroke-width="1"/>
+    <text x="250" y="366" text-anchor="middle">0.0</text>
+    <text x="420" y="366" text-anchor="middle">0.5</text>
+    <text x="590" y="366" text-anchor="middle">0.85 (합격선)</text>
+    <text x="760" y="366" text-anchor="middle">1.0</text>
+  </g>
+  <!-- 합격선 -->
+  <line x1="590" y1="80" x2="590" y2="350" stroke="#4FA47D" stroke-width="1.6" stroke-dasharray="5 4"/>
+
+  <!-- 막대: 각 항목 변경 전(연파랑)·변경 후(진파랑/주황) -->
+  <!-- 항목1 정상 유지 -->
+  <text x="238" y="104" font-size="11.5" fill="#10243f" text-anchor="end">베어링 과열 원인</text>
+  <rect x="250" y="92" width="306" height="13" rx="2" fill="#B7CDE6"/>
+  <rect x="250" y="107" width="316" height="13" rx="2" fill="#2456A4"/>
+  <text x="572" y="118" font-size="10" fill="#2456A4">0.93 ▲</text>
+
+  <!-- 항목2 정상 유지 -->
+  <text x="238" y="148" font-size="11.5" fill="#10243f" text-anchor="end">윤활유 부족 진단</text>
+  <rect x="250" y="136" width="299" height="13" rx="2" fill="#B7CDE6"/>
+  <rect x="250" y="151" width="306" height="13" rx="2" fill="#2456A4"/>
+  <text x="562" y="162" font-size="10" fill="#2456A4">0.90 ▲</text>
+
+  <!-- 항목3 회귀 발생 -->
+  <text x="238" y="192" font-size="11.5" font-weight="700" fill="#7a2e0a" text-anchor="end">진동 이상 원인</text>
+  <rect x="250" y="180" width="312" height="13" rx="2" fill="#B7CDE6"/>
+  <rect x="250" y="195" width="211" height="13" rx="2" fill="#C9663A"/>
+  <text x="468" y="206" font-size="10" font-weight="700" fill="#C9663A">0.62 ▼ (0.85→0.62)</text>
+
+  <!-- 항목4 정상 유지 -->
+  <text x="238" y="236" font-size="11.5" fill="#10243f" text-anchor="end">정렬 불량 추천</text>
+  <rect x="250" y="224" width="289" height="13" rx="2" fill="#B7CDE6"/>
+  <rect x="250" y="239" width="296" height="13" rx="2" fill="#2456A4"/>
+  <text x="552" y="250" font-size="10" fill="#2456A4">0.87 ▲</text>
+
+  <!-- 항목5 정상 유지 -->
+  <text x="238" y="280" font-size="11.5" fill="#10243f" text-anchor="end">과부하 경보 해석</text>
+  <rect x="250" y="268" width="302" height="13" rx="2" fill="#B7CDE6"/>
+  <rect x="250" y="283" width="309" height="13" rx="2" fill="#2456A4"/>
+  <text x="565" y="294" font-size="10" fill="#2456A4">0.91 ▲</text>
+
+  <!-- 회귀 항목 콜아웃 -->
+  <rect x="250" y="316" width="510" height="26" rx="6" fill="#F4D9D0" stroke="#C9663A" stroke-width="1.2"/>
+  <text x="266" y="333" font-size="11.5" fill="#7a2e0a">진동 이상 원인 항목이 합격선 아래로 떨어졌다 → 배포 전 자동 차단, 해당 Prompt 재조정</text>
+
+  <text x="776" y="404" font-size="9.5" fill="#9aa6b2" text-anchor="end">점수는 이해를 돕기 위한 가상 예시 — 실제 점수·합격선은 과제별로 정한다</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg viewBox="0 0 800 470" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="800" height="470" fill="#ffffff"/>
+  <text x="24" y="32" font-size="17" font-weight="700" fill="#10243f">정답셋 1건 — 완성 예시 (가상)</text>
+  <text x="24" y="52" font-size="11.5" fill="#6b7785">두산전자 CCL 라인 품질 결함 원인 질의응답(RAG) 과제 · 이 한 건이 평가 데이터의 기본 단위다</text>
+
+  <!-- 카드 외곽 -->
+  <rect x="24" y="70" width="752" height="378" rx="10" fill="#EEF4FB" stroke="#6B9AD1" stroke-width="1.4"/>
+
+  <!-- 상단 메타 바 -->
+  <rect x="24" y="70" width="752" height="38" rx="10" fill="#2456A4"/>
+  <rect x="24" y="92" width="752" height="16" fill="#2456A4"/>
+  <text x="42" y="94" font-size="12.5" font-weight="700" fill="#ffffff">질문 ID  EQ-2026-042</text>
+  <text x="300" y="94" font-size="12" fill="#cfe0f5">과제 유형  RAG</text>
+  <text x="470" y="94" font-size="12" fill="#cfe0f5">난이도  보통</text>
+  <text x="600" y="94" font-size="12" fill="#cfe0f5">버전  v1.0 · 2026-03-15</text>
+
+  <!-- 행 헬퍼: 라벨(좌) + 값(우) -->
+  <g font-size="12">
+    <!-- 질문 -->
+    <rect x="40" y="122" width="140" height="44" rx="5" fill="#79C3E8"/>
+    <text x="52" y="142" font-size="11.5" font-weight="700" fill="#0b3a52">기준 질문</text>
+    <text x="52" y="158" font-size="9.5" fill="#0b3a52">현업이 던지는 질문</text>
+    <text x="196" y="140" fill="#10243f">"CCL 기판에서 Delamination이 발생했을 때,</text>
+    <text x="196" y="158" fill="#10243f">원인 파악을 위해 먼저 확인할 항목은?"</text>
+
+    <!-- 입력 맥락 -->
+    <rect x="40" y="174" width="140" height="44" rx="5" fill="#B7CDE6"/>
+    <text x="52" y="194" font-size="11.5" font-weight="700" fill="#10243f">입력 맥락</text>
+    <text x="52" y="210" font-size="9.5" fill="#10243f">함께 주는 문서</text>
+    <text x="196" y="200" fill="#10243f">공정표준서 QS-2024-03 §3.2 원문 (RAG가 검색해 올 문서)</text>
+
+    <!-- 기대 답변 -->
+    <rect x="40" y="226" width="140" height="62" rx="5" fill="#3F9BD4"/>
+    <text x="52" y="250" font-size="11.5" font-weight="700" fill="#ffffff">기대 답변</text>
+    <text x="52" y="266" font-size="9.5" fill="#e8f3fb">전문가 승인 정답</text>
+    <text x="196" y="246" fill="#10243f">① 프리프레그 수분 함량 확인</text>
+    <text x="196" y="264" fill="#10243f">② 열압착 온도 프로파일 점검</text>
+    <text x="196" y="282" fill="#10243f">③ 기판 보관 환경(온·습도) 이력 조회</text>
+
+    <!-- 정답 근거 -->
+    <rect x="40" y="296" width="140" height="44" rx="5" fill="#4FA47D"/>
+    <text x="52" y="316" font-size="11.5" font-weight="700" fill="#ffffff">정답 근거</text>
+    <text x="52" y="332" font-size="9.5" fill="#e2f1ea">출처 문서·절</text>
+    <text x="196" y="322" fill="#10243f">공정표준서 QS-2024-03, §3.2.1, p.14  — 답이 이 근거에서 나왔는지 채점</text>
+
+    <!-- 허용 답변 범위 -->
+    <rect x="40" y="348" width="140" height="40" rx="5" fill="#C2E6D6"/>
+    <text x="52" y="368" font-size="11.5" font-weight="700" fill="#1f4d3a">허용 답변 범위</text>
+    <text x="52" y="383" font-size="9.5" fill="#1f4d3a">표현이 달라도 인정</text>
+    <text x="196" y="372" fill="#10243f">세 항목(수분·온도·보관 이력)을 모두 언급하면 정답으로 인정. 단위 누락 시 감점</text>
+
+    <!-- 채점 기준 + 검수자 -->
+    <rect x="40" y="396" width="140" height="38" rx="5" fill="#DCE8F5"/>
+    <text x="52" y="414" font-size="11.5" font-weight="700" fill="#10243f">채점 기준 · 검수자</text>
+    <text x="52" y="429" font-size="9.5" fill="#10243f">루브릭 ID · 승인자</text>
+    <text x="196" y="412" fill="#10243f">루브릭 RUB-RAG-001 (정확성·근거성·완전성)</text>
+    <text x="196" y="429" fill="#10243f">검수자: 품질기술팀 김△△ 책임</text>
+  </g>
+
+  <text x="776" y="462" font-size="9.5" fill="#9aa6b2" text-anchor="end">값은 이해를 돕기 위한 가상 예시 — 실제 값은 PoC·프로젝트에서 확정</text>
+</svg>
