@@ -1,0 +1,126 @@
+<svg viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <defs>
+    <filter id="blur"><feGaussianBlur stdDeviation="1.5"/></filter>
+  </defs>
+  <rect width="860" height="340" fill="#ffffff"/>
+
+  <!-- 제목 -->
+  <text x="24" y="30" font-size="16" font-weight="700" fill="#10243f">수기 검사표 디지털화 전 / 후 (가상 예시)</text>
+
+  <!-- === 왼쪽: 종이 수기 검사표 === -->
+  <!-- 종이 배경 -->
+  <rect x="24" y="52" width="360" height="246" fill="#fcfbf6" stroke="#ccc9ba" stroke-width="1.5" rx="3"/>
+  <!-- 캐비닛/잠금 아이콘 암시 -->
+  <text x="24" y="48" font-size="11" fill="#9b8f6c">종이 · 캐비닛 보관</text>
+
+  <!-- 검사표 양식 헤더 -->
+  <rect x="24" y="52" width="360" height="30" fill="#e8e4d6" stroke="#ccc9ba" stroke-width="1.5"/>
+  <text x="204" y="72" font-size="13" font-weight="700" fill="#2b2b2b" text-anchor="middle">터빈 정기점검 기록지 (GT-201)</text>
+
+  <!-- 점검 정보 행 -->
+  <text x="40" y="103" font-size="11.5" fill="#3a3a3a">점검일:</text>
+  <text x="95" y="104" font-size="13" fill="#1b3a8c" font-style="italic" font-family="'Comic Sans MS', cursive">2026.05.12</text>
+  <text x="200" y="103" font-size="11.5" fill="#3a3a3a">점검자:</text>
+  <text x="255" y="104" font-size="13" fill="#1b3a8c" font-style="italic" font-family="'Comic Sans MS', cursive">이O환</text>
+
+  <!-- 구분선 -->
+  <line x1="24" y1="112" x2="384" y2="112" stroke="#d0ccbc" stroke-width="1"/>
+
+  <!-- 표 헤더 -->
+  <rect x="24" y="112" width="360" height="26" fill="#edeade" stroke="#ccc9ba" stroke-width="1"/>
+  <text x="80" y="129" font-size="11" fill="#2b2b2b" text-anchor="middle">점검 항목</text>
+  <text x="220" y="129" font-size="11" fill="#2b2b2b" text-anchor="middle">측정값</text>
+  <text x="356" y="129" font-size="11" fill="#2b2b2b" text-anchor="middle">판정</text>
+  <line x1="140" y1="112" x2="140" y2="298" stroke="#ccc9ba" stroke-width="1"/>
+  <line x1="298" y1="112" x2="298" y2="298" stroke="#ccc9ba" stroke-width="1"/>
+
+  <!-- 행 1 -->
+  <rect x="24" y="138" width="360" height="30" fill="#ffffff" stroke="#d8d4c4" stroke-width="0.7"/>
+  <text x="82" y="157" font-size="11" fill="#3a3a3a" text-anchor="middle">블레이드 진동</text>
+  <text x="219" y="158" font-size="13" fill="#1b3a8c" font-style="italic" font-family="'Comic Sans MS', cursive">3.8 mm/s</text>
+  <text x="356" y="157" font-size="11" fill="#2b7a3b" text-anchor="middle">양호</text>
+
+  <!-- 행 2 -->
+  <rect x="24" y="168" width="360" height="30" fill="#f9f8f2" stroke="#d8d4c4" stroke-width="0.7"/>
+  <text x="82" y="187" font-size="11" fill="#3a3a3a" text-anchor="middle">냉각수 온도</text>
+  <text x="219" y="188" font-size="13" fill="#1b3a8c" font-style="italic" font-family="'Comic Sans MS', cursive" filter="url(#blur)" opacity="0.5">??°C</text>
+  <text x="356" y="187" font-size="11" fill="#aaa594" text-anchor="middle">___</text>
+
+  <!-- 행 3 -->
+  <rect x="24" y="198" width="360" height="30" fill="#ffffff" stroke="#d8d4c4" stroke-width="0.7"/>
+  <text x="82" y="217" font-size="11" fill="#3a3a3a" text-anchor="middle">윤활유 압력</text>
+  <text x="219" y="218" font-size="13" fill="#1b3a8c" font-style="italic" font-family="'Comic Sans MS', cursive">0.42 MPa</text>
+  <text x="356" y="217" font-size="11" fill="#2b7a3b" text-anchor="middle">양호</text>
+
+  <!-- 특이사항 -->
+  <rect x="24" y="228" width="360" height="40" fill="#f9f8f2" stroke="#d8d4c4" stroke-width="0.7"/>
+  <text x="40" y="245" font-size="11" fill="#3a3a3a">특이사항:</text>
+  <text x="40" y="262" font-size="12" fill="#1b3a8c" font-style="italic" font-family="'Comic Sans MS', cursive">냉각수 게이지 흐림 → 재측요</text>
+
+  <!-- 하단 문제 레이블들 -->
+  <text x="204" y="312" font-size="11" fill="#9b3a20" text-anchor="middle" font-weight="700">검색 불가 · 집계 불가 · AI 학습 불가</text>
+  <text x="204" y="328" font-size="10.5" fill="#9b3a20" text-anchor="middle">판독 오류·누락 상시 / 캐비닛에 잠김</text>
+
+  <!-- === 화살표 === -->
+  <line x1="398" y1="175" x2="444" y2="175" stroke="#2456A4" stroke-width="2.5" marker-end="url(#arr)"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2456A4"/>
+    </marker>
+  </defs>
+  <text x="421" y="168" font-size="10" fill="#2456A4" text-anchor="middle">디지털화</text>
+  <text x="421" y="186" font-size="10" fill="#2456A4" text-anchor="middle">OCR·검수</text>
+
+  <!-- === 오른쪽: 디지털화 후 구조화 레코드 === -->
+  <rect x="452" y="52" width="382" height="246" fill="#EEF4FB" stroke="#6B9AD1" stroke-width="1.5" rx="4"/>
+  <text x="452" y="48" font-size="11" fill="#163a73">디지털 데이터 자산 · 검색·집계·AI 활용 가능</text>
+
+  <!-- 헤더 바 -->
+  <rect x="452" y="52" width="382" height="28" fill="#2456A4" rx="4"/>
+  <rect x="452" y="70" width="382" height="10" fill="#2456A4"/>
+  <text x="643" y="71" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">구조화 레코드 (GT-201 · 2026-05-12)</text>
+
+  <!-- 구조화 필드 표 -->
+  <rect x="452" y="80" width="382" height="26" fill="#DCE8F5" stroke="#6B9AD1" stroke-width="0.8"/>
+  <text x="530" y="97" font-size="10.5" fill="#10243f" font-weight="700" text-anchor="middle">필드</text>
+  <text x="700" y="97" font-size="10.5" fill="#10243f" font-weight="700" text-anchor="middle">값</text>
+  <line x1="608" y1="80" x2="608" y2="298" stroke="#6B9AD1" stroke-width="0.8"/>
+
+  <!-- 행들 -->
+  <rect x="452" y="106" width="382" height="24" fill="#ffffff" stroke="#B7CDE6" stroke-width="0.7"/>
+  <text x="530" y="122" font-size="10.5" fill="#10243f" text-anchor="middle">설비 코드</text>
+  <text x="700" y="122" font-size="10.5" fill="#10243f" text-anchor="middle">GT-201</text>
+
+  <rect x="452" y="130" width="382" height="24" fill="#F4F8FD" stroke="#B7CDE6" stroke-width="0.7"/>
+  <text x="530" y="146" font-size="10.5" fill="#10243f" text-anchor="middle">점검일</text>
+  <text x="700" y="146" font-size="10.5" fill="#10243f" text-anchor="middle">2026-05-12</text>
+
+  <rect x="452" y="154" width="382" height="24" fill="#ffffff" stroke="#B7CDE6" stroke-width="0.7"/>
+  <text x="530" y="170" font-size="10.5" fill="#10243f" text-anchor="middle">점검자 ID</text>
+  <text x="700" y="170" font-size="10.5" fill="#10243f" text-anchor="middle">EMP-0387 (이O환)</text>
+
+  <rect x="452" y="178" width="382" height="24" fill="#F4F8FD" stroke="#B7CDE6" stroke-width="0.7"/>
+  <text x="530" y="194" font-size="10.5" fill="#10243f" text-anchor="middle">블레이드 진동 (mm/s)</text>
+  <text x="700" y="194" font-size="10.5" fill="#10243f" text-anchor="middle">3.8 — 판정: PASS</text>
+
+  <rect x="452" y="202" width="382" height="24" fill="#ffffff" stroke="#B7CDE6" stroke-width="0.7"/>
+  <text x="530" y="218" font-size="10.5" fill="#9b3a20" text-anchor="middle">냉각수 온도 (°C)</text>
+  <text x="700" y="218" font-size="10.5" fill="#9b3a20" text-anchor="middle">[미인식] → 사람 검수 큐</text>
+
+  <rect x="452" y="226" width="382" height="24" fill="#F4F8FD" stroke="#B7CDE6" stroke-width="0.7"/>
+  <text x="530" y="242" font-size="10.5" fill="#10243f" text-anchor="middle">윤활유 압력 (MPa)</text>
+  <text x="700" y="242" font-size="10.5" fill="#10243f" text-anchor="middle">0.42 — 판정: PASS</text>
+
+  <!-- 메타데이터 행 -->
+  <rect x="452" y="250" width="382" height="24" fill="#C2E6D6" stroke="#7CC2A7" stroke-width="0.9"/>
+  <text x="530" y="266" font-size="10" fill="#1f4d3a" text-anchor="middle">문서유형 / 버전</text>
+  <text x="700" y="266" font-size="10" fill="#1f4d3a" text-anchor="middle">터빈점검기록 / v1 · OCR 신뢰도 91%</text>
+
+  <rect x="452" y="274" width="382" height="24" fill="#C2E6D6" stroke="#7CC2A7" stroke-width="0.9"/>
+  <text x="530" y="290" font-size="10" fill="#1f4d3a" text-anchor="middle">등록 위치 / 상태</text>
+  <text x="700" y="290" font-size="10" fill="#1f4d3a" text-anchor="middle">사내 DMS / 검수완료</text>
+
+  <!-- 하단 효과 레이블 -->
+  <text x="643" y="312" font-size="11" fill="#163a73" text-anchor="middle" font-weight="700">키워드 즉시 검색 · 자동 집계 · AI 학습 데이터 투입 가능</text>
+  <text x="643" y="328" font-size="10.5" fill="#163a73" text-anchor="middle">오인식 필드는 사람 검수 라우팅 · 메타데이터 자동 태깅</text>
+</svg>
