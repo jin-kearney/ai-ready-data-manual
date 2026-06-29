@@ -620,13 +620,17 @@ flowchart LR
 | 소재 | CCL | Copper Clad Laminate, 동박적층판. PCB 핵심 소재 |
 | 소재 | Copper Foil | 동박. CCL·PCB 제조에 쓰는 구리 필름 |
 | 소재 | Substrate | 기판. 반도체·전자 소재의 기반 판형 소재 |
+| 소재 | Glass Fabric | 유리섬유. CCL 절연층 보강재 |
 | 소재 | HVLP | Very Low Profile, 동박 표면 프로파일 등급(예: HVLP4) |
-| 영업 | PO / PO No. | Purchase Order(공식 발주 문서) / 발주 식별 번호 |
+| 소재 | Wafer / PCB | 반도체 제조 기반 원형 실리콘 기판 / 인쇄회로기판(Printed Circuit Board) |
+| 소재 | PCIe / HBM | 고속 인터페이스 규격(PCI Express) / 고대역폭 메모리(High Bandwidth Memory) |
+| 영업 | PO / PO No. / 발주일 | Purchase Order(공식 발주 문서) / 발주 식별 번호 / 고객이 주문(PO)을 확정한 날짜 |
 | 영업 | 수주 / 납품 / 납기 | 주문 수령(Order intake) / 인도 완료(Delivery) / 납품 기한 |
 | 영업 | L/T | Lead Time, 주문 후 납품까지 소요 시간 |
 | 영업 | MOQ / RFQ | 최소 발주 수량 / 견적 요청 |
 | 계약 | LTSA / MPA | 장기 공급 계약 / 구매 기본 계약 |
 | 품질 | FQC / 수율 | 최종 품질 검사 / 투입 대비 양품 비율 |
+| 문서 | TDS | Technical Data Sheet, 제품 기술 사양 문서 |
 | 생산 | SOP / BOM | 양산 개시(Start of Production) / 제품 구성 자재 목록 |
 | 검증 | EVT / DVT | Engineering / Design Validation Test |
 | 원가 | 표준원가 / 실제원가 / 원가율 | 계획 기준 원가 / 실제 발생 원가 / 매출 대비 원가 비율 |
@@ -692,3 +696,4 @@ flowchart LR
 | 2026-06-26 | v0.14 | 관계 서술 중복 제거 — Why(§1.1·§1.2)에서 A-2 메타데이터와 비교하던 문장 삭제(관계는 §2.1 그림·§6 Where로 일원화). | §1.1·§1.2 |
 | 2026-06-26 | v0.15 | 00 전체 목차 재정렬 정합 — 구조는 이미 Why→What→When→How→Tech Stack→Where와 일치(섹션 재배치 불필요). 개조식 보완: §2.4 연계 정보에 구체 예시(`수율`→`PROD.YIELD_RATE`/생산기술팀)와 "비면 읽고 끝나는 사전" 마무리 추가. 00 목차 A-3 When 블록을 실제 가이드(선정 기준·우선순위 2소절)와 동기화. | §2.4·00 목차 |
 | 2026-06-26 | v0.16 | 상단 네비게이션 추가 — B-1 방식의 `이 가이드가 답하는 5가지 질문` 평문 표(질문·한 줄 답·본문 링크)를 도입 문단 다음에 두고 상단 목차 맨 위에서 링크. KQ 내부 코드는 노출하지 않고 평문 질문으로, 본문 앵커(#when·#s22·#s42·#s44·#s45) 연결. | 목차·도입부 |
+| 2026-06-29 | v0.17 | 기존 매뉴얼(「Glossary 작성 가이드」) 커버리지 점검 반영 — Appendix B 도메인 용어 예시집에 누락 용어 보강: 소재(Glass Fabric·Wafer·PCB·PCIe·HBM), 문서(TDS), 영업(발주일). 원본 작성 가이드 시트 용어 흡수 완결. | Appendix B |
