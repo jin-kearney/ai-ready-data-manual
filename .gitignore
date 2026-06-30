@@ -11,11 +11,5 @@
 /Kearney_두산지주 AI-ready Data 체계_CSO중간보고_260616.pptx
 기존 매뉴얼 작성본/Meta Tag 운영 가이드(Template)_현업전달용_260227_VF.xlsx
 
-# word 버전 매뉴얼 폴더는 항상 git 추적·push (어떤 무시 규칙에도 제외되지 않게 강제 포함)
-!word 버전 매뉴얼/
-!word 버전 매뉴얼/**
-
-# Word/Office temp lock files + 위 강제 포함보다 뒤에 둬 폴더 안의 OS·lock 잡파일은
-# 계속 제외(word 폴더에선 실제 .docx만 추적)
-.DS_Store
+# Word/Office temp lock files
 ~$*
