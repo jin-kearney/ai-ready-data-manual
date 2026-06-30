@@ -37,10 +37,7 @@ tags: [ai-ready-data, C-3, storyline, lineage, 데이터계통, 근거추적, pr
     - [5.2 선정 기준](#s52)
 6. [Where — 다른 주제와의 관계](#where)
 7. [KPI](#kpi)
-    - [7.1 계통 구축 수준](#s71)
-    - [7.2 운영 수준](#s72)
-    - [7.3 운영 품질](#s73)
-    - [7.4 성숙도(Level)](#s74)
+    - [7.1 성숙도(Level)](#s74)
 
 - [별첨 (Appendix)](#별첨-appendix) · [참고자료 (References)](#참고자료-references) · [변경 이력 / 피드백 반영](#변경-이력--피드백-반영)
 
