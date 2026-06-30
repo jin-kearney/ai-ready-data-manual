@@ -520,8 +520,6 @@ flowchart LR
 
 ## 5. Tech Stack — 솔루션 검토
 
-> **2층 연결:** 솔루션을 묶어서 평가·선정하려면 → [Tech Stack 비교 정본](../../Tech%20Player/01%20Tech%20Stack%20비교%20(솔루션×주제).md). 아래는 *Glossary 관점*의 기능 비교(1층)다.
-
 <a id="s51"></a>
 
 ### 5.1 도구 유형
