@@ -670,10 +670,6 @@ flowchart LR
 
 <a id="ref6"></a>**[6]** OpenMetadata — Open Standard for Metadata & Glossary — <https://open-metadata.org>
 
-**입력 자료**
-
-- 두산 「Meta Tag 운영 가이드(Template)」 — Glossary 개념·유형, 도메인 용어 예시(`기존 매뉴얼 작성본/`)
-
 ---
 
 ## 변경 이력 / 피드백 반영
