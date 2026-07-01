@@ -53,7 +53,7 @@
 
   <!-- annotations -->
   <line x1="300" y1="197" x2="300" y2="226" stroke="#C9663A" stroke-width="1"/>
-  <text x="300" y="240" font-size="11.5" font-weight="700" fill="#C9663A" text-anchor="middle">진짜 급락 → 추세 띠 벗어남 = 이상</text>
+  <text x="300" y="240" font-size="11.5" font-weight="700" fill="#C9663A" text-anchor="middle">수치 급락 → 추세 띠 벗어남 = 이상</text>
 
   <line x1="615" y1="170" x2="615" y2="324" stroke="#9aa6b2" stroke-width="1"/>
   <text x="615" y="338" font-size="11.5" fill="#3a4a55" text-anchor="middle">주말 정상 하락 → 띠 안 = 정상 (고정 한계값이면 오탐)</text>
