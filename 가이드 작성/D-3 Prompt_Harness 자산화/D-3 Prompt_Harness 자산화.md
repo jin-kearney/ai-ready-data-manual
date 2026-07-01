@@ -115,18 +115,28 @@ Prompt를 검증된 공용 자산으로 관리하면 다음이 달라진다. 프
 모든 Prompt가 처음부터 자산인 것은 아니다. 일회성 대화로 시작한 Prompt가 반복 사용되며 보존 가치가 확인되고, 변수로 일반화되고, 평가를 통과한 뒤에야 Registry(등록소)에 등록되는 공용 자산으로 승격된다.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'primaryColor':'#DCE8F5','primaryBorderColor':'#2456A4','primaryTextColor':'#10243f','lineColor':'#2456A4','fontSize':'12px'}}}%%
 flowchart LR
-    S1["일회성 대화<br/><small>보존 불필요</small>"]:::src
-    S2["반복 확인<br/><small>보존 가치 식별</small>"]:::n
-    S3["템플릿화<br/><small>변수로 일반화</small>"]:::n
-    S4["평가 통과<br/><small>품질 검증</small>"]:::gate
-    S5["Registry 등록<br/><small>공용 자산</small>"]:::cat
-    S1 -->|"반복되면"| S2 -->|"다듬어"| S3 -->|"평가로 검증"| S4 -->|"승인·등록"| S5
-    classDef src fill:#79C3E8,stroke:#3F9BD4,color:#0b3a52;
-    classDef n fill:#B7CDE6,stroke:#6B9AD1,color:#10243f;
-    classDef gate fill:#3F9BD4,stroke:#2456A4,color:#fff;
-    classDef cat fill:#2456A4,color:#fff,stroke:#163a73,stroke-width:2px;
+
+S1["일회성 대화<br/>보존 불필요"]
+S2["반복 확인<br/>보존 가치 식별"]
+S3["템플릿화<br/>변수로 일반화"]
+S4["평가 통과<br/>품질 검증"]
+S5["Registry 등록<br/>공용 자산"]
+
+S1 -->|반복| S2
+S2 -->|보정| S3
+S3 -->|평가로 검증| S4
+S4 -->|승인·등록| S5
+
+classDef src fill:#79C3E8,stroke:#3F9BD4,color:#0b3a52;
+classDef normal fill:#B7CDE6,stroke:#6B9AD1,color:#10243f;
+classDef gate fill:#3F9BD4,stroke:#2456A4,color:#ffffff;
+classDef registry fill:#2456A4,stroke:#163A73,stroke-width:2px,color:#ffffff;
+
+class S1 src;
+class S2,S3 normal;
+class S4 gate;
+class S5 registry;
 ```
 
 <a id="s14"></a>
