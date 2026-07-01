@@ -9,8 +9,8 @@
   <!-- meta line -->
   <text x="24" y="70" font-size="12.5" fill="#3a4a55">대상: MES 외관검사 결과 (월 12만 건) · 용도: 불량 원인 RAG·월간 품질 집계 · 오너: 품질혁신팀</text>
 
-  <!-- ===== Section: 품질 차원별 점수 ===== -->
-  <text x="24" y="100" font-size="13.5" font-weight="700" fill="#10243f">품질 차원별 점수 (합격선 대비)</text>
+  <!-- ===== Section: 품질 항목별 점수 ===== -->
+  <text x="24" y="100" font-size="13.5" font-weight="700" fill="#10243f">품질 항목별 점수 (합격선 대비)</text>
 
   <!-- left column bars -->
   <g font-size="12.5" fill="#10243f">

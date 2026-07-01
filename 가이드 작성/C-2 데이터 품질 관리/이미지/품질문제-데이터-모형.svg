@@ -1,7 +1,7 @@
 <svg viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
   <rect width="880" height="360" fill="#ffffff"/>
   <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">품질 문제가 섞인 검사 데이터 — 점검 전 모습 (가상)</text>
-  <text x="24" y="50" font-size="12.5" fill="#3a4a55">사람 눈엔 그냥 표지만, 여섯 가지 품질 차원에서 문제가 숨어 있어 그대로 AI에 넣으면 답이 틀어진다.</text>
+  <text x="24" y="50" font-size="12.5" fill="#3a4a55">사람 눈엔 그냥 표지만, 여섯 가지 품질 항목에서 문제가 숨어 있어 그대로 AI에 넣으면 답이 틀어진다.</text>
 
   <!-- ===== header row ===== -->
   <g font-size="12.5" fill="#10243f" text-anchor="middle" font-weight="700">
@@ -84,7 +84,7 @@
 
   <!-- ===== legend: 6 dimensions ===== -->
   <g font-size="12.5">
-    <text x="470" y="80" font-size="13.5" font-weight="700" fill="#10243f">여섯 가지 품질 차원에서 본 문제</text>
+    <text x="470" y="80" font-size="13.5" font-weight="700" fill="#10243f">여섯 가지 품질 항목에서 본 문제</text>
 
     <circle cx="478" cy="104" r="8" fill="#d64545"/><text x="478" y="108" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">1</text>
     <text x="494" y="102" font-weight="700" fill="#10243f">완전성</text><text x="556" y="102" fill="#3a4a55">단위·판정이 비어 있다(빈칸)</text>
