@@ -10,7 +10,7 @@ last-updated: 2026-07-01
 tags: [ai-ready-data, C-1, storyline, observability, 데이터관측, 이상탐지, 모니터링]
 ---
 
-# C-1. 데이터 Observability 매뉴얼
+# C-1. 데이터 Observability 가이드
 
 > 정의: 데이터 흐름의 지연·누락·변경·이상 징후를 운영 중 감지·알림하는 모니터링 체계.
 
