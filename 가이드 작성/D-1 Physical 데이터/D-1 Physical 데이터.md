@@ -390,8 +390,6 @@ sequenceDiagram
 
 ## 6. Tech Stack — 솔루션·연결 방식
 
-> **2층 연결:** 솔루션을 묶어서 평가·선정하려면 → [Tech Stack 비교 정본](../../Tech%20Player/01%20Tech%20Stack%20비교%20(솔루션×주제).md). 이 절은 Physical 데이터 관점에서 연결 방식과 저장 솔루션의 기능을 비교한다.
-
 <a id="kq2"></a>
 
 ### 6.1 수집·연결 방식
