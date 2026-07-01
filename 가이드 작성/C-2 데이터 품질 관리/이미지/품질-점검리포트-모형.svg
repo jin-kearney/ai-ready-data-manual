@@ -3,11 +3,11 @@
 
   <!-- header band -->
   <rect x="0" y="0" width="860" height="46" fill="#2456A4"/>
-  <text x="24" y="29" font-size="16.5" font-weight="700" fill="#ffffff">데이터 품질 점검 리포트 — CCL_검사결과_월간 (가상)</text>
+  <text x="24" y="29" font-size="16.5" font-weight="700" fill="#ffffff">데이터 품질 점검 리포트 — 도장검사결과_월간 (가상)</text>
   <text x="836" y="29" font-size="11.5" fill="#cfe0f4" text-anchor="end">점검 시각 2026-06-16 02:00 · 적용 기준 v1.3</text>
 
   <!-- meta line -->
-  <text x="24" y="70" font-size="12.5" fill="#3a4a55">대상: MES 외관검사 결과 (월 12만 건) · 용도: 불량 원인 RAG·월간 품질 집계 · 오너: 품질혁신팀</text>
+  <text x="24" y="70" font-size="12.5" fill="#3a4a55">대상: MES 도장 검사 결과 (월 12만 건) · 용도: 불량 원인 RAG·월간 품질 집계 · 오너: 품질혁신팀</text>
 
   <!-- ===== Section: 품질 항목별 점수 ===== -->
   <text x="24" y="100" font-size="13.5" font-weight="700" fill="#10243f">품질 항목별 점수 (합격선 대비)</text>
