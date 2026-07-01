@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" font-family="-apple-system,'Malgun Gothic','Apple SD Gothic Neo',sans-serif" fill="#10243f">
+<rect width="1000" height="620" fill="#ffffff"/>
+
+<text x="40" y="42" font-size="21" font-weight="700" fill="#163a73">성능 평가 30점 — 3 Pillar × 10 지표</text>
+<text x="40" y="66" font-size="13" fill="#5b6b7d">지표마다 최대 3점. AXC가 "컴포넌트 무관"으로 설계한 일반 품질 지표라 데이터 준비 도구에 그대로 적용된다.</text>
+
+<!-- ===== Pillar 1 ===== -->
+<rect x="30" y="88" width="300" height="46" rx="8" fill="#2456A4" stroke="#163a73" stroke-width="1.5"/>
+<text x="180" y="110" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">P1 · 제품 검증성</text>
+<text x="180" y="128" font-size="11.5" fill="#dbe6f5" text-anchor="middle">믿고 쓸 만큼 검증됐나 (소계 9)</text>
+
+<rect x="30" y="146" width="300" height="58" rx="7" fill="#EEF4FB" stroke="#6B9AD1" stroke-width="1.2"/>
+<text x="46" y="170" font-size="13" font-weight="600">CI1 성숙도·활성도</text>
+<text x="46" y="190" font-size="11" fill="#5b6b7d">GA·전담지원 / OSS stable·활성</text>
+<rect x="272" y="162" width="42" height="26" rx="13" fill="#2456A4"/><text x="293" y="180" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+
+<rect x="30" y="212" width="300" height="58" rx="7" fill="#EEF4FB" stroke="#6B9AD1" stroke-width="1.2"/>
+<text x="46" y="236" font-size="13" font-weight="600">CI2 레퍼런스</text>
+<text x="46" y="256" font-size="11" fill="#5b6b7d">대형 도입·Gartner MQ 등재</text>
+<rect x="272" y="228" width="42" height="26" rx="13" fill="#2456A4"/><text x="293" y="246" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+
+<rect x="30" y="278" width="300" height="58" rx="7" fill="#EEF4FB" stroke="#6B9AD1" stroke-width="1.2"/>
+<text x="46" y="302" font-size="13" font-weight="600">CI3 가용성·장애대응 <tspan fill="#4FA47D" font-weight="700">◇</tspan></text>
+<text x="46" y="322" font-size="11" fill="#5b6b7d">SLA·내결함성 문서화</text>
+<rect x="272" y="294" width="42" height="26" rx="13" fill="#2456A4"/><text x="293" y="312" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+
+<!-- ===== Pillar 2 ===== -->
+<rect x="350" y="88" width="300" height="46" rx="8" fill="#2456A4" stroke="#163a73" stroke-width="1.5"/>
+<text x="500" y="110" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">P2 · 개발 적합성</text>
+<text x="500" y="128" font-size="11.5" fill="#dbe6f5" text-anchor="middle">우리 환경에 붙일 수 있나 (소계 9)</text>
+
+<rect x="350" y="146" width="300" height="58" rx="7" fill="#EEF4FB" stroke="#6B9AD1" stroke-width="1.2"/>
+<text x="366" y="170" font-size="13" font-weight="600">CI1 기술 표준 준수</text>
+<text x="366" y="190" font-size="11" fill="#5b6b7d">표준 API + 표준 프로토콜</text>
+<rect x="592" y="162" width="42" height="26" rx="13" fill="#2456A4"/><text x="613" y="180" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+
+<rect x="350" y="212" width="300" height="58" rx="7" fill="#EEF4FB" stroke="#6B9AD1" stroke-width="1.2"/>
+<text x="366" y="236" font-size="13" font-weight="600">CI2 멀티클라우드·하이브리드 <tspan fill="#4FA47D" font-weight="700">◇</tspan></text>
+<text x="366" y="256" font-size="11" fill="#5b6b7d">온프렘 포함·통합 제어</text>
+<rect x="592" y="228" width="42" height="26" rx="13" fill="#2456A4"/><text x="613" y="246" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+
+<rect x="350" y="278" width="300" height="58" rx="7" fill="#EEF4FB" stroke="#6B9AD1" stroke-width="1.2"/>
+<text x="366" y="302" font-size="13" font-weight="600">CI3 Plugin·SDK 연동성</text>
+<text x="366" y="322" font-size="11" fill="#5b6b7d">SDK·Plugin·Webhook</text>
+<rect x="592" y="294" width="42" height="26" rx="13" fill="#2456A4"/><text x="613" y="312" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+
+<!-- ===== Pillar 3 ===== -->
+<rect x="670" y="88" width="300" height="46" rx="8" fill="#2456A4" stroke="#163a73" stroke-width="1.5"/>
+<text x="820" y="110" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">P3 · 운영 안정성</text>
+<text x="820" y="128" font-size="11.5" fill="#dbe6f5" text-anchor="middle">오래 안정적으로 굴러가나 (소계 12)</text>
+
+<rect x="670" y="146" width="300" height="46" rx="7" fill="#EEF4FB" stroke="#6B9AD1" stroke-width="1.2"/>
+<text x="686" y="167" font-size="13" font-weight="600">CI1 확장성·탄력성 <tspan fill="#4FA47D" font-weight="700">◇</tspan></text>
+<text x="686" y="184" font-size="10.5" fill="#5b6b7d">수평확장·오토스케일</text>
+<rect x="912" y="156" width="42" height="26" rx="13" fill="#2456A4"/><text x="933" y="174" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+
+<rect x="670" y="200" width="300" height="46" rx="7" fill="#EEF4FB" stroke="#6B9AD1" stroke-width="1.2"/>
+<text x="686" y="221" font-size="13" font-weight="600">CI2 백업·복구 <tspan fill="#4FA47D" font-weight="700">◇</tspan></text>
+<text x="686" y="238" font-size="10.5" fill="#5b6b7d">자동·PIT·교차리전</text>
+<rect x="912" y="210" width="42" height="26" rx="13" fill="#2456A4"/><text x="933" y="228" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+
+<rect x="670" y="254" width="300" height="46" rx="7" fill="#EEF4FB" stroke="#6B9AD1" stroke-width="1.2"/>
+<text x="686" y="275" font-size="13" font-weight="600">CI3 자원 효율성 <tspan fill="#4FA47D" font-weight="700">◇</tspan></text>
+<text x="686" y="292" font-size="10.5" fill="#5b6b7d">처리량(행/GB·시간)·IOPS 문서화</text>
+<rect x="912" y="264" width="42" height="26" rx="13" fill="#2456A4"/><text x="933" y="282" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+
+<rect x="670" y="308" width="300" height="46" rx="7" fill="#EEF4FB" stroke="#6B9AD1" stroke-width="1.2"/>
+<text x="686" y="329" font-size="13" font-weight="600">CI4 버전 호환성</text>
+<text x="686" y="346" font-size="10.5" fill="#5b6b7d">SemVer·하위호환·폐기 사전고지</text>
+<rect x="912" y="318" width="42" height="26" rx="13" fill="#2456A4"/><text x="933" y="336" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+
+<!-- Subtotals -->
+<rect x="30" y="360" width="300" height="40" rx="7" fill="#DCE8F5" stroke="#2456A4" stroke-width="1.3"/>
+<text x="180" y="385" font-size="13.5" font-weight="700" fill="#163a73" text-anchor="middle">P1 소계 = 9점</text>
+<rect x="350" y="360" width="300" height="40" rx="7" fill="#DCE8F5" stroke="#2456A4" stroke-width="1.3"/>
+<text x="500" y="385" font-size="13.5" font-weight="700" fill="#163a73" text-anchor="middle">P2 소계 = 9점</text>
+<rect x="670" y="360" width="300" height="40" rx="7" fill="#DCE8F5" stroke="#2456A4" stroke-width="1.3"/>
+<text x="820" y="385" font-size="13.5" font-weight="700" fill="#163a73" text-anchor="middle">P3 소계 = 12점</text>
+
+<!-- Total -->
+<rect x="300" y="424" width="400" height="52" rx="10" fill="#2456A4" stroke="#163a73" stroke-width="2"/>
+<text x="500" y="457" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">성능 합계 = 30점</text>
+
+<!-- OSS legend -->
+<rect x="30" y="500" width="940" height="86" rx="9" fill="#F1F7F4" stroke="#7CC2A7" stroke-width="1.3"/>
+<text x="50" y="526" font-size="13.5" font-weight="700" fill="#2f6b50"><tspan font-size="15">◇</tspan>  OSS 미평가 지표 (5개)</text>
+<text x="50" y="550" font-size="12" fill="#1f4d3a">오픈소스는 벤더가 없어 확인이 안 되는 5개 지표(◇: P1·CI3, P2·CI2, P3·CI1·CI2·CI3)를 빼고 나머지 5개만 채점한다.</text>
+<text x="50" y="572" font-size="12" fill="#1f4d3a">5개 × 최대 3점 = 최대 15점 → <tspan font-weight="700">×2 환산 = 30점</tspan> (상용 도구와 같은 30점 척도로 맞춘다).</text>
+</svg>

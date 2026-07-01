@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" font-family="-apple-system,'Malgun Gothic','Apple SD Gothic Neo',sans-serif" fill="#10243f">
+<rect width="960" height="640" fill="#ffffff"/>
+<defs>
+<marker id="arrOut" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto"><path d="M1,1 L7.5,4 L1,7" fill="none" stroke="#6B9AD1" stroke-width="1.6"/></marker>
+</defs>
+
+<text x="40" y="42" font-size="21" font-weight="700" fill="#163a73">Player 평가 퍼널 — 보안 → 성능 → 비용 순으로 좁혀 추천</text>
+<text x="40" y="66" font-size="13" fill="#5b6b7d">03의 14개 카테고리 후보를 위에서 아래로 걸러 남는 것을 순위로 세운다</text>
+
+<!-- Band 1: 후보 풀 -->
+<polygon points="150,90 730,90 702,152 178,152" fill="#79C3E8" stroke="#3F9BD4" stroke-width="1.5"/>
+<text x="440" y="118" font-size="15" font-weight="700" fill="#0b3a52" text-anchor="middle">후보 풀 · 14개 카테고리 × 5개 내외 ≈ 약 60개 Player</text>
+<text x="440" y="139" font-size="12" fill="#0b3a52" text-anchor="middle">03 §3 후보 표가 입력</text>
+
+<!-- Band 2: 보안 게이트 -->
+<polygon points="184,166 696,166 668,228 212,228" fill="#3F9BD4" stroke="#2456A4" stroke-width="1.5"/>
+<text x="440" y="194" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">1) 보안 게이트 (통과 / 탈락)</text>
+<text x="440" y="215" font-size="12" fill="#eaf4fb" text-anchor="middle">하나라도 미충족이면 여기서 탈락</text>
+
+<!-- Band 3: 성능 -->
+<polygon points="218,242 662,242 634,304 246,304" fill="#2456A4" stroke="#163a73" stroke-width="1.5"/>
+<text x="440" y="270" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">2) 성능 30점 (3 Pillar × 10 지표)</text>
+<text x="440" y="291" font-size="12" fill="#dbe6f5" text-anchor="middle">통과한 후보만 채점</text>
+
+<!-- Band 4: 비용 -->
+<polygon points="252,318 628,318 600,380 280,380" fill="#B7CDE6" stroke="#6B9AD1" stroke-width="1.5"/>
+<text x="440" y="346" font-size="15" font-weight="700" fill="#10243f" text-anchor="middle">3) 비용 3점 (3년 TCO)</text>
+<text x="440" y="367" font-size="12" fill="#10243f" text-anchor="middle">성능 30 + 비용 3 = 합계 33점</text>
+
+<!-- Band 5: 20점 컷 -->
+<polygon points="286,394 594,394 566,456 314,456" fill="#3F9BD4" stroke="#2456A4" stroke-width="1.5"/>
+<text x="440" y="422" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">4) 20점 컷</text>
+<text x="440" y="443" font-size="12" fill="#eaf4fb" text-anchor="middle">33점 중 20점 미만은 후순위</text>
+
+<!-- Band 6: 추천 -->
+<polygon points="320,470 560,470 532,532 348,532" fill="#4FA47D" stroke="#2f6b50" stroke-width="1.5"/>
+<text x="440" y="498" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">추천</text>
+<text x="440" y="519" font-size="12" fill="#e5f2ec" text-anchor="middle">단위별 우선순위 + 환경별 1순위</text>
+
+<!-- Drop-out callouts (right) -->
+<line x1="696" y1="197" x2="792" y2="197" stroke="#6B9AD1" stroke-width="1.6" marker-end="url(#arrOut)"/>
+<rect x="795" y="172" width="150" height="52" rx="8" fill="#E7EEF6" stroke="#6B9AD1" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="870" y="192" font-size="11.5" font-weight="700" fill="#3a4a5c" text-anchor="middle">우선순위 제외</text>
+<text x="870" y="210" font-size="10.5" fill="#5b6b7d" text-anchor="middle">CVSS≥7.0·필수기능 없음</text>
+
+<line x1="594" y1="425" x2="792" y2="425" stroke="#6B9AD1" stroke-width="1.6" marker-end="url(#arrOut)"/>
+<rect x="795" y="400" width="150" height="52" rx="8" fill="#E7EEF6" stroke="#6B9AD1" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="870" y="420" font-size="11.5" font-weight="700" fill="#3a4a5c" text-anchor="middle">후순위</text>
+<text x="870" y="438" font-size="10.5" fill="#5b6b7d" text-anchor="middle">종합 20점 미만</text>
+
+<!-- Bottom note -->
+<text x="40" y="588" font-size="12.5" fill="#5b6b7d">순위는 카테고리(솔루션 단위) 안에서만 매긴다 — 거버넌스 플랫폼끼리, 품질·관측 도구끼리 각각.</text>
+<text x="40" y="610" font-size="12.5" fill="#5b6b7d">결과는 03 §3 빈 점수 칸을 채우고, 2층 정본 01 Tech Stack 비교의 정성 판정을 정량으로 뒷받침한다.</text>
+</svg>
