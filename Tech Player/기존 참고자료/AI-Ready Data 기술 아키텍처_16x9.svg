@@ -1,0 +1,295 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="Noto Sans KR">
+<rect width="1920" height="1080" fill="#ffffff"/>
+<defs>
+<marker id="mingest" markerWidth="8" markerHeight="8" refX="6.2" refY="4" orient="auto"><path d="M1,1 L6.5,4 L1,7" fill="none" stroke="#94a3b8" stroke-width="1.5"/></marker>
+  <marker id="mingestS" markerWidth="8" markerHeight="8" refX="1.8" refY="4" orient="auto"><path d="M7,1 L1.5,4 L7,7" fill="none" stroke="#94a3b8" stroke-width="1.5"/></marker>
+<marker id="mserve" markerWidth="8" markerHeight="8" refX="6.2" refY="4" orient="auto"><path d="M1,1 L6.5,4 L1,7" fill="none" stroke="#0284c7" stroke-width="1.5"/></marker>
+  <marker id="mserveS" markerWidth="8" markerHeight="8" refX="1.8" refY="4" orient="auto"><path d="M7,1 L1.5,4 L7,7" fill="none" stroke="#0284c7" stroke-width="1.5"/></marker>
+<marker id="mfb" markerWidth="8" markerHeight="8" refX="6.2" refY="4" orient="auto"><path d="M1,1 L6.5,4 L1,7" fill="none" stroke="#f59e0b" stroke-width="1.5"/></marker>
+  <marker id="mfbS" markerWidth="8" markerHeight="8" refX="1.8" refY="4" orient="auto"><path d="M7,1 L1.5,4 L7,7" fill="none" stroke="#f59e0b" stroke-width="1.5"/></marker>
+<marker id="mbase" markerWidth="8" markerHeight="8" refX="6.2" refY="4" orient="auto"><path d="M1,1 L6.5,4 L1,7" fill="none" stroke="#94a3b8" stroke-width="1.5"/></marker>
+  <marker id="mbaseS" markerWidth="8" markerHeight="8" refX="1.8" refY="4" orient="auto"><path d="M7,1 L1.5,4 L7,7" fill="none" stroke="#94a3b8" stroke-width="1.5"/></marker>
+<marker id="mgap" markerWidth="8" markerHeight="8" refX="6.2" refY="4" orient="auto"><path d="M1,1 L6.5,4 L1,7" fill="none" stroke="#f59e0b" stroke-width="1.5"/></marker>
+</defs>
+<text x="40" y="46" font-size="26" fill="#1e293b" font-weight="700" text-anchor="start" >AI-Ready Data 기술 아키텍처</text>
+<text x="420" y="46" font-size="14" fill="#64748b" font-weight="400" text-anchor="start" >— 20개 주제 × 솔루션 레벨링 : 통합 플랫폼 1종 + 전문 솔루션 5종 + LLMOps 1종 = 실질 도입 7종</text>
+<text x="40" y="92" font-size="11.5" fill="#94a3b8" font-weight="700" text-anchor="start" >⑤ 활용 — 사람과 AI가 함께 일하는 지점</text>
+<text x="40" y="180" font-size="11.5" fill="#94a3b8" font-weight="700" text-anchor="start" >④ AI 서빙 · Agent Ops (Lv.3)</text>
+<text x="40" y="311" font-size="11.5" fill="#94a3b8" font-weight="700" text-anchor="start" >③ 통합 데이터 플랫폼(Lv.1) + 지식그래프(Lv.2)</text>
+<text x="40" y="675" font-size="11.5" fill="#94a3b8" font-weight="700" text-anchor="start" >② 수집 · 변환 — Lv.2 전문 솔루션 위성</text>
+<text x="40" y="787" font-size="11.5" fill="#94a3b8" font-weight="700" text-anchor="start" >① 데이터 원본</text>
+<text x="40" y="895" font-size="11.5" fill="#94a3b8" font-weight="700" text-anchor="start" >⓪ 공통 인프라 계층</text>
+<rect x="320" y="186" width="1000" height="110" rx="9" fill="rgba(255,255,255,0.4)" stroke="#e11d48" stroke-dasharray="6 4" stroke-width="1.6"/>
+<text x="335" y="204" font-size="11.5" fill="#e11d48" font-weight="700" text-anchor="start" >Lv.3 LLMOps · Agent Ops</text>
+<text x="1305" y="204" font-size="9.5" fill="#64748b" font-weight="400" text-anchor="end" >MCP · LangSmith · Langfuse</text>
+<rect x="250" y="318" width="1070" height="330" rx="10" fill="rgba(239,246,255,0.6)" stroke="#2563eb" stroke-dasharray="7 4" stroke-width="1.8"/>
+<text x="265" y="340" font-size="12.5" fill="#2563eb" font-weight="700" text-anchor="start" >Lv.1 통합 데이터 플랫폼 — Lakehouse 1종 (Databricks · Snowflake · MS Fabric 중 택1)</text>
+<rect x="265" y="350" width="510" height="108" rx="7" fill="rgba(255,255,255,0.55)" stroke="#2563eb" stroke-width="1.3"/>
+<text x="275" y="366" font-size="11.5" fill="#2563eb" font-weight="700" text-anchor="start" >유형① 의미 관리 — 카탈로그·메타·용어</text>
+<text x="765" y="366" font-size="9.5" fill="#64748b" font-weight="400" text-anchor="end" >분리: Collibra·DataHub</text>
+<rect x="790" y="350" width="515" height="108" rx="7" fill="rgba(255,255,255,0.55)" stroke="#d97706" stroke-width="1.3"/>
+<text x="800" y="366" font-size="11.5" fill="#d97706" font-weight="700" text-anchor="start" >유형② 신뢰 통제 — 리니지·품질·관측</text>
+<text x="1295" y="366" font-size="9.5" fill="#64748b" font-weight="400" text-anchor="end" >보강: Monte Carlo·Soda</text>
+<rect x="265" y="470" width="510" height="70" rx="7" fill="rgba(255,255,255,0.55)" stroke="#16a34a" stroke-width="1.3"/>
+<text x="275" y="486" font-size="11.5" fill="#16a34a" font-weight="700" text-anchor="start" >유형④ 파이프라인 운영</text>
+<text x="765" y="486" font-size="9.5" fill="#64748b" font-weight="400" text-anchor="end" >Workflows · dbt</text>
+<rect x="790" y="470" width="515" height="70" rx="7" fill="rgba(255,255,255,0.55)" stroke="#0ea5e9" stroke-width="1.3"/>
+<text x="800" y="486" font-size="11.5" fill="#0ea5e9" font-weight="700" text-anchor="start" >유형③ 제공 · 공유</text>
+<text x="1295" y="486" font-size="9.5" fill="#64748b" font-weight="400" text-anchor="end" >Marketplace · Sharing</text>
+<rect x="265" y="552" width="1040" height="84" rx="7" fill="rgba(255,255,255,0.55)" stroke="#64748b" stroke-width="1.3"/>
+<text x="275" y="568" font-size="11.5" fill="#64748b" font-weight="700" text-anchor="start" >유형⑤ 저장 · 처리 엔진</text>
+<text x="1295" y="568" font-size="9.5" fill="#64748b" font-weight="400" text-anchor="end" >Delta · Iceberg</text>
+<rect x="1336" y="318" width="84" height="330" rx="8" fill="#ffffff" stroke="#475569" stroke-width="1.3"/>
+<text x="1378" y="483" font-size="12.5" font-weight="700" fill="#475569" text-anchor="middle" transform="rotate(-90 1378 483)">F-4 AI 데이터 보안 — Presidio·BigID (Lv.2 횡단)</text>
+<path d="M190,794 L190,668 L440,668 L440,628" fill="none" stroke="#94a3b8" stroke-width="1.8"  marker-end="url(#mingest)" />
+<text x="315" y="663" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">내장 커넥터 수집</text>
+<path d="M470,794 C470,774 470,778 470,758" fill="none" stroke="#94a3b8" stroke-width="1.8"  marker-end="url(#mingest)" />
+<path d="M750,794 C750,774 735,778 735,758" fill="none" stroke="#94a3b8" stroke-width="1.8"  marker-end="url(#mingest)" />
+<path d="M1040,794 C1040,769.5100020416497 980,782.4899979583503 980,758" fill="none" stroke="#94a3b8" stroke-width="1.8"  marker-end="url(#mingest)" />
+<text x="1035" y="780" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">스캔·OCR</text>
+<path d="M870,720 L850,720" fill="none" stroke="#94a3b8" stroke-width="1.8"  marker-end="url(#mingest)" />
+<path d="M455,682 C455,662 455,648 455,628" fill="none" stroke="#94a3b8" stroke-width="1.8"  marker-end="url(#mingest)" />
+<text x="478" y="660" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">시계열</text>
+<path d="M735,682 C735,662 735,648 735,628" fill="none" stroke="#94a3b8" stroke-width="1.8"  marker-end="url(#mingest)" />
+<text x="735" y="664" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">청킹·임베딩</text>
+<path d="M660,682 C660,648.2182001663617 580,661.7817998336383 580,628" fill="none" stroke="#94a3b8" stroke-width="1.8"  marker-end="url(#mingest)" />
+<path d="M1177,682 C1177,662 1176,648 1176,628" fill="none" stroke="#94a3b8" stroke-width="1.8"  marker-end="url(#mingest)" />
+<text x="1200" y="660" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">라벨셋</text>
+<path d="M1342,682 C1342,644.6630210113351 1250,665.3369789886649 1250,628" fill="none" stroke="#94a3b8" stroke-width="1.8"  marker-end="url(#mingest)" />
+<path d="M1295,600 L1328,600 L1328,298 L915,298 L915,286" fill="none" stroke="#94a3b8" stroke-width="1.8"  marker-end="url(#mingest)" />
+<text x="1120" y="294" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">Gold 평가셋 제공</text>
+<path d="M250,430 L230,430" fill="none" stroke="#94a3b8" stroke-width="1.8"  marker-end="url(#mingest)" marker-start="url(#mingestS)"/>
+<path d="M275,600 C255,600 250,592 230,592" fill="none" stroke="#94a3b8" stroke-width="1.8"  marker-end="url(#mingest)" />
+<path d="M680,628 L680,660 L240,660 L240,310 L165,310 L165,282" fill="none" stroke="#0284c7" stroke-width="2.2"  marker-end="url(#mserve)" />
+<text x="228" y="480" font-size="10" font-weight="600" fill="#475569" text-anchor="middle" transform="rotate(-90 228 480)" paint-order="stroke" stroke="#ffffff" stroke-width="3">벡터 검색</text>
+<path d="M135,318 C135,298 150,302 150,282" fill="none" stroke="#0284c7" stroke-width="2.2"  marker-end="url(#mserve)" />
+<text x="178" y="306" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">GraphRAG</text>
+<path d="M165,198 C165,40.28819796857309 614,317.71180203142694 614,160" fill="none" stroke="#0284c7" stroke-width="2.2"  marker-end="url(#mserve)" />
+<text x="400" y="170" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">RAG 근거 제공</text>
+<path d="M303,318 C303,262.5407356702237 315,215.45926432977632 315,160" fill="none" stroke="#0284c7" stroke-width="2.2"  marker-end="url(#mserve)" />
+<text x="298" y="240" font-size="10" font-weight="600" fill="#475569" text-anchor="middle" transform="rotate(-90 298 240)" paint-order="stroke" stroke="#ffffff" stroke-width="3">탐색·Product 소비</text>
+<path d="M800,514 L782,514 L782,344 L680,344 L680,286" fill="none" stroke="#0284c7" stroke-width="2.2"  marker-end="url(#mserve)" />
+<text x="770" y="425" font-size="10" font-weight="600" fill="#475569" text-anchor="middle" transform="rotate(-90 770 425)" paint-order="stroke" stroke="#ffffff" stroke-width="3">Product→Tool 등록</text>
+<path d="M445,216 C445,124.62318401257355 700,251.37681598742645 700,160" fill="none" stroke="#0284c7" stroke-width="2.2"  marker-end="url(#mserve)" />
+<text x="560" y="182" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">Prompt 주입</text>
+<path d="M770,160 C770,197.1 680,178.9 680,216" fill="none" stroke="#0284c7" stroke-width="2.2"  marker-end="url(#mserve)" />
+<text x="748" y="196" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">Tool 호출</text>
+<path d="M603,286 L603,306 L30,306 L30,830 L60,830" fill="none" stroke="#0284c7" stroke-width="2.2"  marker-end="url(#mserve)" />
+<text x="20" y="560" font-size="10" font-weight="600" fill="#475569" text-anchor="middle" transform="rotate(-90 20 560)" paint-order="stroke" stroke="#ffffff" stroke-width="3">MCP로 업무시스템 조회·실행</text>
+<path d="M420,130 L560,130" fill="none" stroke="#0284c7" stroke-width="2.2"  marker-end="url(#mserve)" marker-start="url(#mserveS)"/>
+<path d="M915,216 C915,194.53555265095326 890,181.46444734904674 890,160" fill="none" stroke="#0284c7" stroke-width="2.2"  marker-end="url(#mserve)" />
+<text x="925" y="184" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">평가·회귀</text>
+<path d="M920,130 C1013.1946886898604,130 1172,122.80531131013957 1172,216" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#mfb)" />
+<text x="1080" y="158" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">실행 로그·사용자 수정</text>
+<path d="M1040,251 L1025,251" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#mfb)" />
+<path d="M1090,286 L1090,302 L445,302 L445,286" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#mfb)" />
+<text x="760" y="298" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">Prompt·Tool 개선</text>
+<path d="M1172,286 L1172,318" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#mfb)" />
+<text x="1240" y="308" font-size="10" font-weight="600" fill="#475569" text-anchor="middle"  paint-order="stroke" stroke="#ffffff" stroke-width="3">데이터 정비 환류</text>
+<path d="M185,902 C185,882 190,886 190,866" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="2.5 3" marker-end="url(#mbase)" />
+<path d="M440,902 C440,882 470,886 470,866" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="2.5 3" marker-end="url(#mbase)" />
+<path d="M690,902 C690,877.5100020416497 750,890.4899979583503 750,866" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="2.5 3" marker-end="url(#mbase)" />
+<path d="M955,902 C955,869.6917580174966 1040,898.3082419825034 1040,866" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="2.5 3" marker-end="url(#mgap)" />
+<rect x="120" y="100" width="300" height="60" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="120" y="105" width="3.5" height="50" rx="1.7" fill="#64748b"/>
+<text x="132" y="124" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="13">현업 · 분석가 · 경영진</tspan></text>
+<text x="132" y="142" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >포털 · BI · 챗 UI</text>
+<rect x="560" y="100" width="360" height="60" rx="7" fill="#fef2f2" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="560" y="105" width="3.5" height="50" rx="1.7" fill="#e11d48"/>
+<text x="572" y="124" text-anchor="start"><tspan fill="#e11d48" font-weight="700" font-size="11">AI  </tspan><tspan fill="#1e293b" font-weight="700" font-size="15">AI Agent · Copilot · 챗봇</tspan></text>
+<text x="572" y="142" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >LLM + RAG + Tool 호출 + Harness</text>
+<rect x="40" y="198" width="250" height="84" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="40" y="203" width="3.5" height="74" rx="1.7" fill="#64748b"/>
+<text x="52" y="222" text-anchor="start"><tspan fill="#64748b" font-weight="700" font-size="11">서빙  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">RAG 검색 서비스</tspan></text>
+<text x="52" y="240" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >하이브리드 검색 + GraphRAG</text>
+<rect x="335" y="216" width="220" height="70" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="335" y="221" width="3.5" height="60" rx="1.7" fill="#e11d48"/>
+<text x="347" y="240" text-anchor="start"><tspan fill="#e11d48" font-weight="700" font-size="11">D-3  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">Prompt/Harness</tspan></text>
+<text x="347" y="258" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >Prompt Registry · 버전관리</text>
+<rect x="570" y="216" width="220" height="70" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="570" y="221" width="3.5" height="60" rx="1.7" fill="#e11d48"/>
+<text x="582" y="240" text-anchor="start"><tspan fill="#e11d48" font-weight="700" font-size="11">D-2  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">API/Tool (MCP)</tspan></text>
+<text x="582" y="258" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >Tool Registry · 위험등급</text>
+<rect x="805" y="216" width="220" height="70" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="805" y="221" width="3.5" height="60" rx="1.7" fill="#e11d48"/>
+<text x="817" y="240" text-anchor="start"><tspan fill="#e11d48" font-weight="700" font-size="11">E-3  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">AI 평가 데이터</tspan></text>
+<text x="817" y="258" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >Gold Dataset · 회귀테스트</text>
+<rect x="1040" y="216" width="265" height="70" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="1040" y="221" width="3.5" height="60" rx="1.7" fill="#e11d48"/>
+<text x="1052" y="240" text-anchor="start"><tspan fill="#e11d48" font-weight="700" font-size="11">E-4  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">Feedback Loop</tspan></text>
+<text x="1052" y="258" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >오류 분류 · 개선 Backlog</text>
+<rect x="40" y="318" width="190" height="300" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="40" y="323" width="3.5" height="290" rx="1.7" fill="#7c3aed"/>
+<text x="52" y="342" text-anchor="start"><tspan fill="#7c3aed" font-weight="700" font-size="11">B-3  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">온톨로지</tspan></text>
+<text x="52" y="360" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >지식그래프 (Lv.2)</text>
+<text x="52" y="376" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >Neo4j · GraphDB</text>
+<rect x="275" y="382" width="158" height="66" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="275" y="387" width="3.5" height="56" rx="1.7" fill="#2563eb"/>
+<text x="287" y="406" text-anchor="start"><tspan fill="#2563eb" font-weight="700" font-size="11">A-1  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">카탈로그</tspan></text>
+<text x="287" y="424" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >자산 등록·검색</text>
+<rect x="441" y="382" width="158" height="66" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="441" y="387" width="3.5" height="56" rx="1.7" fill="#2563eb"/>
+<text x="453" y="406" text-anchor="start"><tspan fill="#2563eb" font-weight="700" font-size="11">A-2  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">메타데이터</tspan></text>
+<text x="453" y="424" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >스키마·단위·기준</text>
+<rect x="607" y="382" width="158" height="66" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="607" y="387" width="3.5" height="56" rx="1.7" fill="#2563eb"/>
+<text x="619" y="406" text-anchor="start"><tspan fill="#2563eb" font-weight="700" font-size="11">A-3  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">Glossary</tspan></text>
+<text x="619" y="424" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >용어·동의어 사전</text>
+<rect x="800" y="382" width="158" height="66" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="800" y="387" width="3.5" height="56" rx="1.7" fill="#d97706"/>
+<text x="812" y="406" text-anchor="start"><tspan fill="#d97706" font-weight="700" font-size="11">C-3  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">Lineage</tspan></text>
+<text x="812" y="424" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >컬럼 레벨 자동 추적</text>
+<rect x="966" y="382" width="158" height="66" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="966" y="387" width="3.5" height="56" rx="1.7" fill="#d97706"/>
+<text x="978" y="406" text-anchor="start"><tspan fill="#d97706" font-weight="700" font-size="11">C-2  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">품질·접근제어</tspan></text>
+<text x="978" y="424" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >Quality Gate · RBAC</text>
+<rect x="1132" y="382" width="163" height="66" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="1132" y="387" width="3.5" height="56" rx="1.7" fill="#d97706"/>
+<text x="1144" y="406" text-anchor="start"><tspan fill="#d97706" font-weight="700" font-size="11">C-1  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">Observability</tspan></text>
+<text x="1144" y="424" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >기본 내장 + 보강 옵션</text>
+<rect x="275" y="492" width="240" height="44" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="275" y="497" width="3.5" height="34" rx="1.7" fill="#16a34a"/>
+<text x="287" y="511" text-anchor="start"><tspan fill="#16a34a" font-weight="700" font-size="11">F-1  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">DataOps</tspan></text>
+<text x="287" y="526" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >Workflows · dbt</text>
+<rect x="525" y="492" width="240" height="44" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="525" y="497" width="3.5" height="34" rx="1.7" fill="#16a34a"/>
+<text x="537" y="511" text-anchor="start"><tspan fill="#16a34a" font-weight="700" font-size="11">F-2  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">생애주기</tspan></text>
+<text x="537" y="526" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >보존·아카이빙·폐기</text>
+<rect x="800" y="492" width="495" height="44" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="800" y="497" width="3.5" height="34" rx="1.7" fill="#0ea5e9"/>
+<text x="812" y="511" text-anchor="start"><tspan fill="#0ea5e9" font-weight="700" font-size="11">E-1  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">데이터 Product화</tspan></text>
+<text x="812" y="526" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >Marketplace · Delta Sharing · SLA</text>
+<rect x="275" y="572" width="330" height="56" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="275" y="577" width="3.5" height="46" rx="1.7" fill="#64748b"/>
+<text x="287" y="591" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="13">Lakehouse 테이블</tspan></text>
+<text x="287" y="606" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >Delta · Iceberg · DW</text>
+<rect x="615" y="572" width="330" height="56" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="615" y="577" width="3.5" height="46" rx="1.7" fill="#64748b"/>
+<text x="627" y="591" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="13">Vector Search · 검색 인덱스</tspan></text>
+<text x="627" y="606" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >내장 Vector Search</text>
+<rect x="955" y="572" width="340" height="56" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="955" y="577" width="3.5" height="46" rx="1.7" fill="#64748b"/>
+<text x="967" y="591" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="13">학습·평가 데이터셋</tspan></text>
+<text x="967" y="606" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >라벨셋·합성셋·Gold 버전관리</text>
+<rect x="350" y="682" width="240" height="76" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="350" y="687" width="3.5" height="66" rx="1.7" fill="#16a34a"/>
+<text x="362" y="706" text-anchor="start"><tspan fill="#16a34a" font-weight="700" font-size="11">D-1  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">Physical 수집</tspan></text>
+<text x="362" y="724" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >Kafka · AVEVA PI (Lv.2)</text>
+<rect x="620" y="682" width="230" height="76" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="620" y="687" width="3.5" height="66" rx="1.7" fill="#0d9488"/>
+<text x="632" y="706" text-anchor="start"><tspan fill="#0d9488" font-weight="700" font-size="11">B-1  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">데이터 전처리</tspan></text>
+<text x="632" y="724" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >Unstructured·Upstage (Lv.2)</text>
+<rect x="870" y="682" width="220" height="76" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="870" y="687" width="3.5" height="66" rx="1.7" fill="#0d9488"/>
+<text x="882" y="706" text-anchor="start"><tspan fill="#0d9488" font-weight="700" font-size="11">F-3  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">디지털화</tspan></text>
+<text x="882" y="724" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >OCR · 인터뷰 구조화 (Lv.2)</text>
+<rect x="1100" y="682" width="155" height="76" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="1100" y="687" width="3.5" height="66" rx="1.7" fill="#0891b2"/>
+<text x="1112" y="706" text-anchor="start"><tspan fill="#0891b2" font-weight="700" font-size="11">B-2  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">해설/주석</tspan></text>
+<text x="1112" y="724" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >Label Studio (Lv.2)</text>
+<rect x="1265" y="682" width="155" height="76" rx="7" fill="#ffffff" stroke="#e2e8f0"  stroke-width="1.2"/>
+<rect x="1265" y="687" width="3.5" height="66" rx="1.7" fill="#0891b2"/>
+<text x="1277" y="706" text-anchor="start"><tspan fill="#0891b2" font-weight="700" font-size="11">E-2  </tspan><tspan fill="#1e293b" font-weight="700" font-size="13">합성데이터</tspan></text>
+<text x="1277" y="724" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >SDV·Gretel (Lv.2)</text>
+<rect x="60" y="794" width="260" height="72" rx="7" fill="#1e293b" stroke="#0f172a"  stroke-width="1.2"/>
+<rect x="60" y="799" width="3.5" height="62" rx="1.7" fill="#64748b"/>
+<text x="72" y="818" text-anchor="start"><tspan fill="#94a3b8" font-weight="700" font-size="11">원본  </tspan><tspan fill="#f8fafc" font-weight="700" font-size="13">업무 시스템</tspan></text>
+<text x="72" y="836" font-size="10" fill="#94a3b8" font-weight="400" text-anchor="start" >ERP · MES · QMS · LIMS · PLM</text>
+<rect x="350" y="794" width="240" height="72" rx="7" fill="#1e293b" stroke="#0f172a"  stroke-width="1.2"/>
+<rect x="350" y="799" width="3.5" height="62" rx="1.7" fill="#64748b"/>
+<text x="362" y="818" text-anchor="start"><tspan fill="#94a3b8" font-weight="700" font-size="11">원본  </tspan><tspan fill="#f8fafc" font-weight="700" font-size="13">설비 · 센서</tspan></text>
+<text x="362" y="836" font-size="10" fill="#94a3b8" font-weight="400" text-anchor="start" >PLC · SCADA · 검사장비</text>
+<rect x="620" y="794" width="260" height="72" rx="7" fill="#1e293b" stroke="#0f172a"  stroke-width="1.2"/>
+<rect x="620" y="799" width="3.5" height="62" rx="1.7" fill="#64748b"/>
+<text x="632" y="818" text-anchor="start"><tspan fill="#94a3b8" font-weight="700" font-size="11">원본  </tspan><tspan fill="#f8fafc" font-weight="700" font-size="13">문서 저장소</tspan></text>
+<text x="632" y="836" font-size="10" fill="#94a3b8" font-weight="400" text-anchor="start" >SharePoint · 파일서버 · 메일</text>
+<rect x="910" y="794" width="260" height="72" rx="7" fill="#1e293b" stroke="#0f172a"  stroke-width="1.2"/>
+<rect x="910" y="799" width="3.5" height="62" rx="1.7" fill="#64748b"/>
+<text x="922" y="818" text-anchor="start"><tspan fill="#94a3b8" font-weight="700" font-size="11">원본  </tspan><tspan fill="#f8fafc" font-weight="700" font-size="13">아날로그 자산</tspan></text>
+<text x="922" y="836" font-size="10" fill="#94a3b8" font-weight="400" text-anchor="start" >종이 · 수기 · 사진 · 암묵지</text>
+<rect x="60" y="902" width="250" height="64" rx="7" fill="#eef2f7" stroke="#cbd5e1"  stroke-width="1.2"/>
+<rect x="60" y="907" width="3.5" height="54" rx="1.7" fill="#64748b"/>
+<text x="72" y="926" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="13">클라우드 · IDC · K8s</tspan></text>
+<text x="72" y="944" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >AWS · Azure · 온프레미스</text>
+<rect x="330" y="902" width="220" height="64" rx="7" fill="#eef2f7" stroke="#cbd5e1"  stroke-width="1.2"/>
+<rect x="330" y="907" width="3.5" height="54" rx="1.7" fill="#64748b"/>
+<text x="342" y="926" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="13">Edge · OT 네트워크</tspan></text>
+<text x="342" y="944" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >Gateway · 망연계 DMZ</text>
+<rect x="570" y="902" width="240" height="64" rx="7" fill="#eef2f7" stroke="#cbd5e1"  stroke-width="1.2"/>
+<rect x="570" y="907" width="3.5" height="54" rx="1.7" fill="#64748b"/>
+<text x="582" y="926" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="13">스토리지</tspan></text>
+<text x="582" y="944" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >Object Storage · NAS</text>
+<rect x="830" y="902" width="250" height="64" rx="7" fill="#fff7ed" stroke="#f59e0b" stroke-dasharray="5 3" stroke-width="1.2"/>
+<rect x="830" y="907" width="3.5" height="54" rx="1.7" fill="#d97706"/>
+<text x="842" y="926" text-anchor="start"><tspan fill="#d97706" font-weight="700" font-size="11">!  </tspan><tspan fill="#b45309" font-weight="700" font-size="13">디지털 기반 부재</tspan></text>
+<text x="842" y="944" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >→ F-3 디지털화로 진입</text>
+<rect x="1100" y="902" width="160" height="64" rx="7" fill="#eef2f7" stroke="#cbd5e1"  stroke-width="1.2"/>
+<rect x="1100" y="907" width="3.5" height="54" rx="1.7" fill="#64748b"/>
+<text x="1112" y="926" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="13">AI 컴퓨팅·LLM</tspan></text>
+<text x="1112" y="944" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >GPU · LLM Gateway</text>
+<rect x="1275" y="902" width="145" height="64" rx="7" fill="#eef2f7" stroke="#cbd5e1"  stroke-width="1.2"/>
+<rect x="1275" y="907" width="3.5" height="54" rx="1.7" fill="#64748b"/>
+<text x="1287" y="926" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="13">보안 · 계정</tspan></text>
+<text x="1287" y="944" font-size="10" fill="#64748b" font-weight="400" text-anchor="start" >IAM · KMS · 망분리</text>
+<rect x="1452" y="80" width="444" height="976" rx="12" fill="#f8fafc" stroke="#e2e8f0" />
+<text x="1474" y="116" font-size="19" fill="#1e293b" font-weight="700" text-anchor="start" >솔루션 그룹 구성</text>
+<line x1="1474" y1="130" x2="1874" y2="130" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="1474" y="147" width="13" height="13" rx="3" fill="#2563eb" stroke="#2563eb" />
+<text x="1494" y="160" font-size="14.5" fill="#1e293b" font-weight="700" text-anchor="start" >Lv.1  통합 데이터 플랫폼 — 1종</text>
+<text x="1494" y="180" font-size="11" fill="#64748b" font-weight="400" text-anchor="start" >Databricks · Snowflake · MS Fabric 택1 / 9개 주제 내장</text>
+<circle cx="1500" cy="198" r="3.2" fill="#2563eb"/>
+<text x="1510" y="202" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">① 의미 관리  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">A-1·A-2·A-3 카탈로그·메타·용어</tspan></text>
+<circle cx="1500" cy="219" r="3.2" fill="#2563eb"/>
+<text x="1510" y="223" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">└ 분리 옵션: Collibra · DataHub</tspan></text>
+<circle cx="1500" cy="236" r="3.2" fill="#d97706"/>
+<text x="1510" y="240" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">② 신뢰 통제  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">C-3·C-2·C-1 리니지·품질·관측</tspan></text>
+<circle cx="1500" cy="257" r="3.2" fill="#d97706"/>
+<text x="1510" y="261" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">└ 보강 옵션: Monte Carlo · Soda</tspan></text>
+<circle cx="1500" cy="274" r="3.2" fill="#0ea5e9"/>
+<text x="1510" y="278" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">③ 제공·공유  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">E-1 Product · Marketplace · Sharing</tspan></text>
+<circle cx="1500" cy="295" r="3.2" fill="#16a34a"/>
+<text x="1510" y="299" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">④ 운영  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">F-1·F-2 DataOps · 생애주기</tspan></text>
+<circle cx="1500" cy="316" r="3.2" fill="#64748b"/>
+<text x="1510" y="320" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">⑤ 저장 엔진  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">Delta · Vector Search · ML 데이터셋</tspan></text>
+<rect x="1474" y="342" width="13" height="13" rx="3" fill="#7c3aed" stroke="#7c3aed" />
+<text x="1494" y="355" font-size="14.5" fill="#1e293b" font-weight="700" text-anchor="start" >Lv.2  전문 솔루션 — 5종 선택 도입</text>
+<text x="1494" y="375" font-size="11" fill="#64748b" font-weight="400" text-anchor="start" >플랫폼이 못 하는 영역만 위성으로</text>
+<circle cx="1500" cy="393" r="3.2" fill="#7c3aed"/>
+<text x="1510" y="397" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">지식그래프  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">B-3 — Neo4j · GraphDB (관계·인과 추론)</tspan></text>
+<circle cx="1500" cy="414" r="3.2" fill="#0d9488"/>
+<text x="1510" y="418" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">문서 AI·디지털화  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">B-1·F-3 — Unstructured · OCR</tspan></text>
+<circle cx="1500" cy="435" r="3.2" fill="#0891b2"/>
+<text x="1510" y="439" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">학습데이터 팩토리  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">B-2·E-2 — Label Studio · SDV</tspan></text>
+<circle cx="1500" cy="456" r="3.2" fill="#16a34a"/>
+<text x="1510" y="460" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">OT/IoT 수집  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">D-1 — Kafka · AVEVA PI · Edge</tspan></text>
+<circle cx="1500" cy="477" r="3.2" fill="#475569"/>
+<text x="1510" y="481" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">보안 전문 (횡단)  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">F-4 — Presidio · BigID 마스킹·가명화</tspan></text>
+<rect x="1474" y="503" width="13" height="13" rx="3" fill="#e11d48" stroke="#e11d48" />
+<text x="1494" y="516" font-size="14.5" fill="#1e293b" font-weight="700" text-anchor="start" >Lv.3  LLMOps · Agent Ops — 1종</text>
+<text x="1494" y="536" font-size="11" fill="#64748b" font-weight="400" text-anchor="start" >Agent 운영 시작 시 도입</text>
+<circle cx="1500" cy="554" r="3.2" fill="#e11d48"/>
+<text x="1510" y="558" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">D-2 Tool(MCP)  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">Agent의 손발 — 업무시스템 호출</tspan></text>
+<circle cx="1500" cy="575" r="3.2" fill="#e11d48"/>
+<text x="1510" y="579" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">D-3 Prompt  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">업무 절차·판단 기준의 자산화</tspan></text>
+<circle cx="1500" cy="596" r="3.2" fill="#e11d48"/>
+<text x="1510" y="600" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">E-3 평가 · E-4 피드백  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">Gold셋 회귀검증 → 전 계층 환류</tspan></text>
+<rect x="1474" y="622" width="13" height="13" rx="3" fill="#64748b" stroke="#64748b" />
+<text x="1494" y="635" font-size="14.5" fill="#1e293b" font-weight="700" text-anchor="start" >공통 인프라 계층</text>
+<text x="1494" y="655" font-size="11" fill="#64748b" font-weight="400" text-anchor="start" >클라우드·Edge/OT·스토리지·GPU/LLM·보안계정</text>
+<circle cx="1500" cy="673" r="3.2" fill="#d97706"/>
+<text x="1510" y="677" text-anchor="start"><tspan fill="#1e293b" font-weight="700" font-size="12">아날로그 영역  </tspan><tspan fill="#64748b" font-weight="400" font-size="11">디지털 기반 부재 → F-3 디지털화 필수</tspan></text>
+<rect x="1474" y="708" width="400" height="118" rx="9" fill="#eff6ff" stroke="#bfdbfe" />
+<text x="1490" y="732" font-size="12.5" fill="#2563eb" font-weight="700" text-anchor="start" >도입 순서 가이드</text>
+<text x="1490" y="754" font-size="11" fill="#1e293b" font-weight="400" text-anchor="start" >① Lv.1 통합 플랫폼 구축 (거버넌스 자동 확보)</text>
+<text x="1490" y="774" font-size="11" fill="#1e293b" font-weight="400" text-anchor="start" >② AI 과제 유형에 따라 Lv.2 선택 도입</text>
+<text x="1490" y="794" font-size="11" fill="#1e293b" font-weight="400" text-anchor="start" >③ Agent 운영 시작 시 Lv.3 LLMOps</text>
+<text x="1490" y="814" font-size="11" fill="#1e293b" font-weight="400" text-anchor="start" >④ 규모 확대 시 유형 단위 분리·보강</text>
+<line x1="1474" y1="846" x2="1500" y2="846" stroke="#94a3b8" stroke-width="2.4" />
+<text x="1506" y="850" font-size="10.5" fill="#64748b" font-weight="400" text-anchor="start" >수집·정비</text>
+<line x1="1580" y1="846" x2="1606" y2="846" stroke="#0284c7" stroke-width="2.4" />
+<text x="1612" y="850" font-size="10.5" fill="#64748b" font-weight="400" text-anchor="start" >AI 활용</text>
+<line x1="1678" y1="846" x2="1704" y2="846" stroke="#f59e0b" stroke-width="2.4" stroke-dasharray="6 4"/>
+<text x="1710" y="850" font-size="10.5" fill="#64748b" font-weight="400" text-anchor="start" >피드백</text>
+<line x1="1782" y1="846" x2="1808" y2="846" stroke="#94a3b8" stroke-width="2.4" stroke-dasharray="2.5 3"/>
+<text x="1814" y="850" font-size="10.5" fill="#64748b" font-weight="400" text-anchor="start" >인프라 기반</text>
+</svg>

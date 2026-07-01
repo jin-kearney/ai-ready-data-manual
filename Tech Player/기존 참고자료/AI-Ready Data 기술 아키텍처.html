@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Ready Data 기술 아키텍처</title>
+<style>
+  :root{
+    --p1:#2563eb; --g2:#7c3aed; --g3:#0d9488; --g4:#0891b2;
+    --g6:#16a34a; --g7:#e11d48; --g8:#475569;
+    --infra:#64748b; --src:#334155;
+    --ingest:#94a3b8; --serve:#0284c7; --feedback:#f59e0b; --base:#64748b;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',sans-serif; background:#f1f5f9; color:#1e293b;}
+  header{position:sticky; top:0; z-index:50; background:#fff; border-bottom:1px solid #e2e8f0; padding:10px 18px;}
+  header h1{font-size:17px; display:inline-block; margin-right:14px;}
+  header .sub{font-size:11.5px; color:#64748b;}
+  .toolbar{display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-top:8px;}
+  .btn{font-size:11.5px; padding:4px 10px; border:1px solid #cbd5e1; border-radius:14px; background:#fff; cursor:pointer; color:#334155;}
+  .btn:hover{background:#f1f5f9;}
+  .btn.active{background:#1e293b; color:#fff; border-color:#1e293b;}
+  .sep{width:1px; height:18px; background:#e2e8f0; margin:0 4px;}
+  .chip{font-size:11px; padding:3px 9px; border-radius:12px; cursor:pointer; border:1.5px solid; background:#fff; font-weight:600;}
+  .edge-legend{display:flex; gap:14px; margin-top:7px; font-size:11px; color:#475569; align-items:center; flex-wrap:wrap;}
+  .edge-legend span{display:inline-flex; align-items:center; gap:5px;}
+  .li{display:inline-block; width:26px; height:0; border-top:2.5px solid;}
+  #viewport{overflow:auto; height:calc(100vh - 110px);}
+  #canvas{position:relative; width:1720px; height:1330px; transform-origin:0 0;}
+  .band-label{position:absolute; font-size:11px; font-weight:700; color:#94a3b8; letter-spacing:.5px; z-index:2;}
+  .zone-label{position:absolute; font-size:10.5px; font-weight:700; color:#64748b; z-index:3;}
+  svg#edges{position:absolute; top:0; left:0; pointer-events:none; z-index:1;}
+  svg#edges path{fill:none; transition:opacity .15s, stroke-width .15s;}
+  svg#edges path.dim{opacity:.12;}
+  svg#edges path.hl{stroke-width:3.2 !important; opacity:1 !important;}
+  svg#edges text{font-size:10.5px; fill:#334155; paint-order:stroke; stroke:#f8fafc; stroke-width:3px; font-weight:600; opacity:0; transition:opacity .15s;}
+  svg#edges text.show{opacity:1;}
+  .gbox{position:absolute; border:1.8px dashed; border-radius:10px; z-index:2; cursor:pointer; background:rgba(255,255,255,.35);}
+  .gbox.solidbg{background:rgba(239,246,255,.55);}
+  .gbox.modbox{border-style:solid; border-width:1.4px; background:rgba(255,255,255,.6); border-radius:8px;}
+  .gbox.modbox .gtitle{font-size:10.5px;}
+  .gbox.modbox .gsol{font-size:9px;}
+  .gbox .gtitle{position:absolute; top:5px; left:10px; font-size:11.5px; font-weight:800;}
+  .gbox .gsol{position:absolute; top:5px; right:10px; font-size:10px; color:#64748b;}
+  .gbox.gov{box-shadow:0 0 0 2.5px rgba(147,51,234,.55);}
+  .node{position:absolute; background:#fff; border:1px solid #e2e8f0; border-left:4px solid; border-radius:8px;
+        padding:6px 8px; cursor:pointer; z-index:3; box-shadow:0 1px 2px rgba(15,23,42,.08);
+        transition:box-shadow .15s, transform .15s, opacity .15s;}
+  .node:hover{box-shadow:0 4px 10px rgba(15,23,42,.18); transform:translateY(-1px);}
+  .node.dim{opacity:.28;}
+  .node.selected{box-shadow:0 0 0 3px rgba(30,41,59,.55), 0 4px 12px rgba(15,23,42,.25);}
+  .node.nbr{box-shadow:0 0 0 2.5px rgba(2,132,199,.45);}
+  .node.gov{box-shadow:0 0 0 2.5px rgba(147,51,234,.55);}
+  .node .code{display:inline-block; font-size:9.5px; font-weight:800; color:#fff; border-radius:4px; padding:1px 5px; margin-bottom:2px;}
+  .node .nm{font-size:12px; font-weight:700; line-height:1.22;}
+  .node .so{font-size:9.5px; color:#64748b; margin-top:2px; line-height:1.3;}
+  .node.infra{background:#f8fafc;}
+  .node.srcn{background:#1e293b; border-color:#0f172a; color:#f1f5f9;}
+  .node.srcn .nm{color:#f8fafc;}
+  .node.srcn .so{color:#94a3b8;}
+  .node.infb{background:#eef2f7; border-style:solid; border-color:#cbd5e1; border-left:4px solid #64748b;}
+  .node.gapn{background:#fff7ed; border:1.6px dashed #f59e0b; border-left:4px solid #f59e0b;}
+  .node.gapn .nm{color:#b45309;}
+  /* 레벨링 패널 */
+  #lvpanel{position:absolute; z-index:3; background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:12px 14px; font-size:11px; line-height:1.55; box-shadow:0 1px 3px rgba(15,23,42,.1);}
+  #lvpanel h4{font-size:12px; margin-bottom:6px;}
+  #lvpanel .lv{margin-bottom:9px;}
+  #lvpanel .lvt{font-weight:800; font-size:11px;}
+  #lvpanel .lvd{color:#475569;}
+  #lvpanel .ord{margin-top:4px; padding-top:8px; border-top:1px dashed #e2e8f0; color:#334155;}
+  /* 상세 drawer */
+  #drawer{position:fixed; top:0; right:-400px; width:390px; height:100vh; background:#fff; z-index:100;
+          box-shadow:-6px 0 22px rgba(15,23,42,.18); transition:right .22s ease; display:flex; flex-direction:column;}
+  #drawer.open{right:0;}
+  #drawer .dh{padding:14px 18px; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:flex-start;}
+  #drawer .dh h2{font-size:15px; line-height:1.3;}
+  #drawer .dh .x{cursor:pointer; font-size:18px; color:#94a3b8; border:none; background:none; padding:2px 6px;}
+  #drawer .db{padding:14px 18px; overflow-y:auto; font-size:12.5px; line-height:1.6;}
+  #drawer .tag{display:inline-block; font-size:10px; font-weight:700; color:#fff; border-radius:4px; padding:2px 7px; margin-right:5px;}
+  #drawer h3{font-size:12px; color:#64748b; margin:14px 0 5px; font-weight:800; letter-spacing:.4px;}
+  #drawer ul{padding-left:16px;}
+  #drawer li{margin-bottom:4px;}
+  #drawer .sol{background:#f1f5f9; border-radius:6px; padding:7px 10px; font-size:12px;}
+  .rel-arrow{color:#94a3b8; font-size:11px;}
+</style>
+</head>
+<body>
+<header>
+  <h1>AI-Ready Data 기술 아키텍처</h1>
+  <span class="sub">20개 주제 × 솔루션 레벨링(Lv.1 플랫폼 내장 9개 · Lv.2 전문 솔루션 5종 · Lv.3 LLMOps) = 실질 도입 7종 · 노드/그룹 클릭 시 상세와 연계 강조</span>
+  <div class="toolbar">
+    <button class="btn mode active" data-mode="all">전체 흐름</button>
+    <button class="btn mode" data-mode="ingest">① 데이터 정비 흐름</button>
+    <button class="btn mode" data-mode="serve">② AI 활용 흐름</button>
+    <button class="btn mode" data-mode="feedback">③ 피드백 루프</button>
+    <div class="sep"></div>
+    <button class="btn" id="lblBtn">라벨 표시</button>
+    <div class="sep"></div>
+    <button class="btn" id="zo">−</button>
+    <button class="btn" id="zr">100%</button>
+    <button class="btn" id="zi">＋</button>
+    <div class="sep"></div>
+    <span id="chips"></span>
+  </div>
+  <div class="edge-legend">
+    <span><span class="li" style="border-color:var(--ingest)"></span>데이터 수집·정비</span>
+    <span><span class="li" style="border-color:var(--serve)"></span>AI·사용자 활용</span>
+    <span><span class="li" style="border-color:var(--feedback); border-top-style:dashed"></span>피드백 루프</span>
+    <span><span class="li" style="border-color:var(--base); border-top-style:dotted"></span>인프라 기반 제공</span>
+    <span style="color:#9333ea; font-weight:700">■ 보라 테두리</span><span style="margin-left:-8px">= 클릭한 블록의 적용·지원 범위</span>
+  </div>
+</header>
+<div id="viewport"><div id="canvas">
+  <svg id="edges" width="1720" height="1330">
+    <defs id="mdefs"></defs>
+  </svg>
+</div></div>
+<aside id="drawer">
+  <div class="dh"><h2 id="dTitle">상세</h2><button class="x" onclick="closeDrawer()">✕</button></div>
+  <div class="db" id="dBody"></div>
+</aside>
+
+<script>
+/* ───────────────────── 솔루션 레벨링 그룹 ───────────────────── */
+const GROUPS = {
+  p1:{name:'Lv.1 통합 데이터 플랫폼 (내장)', raw:'#2563eb',
+      sol:'Databricks(Unity Catalog) · Snowflake(Horizon) · MS Fabric(Purview) 중 택 1 — 1개 솔루션',
+      topics:'A-1 카탈로그 · A-2 메타데이터 · A-3 Glossary · C-3 Lineage · E-1 Data Product · C-1 Observability(기본) · C-2 품질/접근제어 · F-1 DataOps · F-2 생애주기 (9개 주제)',
+      desc:'현대 Lakehouse 플랫폼은 저장 엔진만이 아니라 카탈로그·메타데이터·용어집·컬럼 레벨 리니지·마켓플레이스·RBAC/ABAC·품질 검증·워크플로·스토리지 생애주기를 한 제품 안에 내장한다. 9개 주제는 별도 솔루션 구매 없이 플랫폼 하나로 시작하는 것이 정답이며, 그룹 규모가 커지면 전문 솔루션(Collibra, Monte Carlo 등)으로 선택 보강한다.'},
+  g2:{name:'Lv.2 지식그래프', raw:'#7c3aed',
+      sol:'Neo4j · Ontotext GraphDB · AWS Neptune (RDF/OWL · Cypher · GraphRAG)',
+      topics:'B-3 온톨로지',
+      desc:'개념 간 관계·계층·인과를 그래프로 저장·추론하는 영역은 Lakehouse가 제공하지 못하는 유일한 "의미 계층"이다. 별도 Graph DB 스택이 필요하며, 플랫폼 카탈로그의 용어·메타데이터와 양방향 매핑해 GraphRAG·원인분석·추천에 쓴다.'},
+  g3:{name:'Lv.2 문서 AI · 디지털화', raw:'#0d9488',
+      sol:'Unstructured.io · Upstage DP · Azure Document Intelligence · CLOVA OCR · ABBYY',
+      topics:'B-1 데이터 전처리 · F-3 데이터 디지털화',
+      desc:'비정형→구조화 변환은 문서 AI 전문 영역. 이미 디지털인 문서(B-1)와 종이·수기·암묵지(F-3)는 입구만 다를 뿐 같은 파싱·OCR 기술을 쓴다. 산출물은 플랫폼의 Vector Search·테이블로 적재된다.'},
+  g4:{name:'Lv.2 학습데이터 팩토리', raw:'#0891b2',
+      sol:'Label Studio · CVAT · Encord / SDV · Gretel · 시뮬레이터',
+      topics:'B-2 데이터 해설/주석 · E-2 합성데이터',
+      desc:'AI 학습데이터를 "만드는" 도구군. 사람이 의미를 부여하는 라벨링(B-2)과 기계가 부족분을 생성하는 합성(E-2)은 모두 플랫폼의 학습·평가 데이터셋 저장소로 산출물을 보낸다.'},
+  g6:{name:'Lv.2 OT/IoT 수집', raw:'#16a34a',
+      sol:'Kafka · AVEVA PI · Azure IoT Hub · Edge Gateway',
+      topics:'D-1 Physical 데이터',
+      desc:'공장 OT 데이터는 프로토콜·시간 동기화·Edge 처리 특성 때문에 플랫폼 내장 커넥터만으로 부족하다. 산업용 수집 스택으로 표준화해 플랫폼에 적재한다.'},
+  g7:{name:'Lv.3 LLMOps · Agent Ops', raw:'#e11d48',
+      sol:'MCP · LangSmith · Langfuse · promptfoo · Ragas — 1개 스택',
+      topics:'D-2 API/Tool 연계 · D-3 Prompt/Harness · E-3 AI 평가 데이터 · E-4 Feedback Loop',
+      desc:'AI Agent 실행을 둘러싼 운영 스택. Tool 명세(MCP), Prompt 자산, 평가, 피드백 환류는 데이터 플랫폼이 아닌 LLMOps 플랫폼에서 함께 관리된다. Agent 운영을 시작하는 시점에 도입한다.'},
+  g8:{name:'Lv.2 보안 전문', raw:'#475569',
+      sol:'MS Presidio · BigID · Protegrity (플랫폼 기본 마스킹 + 전문 보강)',
+      topics:'F-4 AI 데이터 보안',
+      desc:'플랫폼의 컬럼 마스킹·태깅은 정형 데이터까지만 커버한다. 문서·Prompt·Agent 로그 등 비정형 전반의 민감정보 탐지·가명화는 전문 솔루션으로 보강해 전 구간에 횡단 적용한다.'},
+};
+
+/* ───────────────────── 노드 ───────────────────── */
+const NODES = [
+  /* ⑤ 활용 */
+  {id:'user', x:200,y:50,w:260,h:80, grp:'infra', code:'사용자', nm:'현업 · 분석가 · 경영진', so:'포털 · BI · 챗 UI',
+   d:'AI Agent에 질의하고, 플랫폼 카탈로그에서 데이터를 탐색하며, Agent의 고위험 작업을 승인하는 최종 사용자.'},
+  {id:'agent', x:640,y:50,w:320,h:80, grp:'infra', code:'AI', nm:'AI Agent · Copilot · 챗봇', so:'LLM + RAG + Tool 호출 + Harness 실행',
+   d:'Prompt/Harness(D-3)를 지시문으로, RAG·지식그래프를 근거로, MCP Tool(D-2)을 손발로 사용해 업무를 수행하는 실행 주체. 실행 결과·로그는 E-4로 환류된다.'},
+  /* ④ AI 서빙 */
+  {id:'rag', x:60,y:240,w:260,h:90, grp:'infra', code:'서빙', nm:'RAG 검색 서비스', so:'하이브리드 검색 + GraphRAG + Reranking',
+   d:'플랫폼 Vector Search의 벡터 검색과 지식그래프(B-3)의 관계 추론을 결합해 Agent에 근거를 제공하는 검색 계층. Glossary(A-3)로 현장 용어를 표준 용어로 변환해 검색 정확도를 높인다.'},
+  {id:'d3', x:400,y:240,w:200,h:90, grp:'g7', code:'D-3', nm:'Prompt/Harness 자산화', so:'Prompt Registry · 버전관리',
+   d:'업무 절차·판단 기준을 Prompt와 Harness(Prompt+데이터+Tool 순서+출력 포맷 패키지)로 구조화. 버전 관리와 데이터·Tool 의존성 맵을 관리한다.'},
+  {id:'d2', x:620,y:240,w:200,h:90, grp:'g7', code:'D-2', nm:'API/Tool 연계 (MCP)', so:'Tool Registry · Schema · 호출 로그',
+   d:'Agent가 외부 시스템·Tool을 안전하게 호출하도록 기능·입출력·제약을 명세(MCP/OpenAPI). 조회/추천/실행/외부전송 위험등급을 나누고 Tool 버전과 호출 로그를 관리한다. 플랫폼의 Data Product(E-1)도 Tool로 등록되어 Agent가 소비한다.'},
+  {id:'e3', x:840,y:240,w:200,h:90, grp:'g7', code:'E-3', nm:'AI 평가 데이터', so:'Gold Dataset · Rubric · 회귀테스트',
+   d:'기준 질문·기대 답변·정답 근거·평가 Rubric으로 구성된 Gold Dataset. 모델·Prompt 변경 전후 성능 비교와 회귀 테스트에 사용. 전문가 판단을 구조화해 축적한다.'},
+  {id:'e4', x:1060,y:240,w:240,h:90, grp:'g7', code:'E-4', nm:'데이터 Feedback Loop', so:'오류 Taxonomy · 개선 Backlog',
+   d:'Agent 실행 결과·사용자 수정·Tool 실패를 수집해 원인을 분류(데이터/Prompt/모델/Tool/권한)하고 각 영역으로 환류: 데이터 누락→플랫폼 거버넌스 정비, 라벨 부족→B-2, 평가 실패→E-3, Prompt 문제→D-3, Tool 문제→D-2.'},
+  /* ③ 지식그래프 (Lv.2, 플랫폼 옆) */
+  {id:'b3', x:60,y:490,w:200,h:200, grp:'g2', code:'B-3', nm:'온톨로지 · 지식그래프', so:'Neo4j · GraphDB · Neptune | 제품-공정-결함-원인-조치 관계망 | RDF/OWL',
+   d:'업무 개념(제품·공정·결함·원인·조치) 간 관계·계층·인과를 그래프로 정의. 플랫폼 카탈로그의 Glossary 용어·메타데이터 필드·SOP/PFMEA 문서를 개념에 연결하고, GraphRAG·원인분석·유사사례 추천에 활용한다. Lakehouse가 못 하는 유일한 의미 계층이라 별도 Graph DB로 구축한다.'},
+  /* ③ 통합 플랫폼 내부 — 유형① 의미 관리 모듈 */
+  {id:'a1', x:330,y:490,w:150,h:80, grp:'p1', mc:'#2563eb', mod:'유형① 의미 관리', code:'A-1', nm:'데이터 카탈로그', so:'자산 등록·검색 (내장)',
+   d:'데이터 자산의 존재·위치·오너·접근 경로를 등록하는 자산 목록. Unity Catalog·Horizon·Purview가 테이블·파일·모델·대시보드를 자동 등록·검색 제공한다. 외부 시스템(ERP·MES) 자산은 커넥터로 수집해 등록한다.'},
+  {id:'a2', x:488,y:490,w:150,h:80, grp:'p1', mc:'#2563eb', mod:'유형① 의미 관리', code:'A-2', nm:'메타데이터', so:'스키마·단위·기준 (내장)',
+   d:'테이블·필드의 타입, 단위, 집계 기준, 갱신 주기 등 기술·운영 속성. 플랫폼이 스키마·태그·코멘트로 기본 제공하며, ETL 로그에서 자동 수집 후 오너가 승인한다. AI가 수치를 잘못 비교하지 않게 하는 핵심.'},
+  {id:'a3', x:646,y:490,w:158,h:80, grp:'p1', mc:'#2563eb', mod:'유형① 의미 관리', code:'A-3', nm:'비즈니스 Glossary', so:'용어·동의어 사전 (내장)',
+   d:'업무 용어·약어·동의어를 표준 정의로 통일하는 용어 사전. 플랫폼 Glossary 기능(Purview Glossary, Unity Catalog tags 등)으로 관리하고, 지식그래프(B-3)의 노드 어휘가 된다. 사용자가 현장 용어로 질문해도 AI가 표준 용어로 변환해 찾게 한다.'},
+  {id:'c3', x:857,y:490,w:142,h:80, grp:'p1', mc:'#d97706', mod:'유형② 신뢰 통제', code:'C-3', nm:'데이터 Lineage', so:'컬럼 레벨 자동 추적 (내장)',
+   d:'원천→변환→테이블→AI 활용까지의 계보. 플랫폼이 쿼리 로그 기반 컬럼 레벨 리니지를 자동 생성한다. RAG 인덱스·AI 답변 근거(Citation)까지의 확장 추적은 Lv.3 LLMOps 로그와 연결해 완성한다.'},
+  {id:'e1', x:857,y:626,w:300,h:52, grp:'p1', mc:'#0ea5e9', mod:'유형③ 제공·공유', code:'E-1', nm:'데이터 Product화', so:'Marketplace · Delta Sharing (내장)',
+   d:'반복 재사용 데이터를 오너·품질기준·SLA를 갖춘 상품 단위로 정의. 플랫폼 Marketplace·Sharing 기능으로 제공하며, Tool(D-2)로 등록되어 Agent가 직접 소비한다.'},
+  /* ③ 플랫폼 내부 — 유형② 신뢰 통제 모듈 */
+  {id:'c2', x:1007,y:490,w:145,h:80, grp:'p1', mc:'#d97706', mod:'유형② 신뢰 통제', code:'C-2', nm:'품질·접근제어 (Quality Gate)', so:'RBAC/ABAC · Expectations',
+   d:'완전성·정확성·최신성 품질 기준과 접근 권한을 판정. 플랫폼 내장 기능(DLT Expectations, Snowflake DMF, RBAC/ABAC·행/열 마스킹)으로 AI 투입 전 Quality Gate를 구성한다. 예외 사용은 승인 절차를 기록한다.',
+   gov:['lake','vec','train','rag']},
+  {id:'c1', x:1160,y:490,w:142,h:80, grp:'p1', mc:'#d97706', mod:'유형② 신뢰 통제', code:'C-1', nm:'Observability (기본)', so:'+ Monte Carlo 보강 옵션',
+   d:'수집 실패·지연·건수 급변·스키마 변경·분포 변화를 감지·알림. 플랫폼 기본 모니터링(Lakehouse Monitoring 등)으로 시작하고, 규모 확대 시 Monte Carlo·Soda 같은 전문 솔루션으로 보강한다. 데이터/모델/Prompt 버전을 함께 기록해 원인을 분리한다.',
+   gov:['d1','b1','f3','lake','vec','train']},
+  {id:'f1', x:332,y:626,w:225,h:52, grp:'p1', mc:'#16a34a', mod:'유형④ 파이프라인 운영', code:'F-1', nm:'DataOps · 워크플로', so:'Workflows · dbt · Auto Loader',
+   d:'수집·정제·변환·제공 파이프라인의 실행·복구·변경 관리. 플랫폼 내장 워크플로(Databricks Workflows, Snowflake Tasks)+dbt로 표준화한다. 장애 Runbook, 변경 영향 검토·사전 공지, SLA를 관리한다.',
+   gov:['d1','b1','b2','lake']},
+  {id:'f2', x:565,y:626,w:235,h:52, grp:'p1', mc:'#16a34a', mod:'유형④ 파이프라인 운영', code:'F-2', nm:'생애주기 관리', so:'스토리지 정책 · 계층화',
+   d:'생성→사용→보관→아카이빙→폐기 시간축을 정책으로 통제. 플랫폼·스토리지의 수명주기 정책(Hot/Warm/Cold 계층화)으로 집행한다. 실패 실험 등 과정 데이터의 AI 재사용 보존 판단을 포함한다.',
+   gov:['lake','vec','train','src_doc']},
+  /* ③ 플랫폼 내부 — 유형⑤ 저장·처리 엔진 모듈 */
+  {id:'lake', x:332,y:728,w:300,h:72, grp:'p1', mc:'#64748b', mod:'유형⑤ 저장·처리 엔진', code:'저장', nm:'Lakehouse 테이블', so:'Delta · Iceberg · DW 테이블',
+   d:'정형·시계열·구조화 산출물이 모이는 중앙 저장. 카탈로그·리니지·품질·생애주기가 같은 플랫폼 안에서 자동으로 걸리는 것이 통합 플랫폼의 핵심 가치다.'},
+  {id:'vec', x:648,y:728,w:310,h:72, grp:'p1', mc:'#64748b', mod:'유형⑤ 저장·처리 엔진', code:'저장', nm:'Vector Search · 검색 인덱스', so:'내장 Vector Search (또는 외부 Milvus·OpenSearch)',
+   d:'전처리(B-1) 산출물의 청크·임베딩을 저장해 RAG에 제공. Databricks Vector Search·Snowflake Cortex Search 등 플랫폼 내장 기능으로 시작 가능하다. F-4 마스킹과 C-2 Quality Gate 통과가 적재 전제다.'},
+  {id:'train', x:974,y:728,w:324,h:72, grp:'p1', mc:'#64748b', mod:'유형⑤ 저장·처리 엔진', code:'저장', nm:'학습·평가 데이터셋', so:'라벨셋 · 합성셋 · Gold Dataset 버전관리',
+   d:'라벨링(B-2)·합성(E-2) 산출물과 평가용 Gold Dataset(E-3)을 버전 관리하며 보관. 어떤 데이터가 어느 학습·평가에 쓰였는지 리니지(C-3)에 연결된다.'},
+  /* ② 수집·변환 (Lv.2 위성) */
+  {id:'d1', x:250,y:880,w:200,h:90, grp:'g6', code:'D-1', nm:'Physical 데이터 수집', so:'Kafka · AVEVA PI · IoT Hub (Lv.2)',
+   d:'센서·PLC·MES 등 물리 데이터를 AI 입력으로 수집·연결. 시간 동기화, 설비 ID, 단위, 샘플링 주기를 표준화하고 노이즈·결측을 기초 정제한다. OT 특성상 플랫폼 내장 커넥터로는 부족해 전문 수집 스택을 둔다.'},
+  {id:'b1', x:490,y:880,w:190,h:90, grp:'g3', code:'B-1', nm:'데이터 전처리', so:'Unstructured · Upstage · Azure DI (Lv.2)',
+   d:'PDF·PPT·Excel·이미지 등 비정형 자료를 AI가 읽을 수 있는 구조(청크·JSON·테이블)로 변환. 원본 위치 정보를 보존해 재참조와 리니지를 가능하게 한다. 파서 버전·테스트셋으로 양식 변경에 대응한다.'},
+  {id:'f3', x:710,y:880,w:190,h:90, grp:'g3', code:'F-3', nm:'데이터 디지털화', so:'CLOVA OCR · ABBYY · 인터뷰 구조화 (Lv.2)',
+   d:'종이·수기·사진·암묵지를 스캔·OCR/ICR·음성변환·인터뷰 구조화로 디지털 자산화. 전환 품질을 원본 대비 검수하고, 장기적으로 Digital-first 업무 전환을 설계한다. 산출물은 B-1 전처리로 이어진다.'},
+  {id:'b2', x:930,y:880,w:190,h:90, grp:'g4', code:'B-2', nm:'데이터 해설/주석', so:'Label Studio · CVAT · HITL (Lv.2)',
+   d:'결함 이미지·클레임 문장 등에 라벨·분류·해석 기준을 부여. 라벨 Taxonomy와 Annotation Guideline으로 일관성을 확보하고, AI 1차 라벨 + 저신뢰·고위험 건만 전문가 검수하는 Human-in-the-loop로 운영한다.'},
+  {id:'e2', x:1150,y:880,w:180,h:90, grp:'g4', code:'E-2', nm:'합성데이터', so:'SDV · Gretel · 시뮬레이션 (Lv.2)',
+   d:'실데이터 부족·희소 이벤트·보안 제약 시 통계·규칙·시뮬레이션·생성모델로 학습/검증 데이터를 생성. 분포 유사성·업무 타당성을 검증하고 Synthetic 태깅으로 원본과 구분한다.'},
+  /* ① 데이터 원본 */
+  {id:'src_sys', x:60,y:1060,w:250,h:90, grp:'src', code:'원본', nm:'업무 시스템', so:'ERP · MES · QMS · LIMS · PLM',
+   d:'정형 데이터의 원천. 플랫폼 내장 커넥터(Auto Loader·Snowpipe·Fivetran)로 수집되는 동시에, Agent가 MCP Tool(D-2)로 직접 조회·실행하는 대상이기도 하다.'},
+  {id:'src_sensor', x:340,y:1060,w:220,h:90, grp:'src', code:'원본', nm:'설비 · 센서', so:'PLC · SCADA · 검사장비 · 환경센서',
+   d:'물리 세계 데이터의 원천. Edge·OT 망연계 인프라 위에서 D-1 수집 체계를 통해 시계열로 표준화되어 적재된다.'},
+  {id:'src_doc', x:590,y:1060,w:240,h:90, grp:'src', code:'원본', nm:'문서 저장소', so:'SharePoint · 파일서버 · 메일 · 협업도구',
+   d:'보고서·SOP·PFMEA·C/S Report 등 비정형 문서의 원천. B-1 전처리를 거쳐 Vector Search·테이블로 들어간다.'},
+  {id:'src_paper', x:860,y:1060,w:240,h:90, grp:'src', code:'원본', nm:'아날로그 자산', so:'종이문서 · 수기 검사표 · 사진 · 암묵지',
+   d:'아직 디지털화되지 않은 자산. 받쳐줄 인프라가 없는 영역이므로 F-3 디지털화를 거쳐야 AI 활용 범위에 들어온다.'},
+  /* ⓪ 공통 인프라 */
+  {id:'inf_cloud', x:60,y:1220,w:250,h:85, grp:'infb', code:'인프라', nm:'클라우드 · IDC · K8s', so:'AWS · Azure · NCP · 온프레미스',
+   d:'전 계층이 구동되는 컴퓨팅 기반. 클라우드와 온프레미스 IDC, K8s 컨테이너 플랫폼. 계열사별 이질적 환경을 고려하면 하이브리드 구성이 일반적이며, 업무 시스템·데이터 플랫폼·파이프라인이 모두 이 위에서 돈다.',
+   gov:['src_sys','lake','vec','train','rag']},
+  {id:'inf_edge', x:340,y:1220,w:220,h:85, grp:'infb', code:'인프라', nm:'Edge · OT 네트워크', so:'Edge Gateway · OT/IT 망연계 · 5G',
+   d:'공장 현장의 설비·센서를 IT망으로 연결하는 기반. Edge Gateway에서 1차 수집·버퍼링·프로토콜 변환을 하고, OT/IT 망연계(DMZ) 보안 구간을 거쳐 D-1 수집 체계로 전달한다. 이 기반이 없으면 Physical 데이터(D-1)는 시작조차 못 한다.',
+   gov:['src_sensor','d1']},
+  {id:'inf_storage', x:590,y:1220,w:240,h:85, grp:'infb', code:'인프라', nm:'스토리지', so:'Object Storage(S3·ADLS) · NAS',
+   d:'Lakehouse·Vector Search·학습데이터셋이 올라가는 물리 저장 기반. F-2 생애주기 정책의 Hot/Warm/Cold 계층화가 실제로 집행되는 지점이며, 저장 비용 통제의 실체이기도 하다.',
+   gov:['src_doc','lake','vec','train','f2']},
+  {id:'gap_paper', x:860,y:1220,w:240,h:85, grp:'gap', code:'!', nm:'디지털 기반 부재 영역', so:'종이·수기·암묵지는 받쳐줄 인프라가 없음 → F-3로 진입',
+   d:'종이 문서·수기 검사표·작업자 암묵지는 그 아래에 디지털 인프라 자체가 없는 영역이다. 인프라를 깔아도 데이터가 저절로 생기지 않으므로, ① F-3 디지털화(스캔·OCR·인터뷰 구조화)로 디지털 자산을 먼저 만들고, ② 장기적으로는 모바일·태블릿 입력 등 Digital-first 프로세스로 전환해 처음부터 디지털로 생성되게 해야 한다.',
+   gov:['src_paper','f3','b1']},
+  {id:'inf_gpu', x:1130,y:1220,w:250,h:85, grp:'infb', code:'인프라', nm:'AI 컴퓨팅 · LLM 서빙', so:'GPU 클러스터 · LLM Gateway · 외부 LLM API',
+   d:'LLM·임베딩·OCR 모델이 실행되는 연산 기반. 사내 GPU 서빙 또는 외부 LLM API를 LLM Gateway(키 관리·사용량·로깅 통제)로 묶는다. Agent의 추론, RAG 임베딩, 전처리 OCR, 합성데이터 생성 연산이 모두 여기에 의존하며, 학습데이터셋 기반 파인튜닝도 이 기반에서 수행된다.',
+   gov:['agent','rag','b1','e2','f3']},
+  {id:'inf_sec', x:1410,y:1220,w:280,h:85, grp:'infb', code:'인프라', nm:'보안 · 계정 인프라', so:'IAM/AD · KMS 암호화 · 망분리/DMZ',
+   d:'전 계층의 계정·암호화·망분리 기반. IAM/AD 통합 인증이 C-2 접근 통제(RBAC/ABAC)의 전제이고, KMS 암호화와 망분리/DMZ가 F-4 보안 체계를 물리적으로 받친다.',
+   gov:['c2','f4','d2','src_sys','lake']},
+  /* 우측 횡단 — 보안 전문 */
+  {id:'f4', x:1390,y:480,w:300,h:110, grp:'g8', code:'F-4', nm:'AI 데이터 보안 (전문 보강)', so:'Presidio · BigID | 탐지·마스킹·가명화 (Lv.2 횡단)',
+   d:'플랫폼 내장 마스킹(행/열 단위)은 정형까지만 커버한다. 문서·보고서·Prompt 입력·Agent 로그 등 비정형 전반의 민감정보(개인정보·고객사명·계약조건·기술기밀) 탐지·가명화는 전문 솔루션으로 보강한다. 학습 가능 등급을 구분하고 재식별 위험을 점검한다.',
+   gov:['b1','b2','vec','train','rag','d2','e4']},
+];
+
+/* 그룹 컨테이너 박스 */
+const BOXES = [
+  {id:'g7box', grp:'g7', x:380,y:220,w:950,h:150, title:'Lv.3 LLMOps · Agent Ops', sol:'MCP · LangSmith · Langfuse · promptfoo'},
+  {id:'platbox', grp:'p1', x:300,y:420,w:1030,h:400, solid:true, title:'Lv.1 통합 데이터 플랫폼 — Lakehouse (1개 솔루션, 내부는 5개 유형 모듈)', sol:'Databricks(Unity Catalog) · Snowflake(Horizon) · MS Fabric(Purview) 중 택 1'},
+  {id:'modM1', mod:true, color:'#2563eb', x:320,y:450,w:495,h:135, title:'유형① 의미 관리 — 카탈로그·메타·용어', sol:'분리 옵션: Collibra · DataHub',
+   members:['a1','a2','a3'],
+   d:'데이터를 "찾고 해석하게" 하는 유형. 자산 목록(A-1), 기술 속성(A-2), 업무 용어(A-3)를 묶는다. 플랫폼 내장 카탈로그로 시작하되, 멀티 플랫폼·그룹 전체 카탈로그 통합이 필요해지면 Collibra·DataHub 같은 전문 카탈로그로 분리 도입하는 1순위 후보다. 지식그래프(B-3)와 용어·개념 매핑으로 연결된다.'},
+  {id:'modM2', mod:true, color:'#d97706', x:845,y:450,w:465,h:135, title:'유형② 신뢰 통제 — 리니지·품질·관측', sol:'보강 옵션: Monte Carlo · Soda',
+   members:['c3','c2','c1'],
+   d:'데이터를 "믿을 수 있게" 하는 유형. 계보 추적(C-3), 품질·접근제어 Quality Gate(C-2), 이상 감지(C-1)를 묶는다. 내장 리니지·Expectations·기본 모니터링으로 시작하고, 파이프라인 규모가 커지면 Monte Carlo·Soda 같은 전문 Observability로 보강한다.'},
+  {id:'modM3', mod:true, color:'#0ea5e9', x:845,y:595,w:465,h:90, title:'유형③ 제공 · 공유 — 소비 인터페이스', sol:'Marketplace · Delta Sharing',
+   members:['e1'],
+   d:'정비된 데이터를 "소비자에게 노출"하는 유형. Data Product(E-1)를 Marketplace·Sharing으로 사람에게, Tool 등록(D-2)으로 AI Agent에게 제공한다. 데이터 만드는 쪽과 쓰는 쪽의 접점이라 별도 유형으로 구분한다.'},
+  {id:'modM4', mod:true, color:'#16a34a', x:320,y:595,w:490,h:90, title:'유형④ 파이프라인 운영 — DataOps·생애주기', sol:'Workflows · dbt · 스토리지 정책',
+   members:['f1','f2'],
+   d:'데이터를 "옮기고 보관·폐기"하는 운영 유형. 파이프라인 실행·복구·변경관리(F-1)와 보존·아카이빙·폐기(F-2)를 묶는다. 플랫폼 워크플로+dbt와 스토리지 수명주기 정책으로 집행한다.'},
+  {id:'modM5', mod:true, color:'#64748b', x:320,y:695,w:990,h:115, title:'유형⑤ 저장 · 처리 엔진', sol:'Delta · Iceberg · Vector Search · ML 데이터셋',
+   members:['lake','vec','train'],
+   d:'모든 산출물이 물리적으로 모이는 엔진 유형. 정형·구조화 테이블(Lakehouse), RAG용 벡터 인덱스(Vector Search), 학습·평가 데이터셋 저장소로 나뉜다. 위의 유형①~④가 이 엔진 위의 데이터에 자동 적용되는 것이 통합 플랫폼의 핵심 가치다.'},
+];
+
+/* 계층 밴드 라벨 */
+const BANDS = [
+  {y:24,  t:'⑤ 활용 — 사람과 AI가 함께 일하는 지점'},
+  {y:204, t:'④ AI 서빙 · Agent Ops (Lv.3)'},
+  {y:398, t:'③ 통합 데이터 플랫폼(Lv.1) + 지식그래프(Lv.2)'},
+  {y:848, t:'② 수집 · 변환 — Lv.2 전문 솔루션 위성'},
+  {y:1038,t:'① 데이터 원본'},
+  {y:1198,t:'⓪ 공통 인프라 계층 — 모든 계층이 올라가는 기반 (아날로그 영역은 기반 부재 → 디지털화 필요)'},
+];
+const ZLABELS = [
+  {x:60,  y:460, t:'Lv.2 전문 솔루션'},
+  {x:1390,y:458, t:'횡단 보안 (Lv.2)'},
+];
+
+/* ───────────── 엣지 ───────────── */
+const EDGES = [
+  /* ① 데이터 정비 흐름 */
+  {f:'src_sys',t:'lake',type:'ingest',pts:[[185,1060],[185,845],[460,845],[460,800]],lb:'플랫폼 내장 커넥터 수집 (Auto Loader·Snowpipe)'},
+  {f:'src_sensor',t:'d1',type:'ingest',fs:'top',ts:'bottom',lb:'센서·설비 신호'},
+  {f:'src_doc',t:'b1',type:'ingest',fs:'top',ts:'bottom',lb:'문서 수집·파싱'},
+  {f:'src_paper',t:'f3',type:'ingest',fs:'top',ts:'bottom',lb:'스캔·OCR·인터뷰'},
+  {f:'f3',t:'b1',type:'ingest',fs:'left',ts:'right',lb:'디지털 전환 산출물'},
+  {f:'d1',t:'lake',type:'ingest',fs:'top',ts:'bottom',ts_f:.5,lb:'시계열 적재'},
+  {f:'b1',t:'vec',type:'ingest',fs:'top',ff:.7,ts:'bottom',ts_f:.25,lb:'청킹·임베딩'},
+  {f:'b1',t:'lake',type:'ingest',fs:'top',ff:.2,ts:'bottom',ts_f:.75,lb:'구조화 테이블'},
+  {f:'lake',t:'b2',type:'ingest',fs:'bottom',ff:.9,ts:'top',ts_f:.1,lb:'라벨링 원천 제공'},
+  {f:'b2',t:'train',type:'ingest',fs:'top',ts:'bottom',ts_f:.33,lb:'라벨 데이터셋'},
+  {f:'e2',t:'train',type:'ingest',fs:'top',ts:'bottom',ts_f:.66,lb:'합성 데이터셋'},
+  {f:'platbox',t:'b3',type:'ingest',fs:'left',ff:.25,ts:'right',ts_f:.25,bidir:true,lb:'카탈로그 용어·메타 ↔ 개념 매핑'},
+  {f:'lake',t:'b3',type:'ingest',fs:'left',ff:.5,ts:'bottom',ts_f:.5,lb:'지식 추출 (엔티티·관계)'},
+  {f:'train',t:'e3',type:'ingest',pts:[[1298,764],[1350,764],[1350,380],[940,380],[940,330]],lb:'Gold·평가 데이터셋 제공'},
+  /* ② AI 활용 흐름 */
+  {f:'vec',t:'rag',type:'serve',pts:[[679,800],[679,838],[290,838],[290,405],[190,405],[190,330]],lb:'벡터 검색'},
+  {f:'b3',t:'rag',type:'serve',fs:'top',ff:.5,ts:'bottom',ts_f:.5,lb:'GraphRAG · 관계 추론'},
+  {f:'rag',t:'agent',type:'serve',fs:'top',ts:'bottom',ts_f:.1,lb:'근거 제공 (RAG)'},
+  {f:'platbox',t:'user',type:'serve',fs:'top',ff:.04,ts:'bottom',ts_f:.5,lb:'데이터 검색·탐색·Product 소비'},
+  {f:'e1',t:'d2',type:'serve',pts:[[1157,652],[1338,652],[1338,398],[790,398],[790,330]],lb:'Data Product → Tool 등록'},
+  {f:'d3',t:'agent',type:'serve',fs:'top',ts:'bottom',ts_f:.3,lb:'Prompt·Harness 주입'},
+  {f:'agent',t:'d2',type:'serve',fs:'bottom',ff:.55,ts:'top',lb:'Tool 호출'},
+  {f:'d2',t:'src_sys',type:'serve',pts:[[720,330],[720,392],[30,392],[30,1105],[60,1105]],lb:'업무 시스템 조회·실행 (MCP)'},
+  {f:'user',t:'agent',type:'serve',fs:'right',ts:'left',bidir:true,lb:'질의·승인 / 답변'},
+  {f:'e3',t:'agent',type:'serve',fs:'top',ts:'bottom',ts_f:.85,lb:'평가·회귀 테스트'},
+  /* ③ 피드백 루프 */
+  {f:'agent',t:'e4',type:'feedback',fs:'right',ts:'top',lb:'실행 로그·사용자 수정'},
+  {f:'e4',t:'e3',type:'feedback',fs:'left',ts:'right',lb:'평가셋 보강'},
+  {f:'e4',t:'d3',type:'feedback',pts:[[1108,330],[1108,370],[500,370],[500,330]],lb:'Prompt 개선'},
+  {f:'e4',t:'d2',type:'feedback',pts:[[1084,330],[1084,355],[760,355],[760,330]],lb:'Tool 개선'},
+  {f:'e4',t:'b2',type:'feedback',pts:[[1300,285],[1365,285],[1365,850],[1025,850],[1025,880]],lb:'라벨·학습데이터 보강'},
+  {f:'e4',t:'platbox',type:'feedback',pts:[[1180,330],[1180,420]],lb:'데이터 정비 과제 환류'},
+  /* 인프라 기반 제공 */
+  {f:'inf_cloud',t:'src_sys',type:'base',fs:'top',ts:'bottom',lb:'시스템 구동 기반'},
+  {f:'inf_edge',t:'src_sensor',type:'base',fs:'top',ts:'bottom',lb:'OT 수집·망연계 기반'},
+  {f:'inf_storage',t:'src_doc',type:'base',fs:'top',ts:'bottom',lb:'저장 기반'},
+  {f:'gap_paper',t:'src_paper',type:'base',fs:'top',ts:'bottom',lb:'기반 부재 → F-3 디지털화 필요'},
+];
+
+/* ───────────── 렌더링 ───────────── */
+const canvas = document.getElementById('canvas');
+const svg = document.getElementById('edges');
+const NS = 'http://www.w3.org/2000/svg';
+const nodeMap = {};
+NODES.forEach(n=>nodeMap[n.id]=n);
+BOXES.forEach(b=>nodeMap[b.id]=b);
+
+function gcolor(grp){
+  if(grp==='infra'||grp==='infb') return '#64748b';
+  if(grp==='src') return '#0f172a';
+  if(grp==='gap') return '#d97706';
+  return GROUPS[grp].raw;
+}
+
+BANDS.forEach(b=>{
+  const el=document.createElement('div'); el.className='band-label';
+  el.style.left='20px'; el.style.top=b.y+'px'; el.textContent=b.t; canvas.appendChild(el);
+});
+ZLABELS.forEach(z=>{
+  const el=document.createElement('div'); el.className='zone-label';
+  el.style.left=z.x+'px'; el.style.top=z.y+'px'; el.textContent=z.t; canvas.appendChild(el);
+});
+
+BOXES.forEach(b=>{
+  const col = b.mod ? b.color : gcolor(b.grp);
+  const el=document.createElement('div'); el.className='gbox'+(b.solid?' solidbg':'')+(b.mod?' modbox':''); el.id='el_'+b.id;
+  el.style.left=b.x+'px'; el.style.top=b.y+'px'; el.style.width=b.w+'px'; el.style.height=b.h+'px';
+  el.style.borderColor=col;
+  el.innerHTML=`<span class="gtitle" style="color:${col}">${b.title}</span><span class="gsol">${b.sol}</span>`;
+  el.addEventListener('click',ev=>{ev.stopPropagation(); b.mod?selectModule(b):selectGroup(b.grp);});
+  canvas.appendChild(el);
+});
+
+NODES.forEach(n=>{
+  const el=document.createElement('div');
+  el.className='node'+(n.grp==='infra'?' infra':'')+(n.grp==='src'?' srcn':'')+(n.grp==='infb'?' infb':'')+(n.grp==='gap'?' gapn':'');
+  el.id='el_'+n.id;
+  el.style.left=n.x+'px'; el.style.top=n.y+'px'; el.style.width=n.w+'px'; el.style.height=n.h+'px';
+  const ncol = n.mc || gcolor(n.grp);
+  el.style.borderLeftColor=ncol;
+  el.innerHTML=`<span class="code" style="background:${ncol}">${n.code}</span><div class="nm">${n.nm}</div><div class="so">${n.so}</div>`;
+  el.addEventListener('click',ev=>{ev.stopPropagation(); selectNode(n.id);});
+  canvas.appendChild(el);
+});
+
+/* 레벨링 요약 패널 */
+const lv=document.createElement('div'); lv.id='lvpanel';
+lv.style.left='1390px'; lv.style.top='640px'; lv.style.width='300px';
+lv.innerHTML=`<h4>솔루션 레벨링 — 실질 도입 7종</h4>
+ <div class="lv"><span class="lvt" style="color:#2563eb">Lv.1 통합 데이터 플랫폼 (1종)</span><div class="lvd">A-1·A-2·A-3·C-3·E-1·C-1·C-2·F-1·F-2 → 9개 주제를 플랫폼 내장 기능으로 해결</div></div>
+ <div class="lv"><span class="lvt" style="color:#7c3aed">Lv.2 전문 솔루션 (5종 선택 도입)</span><div class="lvd">지식그래프(B-3) · 문서 AI/디지털화(B-1·F-3) · 학습데이터(B-2·E-2) · OT 수집(D-1) · 보안 전문(F-4)</div></div>
+ <div class="lv"><span class="lvt" style="color:#e11d48">Lv.3 LLMOps 스택 (1종)</span><div class="lvd">D-2·D-3·E-3·E-4 → Agent 운영 시작 시 도입</div></div>
+ <div class="ord"><b>도입 순서 가이드</b><br>① Lv.1 플랫폼 먼저 구축 → ② AI 과제 유형에 따라 Lv.2 선택 도입 → ③ Agent 운영 시작 시 Lv.3 → ④ 규모 확대 시 전문 솔루션(Collibra·Monte Carlo 등)으로 Lv.1 기능 보강</div>`;
+canvas.appendChild(lv);
+
+/* 화살표 마커 */
+const mdefs=document.getElementById('mdefs');
+['ingest','serve','feedback','base'].forEach(t=>{
+  const c=getComputedStyle(document.documentElement).getPropertyValue('--'+t).trim();
+  ['','S'].forEach(rev=>{
+    const m=document.createElementNS(NS,'marker');
+    m.setAttribute('id','arr_'+t+rev); m.setAttribute('markerWidth','9'); m.setAttribute('markerHeight','9');
+    m.setAttribute('refX', rev?'2':'7'); m.setAttribute('refY','4.5'); m.setAttribute('orient','auto');
+    const p=document.createElementNS(NS,'path');
+    p.setAttribute('d', rev?'M8,1 L2,4.5 L8,8':'M1,1 L7,4.5 L1,8');
+    p.setAttribute('fill','none'); p.setAttribute('stroke',c); p.setAttribute('stroke-width','1.6');
+    m.appendChild(p); mdefs.appendChild(m);
+  });
+});
+
+function anchor(n, side, f){
+  f = (f===undefined)? .5 : f;
+  if(side==='top')    return [n.x+n.w*f, n.y];
+  if(side==='bottom') return [n.x+n.w*f, n.y+n.h];
+  if(side==='left')   return [n.x, n.y+n.h*f];
+  return [n.x+n.w, n.y+n.h*f];
+}
+function normal(side){return side==='top'?[0,-1]:side==='bottom'?[0,1]:side==='left'?[-1,0]:[1,0];}
+
+EDGES.forEach((e,i)=>{
+  e.id='edge'+i;
+  let d, mid;
+  if(e.pts){
+    d='M'+e.pts.map(p=>p.join(',')).join(' L');
+    const seg=e.pts[Math.floor(e.pts.length/2)-1], seg2=e.pts[Math.floor(e.pts.length/2)];
+    mid=[(seg[0]+seg2[0])/2,(seg[1]+seg2[1])/2];
+  } else {
+    const fn=nodeMap[e.f], tn=nodeMap[e.t];
+    const a=anchor(fn,e.fs,e.ff), b=anchor(tn,e.ts,e.ts_f);
+    const k=Math.max(34, Math.hypot(b[0]-a[0],b[1]-a[1])*0.32);
+    const nf=normal(e.fs), nt=normal(e.ts);
+    d=`M${a[0]},${a[1]} C${a[0]+nf[0]*k},${a[1]+nf[1]*k} ${b[0]+nt[0]*k},${b[1]+nt[1]*k} ${b[0]},${b[1]}`;
+    mid=[(a[0]+b[0])/2,(a[1]+b[1])/2];
+  }
+  const path=document.createElementNS(NS,'path');
+  path.setAttribute('d',d); path.setAttribute('id',e.id);
+  let col=getComputedStyle(document.documentElement).getPropertyValue('--'+e.type).trim();
+  path.setAttribute('stroke',col);
+  path.setAttribute('stroke-width', e.type==='serve'?2.4:2);
+  if(e.type==='feedback') path.setAttribute('stroke-dasharray','7 5');
+  if(e.type==='base'){path.setAttribute('stroke-dasharray','2.5 4'); path.setAttribute('stroke-width','1.7');}
+  path.setAttribute('marker-end',`url(#arr_${e.type})`);
+  if(e.f==='gap_paper'){path.setAttribute('stroke','#f59e0b'); path.setAttribute('marker-end','url(#arr_feedback)');}
+  if(e.bidir) path.setAttribute('marker-start',`url(#arr_${e.type}S)`);
+  svg.appendChild(path);
+  const tx=document.createElementNS(NS,'text');
+  tx.setAttribute('x',mid[0]); tx.setAttribute('y',mid[1]-5); tx.setAttribute('text-anchor','middle');
+  tx.setAttribute('id','lb_'+e.id); tx.textContent=e.lb||'';
+  svg.appendChild(tx);
+  e.pathEl=path; e.lblEl=tx;
+});
+
+/* 그룹 칩 */
+const chips=document.getElementById('chips');
+Object.entries(GROUPS).forEach(([gid,g])=>{
+  const c=document.createElement('span'); c.className='chip'; c.textContent=g.name.split(' (')[0];
+  c.title=g.name; c.style.borderColor=g.raw; c.style.color=g.raw; c.dataset.gid=gid;
+  c.addEventListener('click',ev=>{ev.stopPropagation(); selectGroup(gid);});
+  chips.appendChild(c);
+});
+
+/* ───────────── 인터랙션 ───────────── */
+let mode='all', labelsOn=false, selected=null;
+
+function resetClasses(){
+  document.querySelectorAll('.node').forEach(el=>el.classList.remove('dim','selected','nbr','gov'));
+  document.querySelectorAll('.gbox').forEach(el=>el.classList.remove('gov'));
+  document.querySelectorAll('.chip').forEach(el=>{el.classList.remove('active'); el.style.background='#fff'; el.style.color=GROUPS[el.dataset.gid].raw;});
+  EDGES.forEach(e=>{e.pathEl.classList.remove('hl'); e.lblEl.classList.toggle('show',labelsOn);});
+  applyMode();
+}
+function applyMode(){
+  EDGES.forEach(e=>{
+    const visible = (mode==='all') || e.type===mode || (mode==='ingest'&&e.type==='base');
+    e.pathEl.classList.toggle('dim', !visible);
+    if(!visible) e.lblEl.classList.remove('show');
+  });
+}
+function selectNode(id){
+  resetClasses(); selected=id;
+  const n=nodeMap[id];
+  document.getElementById('el_'+id).classList.add('selected');
+  document.querySelectorAll('.node').forEach(el=>{if(el.id!=='el_'+id)el.classList.add('dim');});
+  const rels={in:[],out:[]};
+  EDGES.forEach(e=>{
+    if(e.f===id||e.t===id){
+      e.pathEl.classList.add('hl'); e.pathEl.classList.remove('dim'); e.lblEl.classList.add('show');
+      const other=e.f===id?e.t:e.f;
+      const oel=document.getElementById('el_'+other);
+      if(oel){oel.classList.remove('dim'); oel.classList.add('nbr');}
+      (e.t===id?rels.in:rels.out).push({other, lb:e.lb});
+    }
+  });
+  if(n.gov){
+    n.gov.forEach(g=>{const el=document.getElementById('el_'+g); if(el){el.classList.remove('dim'); el.classList.add('gov');}});
+  }
+  openDrawer(n, rels);
+}
+function selectGroup(gid){
+  resetClasses(); selected='grp:'+gid;
+  const g=GROUPS[gid];
+  document.querySelectorAll('.node').forEach(el=>el.classList.add('dim'));
+  NODES.filter(n=>n.grp===gid).forEach(n=>{
+    const el=document.getElementById('el_'+n.id); el.classList.remove('dim'); el.classList.add('nbr');
+  });
+  const chip=document.querySelector(`.chip[data-gid="${gid}"]`);
+  if(chip){chip.classList.add('active'); chip.style.background=g.raw; chip.style.color='#fff';}
+  document.getElementById('dTitle').textContent=g.name;
+  document.getElementById('dBody').innerHTML=
+    `<span class="tag" style="background:${g.raw}">${g.name}</span>
+     <h3>포함 주제</h3><div>${g.topics}</div>
+     <h3>솔루션 / 기술 스택</h3><div class="sol">${g.sol}</div>
+     <h3>왜 이 레벨·그룹인가</h3><div>${g.desc}</div>`;
+  document.getElementById('drawer').classList.add('open');
+}
+function selectModule(b){
+  resetClasses(); selected='mod:'+b.id;
+  document.querySelectorAll('.node').forEach(el=>el.classList.add('dim'));
+  b.members.forEach(m=>{
+    const el=document.getElementById('el_'+m); if(el){el.classList.remove('dim'); el.classList.add('nbr');}
+  });
+  const mems=b.members.map(m=>{const t=nodeMap[m]; return (t.code&&t.code.includes('-')?t.code+' ':'')+t.nm;}).join(' · ');
+  document.getElementById('dTitle').textContent=b.title;
+  document.getElementById('dBody').innerHTML=
+    `<span class="tag" style="background:#2563eb">Lv.1 플랫폼 내장</span><span class="tag" style="background:${b.color}">${b.title.split(' —')[0]}</span>
+     <h3>포함 구성</h3><div>${mems}</div>
+     <h3>기능 / 분리·보강 옵션</h3><div class="sol">${b.sol}</div>
+     <h3>유형 설명</h3><div>${b.d}</div>`;
+  document.getElementById('drawer').classList.add('open');
+}
+function openDrawer(n, rels){
+  const g = n.grp==='infra'?{name:'인프라 구성요소',raw:'#64748b'} :
+            n.grp==='infb'?{name:'공통 인프라 계층',raw:'#64748b'} :
+            n.grp==='gap'?{name:'디지털화 필요 영역 (F-3 연계)',raw:'#d97706'} :
+            n.grp==='src'?{name:'데이터 원본',raw:'#0f172a'} : GROUPS[n.grp];
+  let relHtml='';
+  const nm=id=>{const t=nodeMap[id]; return t? (t.nm? (t.code&&t.code.includes('-')?t.code+' ':'')+t.nm : (t.title||id)) : id;};
+  if(rels.in.length) relHtml+='<h3>들어오는 연계</h3><ul>'+rels.in.map(r=>`<li>${nm(r.other)} <span class="rel-arrow">→ 이 블록</span> · ${r.lb}</li>`).join('')+'</ul>';
+  if(rels.out.length) relHtml+='<h3>나가는 연계</h3><ul>'+rels.out.map(r=>`<li><span class="rel-arrow">이 블록 →</span> ${nm(r.other)} · ${r.lb}</li>`).join('')+'</ul>';
+  if(n.gov) relHtml+='<h3>적용·지원 범위 (보라색 강조)</h3><ul>'+n.gov.map(g2=>`<li>${nm(g2)}</li>`).join('')+'</ul>';
+  document.getElementById('dTitle').textContent=(n.code&&n.code.includes('-')?n.code+' · ':'')+n.nm;
+  document.getElementById('dBody').innerHTML=
+    `<span class="tag" style="background:${g.raw}">${g.name}</span>${n.mod?`<span class="tag" style="background:${n.mc}">${n.mod}</span>`:''}
+     ${n.so?`<h3>기술 스택 / 형태</h3><div class="sol">${n.so}</div>`:''}
+     <h3>설명</h3><div>${n.d}</div>${relHtml}`;
+  document.getElementById('drawer').classList.add('open');
+}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open'); resetClasses(); selected=null;}
+document.getElementById('viewport').addEventListener('click',()=>closeDrawer());
+
+document.querySelectorAll('.btn.mode').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.btn.mode').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); mode=b.dataset.mode; resetClasses();
+  });
+});
+document.getElementById('lblBtn').addEventListener('click',function(){
+  labelsOn=!labelsOn; this.classList.toggle('active',labelsOn);
+  EDGES.forEach(e=>{ if(!e.pathEl.classList.contains('dim')) e.lblEl.classList.toggle('show',labelsOn); });
+});
+let zoom=1;
+function setZoom(z){zoom=Math.min(1.6,Math.max(0.4,z)); canvas.style.transform=`scale(${zoom})`; document.getElementById('zr').textContent=Math.round(zoom*100)+'%';}
+document.getElementById('zi').addEventListener('click',()=>setZoom(zoom+0.1));
+document.getElementById('zo').addEventListener('click',()=>setZoom(zoom-0.1));
+document.getElementById('zr').addEventListener('click',()=>setZoom(1));
+setZoom(Math.min(1,(window.innerWidth-20)/1720));
+applyMode();
+</script>
+</body>
+</html>
