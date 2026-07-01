@@ -29,7 +29,7 @@
   <circle cx="214" cy="218" r="5" fill="#3F9BD4"/>
   <text x="214" y="206" font-size="11.5" font-weight="700" fill="#10243f" text-anchor="middle">02:00 중단</text>
   <circle cx="238" cy="218" r="5" fill="#4FA47D"/>
-  <text x="300" y="206" font-size="11.5" font-weight="700" fill="#2f6b50">02:06 신선도 경보 → 즉시 알림</text>
+  <text x="300" y="206" font-size="11.5" font-weight="700" fill="#2f6b50">02:06 최신성 경보 → 즉시 알림</text>
   <text x="300" y="240" font-size="11" fill="#2f6b50">02:20 운영 담당 대응·억제 윈도우 · 영향 AI팀 통보</text>
   <line x1="238" y1="218" x2="296" y2="234" stroke="#7CC2A7" stroke-width="1"/>
 
