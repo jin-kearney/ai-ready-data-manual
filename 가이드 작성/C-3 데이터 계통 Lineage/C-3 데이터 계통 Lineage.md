@@ -10,7 +10,7 @@ last-updated: 2026-06-29
 tags: [ai-ready-data, C-3, storyline, lineage, 데이터계통, 근거추적, provenance]
 ---
 
-# C-3. 데이터 계통(Data Lineage) 매뉴얼
+# C-3. 데이터 계통(Data Lineage) 가이드
 
 ---
 
