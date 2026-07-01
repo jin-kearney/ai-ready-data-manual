@@ -1,47 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 500" width="1560" height="1000" font-family="'Noto Sans KR','Noto Sans',sans-serif" fill="#10243f">
 <rect width="780" height="500" fill="#ffffff"/>
 
-<text x="40" y="40" font-size="20" font-weight="700" fill="#163a73">점수가 어떻게 나오나 — 종합 33점과 20점 컷</text>
+<text x="40" y="40" font-size="20" font-weight="700" fill="#163a73">점수가 어떻게 나오나 — 성능 30점과 20점 컷</text>
 <text x="40" y="63" font-size="12.5" fill="#b04a2f" font-weight="600">※ 아래 수치는 읽는 법을 보여주는 설명용 가상 예시다 (실제 평가 결과 아님).</text>
 
-<!-- Chart area: y-axis 0..33 mapped to pixel 430(bottom)..90(top). scale = (430-90)/33 = 10.30 px/point -->
-<!-- axis -->
+<!-- Y axis 0..30 mapped to pixel 430(bottom)..90(top). scale = 340/30 = 11.33 px/point -->
 <line x1="150" y1="90" x2="150" y2="430" stroke="#94a3b8" stroke-width="1.4"/>
 <line x1="150" y1="430" x2="720" y2="430" stroke="#94a3b8" stroke-width="1.4"/>
 
-<!-- gridlines & labels: 0,10,20,30,33 -->
+<!-- gridlines & labels: 0,10,20,30 -->
 <text x="140" y="434" font-size="12" fill="#5b6b7d" text-anchor="end">0</text>
-<line x1="150" y1="327" x2="720" y2="327" stroke="#e3e9f0" stroke-width="1"/>
-<text x="140" y="331" font-size="12" fill="#5b6b7d" text-anchor="end">10</text>
-<line x1="150" y1="224" x2="720" y2="224" stroke="#e3e9f0" stroke-width="1"/>
-<text x="140" y="228" font-size="12" fill="#5b6b7d" text-anchor="end">20</text>
-<line x1="150" y1="121" x2="720" y2="121" stroke="#e3e9f0" stroke-width="1"/>
-<text x="140" y="125" font-size="12" fill="#5b6b7d" text-anchor="end">30</text>
-<text x="140" y="94" font-size="12" fill="#5b6b7d" text-anchor="end">33</text>
+<line x1="150" y1="317" x2="720" y2="317" stroke="#e3e9f0" stroke-width="1"/>
+<text x="140" y="321" font-size="12" fill="#5b6b7d" text-anchor="end">10</text>
+<line x1="150" y1="90" x2="720" y2="90" stroke="#e3e9f0" stroke-width="1"/>
+<text x="140" y="94" font-size="12" fill="#5b6b7d" text-anchor="end">30</text>
 
 <!-- 20-point cut line (emphasized) -->
-<line x1="150" y1="224" x2="720" y2="224" stroke="#b04a2f" stroke-width="1.8" stroke-dasharray="7 4"/>
-<text x="716" y="216" font-size="12" font-weight="700" fill="#b04a2f" text-anchor="end">20점 컷</text>
+<line x1="150" y1="203" x2="720" y2="203" stroke="#b04a2f" stroke-width="1.8" stroke-dasharray="7 4"/>
+<text x="716" y="195" font-size="12.5" font-weight="700" fill="#b04a2f" text-anchor="end">20점 컷</text>
 
-<!-- Player A : 성능 25.5 + 비용 2.4 = 27.9 (pass). 성능 height=25.5*10.30=262.7 -> from 430 up to 167.3. 비용 2.4*10.30=24.7 stacked -> 167.3 to 142.6 -->
-<rect x="250" y="167" width="120" height="263" fill="#2456A4" stroke="#163a73" stroke-width="1.2"/>
-<text x="310" y="305" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">성능 25.5</text>
-<rect x="250" y="142" width="120" height="25" fill="#4FA47D" stroke="#2f6b50" stroke-width="1.2"/>
-<text x="310" y="159" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">비용 2.4</text>
-<text x="310" y="130" font-size="14" font-weight="700" fill="#2f6b50" text-anchor="middle">종합 27.9 ✓</text>
+<!-- Player A : 성능 25.5 → height 25.5*11.33=289 -> from 430 up to 141 (pass) -->
+<rect x="250" y="141" width="120" height="289" fill="#2456A4" stroke="#163a73" stroke-width="1.2"/>
+<text x="310" y="300" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">성능 25.5</text>
+<text x="310" y="130" font-size="14" font-weight="700" fill="#2f6b50" text-anchor="middle">25.5점 ✓ 통과</text>
 <text x="310" y="452" font-size="13" font-weight="600" text-anchor="middle">후보 A</text>
-<text x="310" y="470" font-size="12" fill="#5b6b7d" text-anchor="middle">통과 → 단위 1순위 후보</text>
+<text x="310" y="470" font-size="12" fill="#5b6b7d" text-anchor="middle">20점 이상 → 단위 1순위 후보</text>
 
-<!-- Player B : 성능 16 + 비용 2.7 = 18.7 (fail). 성능 16*10.30=164.8 -> 430 to 265.2. 비용 2.7*10.30=27.8 -> 265.2 to 237.4 -->
-<rect x="500" y="265" width="120" height="165" fill="#B7CDE6" stroke="#6B9AD1" stroke-width="1.2"/>
-<text x="560" y="355" font-size="13" font-weight="700" fill="#10243f" text-anchor="middle">성능 16.0</text>
-<rect x="500" y="237" width="120" height="28" fill="#7CC2A7" stroke="#2f6b50" stroke-width="1.2"/>
-<text x="560" y="256" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">비용 2.7</text>
-<text x="560" y="225" font-size="14" font-weight="700" fill="#b04a2f" text-anchor="middle">종합 18.7 ✗</text>
+<!-- Player B : 성능 16 → height 16*11.33=181 -> from 430 up to 249 (fail) -->
+<rect x="500" y="249" width="120" height="181" fill="#B7CDE6" stroke="#6B9AD1" stroke-width="1.2"/>
+<text x="560" y="350" font-size="14" font-weight="700" fill="#10243f" text-anchor="middle">성능 16.0</text>
+<text x="560" y="238" font-size="14" font-weight="700" fill="#b04a2f" text-anchor="middle">16.0점 ✗</text>
 <text x="560" y="452" font-size="13" font-weight="600" text-anchor="middle">후보 B</text>
 <text x="560" y="470" font-size="12" fill="#5b6b7d" text-anchor="middle">20점 미만 → 후순위</text>
-
-<!-- legend -->
-<rect x="600" y="95" width="14" height="14" fill="#2456A4"/><text x="620" y="107" font-size="12" fill="#334b63">성능 (30)</text>
-<rect x="600" y="115" width="14" height="14" fill="#4FA47D"/><text x="620" y="127" font-size="12" fill="#334b63">비용 (3)</text>
 </svg>
