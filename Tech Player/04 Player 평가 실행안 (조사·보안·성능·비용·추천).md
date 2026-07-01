@@ -32,12 +32,12 @@
 %%{init: {'theme':'base','themeVariables':{'primaryColor':'#DCE8F5','primaryBorderColor':'#2456A4','primaryTextColor':'#10243f','lineColor':'#2456A4','clusterBkg':'#EEF4FB','clusterBorder':'#6B9AD1','fontSize':'13px'}}}%%
 flowchart LR
     POOL["① 전수 조사<br/>14개 카테고리별<br/>Player 5개 내외"]:::src --> GATE{"② 보안 게이트<br/>통과 / 탈락"}:::gate
-    GATE -->|"미충족·CVSS≥7.0"| OUT["우선순위 제외"]:::n
+    GATE -->|"미충족·CVSS≥7.0"| OUT["Black-List<br/>(사용 제한)"]:::n
     GATE -->|통과| PERF["③ 성능 30점<br/>3 Pillar × 10 지표"]:::cat
     PERF --> CUT{"④ 성능 30점 중<br/>20점 이상?"}:::gate
-    CUT -->|미만| LOW["후순위"]:::n
+    CUT -->|미만| LOW["후순위<br/>(White-List 제외)"]:::n
     CUT -->|이상| RANK["⑤ 카테고리 안에서 순위<br/>+ 환경별 1순위"]:::gate
-    RANK --> REC["추천<br/>(03 점수 칸 채움)"]:::loop
+    RANK --> REC["White-List · 추천<br/>(03 점수 칸 채움)"]:::loop
 
     classDef n fill:#B7CDE6,stroke:#6B9AD1,color:#10243f;
     classDef src fill:#79C3E8,stroke:#3F9BD4,color:#0b3a52;
@@ -53,6 +53,7 @@ flowchart LR
 - **보안이 맨 앞이다.** 아무리 성능이 좋아도 보안 게이트를 못 넘으면 채점 자체를 안 한다(탈락). 헛수고를 줄이는 순서다.
 - **성능 30점이 후보를 가른다.** 20점(30점 만점 중) 미만은 후순위로 내린다.
 - **순위는 카테고리 안에서만** 매긴다. 카탈로그 플랫폼끼리, 품질·관측 도구끼리 각각 줄 세운다(서로 다른 시장을 한 줄에 세우지 않는다).
+- **AXC 산출물 용어로 정리하면:** 보안에서 걸러진 Player = **Black-List(사용 제한)**, 보안 통과 + 성능 20점 이상 = **White-List · 추천(Recommendation)**. 20점 미만은 White-List에서 빠진다.
 
 ---
 
@@ -130,11 +131,11 @@ flowchart TB
 %%{init: {'theme':'base','themeVariables':{'primaryColor':'#DCE8F5','primaryBorderColor':'#2456A4','primaryTextColor':'#10243f','lineColor':'#2456A4','fontSize':'13px'}}}%%
 flowchart LR
     IN["후보 1개"]:::src --> SEC{"보안 게이트"}:::gate
-    SEC -->|하나라도 미충족| X["탈락<br/>(채점 안 함)"]:::n
+    SEC -->|하나라도 미충족| X["Black-List<br/>(사용 제한 · 채점 안 함)"]:::n
     SEC -->|모두 통과| P["성능 채점<br/>0~30점"]:::cat
     P --> CUT{"20점 이상?"}:::gate
     CUT -->|미만| LOW["후순위"]:::n
-    CUT -->|이상| RANK["카테고리 안 순위"]:::gate
+    CUT -->|이상| RANK["White-List · 추천<br/>(카테고리 안 순위)"]:::gate
     classDef n fill:#B7CDE6,stroke:#6B9AD1,color:#10243f;
     classDef src fill:#79C3E8,stroke:#3F9BD4,color:#0b3a52;
     classDef cat fill:#2456A4,color:#fff,stroke:#163a73,stroke-width:2px;
@@ -143,9 +144,9 @@ flowchart LR
 
 | 순서 | 성격 | 결과 |
 |---|---|---|
-| **1) 보안 게이트** | 통과 / 탈락 (점수 아님) | 미충족 시 탈락 — 이후 채점 없음 |
+| **1) 보안 게이트** | 통과 / 탈락 (점수 아님) | 미충족 = **Black-List(사용 제한)** — 이후 채점 없음 |
 | **2) 성능** | 30점 채점 | 후보 변별의 몸통 |
-| **3) 20점 컷** | 성능 30점 중 20점 | 미만은 후순위 |
+| **3) 20점 컷** | 성능 30점 중 20점 | 이상 = **White-List · 추천**, 미만 = 후순위 |
 
 이 순서가 곧 §1 퍼널의 좁혀지는 단계다. 아래 4·5장에서 각 단계를 자세히 본다.
 
@@ -227,7 +228,7 @@ flowchart LR
     B -->|미만| L["후순위"]:::n
     B -->|이상| C["카테고리 안에서<br/>성능 30점 내림차순 정렬"]:::gate
     C --> D["환경별 1순위<br/>(클라우드 / 온프렘)"]:::gate
-    D --> E["03 §3 점수 칸 채움<br/>+ 01 정본 정량 보강"]:::loop
+    D --> E["White-List · 추천 확정<br/>03 §3 점수 칸 채움"]:::loop
     classDef n fill:#B7CDE6,stroke:#6B9AD1,color:#10243f;
     classDef cat fill:#2456A4,color:#fff,stroke:#163a73,stroke-width:2px;
     classDef gate fill:#3F9BD4,stroke:#2456A4,color:#fff;
@@ -237,7 +238,7 @@ flowchart LR
 - **종합 = 성능 30점 만점.** 20점 미만은 후순위.
 - **순위는 카테고리 안에서** 성능 30점 내림차순. 동률은 상위 기둥(P1 제품 검증성 → P3 운영 안정성) 점수, 그래도 같으면 2층 정본의 정성 비교로 가른다.
 - **환경별 1순위:** 클라우드는 자체 Managed 우선, 온프렘은 OSS 최고점. **온프렘 1순위는 반드시 채운다**(폐쇄망 계열사용).
-- **Black/White-List는 발행하지 않는다**(지주 권한) — 우리 산출은 카테고리별 우선순위 + 환경별 1순위까지.
+- **산출은 AXC 리스트 용어로 정리한다** — 보안 탈락 = **Black-List(사용 제한)**, 성능 20점 이상 통과 = **White-List · 추천(Recommendation)**. 여기에 카테고리별 우선순위 + 환경별 1순위를 더한다. (그룹 전체에 강제하는 공식 List 확정은 지주 권한.)
 
 출력은 03 §3의 빈 점수 칸과 같은 행으로 채운다:
 
@@ -291,4 +292,5 @@ flowchart LR
 |---|---|---|
 | v0.1 | 2026-07-01 | 신규 — 조사→보안·성능·비용→추천 실행 흐름을 그림 중심으로 정리. 퍼널·성능 스코어카드·채점방식·예시·TCO 5개 SVG + 흐름도 5개(mermaid). 규칙은 기획안, 후보 판은 03에 위임. |
 | v0.2 | 2026-07-01 | §2에 "0단계 — 나누기" 추가. RFP 5영역 → 14개 카테고리 통합/분리 로직을 SVG(split-rfp-to-categories)로 시각화(②통합 1개·④4개 분리 강조), §2를 2.1 나누기 / 2.2 조사로 재구성. |
+| v0.4 | 2026-07-01 | **AXC 산출물 용어로 정리** — 보안 탈락 = Black-List(사용 제한), 성능 20점 이상 통과 = White-List·추천(Recommendation). 퍼널·§1·§3·§6 흐름도·표에 반영. |
 | v0.3 | 2026-07-01 | **비용 축 제거 — 평가 = 보안 게이트 + 성능 30점만, 20점 컷은 성능 30점 기준으로 유지**(고객 결정). §6 비용 섹션·cost-tco SVG 삭제, 퍼널·예시 SVG를 성능 30점 단독으로 재작성, §7·§8 재번호(→§6·§7), 종합=성능 30점, 동률 처리 규칙 변경. AXC 33점 체계에서 비용(3점)만 뺀 변형. |
