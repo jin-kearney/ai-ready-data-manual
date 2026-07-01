@@ -45,20 +45,20 @@
 
 | 묶음 | 핵심 기능(capability) | 커버 주제 | 대표 제품(군) |
 |---|---|---|---|
-| **① 통합 데이터 거버넌스·카탈로그 플랫폼** | 자동 메타 수집(커넥터) · 검색/탐색 · **비즈니스 용어집(Glossary)+동의어 매핑** · 승인 워크플로 · **컬럼단위 계통(Lineage)** · AI 자연어 탐색 | **A-1·A-2·A-3** (+C-3 계통) **한 제품으로 묶임** | Collibra · Microsoft Purview · Atlan · Databricks Unity Catalog · (OSS) OpenMetadata · DataHub |
+| **① 통합 데이터 카탈로그 플랫폼** | 자동 메타 수집(커넥터) · 검색/탐색 · **비즈니스 용어집(Glossary)+동의어 매핑** · 승인 워크플로 · **컬럼단위 계통(Lineage)** · AI 자연어 탐색 | **A-1·A-2·A-3** (+C-3 계통) **한 제품으로 묶임** | Collibra · Microsoft Purview · Atlan · Databricks Unity Catalog · (OSS) OpenMetadata · DataHub |
 | **② 문서 전처리 / Document AI** | 레이아웃 인식 OCR · **표 구조 보존** · 마크다운/JSON 출력 · 청킹·임베딩 · 온프레미스/망분리 · 한국어 | **B-1** | Docling · Unstructured · LlamaParse · Camelot/pdfplumber · Azure Document Intelligence · Google Document AI · AWS Textract · (국내) Upstage |
 | **③ 데이터 라벨링 / 주석 플랫폼** | **AI 1차 라벨(pre-label)** · 능동학습 · 프로그래매틱(약지도) 라벨링 · 라벨 오류 탐지 · 합의/검수(HITL) · 온프레미스 | **B-2** | Label Studio · CVAT · Snorkel Flow · Labelbox · Scale AI · Roboflow · Prodigy · Cleanlab · SageMaker Ground Truth · (보조) SAM 2 |
 | **④ 그래프DB / 온톨로지** | **그래프 추론**(OWL/SHACL) · 다중 홉 경로 탐색 · SPARQL/Cypher 질의 · 벡터·GraphRAG · 온톨로지 저작 | **B-3** | Neo4j · Amazon Neptune · TigerGraph · Memgraph · Ontotext GraphDB · Stardog · Apache Jena · Protégé |
 
 **핵심 인사이트:**
-- **묶음 ①이 곧 이 매뉴얼 A군의 정답 구조다.** A-1·A-2·A-3을 도구 3개로 따로 사는 게 아니라, **카탈로그/거버넌스 플랫폼 1개**가 카탈로그 + 메타데이터 작성·승인 + 비즈니스 용어집을 함께 제공한다(계통 C-3까지). 6개 가이드 본문이 모두 같은 벤더 집합(Collibra·Purview·Atlan·Unity Catalog·OpenMetadata·DataHub)으로 수렴한다.
-- **묶음 ②③④는 서로 다른 시장이다 — 한 제품으로 다 안 된다.** 전처리(B-1)·라벨링(B-2)·온톨로지(B-3)는 각각 전용/OSS 도구를 붙여야 하고, 묶음 ①의 거버넌스 플랫폼은 이 영역이 통째로 비어 있다.
+- **묶음 ①이 곧 이 매뉴얼 A군의 정답 구조다.** A-1·A-2·A-3을 도구 3개로 따로 사는 게 아니라, **데이터 카탈로그 플랫폼 1개**가 카탈로그 + 메타데이터 작성·승인 + 비즈니스 용어집을 함께 제공한다(계통 C-3까지). 6개 가이드 본문이 모두 같은 벤더 집합(Collibra·Purview·Atlan·Unity Catalog·OpenMetadata·DataHub)으로 수렴한다.
+- **묶음 ②③④는 서로 다른 시장이다 — 한 제품으로 다 안 된다.** 전처리(B-1)·라벨링(B-2)·온톨로지(B-3)는 각각 전용/OSS 도구를 붙여야 하고, 묶음 ①의 카탈로그 플랫폼은 이 영역이 통째로 비어 있다.
 
 ## A0-2. 기능(capability) × 묶음 매트릭스 — "이 기능을 하는 건 어느 묶음인가"
 
 > 행=기능, 열=4개 솔루션 묶음. ● 그 묶음의 핵심 기능 / ◐ 일부 제품만·부분 / ○ 연동·플러그인으로 / 공백=아님.
 
-| 기능 (capability) | ① 거버넌스·카탈로그 | ② 문서 전처리 | ③ 라벨링·주석 | ④ 그래프·온톨로지 |
+| 기능 (capability) | ① 카탈로그 | ② 문서 전처리 | ③ 라벨링·주석 | ④ 그래프·온톨로지 |
 |---|:--:|:--:|:--:|:--:|
 | 자동 메타데이터 수집(커넥터) | ● | | | ○ |
 | 검색·탐색(자연어·필터) | ● | | | ◐ |
@@ -500,7 +500,7 @@
 
 ## 핵심 판단
 
-> ⭐ **A·B 6개 주제 요약(이번 갱신 범위):** 4개 묶음으로 갈린다 — **묶음 ① 거버넌스·카탈로그 플랫폼 1개가 A-1·A-2·A-3을 통째로** 덮고(따로 안 산다), **묶음 ② 전처리·③ 라벨링·④ 온톨로지는 각각 전용/OSS 도구**를 따로 붙인다(거버넌스 플랫폼엔 이 셋이 비어 있다). 즉 "**거버넌스 플랫폼 1개 + B-1·B-2·B-3용 전용 도구 3개**"가 자연스러운 조합이다.
+> ⭐ **A·B 6개 주제 요약(이번 갱신 범위):** 4개 묶음으로 갈린다 — **묶음 ① 카탈로그 플랫폼 1개가 A-1·A-2·A-3을 통째로** 덮고(따로 안 산다), **묶음 ② 전처리·③ 라벨링·④ 온톨로지는 각각 전용/OSS 도구**를 따로 붙인다(카탈로그 플랫폼엔 이 셋이 비어 있다). 즉 "**카탈로그 플랫폼 1개 + B-1·B-2·B-3용 전용 도구 3개**"가 자연스러운 조합이다.
 
 1. **A·C·F(거버넌스) 계열은 어느 대형 플랫폼이든 강하다.** 카탈로그·메타데이터·용어집·계통·품질·보안은 평준화됐다 — A-1·A-2·A-3은 한 제품(묶음 ①)으로 함께 해결된다. 여기서 스택을 가르는 건 "이미 어느 클라우드를 쓰는가"다. 단일 클라우드면 그 내장 거버넌스로 시작하는 게 합리적. **단 A-3 네이티브 용어집·동의어 매핑은 Databricks·Snowflake가 약하므로(△)** 용어집이 중요하면 전용(Collibra·Purview·Atlan)을 본다.
 
@@ -528,7 +528,7 @@
 - Collibra — https://www.collibra.com/ · Alation — https://www.alation.com/ · Atlan — https://atlan.com/
 
 **A·B 6개 주제 — 묶음별 제품 공식 문서 (이번 갱신에서 추가):**
-- 묶음 ① 거버넌스·카탈로그: Informatica CDGC — https://www.informatica.com/products/data-governance/cloud-data-governance-and-catalog.html · IBM Knowledge Catalog — https://www.ibm.com/products/watsonx-data-intelligence/governance-catalog
+- 묶음 ① 카탈로그: Informatica CDGC — https://www.informatica.com/products/data-governance/cloud-data-governance-and-catalog.html · IBM Knowledge Catalog — https://www.ibm.com/products/watsonx-data-intelligence/governance-catalog
 - 묶음 ② 문서 전처리: Docling — https://github.com/docling-project/docling · Unstructured — https://unstructured.io/ · LlamaParse — https://developers.llamaindex.ai/python/framework/llama_cloud/llama_parse/ · Camelot — https://camelot-py.readthedocs.io · pdfplumber — https://github.com/jsvine/pdfplumber · Azure Document Intelligence — https://azure.microsoft.com/ko-kr/products/ai-services/ai-document-intelligence · Google Document AI — https://cloud.google.com/document-ai · AWS Textract — https://aws.amazon.com/textract/ · Upstage — https://www.upstage.ai/products/document-parse · Apache Tika — https://tika.apache.org
 - 묶음 ③ 라벨링: Label Studio — https://labelstud.io/ · CVAT — https://github.com/cvat-ai/cvat · Snorkel Flow — https://snorkel.ai/ · Labelbox — https://labelbox.com/ · Scale AI — https://scale.com/data-engine · Roboflow — https://roboflow.com/ · Prodigy — https://prodi.gy/ · SAM 2 — https://ai.meta.com/research/sam2/ · Cleanlab — https://cleanlab.ai/ · SageMaker Ground Truth — https://aws.amazon.com/sagemaker/ai/groundtruth/
 - 묶음 ④ 그래프·온톨로지: Neo4j — https://neo4j.com · Amazon Neptune — https://aws.amazon.com/neptune/ · TigerGraph — https://www.tigergraph.com · Memgraph — https://memgraph.com · Ontotext GraphDB — https://graphdb.ontotext.com · Stardog — https://www.stardog.com/platform/ · Apache Jena — https://jena.apache.org · Protégé — https://protege.stanford.edu · PoolParty — https://www.poolparty.biz/ontology-management · TopBraid EDG — https://www.topquadrant.com/products/topbraid-edg/ · IOF — https://github.com/iofoundry/ontology
