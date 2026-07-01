@@ -415,12 +415,12 @@ flowchart LR
 
 ## 7. KPI — 성과 지표
 
-운영 기준(데이터 오너십·역할과 책임·생애주기)은 신뢰성 세 주제가 공유하므로 [별첨 C. 운영 기준서](../별첨%20C%20운영%20기준서/별첨%20C.%20운영%20기준서.md)에 공통으로 정의한다. 이 절은 계통이 잘 관리되고 있는지 보는 KPI만 다룬다.
+운영 기준(데이터 오너십·역할과 책임)은 신뢰성 세 주제가 공유하므로 [별첨 C. 운영 기준서](../별첨%20C%20운영%20기준서/별첨%20C.%20운영%20기준서.md)에 공통으로 정의한다. 이 절은 계통이 잘 관리되고 있는지 보는 KPI만 다룬다.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'primaryColor':'#DCE8F5','primaryBorderColor':'#2456A4','primaryTextColor':'#10243f','lineColor':'#2456A4','clusterBkg':'#EEF4FB','clusterBorder':'#6B9AD1','fontSize':'13px'}}}%%
 flowchart LR
-    STD["운영 기준<br/>(별첨 C: 오너십·R&R·생애주기)"]:::std
+    STD["운영 기준<br/>(별첨 C: 오너십·R&R)"]:::std
     K["KPI로 점검<br/>계통 커버리지·근거 추적·영향도 분석"]:::mid
     G{"목표(SLA)<br/>대비 평가"}:::gate
     STD --> K --> G -->|미달 시 개선| STD
