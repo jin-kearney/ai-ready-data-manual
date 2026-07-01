@@ -10,7 +10,7 @@
   <!-- 역할 -->
   <rect x="44" y="86" width="64" height="40" rx="4" fill="#2456A4"/>
   <text x="76" y="110" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">역할</text>
-  <text x="118" y="103" font-size="11.5" fill="#10243f">두산전자 CCL 품질 클레임 원인 분류 전문가</text>
+  <text x="118" y="103" font-size="11.5" fill="#10243f">CCL 품질 클레임 원인 분류 전문가</text>
   <text x="118" y="119" font-size="10.5" fill="#6b7785">"누가 이 업무를 하는가"를 고정</text>
 
   <!-- 입력 -->
