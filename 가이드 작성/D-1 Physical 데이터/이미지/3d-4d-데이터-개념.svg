@@ -1,0 +1,41 @@
+<svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="820" height="300" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">3D 데이터와 4D 데이터 (개념)</text>
+
+  <line x1="410" y1="50" x2="410" y2="248" stroke="#e6ecf3" stroke-width="1.2"/>
+
+  <!-- LEFT: 3D (geometry only) -->
+  <text x="30" y="64" font-size="14" font-weight="700" fill="#10243f">3D — 디지털 트윈</text>
+  <polygon points="165,123 235,123 235,177 165,177" fill="#B7CDE6" stroke="#6B9AD1" stroke-width="1.3"/>
+  <polygon points="165,123 187,109 257,109 235,123" fill="#DCE8F5" stroke="#6B9AD1" stroke-width="1.3"/>
+  <polygon points="235,123 257,109 257,163 235,177" fill="#9db8d6" stroke="#6B9AD1" stroke-width="1.3"/>
+  <text x="210" y="208" font-size="12" fill="#3a4a55" text-anchor="middle">형상·배치만 담음 (정적)</text>
+
+  <!-- RIGHT: 4D (geometry + physical forces) -->
+  <text x="440" y="64" font-size="14" font-weight="700" fill="#2456A4">4D — 물리 거동까지</text>
+  <polygon points="565,123 635,123 635,177 565,177" fill="#B7CDE6" stroke="#6B9AD1" stroke-width="1.3"/>
+  <polygon points="565,123 587,109 657,109 635,123" fill="#DCE8F5" stroke="#6B9AD1" stroke-width="1.3"/>
+  <polygon points="635,123 657,109 657,163 635,177" fill="#9db8d6" stroke="#6B9AD1" stroke-width="1.3"/>
+  <circle cx="600" cy="150" r="4" fill="#E0B400" stroke="#a07f00" stroke-width="1"/>
+
+  <!-- 지지력 up -->
+  <line x1="600" y1="150" x2="600" y2="99" stroke="#2456A4" stroke-width="2.4"/>
+  <polygon points="600,89 594,102 606,102" fill="#2456A4"/>
+  <text x="600" y="83" font-size="12" fill="#2456A4" font-weight="700" text-anchor="middle">지지력</text>
+  <!-- 중력 down -->
+  <line x1="600" y1="150" x2="600" y2="201" stroke="#4FA47D" stroke-width="2.4"/>
+  <polygon points="600,211 594,198 606,198" fill="#4FA47D"/>
+  <text x="600" y="227" font-size="12" fill="#2f6b50" font-weight="700" text-anchor="middle">중력</text>
+  <!-- 마찰 right -->
+  <line x1="600" y1="150" x2="661" y2="150" stroke="#3F9BD4" stroke-width="2.4"/>
+  <polygon points="671,150 658,144 658,156" fill="#3F9BD4"/>
+  <text x="678" y="154" font-size="12" fill="#2456A4" font-weight="700">마찰</text>
+  <!-- 속도 down-left -->
+  <line x1="600" y1="150" x2="554" y2="188" stroke="#5B8AC9" stroke-width="2.4"/>
+  <polygon points="546,194 549,181 559,190" fill="#5B8AC9"/>
+  <text x="512" y="204" font-size="12" fill="#2456A4" font-weight="700">속도</text>
+
+  <text x="600" y="252" font-size="12" fill="#3a4a55" text-anchor="middle">+ 지지력·표면장력·점성 · 시간에 따른 거동</text>
+
+  <text x="24" y="284" font-size="11.5" fill="#2f6b50">D-1은 이런 3D·4D 시뮬레이션이 학습·검증에 쓸 물리 데이터(형상·물성·힘·시간)를 표준화·정제해 준비한다. 모델 자체를 만드는 건 범위 밖.</text>
+</svg>
