@@ -1,0 +1,28 @@
+<svg viewBox="0 0 820 312" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect width="820" height="312" fill="#ffffff"/>
+  <text x="24" y="30" font-size="17" font-weight="700" fill="#10243f">같은 온도 상승 — 맥락이 있으면 해석되고, 없으면 알 수 없다 (가상)</text>
+
+  <line x1="410" y1="52" x2="410" y2="278" stroke="#e6ecf3" stroke-width="1.2"/>
+
+  <!-- LEFT: with context -->
+  <text x="40" y="64" font-size="13.5" font-weight="700" fill="#2456A4">맥락(작업 조건)을 함께 기록</text>
+  <line x1="60" y1="240" x2="380" y2="240" stroke="#c9d4e0" stroke-width="1.2"/>
+  <line x1="60" y1="92" x2="60" y2="240" stroke="#c9d4e0" stroke-width="1.2"/>
+  <polyline fill="none" stroke="#2456A4" stroke-width="2.2"
+    points="60,202 100,200 140,203 180,200 215,199 240,182 270,152 310,124 360,108"/>
+  <line x1="225" y1="96" x2="225" y2="240" stroke="#4FA47D" stroke-width="1.6" stroke-dasharray="5 3"/>
+  <text x="232" y="110" font-size="12" font-weight="700" fill="#2f6b50">레시피 R-10→R-12</text>
+  <text x="232" y="126" font-size="11" fill="#3a4a55">수집 시점에 기록됨</text>
+  <text x="40" y="266" font-size="12.5" font-weight="700" fill="#2f6b50">상승 원인 = 조건 변경 — 데이터로 해석된다</text>
+
+  <!-- RIGHT: values only -->
+  <text x="450" y="64" font-size="13.5" font-weight="700" fill="#10243f">측정값만 기록 (맥락 없음)</text>
+  <line x1="470" y1="240" x2="790" y2="240" stroke="#c9d4e0" stroke-width="1.2"/>
+  <line x1="470" y1="92" x2="470" y2="240" stroke="#c9d4e0" stroke-width="1.2"/>
+  <polyline fill="none" stroke="#2456A4" stroke-width="2.2"
+    points="470,202 510,200 550,203 590,200 625,199 650,182 680,152 720,124 770,108"/>
+  <text x="636" y="112" font-size="12.5" font-weight="700" fill="#b32020">설비 이상? 조건 변경?</text>
+  <text x="450" y="266" font-size="12.5" font-weight="700" fill="#b32020">그때의 작업 조건은 사후에 복구할 수 없다</text>
+
+  <text x="24" y="298" font-size="11.5" fill="#3a4a55">같은 곡선이라도 함께 기록된 맥락이 있어야 원인을 가릴 수 있다 — 공통 기준의 넷째 항목이 맥락인 이유다.</text>
+</svg>
